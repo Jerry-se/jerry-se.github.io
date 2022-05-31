@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/python/build_blogs_with_pelican/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Pelican - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Git <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../git/git_lfs/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../mkdocs/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#pelican" class="nav-link">使用Pelican搭建博客</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#create-github-repo" class="nav-link">创建Github仓库</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-pelican" class="nav-link">安装Pelican</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#quickstart" class="nav-link">快速配置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#write-blog" class="nav-link">创建文章</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#build-blog" class="nav-link">生成发布网站</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#publish-blog-to-github" class="nav-link">发布到Github</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pelican-themes" class="nav-link">设置主题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="pelican">使用Pelican搭建博客<a class="headerlink" href="#pelican" title="Permanent link"></a></h1>
+<p>Build blogs with pelican and Github pages.</p>
+<hr />
+<h2 id="create-github-repo">创建Github仓库<a class="headerlink" href="#create-github-repo" title="Permanent link"></a></h2>
+<p>GitHub可以托管各种git库的站点。通过 <code>GitHub Pages</code>生成的静态站点，可以免费托管、自定义主题、并且自制网页界面。</p>
+<ol>
+<li>首先到Github进行账号注册：<code>https://github.com/</code>。</li>
+<li>注册后登录Github，右上角点击“Creat a new repo”，跳转到新页面后填写相关内容，注意版本库名使用'username.github.io'的格式，这里将 <code>username</code>替换成自己的用户名即可。</li>
+<li>设置和选择好页面模板后就可以生成然后发布新网页了。</li>
+<li>创建SSH密钥并上传到Github。</li>
+</ol>
+<p>关于SSH认证：<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">Windows/Linux/Mac下使用SSH密钥连接Github</a></p>
+<p>官方文档：<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">Github官方文档在这里</a></p>
+<h2 id="install-pelican">安装Pelican<a class="headerlink" href="#install-pelican" title="Permanent link"></a></h2>
+<p>Pelican 是一个静态站点生成器，用 <code>Python</code>编写。
+通过在首选终端中运行以下命令，在 Python 3.6+ 上安装 Pelican（如果您打算使用它，还可以选择 <code>Markdown</code>）：</p>
+<pre><code class="language-bash">$ python3 -m pip install &quot;pelican[markdown]&quot;
+</code></pre>
+<p>官方文档：<a href="https://docs.getpelican.com/en/latest/">Pelican官方文档</a></p>
+<h2 id="quickstart">快速配置<a class="headerlink" href="#quickstart" title="Permanent link"></a></h2>
+<p>将 <code>username.github.io</code>项目克隆到本地，切换到该目录</p>
+<pre><code class="language-bash">$ git clone git@github.com:username/username.github.io.git
+$ cd username.github.io
+</code></pre>
+<p>通过命令创建一个框架项目 <code>pelican-quickstart</code>，首先询问有关您网站的一些问题，对于括号中表示默认值的问题，请随时使用 Return 键接受这些默认值。
+这些问题只是用来生成配置文件的，我们后面都可以通过修改配置文件来手动修改这些设置。我填写的内容如下：</p>
+<pre><code class="language-bash">$ pelican-quickstart
+Welcome to pelican-quickstart v4.7.1.
+
+This script will help you create a new Pelican-based website.
+
+Please answer the following questions so this script can generate the files
+needed by Pelican.
+
+
+&gt; Where do you want to create your new web site? [.]
+&gt; What will be the title of this web site? Jerry‘s blog
+&gt; Who will be the author of this web site? Jerry
+&gt; What will be the default language of this web site? [en]
+&gt; Do you want to specify a URL prefix? e.g., https://example.com   (Y/n) n
+&gt; Do you want to enable article pagination? (Y/n)
+&gt; How many articles per page do you want? [10]
+&gt; What is your time zone? [Europe/Rome] Asia/Shanghai
+&gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? (Y/n)
+&gt; Do you want to upload your website using FTP? (y/N)
+&gt; Do you want to upload your website using SSH? (y/N)
+&gt; Do you want to upload your website using Dropbox? (y/N)
+&gt; Do you want to upload your website using S3? (y/N)
+&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N)
+&gt; Do you want to upload your website using GitHub Pages? (y/N) y
+&gt; Is this your personal page (username.github.io)? (y/N) y
+Done. Your new project is available at /home/jerry/Code/Jerry-se.github.io
+</code></pre>
+<p>回答完所有问题后，项目将包含以下层次结构（<em>pages</em> 除外- 显示在下面的括号中 - 如果您计划创建非按时间顺序排列的内容，您可以选择添加自己）：</p>
+<pre><code class="language-no-highlight">yourproject/
+├── content
+│   └── (pages)
+├── output
+├── tasks.py
+├── Makefile
+├── pelicanconf.py       # Main settings file
+└── publishconf.py       # Settings to use when ready to publish
+</code></pre>
+<p>下一步是开始将内容添加到为您创建的内容文件夹中。</p>
+<h2 id="write-blog">创建文章<a class="headerlink" href="#write-blog" title="Permanent link"></a></h2>
+<p>在创建一些内容之前，您无法运行 Pelican。使用您喜欢的文本编辑器创建您的第一篇文章，内容如下：</p>
+<pre><code class="language-no-highlight">Title: My super title
+Date: 2010-12-03 10:20
+Modified: 2010-12-05 19:30
+Category: Python
+Tags: pelican, publishing
+Slug: my-super-post
+Authors: Alexis Metaireau, Conan Doyle
+Summary: Short version for index and feeds
+
+This is the content of my super blog post.
+</code></pre>
+<p>鉴于此示例文章为 Markdown 格式，请将其另存为 <code>username.github.io/content/xxxx.md</code></p>
+<p>官方文档：<a href="https://docs.getpelican.com/en/latest/content.html">Pelican写作文章</a></p>
+<h2 id="build-blog">生成发布网站<a class="headerlink" href="#build-blog" title="Permanent link"></a></h2>
+<p>从您的项目根目录中，运行 <code>pelican</code>命令以生成您的站点：</p>
+<pre><code class="language-bash">pelican content
+</code></pre>
+<p>您的站点现已在 <code>output/</code>目录中生成。（您可能会看到与提要相关的警告，但在本地开发时这是正常的，现在可以忽略。）</p>
+<p>虽然该 <code>pelican</code>命令是生成站点的规范方式，但可以使用自动化工具来简化生成和发布流程。在 <code>pelican-quickstart</code>运行过程中提问是否要自动化站点生成和发布。如果对该问题回答“是”，则会在项目的根目录中生成一个 <code>tasks.py</code>和 <code>Makefile</code>。这些文件预先填充了从 <code>pelican-quickstart</code>过程中提供的其他答案中收集的某些信息，作为起点，应进行定制以适合的特定需求和使用模式。如果发现这些自动化工具中的一个或两个的实用性有限，则可以随时删除这些文件，并且不会影响规范 <code>pelican</code>命令的使用。</p>
+<p>下面介绍POSIX系统中使用 <code>make</code>来生成和发布网站，想要在广泛的系统环境中使用，请参考文档，使用由Python编写的<a href="https://www.pyinvoke.org/">Invoke</a>工具。</p>
+<p>如果要使用 <code>pelicanconf.py</code>中设置的 <code>make</code>生成站点，请运行：</p>
+<pre><code class="language-bash">make html
+</code></pre>
+<p>要生成用于生产的站点，请使用 <code>publishconf.py</code>中的设置，运行：</p>
+<pre><code class="language-bash">make publish
+</code></pre>
+<p>如果您希望 Pelican 在每次检测到更改时自动重新生成您的站点（这在本地测试时很方便），请改用以下命令：</p>
+<pre><code class="language-bash">make regenerate
+</code></pre>
+<p>为生成的站点提供服务，以便可以在浏览器中的 <code>http://localhost:8000/</code>进行预览：</p>
+<pre><code class="language-bash">make serve
+</code></pre>
+<p>通常，您需要在两个单独的终端会话中运行 <code>make regenerate</code>和 <code>make serve</code>，但您可以通过以下方式同时运行两者：</p>
+<pre><code class="language-bash">make devserver
+</code></pre>
+<p>上述命令将同时以再生模式运行 Pelican 并在 <code>http://localhost:8000</code>处提供输出。</p>
+<p>当您准备好发布您的网站时，您可以通过您在 <code>pelican-quickstart</code>调查问卷中选择的方法上传它。对于这个例子，我们将使用 rsync over ssh：</p>
+<pre><code class="language-bash">make rsync_upload
+</code></pre>
+<p>官方文档：<a href="https://docs.getpelican.com/en/latest/publish.html">Pelican发布网站</a></p>
+<h2 id="publish-blog-to-github">发布到Github<a class="headerlink" href="#publish-blog-to-github" title="Permanent link"></a></h2>
+<p><a href="https://help.github.com/categories/20/articles">GitHub pages</a>有<a href="https://help.github.com/articles/user-organization-and-project-pages">两种类型</a>： 项目页面和用户页面。Pelican 站点可以发布为项目页面和用户页面。可以使用 <code>pip</code>安装的优秀的<a href="https://github.com/davisp/ghp-import">ghp-import</a>让这个过程变得非常简单。</p>
+<pre><code class="language-bash">$ python3 -m pip install ghp-import
+</code></pre>
+<p>如上在<a href="#quickstart">pelican-quickstart</a>中询问是否使用 <code>Github Pages</code>上传您的网站和是否是您的个人页面 <code>&lt;username&gt;.github.io</code>，我选择了是。当我需要将 <code>Pelican</code>生成的 <code>output</code>中的内容推送到<code>GitHub</code>上的存储库的 <code>master</code>分支中时，只需要运行命令：</p>
+<pre><code class="language-bash">make github
+</code></pre>
+<p>因为我想将文章和Pelican配置上传到Github的主分支上，将生成的页面上传到 <code>gh-pages</code>分支上，然后让 <code>Github Pages</code>托管显示 <code>gh-pages</code>分支上的网站。所以我将<a href="https://github.com/Jerry-se/Jerry-se.github.io/blob/main/Makefile">Makefile</a>文件中的变量"GITHUB_PAGES_BRANCH"的值从"main"修改为"gh-pages"，然后运行<code>make github</code>。这样我的所有文章、Pelican和博客页面都放在 <code>username.github.io</code>项目中了。</p>
+<p>有关项目页面和用户页面的其他设置，请参考：<a href="https://docs.getpelican.com/en/latest/tips.html">Pelican发布到Github pages</a></p>
+<h2 id="pelican-themes">设置主题<a class="headerlink" href="#pelican-themes" title="Permanent link"></a></h2>
+<p>有一个由社区管理的<a href="https://github.com/getpelican/pelican-themes">Pelican 主题</a>存储库，供人们共享和使用，现场版本可以在 <code>http://www.pelicanthemes.com</code>看到。</p>
+<p>可以在配置文件 <code>pelicanconf.py</code>中设置主题，可以设置为主题文件夹的相对或绝对路径，也可以是默认主题的名称或通过 <code>pelican-themes</code>安装的主题。若要查询已安装的主题，请使用<code>pelican-themes -l</code>命令。以下是指定首选主题的示例方法：</p>
+<pre><code class="language-no-highlight"># Specify name of a built-in theme
+THEME = &quot;notmyidea&quot;
+# Specify name of a theme installed via the pelican-themes tool
+THEME = &quot;chunk&quot;
+# Specify a customized theme, via path relative to the settings file
+THEME = &quot;themes/mycustomtheme&quot;
+# Specify a customized theme, via absolute path
+THEME = &quot;/home/myuser/projects/mysite/themes/mycustomtheme&quot;
+</code></pre>
+<p>内置 <code>notmyidea</code>主题可以很好地利用以下设置。也可以随意在您的主题中使用它们。</p>
+<p>若您要创建自制主题或者修改主题，请参考：<a href="https://docs.getpelican.com/en/latest/themes.html">Pelican theme</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

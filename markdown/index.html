@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/markdown/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Markdown - Jerry's blog</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Git <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../git/git_lfs/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#markdown" class="nav-link">Markdown 教程</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">1. 简介</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#basic-syntax" class="nav-link">2. 基本语法</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#headers" class="nav-link">2.1. 标题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#paragraphs-and-line-breaks" class="nav-link">2.2. 段落和换行</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#text-emphasis" class="nav-link">2.3. 字体</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#blockquote" class="nav-link">2.4. 块引用</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#lists" class="nav-link">2.5. 列表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#code" class="nav-link">2.6. 代码语法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#horizontal-rules" class="nav-link">2.7. 分隔线</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#links" class="nav-link">2.8. 链接语法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#images" class="nav-link">2.9. 图片语法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#backslash-escapes" class="nav-link">2.10. 转义字符</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#inline-html" class="nav-link">2.11. 内嵌 HTML 标签</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#extended-syntax" class="nav-link">3. 扩展语法</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#extended-syntax-availability" class="nav-link">3.1. 扩展的可用性</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#table" class="nav-link">3.2. 表格</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#fenced-code-blocks" class="nav-link">3.3. 围栏代码块</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#footnotes" class="nav-link">3.4. 脚注</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#heading-ids" class="nav-link">3.5. 标题编号</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#definition-lists" class="nav-link">3.6. 定义列表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#strikethrough" class="nav-link">3.7. 删除线</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#task-lists" class="nav-link">3.8. 任务列表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#emoji" class="nav-link">3.9. Emoji表情</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#mathematical_formula" class="nav-link">3.10. 数学公式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#python-markdown" class="nav-link">4. Python-Markdown</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#python-markdown-introduction" class="nav-link">4.1. 介绍</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#python-markdown-documentation" class="nav-link">4.2. 文档</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">5. 参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<!-- This is the first paragraph of the document. -->
+
+<h1 id="markdown">Markdown 教程<a class="headerlink" href="#markdown" title="Permanent link"></a></h1>
+<p>本人关于使用Markdown的总结。</p>
+<hr />
+<h2 id="introduction">1. 简介<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+<p><a href="https://daringfireball.net/projects/markdown/">Markdown</a> 是一种轻量级标记语言，允许人们使用易读易写的纯文本格式编写文档。</p>
+<p>在 2004 由约翰·格鲁伯（英语：John Gruber）创建。</p>
+<p>可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。</p>
+<p>因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</p>
+<p>有关语法规则，请参阅 John 的 <a href="https://daringfireball.net/projects/markdown/syntax">语法文档</a>。</p>
+<h2 id="basic-syntax">2. 基本语法<a class="headerlink" href="#basic-syntax" title="Permanent link"></a></h2>
+<h3 id="headers">2.1. 标题<a class="headerlink" href="#headers" title="Permanent link"></a></h3>
+<p>要创建标题，请在单词或短语前面添加井号 (<code>#</code>) 。<code>#</code>的数量代表了标题的级别。例如，添加三个 <code>#</code> 表示创建一个三级标题 (<code>&lt;h3&gt;</code>) (例如：<code>### My Header</code>)。</p>
+<table class="table table-bordered">
+    <tr>
+        <td>Markdown语法</td>
+        <td>HTML</td>
+        <td>预览效果</td>
+    </tr>
+    <tr>
+        <td><code># Heading level 1</code></td>
+        <td><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;</code></td>
+        <td><h1>Heading level 1</h1></td>
+    </tr>
+    <tr>
+        <td><code>## Heading level 2</code></td>
+        <td><code>&lt;h2&gt;Heading level 2&lt;/h2&gt;</code></td>
+        <td><h2>Heading level 2</h2></td>
+    </tr>
+    <tr>
+        <td><code>### Heading level 3</code></td>
+        <td><code>&lt;h3&gt;Heading level 3&lt;/h3&gt;</code></td>
+        <td><h3>Heading level 3</h3></td>
+    </tr>
+    <tr>
+        <td><code>#### Heading level 4</code></td>
+        <td><code>&lt;h4&gt;Heading level 4&lt;/h4&gt;</code></td>
+        <td><h4>Heading level 4</h4></td>
+    </tr>
+    <tr>
+        <td><code>##### Heading level 5</code></td>
+        <td><code>&lt;h5&gt;Heading level 5&lt;/h5&gt;</code></td>
+        <td><h5>Heading level 5</h5></td>
+    </tr>
+    <tr>
+        <td><code>###### Heading level 6</code></td>
+        <td><code>&lt;h6&gt;Heading level 6&lt;/h6&gt;</code></td>
+        <td><h6>Heading level 6</h6></td>
+    </tr>
+</table>
+
+<p>还可以在文本下方添加任意数量的 == 号来标识一级标题，或者 -- 号来标识二级标题。</p>
+<table class="table table-bordered">
+    <tr>
+        <td>Markdown语法</td>
+        <td>HTML</td>
+        <td>预览效果</td>
+    </tr>
+    <tr>
+        <td><code>Heading level 1
+===============</code></td>
+        <td><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;</code></td>
+        <td><h1>Heading level 1</h1></td>
+    </tr>
+    <tr>
+        <td><code>Heading level 2
+---------------</code></td>
+        <td><code>&lt;h2&gt;Heading level 2&lt;/h2&gt;</code></td>
+        <td><h2>Heading level 2</h2></td>
+    </tr>
+</table>
+
+<blockquote>
+<p>不同的 Markdown 应用程序处理 <code>#</code> 和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在 <code>#</code> 和标题之间进行分隔。</p>
+</blockquote>
+<h3 id="paragraphs-and-line-breaks">2.2. 段落和换行<a class="headerlink" href="#paragraphs-and-line-breaks" title="Permanent link"></a></h3>
+<h4 id="paragraphs">2.2.1. 段落<a class="headerlink" href="#paragraphs" title="Permanent link"></a></h4>
+<p>要创建段落，请使用空白行将一行或多行文本进行分隔。
+不要用空格（spaces）或制表符（ tabs）缩进段落。</p>
+<h4 id="line-breaks">2.2.2. 换行<a class="headerlink" href="#line-breaks" title="Permanent link"></a></h4>
+<p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(<code>&lt;br&gt;</code>)。</p>
+<p>几乎每个 Markdown 应用程序都支持两个或多个空格进行换行，称为 <code>结尾空格（trailing whitespace)</code> 的方式，但这是有争议的，因为很难在编辑器中直接看到空格，并且很多人在每个句子后面都会有意或无意地添加两个空格。由于这个原因，你可能要使用除结尾空格以外的其它方式来换行。幸运的是，几乎每个 Markdown 应用程序都支持另一种换行方式：HTML 的 <code>&lt;br&gt;</code> 标签。</p>
+<p>为了兼容性，请在行尾添加“结尾空格”或 HTML 的 <code>&lt;br&gt;</code> 标签来实现换行。</p>
+<h3 id="text-emphasis">2.3. 字体<a class="headerlink" href="#text-emphasis" title="Permanent link"></a></h3>
+<p>通过将文本设置为粗体或斜体来强调其重要性。</p>
+<h4 id="bold">2.3.1. 粗体<a class="headerlink" href="#bold" title="Permanent link"></a></h4>
+<p>要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>I just love **bold text**.</code></td>
+<td><code>I just love &lt;strong&gt;bold text&lt;/strong&gt;.</code></td>
+<td>I just love <strong>bold text</strong>.</td>
+</tr>
+<tr>
+<td><code>I just love __bold text__.</code></td>
+<td><code>I just love &lt;strong&gt;bold text&lt;/strong&gt;.</code></td>
+<td>I just love <strong>bold text</strong>.</td>
+</tr>
+<tr>
+<td><code>Love**is**bold</code></td>
+<td><code>Love&lt;strong&gt;is&lt;/strong&gt;bold</code></td>
+<td>Love<strong>is</strong>bold</td>
+</tr>
+</tbody>
+</table>
+<p>Markdown 应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。</p>
+<table>
+<thead>
+<tr>
+<th>✅  Do this</th>
+<th>❌  Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Love**is**bold</code></td>
+<td><code>Love__is__bold</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="italic">2.3.2. 斜体<a class="headerlink" href="#italic" title="Permanent link"></a></h4>
+<p>要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Italicized text is the *cat's meow*.</code></td>
+<td><code>Italicized text is the &lt;em&gt;cat's meow&lt;/em&gt;.</code></td>
+<td>Italicized text is the <em>cat's meow</em>.</td>
+</tr>
+<tr>
+<td><code>Italicized text is the _cat's meow_.</code></td>
+<td><code>Italicized text is the &lt;em&gt;cat's meow&lt;/em&gt;.</code></td>
+<td>Italicized text is the <em>cat's meow</em>.</td>
+</tr>
+<tr>
+<td><code>A*cat*meow</code></td>
+<td><code>A&lt;em&gt;cat&lt;/em&gt;meow</code></td>
+<td>A<em>cat</em>meow</td>
+</tr>
+</tbody>
+</table>
+<p>Markdown 应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，要斜体突出单词或短语中间部分的话，请使用星号（asterisks）。</p>
+<table>
+<thead>
+<tr>
+<th>✅  Do this</th>
+<th>❌  Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A*cat*meow</code></td>
+<td><code>A_cat_meow</code></td>
+</tr>
+</tbody>
+</table>
+<p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>This text is ***really important***.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is <strong><em>really important</em></strong>.</td>
+</tr>
+<tr>
+<td><code>This text is ___really important___.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is <strong><em>really important</em></strong>.</td>
+</tr>
+<tr>
+<td><code>This text is __*really important*__.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is <strong><em>really important</em></strong>.</td>
+</tr>
+<tr>
+<td><code>This text is **_really important_**.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is <strong><em>really important</em></strong>.</td>
+</tr>
+<tr>
+<td><code>This is really***very***important text.</code></td>
+<td><code>This is really&lt;strong&gt;&lt;em&gt;very&lt;/em&gt;&lt;/strong&gt;important text.</code></td>
+<td>This is really<strong><em>very</em></strong>important text.</td>
+</tr>
+</tbody>
+</table>
+<p>Markdown 应用程序在处理单词或短语中间添加的下划线上并不一致。为了实现兼容性，请使用星号将单词或短语的中间部分加粗并以斜体显示，以示重要。</p>
+<table>
+<thead>
+<tr>
+<th>✅  Do this</th>
+<th>❌  Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>This is really***very***important text.</code></td>
+<td><code>This is really___very___important text.</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="underlined">2.3.3. 下划线<a class="headerlink" href="#underlined" title="Permanent link"></a></h4>
+<p>下划线可以通过 HTML 的 <code>&lt;u&gt;</code> 标签来实现：</p>
+<table>
+<thead>
+<tr>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;u&gt;带下划线文本&lt;/u&gt;</code></td>
+<td><u>带下划线文本</u></td>
+</tr>
+</tbody>
+</table>
+<h3 id="blockquote">2.4. 块引用<a class="headerlink" href="#blockquote" title="Permanent link"></a></h3>
+<p>要创建块引用，请在段落前添加一个 <code>&gt;</code> 符号。</p>
+<pre><code>&gt; Dorothy followed her through many of the beautiful rooms in her castle.
+</code></pre>
+<p>渲染效果如下所示：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+</blockquote>
+<p>块引用可以包含多个段落。为段落之间的空白行添加一个 <code>&gt;</code> 符号。</p>
+<pre><code>&gt; Dorothy followed her through many of the beautiful rooms in her castle.
+&gt;
+&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+</code></pre>
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+<p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
+</blockquote>
+<p>块引用可以嵌套。在要嵌套的段落前添加一个 <code>&gt;&gt;</code> 符号。</p>
+<pre><code>&gt; Dorothy followed her through many of the beautiful rooms in her castle.
+&gt;
+&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+</code></pre>
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+<blockquote>
+<p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
+</blockquote>
+</blockquote>
+<p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
+<pre><code>&gt; #### The quarterly results look great!
+&gt;
+&gt; - Revenue was off the chart.
+&gt; - Profits were higher than ever.
+&gt;
+&gt;  *Everything* is going according to **plan**.
+</code></pre>
+<p>渲染效果如下：</p>
+<blockquote>
+<h4 id="the-quarterly-results-look-great">The quarterly results look great!<a class="headerlink" href="#the-quarterly-results-look-great" title="Permanent link"></a></h4>
+<ul>
+<li>Revenue was off the chart.</li>
+<li>Profits were higher than ever.</li>
+</ul>
+<p><em>Everything</em> is going according to <strong>plan</strong>.</p>
+</blockquote>
+<h3 id="lists">2.5. 列表<a class="headerlink" href="#lists" title="Permanent link"></a></h3>
+<p>可以将多个条目组织成有序或无序列表。</p>
+<h4 id="ordered-lists">2.5.1. 有序列表<a class="headerlink" href="#ordered-lists" title="Permanent link"></a></h4>
+<p>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</p>
+<table class="table table-bordered">
+    <tr>
+        <td>Markdown语法</td>
+        <td>HTML</td>
+        <td>预览效果</td>
+    </tr>
+    <tr>
+        <td><code>1. First item
+2. Second item
+3. Third item
+4. Fourth item</code></td>
+        <td>
+            <code>&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+    &lt;li&gt;Fourth item&lt;/li&gt;
+&lt;/ol&gt;</code>
+        </td>
+        <td>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+                <li>Fourth item</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td><code>1. First item
+8. Second item
+3. Third item
+5. Fourth item</code></td>
+        <td>
+            <code>&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+    &lt;li&gt;Fourth item&lt;/li&gt;
+&lt;/ol&gt;</code>
+        </td>
+        <td>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+                <li>Fourth item</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td><code>1. First item
+2. Second item
+3. Third item
+    1. Indented item
+    2. Indented item
+4. Fourth item</code></td>
+        <td>
+            <code>&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item
+        &lt;ol&gt;
+            &lt;li&gt;Indented item&lt;/li&gt;
+            &lt;li&gt;Indented item&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Fourth item&lt;/li&gt;
+&lt;/ol&gt;</code>
+        </td>
+        <td>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item
+                    <ol>
+                        <li>Indented item</li>
+                        <li>Indented item</li>
+                    </ol>
+                </li>
+                <li>Fourth item</li>
+            </ol>
+        </td>
+    </tr>
+</table>
+
+<p>CommonMark 和其他一些轻量级标记语言允许您使用括号 ( <code>)</code>) 作为分隔符（例如，<code>1) First item</code>），但并非所有 Markdown 应用程序都支持这一点，因此从兼容性的角度来看，这不是一个很好的选择。为了兼容性，仅使用句点。</p>
+<table class="table table-bordered">
+    <tr>
+        <td>✅  Do this</td>
+        <td>❌  Don't do this</td>
+    </tr>
+    <tr>
+        <td><code>1. First item
+2. Second item</code></td>
+        <td><code>1) First item
+2) Second item</code></td>
+    </tr>
+</table>
+
+<h4 id="unordered-lists">2.5.2. 无序列表<a class="headerlink" href="#unordered-lists" title="Permanent link"></a></h4>
+<p>要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表。</p>
+<table class="table table-bordered">
+    <tr>
+        <td>Markdown语法</td>
+        <td>HTML</td>
+        <td>预览效果</td>
+    </tr>
+    <tr>
+        <td><code>- First item
+- Second item
+- Third item
+- Fourth item</code></td>
+        <td>
+            <code>&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+    &lt;li&gt;Fourth item&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </td>
+        <td>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+                <li>Fourth item</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><code>* First item
+* Second item
+* Third item
+* Fourth item</code></td>
+        <td>
+            <code>&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+    &lt;li&gt;Fourth item&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </td>
+        <td>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+                <li>Fourth item</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><code>+ First item
++ Second item
++ Third item
++ Fourth item</code></td>
+        <td>
+            <code>&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+    &lt;li&gt;Fourth item&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </td>
+        <td>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+                <li>Fourth item</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><code>- First item
+- Second item
+- Third item
+    - Indented item
+    - Indented item
+- Fourth item</code></td>
+        <td>
+            <code>&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item
+        &lt;ul&gt;
+            &lt;li&gt;Indented item&lt;/li&gt;
+            &lt;li&gt;Indented item&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Fourth item&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </td>
+        <td>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item
+                    <ul>
+                        <li>Indented item</li>
+                        <li>Indented item</li>
+                    </ul>
+                </li>
+                <li>Fourth item</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<p>Markdown 应用程序不同意如何处理同一列表中的不同分隔符。为了兼容性，不要在同一个列表中混合和匹配分隔符 -- 选择一个并坚持使用它。</p>
+<table class="table table-bordered">
+    <tr>
+        <td>✅  Do this</td>
+        <td>❌  Don't do this</td>
+    </tr>
+    <tr>
+        <td><code>- First item
+- Second item
+- Third item
+- Fourth item</code></td>
+        <td><code>+ First item
+* Second item
+- Third item
++ Fourth item</code></td>
+    </tr>
+</table>
+
+<h4 id="nest-other-elements-inline-lists">2.5.3. 在列表中嵌套其他元素<a class="headerlink" href="#nest-other-elements-inline-lists" title="Permanent link"></a></h4>
+<p>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符，如下例所示：</p>
+<pre><code>*   This is the first list item.
+*   Here's the second list item.
+
+    I need to add another paragraph below the second list item.
+    &gt; A blockquote would look great below the second list item.
+
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Test&lt;/title&gt;
+            &lt;/head&gt;
+        &lt;/html&gt;
+
+    ![Tux, the Linux mascot](/img/tux.png)
+
+    1. First item
+    2. Second item
+    3. Third item
+    4. Fourth item
+
+*   And here's the third list item.
+</code></pre>
+<ul>
+<li>This is the first list item.</li>
+<li>
+<p>Here's the second list item.</p>
+<p>I need to add another paragraph below the second list item.</p>
+<blockquote>
+<p>A blockquote would look great below the second list item.</p>
+</blockquote>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Test&lt;/title&gt;
+    &lt;/head&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img alt="Tux, the Linux mascot" src="/img/tux.png" /></p>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+<li>Fourth item</li>
+</ol>
+</li>
+<li>
+<p>And here's the third list item.</p>
+</li>
+</ul>
+<h3 id="code">2.6. 代码语法<a class="headerlink" href="#code" title="Permanent link"></a></h3>
+<p>要将单词或短语表示为代码，请将其包裹在反引号 (<code>`</code>) 中。</p>
+<p>如果你要表示为代码的单词或短语中包含一个或多个反引号，则可以通过将单词或短语包裹在双反引号(<code>``</code>)中。</p>
+<table class="table table-bordered">
+    <tr>
+        <td>Markdown语法</td>
+        <td>HTML</td>
+        <td>预览效果</td>
+    </tr>
+    <tr>
+        <td><code>At the command prompt, type `nano`.</code></td>
+        <td><code>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</code></td>
+        <td>At the command prompt, type <code>nano</code>.</td>
+    </tr>
+    <tr>
+        <td><code>``Use `code` in your Markdown file.``</code></td>
+        <td><code>&lt;code&gt;Use `code` in your Markdown file.&lt;/code&gt;</code></td>
+        <td><code>Use `code` in your Markdown file.</code></td>
+    </tr>
+</table>
+
+<p>要创建代码块，请将代码块的每一行缩进至少四个空格或一个制表符。</p>
+<pre><code>    &lt;html&gt;
+      &lt;head&gt;
+      &lt;/head&gt;
+    &lt;/html&gt;
+</code></pre>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Note: 要创建不用缩进的代码块，请使用 <a href="#33">围栏式代码块（fenced code blocks）</a>.</p>
+<h3 id="horizontal-rules">2.7. 分隔线<a class="headerlink" href="#horizontal-rules" title="Permanent link"></a></h3>
+<p>您可以通过在一行上单独放置三个或更多连字符 (<code>---</code>) 、星号 (<code>***</code>)或下划线 (<code>___</code>)来生成水平规则标记 ( <code>&lt;hr /&gt;</code>)。
+如果您愿意，可以在 <code>-</code> 或 <code>*</code> 之间使用空格。以下每一行都会产生一条水平线：</p>
+<pre><code>* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+
+_________________
+</code></pre>
+<p>为了兼容性，请在分隔线的前后均添加空白行。</p>
+<h3 id="links">2.8. 链接语法<a class="headerlink" href="#links" title="Permanent link"></a></h3>
+<p>Markdown 支持两种样式的链接：内联(inline)和引用(reference)。在这两种样式中，链接文本由 <code>[方括号]</code> 分隔。</p>
+<h4 id="inline-links">2.8.1. 内联链接<a class="headerlink" href="#inline-links" title="Permanent link"></a></h4>
+<p>要创建内联链接，请在链接文本的右方括号之后立即使用一组常规括号。在括号内，将 URL 放在您希望链接指向的位置，以及链接的<em>可选</em>标题，并用引号括起来。例如：</p>
+<pre><code class="language-no-highlight">This is [an example](http://example.com/ &quot;Title&quot;) inline link.
+
+[This link](http://example.net/) has no title attribute.
+</code></pre>
+<p>将产生：</p>
+<p>This is <a href="http://example.com/" title="Title">an example</a> inline link.</p>
+<p><a href="http://example.net/">This link</a> has no title attribute.</p>
+<p>如果您指的是同一服务器上的本地资源，则可以使用相对路径：</p>
+<pre><code class="language-no-highlight">See my [About](/about/) page for details.
+</code></pre>
+<h4 id="reference-links">2.8.2. 引用链接<a class="headerlink" href="#reference-links" title="Permanent link"></a></h4>
+<p>引用样式链接使用第二组方括号，您可以在其中放置您选择的标签来标识链接，可以选择使用空格来分隔括号组：</p>
+<pre><code class="language-no-highlight">This is [an example][id] reference-style link.
+This is [an example] [id] reference-style link.
+</code></pre>
+<p>然后，在文档中的任何位置，您都可以像这样在一行上定义链接标签：</p>
+<pre><code class="language-no-highlight">[id]: http://example.com/  &quot;Optional Title Here&quot;
+</code></pre>
+<p>引用类型链接的第二部分使用以下属性设置格式：</p>
+<ul>
+<li>包含链接标识符的方括号（可选从左边距缩进最多三个空格）；</li>
+<li>后跟一个冒号；</li>
+<li>后跟一个或多个空格（或制表符）；</li>
+<li>后跟链接的 URL；</li>
+<li>可选地后跟链接的标题属性，用双引号或单引号括起来，或者用括号括起来。</li>
+</ul>
+<p>以下几种链接定义是等价的：</p>
+<pre><code class="language-no-highlight">[foo]: http://example.com/  &quot;Optional Title Here&quot;
+[foo]: http://example.com/  'Optional Title Here'
+[foo]: http://example.com/  (Optional Title Here)
+</code></pre>
+<p>链接 URL 可以选择用尖括号括起来：</p>
+<pre><code class="language-no-highlight">[id]: &lt;http://example.com/&gt;  &quot;Optional Title Here&quot;
+</code></pre>
+<p>您可以将 title 属性放在下一行并使用额外的空格或制表符进行填充，这对于较长的 URL 看起来会更好：</p>
+<pre><code class="language-no-highlight">[id]: http://example.com/longish/path/to/resource/here
+    &quot;Optional Title Here&quot;
+</code></pre>
+<p>链接定义仅用于在 Markdown 处理期间创建链接，并在 HTML 输出中从您的文档中删除。</p>
+<p>链接定义名称可能包含字母、数字、空格和标点符号——但它们不区分大小写。例如这两个链接是等价的：</p>
+<pre><code class="language-no-highlight">[link text][a]
+[link text][A]
+</code></pre>
+<h4 id="implicit-links">2.8.3. 隐式链接<a class="headerlink" href="#implicit-links" title="Permanent link"></a></h4>
+<p>隐式链接方式允许您省略链接名称，在这种情况下，链接文本本身用作名称。只需使用一组空方括号——例如，将“Google”这个词链接到 <code>google.com</code> 网站，你可以简单地写：</p>
+<pre><code class="language-no-highlight">[Google][]
+
+[Google]: http://google.com/
+</code></pre>
+<p>因为链接名称可能包含空格，所以此快捷方式甚至适用于链接文本中的多个单词：</p>
+<pre><code class="language-no-highlight">Visit [Daring Fireball][] for more information.
+
+[Daring Fireball]: http://daringfireball.net/
+</code></pre>
+<h4 id="automatic-links">2.8.4. 自动链接<a class="headerlink" href="#automatic-links" title="Permanent link"></a></h4>
+<p>Markdown 支持为 <code>URL</code> 和电子邮件地址创建“自动”链接的快捷方式：只需将 <code>URL</code> 或电子邮件地址用尖括号括起来。这意味着，如果您想显示 <code>URL</code> 或电子邮件地址的实际文本，并使其成为可点击的链接，您可以这样做：</p>
+<p><code>&lt;http://example.com/&gt;</code></p>
+<p>Markdown 会将其变成：</p>
+<p><code>&lt;a href="http://example.com/"&gt;http://example.com/&lt;/a&gt;</code></p>
+<p>电子邮件地址的自动链接的工作方式类似，除了 Markdown 还将执行一些随机的十进制和十六进制实体编码，以帮助从地址收集垃圾邮件机器人中隐藏您的地址。例如，Markdown 会将这样：</p>
+<p><code>&lt;address@example.com&gt;</code></p>
+<p>变成这样的东西：</p>
+<pre><code class="language-no-highlight">&lt;a href=&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;
+&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;
+&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;
+&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
+</code></pre>
+<p>它将在浏览器中呈现为“address@example.com”的可点击链接。</p>
+<p>（这种实体编码技巧确实会欺骗许多（如果不是大多数）地址收集机器人，但它肯定不会欺骗所有这些。总比没有好，但以这种方式发布的地址最终可能会开始接收垃圾邮件。）</p>
+<h4 id="emphasis-links">2.8.5. 带格式的链接<a class="headerlink" href="#emphasis-links" title="Permanent link"></a></h4>
+<p>强调 链接, 在链接语法前后增加星号。 要将链接表示为代码，请在方括号中添加反引号。</p>
+<pre><code class="language-no-highlight">I love supporting the **[EFF](https://eff.org)**.
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+See the section on [`code`](#code).
+</code></pre>
+<p>渲染效果如下：</p>
+<p>I love supporting the <strong><a href="https://eff.org">EFF</a></strong>.
+This is the <em><a href="https://www.markdownguide.org">Markdown Guide</a></em>.
+See the section on <a href="#code"><code>code</code></a>.</p>
+<h4 id="link-examples">2.8.6. 示例说明<a class="headerlink" href="#link-examples" title="Permanent link"></a></h4>
+<p>链接定义可以放在 Markdown 文档中的任何位置。我倾向于将它们放在使用它们的每个段落之后，但是如果您愿意，可以将它们全部放在文档的末尾，有点像脚注。
+以下是实际参考链接的示例：</p>
+<pre><code class="language-no-highlight">I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+  [1]: http://google.com/        &quot;Google&quot;
+  [2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [3]: http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre>
+<p>使用隐式链接名称快捷方式，您可以改为编写：</p>
+<pre><code class="language-no-highlight">I get 10 times more traffic from [Google][] than from
+[Yahoo][] or [MSN][].
+
+  [google]: http://google.com/        &quot;Google&quot;
+  [yahoo]:  http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [msn]:    http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre>
+<p>为了比较，这里是使用 Markdown 的内联链接样式编写的相同段落：</p>
+<pre><code class="language-no-highlight">I get 10 times more traffic from [Google](http://google.com/ &quot;Google&quot;)
+than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or
+[MSN](http://search.msn.com/ &quot;MSN Search&quot;).
+</code></pre>
+<p>引用风格链接的重点不是它们更容易编写。关键是，使用引用样式的链接，您的文档源代码的可读性大大提高。比较上面的例子：使用引用样式的链接，段落本身只有 81 个字符长；使用内联样式的链接，它是 176 个字符；作为原始 HTML，它是 234 个字符。在原始 HTML 中，标记比文本多。</p>
+<p>使用 Markdown 的引用样式链接，源文档更接近于最终输出，如在浏览器中呈现的那样。通过允许您将与标记相关的元数据移出段落，您可以添加链接而不会中断散文的叙述流程。</p>
+<h3 id="images">2.9. 图片语法<a class="headerlink" href="#images" title="Permanent link"></a></h3>
+<p>Markdown 使用的图像语法旨在类似于链接的语法，允许两种样式：内联(inline)和引用(reference)。</p>
+<p>内联图像语法如下所示：</p>
+<pre><code class="language-no-highlight">![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg &quot;Optional title&quot;)
+</code></pre>
+<p>内联图像语法格式：</p>
+<ul>
+<li>感叹号：!;</li>
+<li>后跟一组方括号，包含图像的属性文本；</li>
+<li>后跟一组括号，包含图像的 URL 或路径，以及 title 用双引号或单引号括起来的可选属性。</li>
+</ul>
+<p>图像引用使用与链接引用相同的语法定义。引用风格的图像语法如下所示：</p>
+<pre><code class="language-no-highlight">![Alt text][id]
+
+[id]: url/to/image  &quot;Optional title attribute&quot;
+</code></pre>
+<p>其中“id”是定义的图像引用的名称。
+在撰写本文时，Markdown 没有用于指定图像尺寸的语法。如果这对您很重要，您可以简单地使用常规 HTML<code>&lt;img&gt;</code>标签。</p>
+<p>给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中：</p>
+<pre><code class="language-no-highlight">[![image text](/assets/img/shiprock.jpg &quot;Optional title&quot;)](https://jerry-se.github.io/)
+</code></pre>
+<h3 id="backslash-escapes">2.10. 转义字符<a class="headerlink" href="#backslash-escapes" title="Permanent link"></a></h3>
+<p>Markdown 允许使用反斜杠转义来生成文字字符，否则这些字符在 Markdown 的格式化语法中具有特殊含义。例如，如果想用文字星号（而不是 HTML<code>&lt;em&gt;</code>标记）包围一个单词，可以在星号之前使用反斜杠，如下所示：</p>
+<pre><code>\*literal asterisks\*
+</code></pre>
+<p>Markdown 为以下字符提供反斜杠转义：</p>
+<table>
+<thead>
+<tr>
+<th><strong>Character</strong></th>
+<th><strong>Name</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>backslash</td>
+</tr>
+<tr>
+<td>`</td>
+<td>backtick</td>
+</tr>
+<tr>
+<td>*</td>
+<td>asterisk</td>
+</tr>
+<tr>
+<td>_</td>
+<td>underscore</td>
+</tr>
+<tr>
+<td>{}</td>
+<td>curly braces</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>square brackets</td>
+</tr>
+<tr>
+<td>()</td>
+<td>parentheses</td>
+</tr>
+<tr>
+<td>#</td>
+<td>hash mark</td>
+</tr>
+<tr>
+<td>+</td>
+<td>plus sign</td>
+</tr>
+<tr>
+<td>-</td>
+<td>minus sign (hyphen)</td>
+</tr>
+<tr>
+<td>.</td>
+<td>dot</td>
+</tr>
+<tr>
+<td>!</td>
+<td>exclamation mark</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inline-html">2.11. 内嵌 HTML 标签<a class="headerlink" href="#inline-html" title="Permanent link"></a></h3>
+<p>对于 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML 本身。如需使用 HTML，不需要额外标注这是 HTML 或是 Markdown，只需 HTML 标签添加到 Markdown 文本中即可。</p>
+<h4 id="span-level-html-tags">2.11.1. 行级内嵌标签<a class="headerlink" href="#span-level-html-tags" title="Permanent link"></a></h4>
+<p>HTML 的行级內联标签如 <code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code> 不受限制，可以在 Markdown 的段落、列表或是标题里任意使用。依照个人习惯，甚至可以不用 Markdown 格式，而采用 HTML 标签来格式化。例如：如果比较喜欢 HTML 的 <code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code> 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图片语法。当你需要更改元素的属性时（例如为文本指定颜色或更改图像的宽度），使用 HTML 标签更方便些。</p>
+<p>HTML 行级內联标签和区块标签不同，在內联标签的范围内， Markdown 的语法是可以解析的。例如：</p>
+<pre><code class="language-no-highlight">This **word** is bold. This &lt;em&gt;word&lt;/em&gt; is italic.
+</code></pre>
+<h4 id="block-level-html-tags">2.11.2. 块级标签<a class="headerlink" href="#block-level-html-tags" title="Permanent link"></a></h4>
+<p>区块元素──比如 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签，必须在前后加上空行，以便于内容区分。而且这些元素的开始与结尾标签，不可以用 <code>tab</code> 或是空白来缩进。Markdown 会自动识别这区块元素，避免在区块标签前后加上没有必要的 <code>&lt;p&gt;</code> 标签。</p>
+<p>例如，在 Markdown 文件里加上一段 HTML 表格：</p>
+<pre><code class="language-no-highlight">This is a regular paragraph.
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Foo&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+This is another regular paragraph.
+</code></pre>
+<p>请注意，Markdown 语法在 HTML 区块标签中将不会被进行处理。例如<code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code>，你无法在 HTML 区块内使用 Markdown 形式的<em>强调</em>。</p>
+<h4 id="collapse-expand-html-tags">2.11.3. 折叠示例<a class="headerlink" href="#collapse-expand-html-tags" title="Permanent link"></a></h4>
+<pre><code class="language-html">&lt;details&gt;
+&lt;summary&gt;展开查看&lt;/summary&gt;
+AAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAA
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+&lt;/details&gt;
+</code></pre>
+<h4 id="inline-html-availability">2.11.4. 可用性<a class="headerlink" href="#inline-html-availability" title="Permanent link"></a></h4>
+<p>出于安全原因，并非所有 Markdown 应用程序都支持在 Markdown 文档中添加 HTML。如有疑问，请查看相应 Markdown 应用程序的手册。某些应用程序只支持 HTML 标签的子集。</p>
+<h2 id="extended-syntax">3. 扩展语法<a class="headerlink" href="#extended-syntax" title="Permanent link"></a></h2>
+<p>John Gruber的原始设计文档中概述的<a href="https://markdown.com.cn/basic_syntax">基本语法</a>主要是为了应付大多数情况下的日常所需元素，但对于某些人来说还不够，这就是扩展语法的用武之地。</p>
+<p>一些个人和组织开始通过添加其他元素（例如表，代码块，语法突出显示，URL自动链接和脚注）来扩展基本语法。可以通过使用基于基本Markdown语法的轻量级标记语言，或通过向兼容的Markdown处理器添加扩展来启用这些元素。</p>
+<h3 id="extended-syntax-availability">3.1. 扩展的可用性<a class="headerlink" href="#extended-syntax-availability" title="Permanent link"></a></h3>
+<p>并非所有Markdown应用程序都支持扩展语法元素。您需要检查您的应用程序所使用的轻量级标记语言是否支持您要使用的扩展语法元素。如果没有，那么仍然有可能在Markdown处理器中启用扩展。</p>
+<p>有几种轻量级标记语言是Markdown的超集。它们包含Gruber的基本语法，并通过添加其他元素（例如表，代码块，语法突出显示，URL自动链接和脚注）在此基础上构建。许多最受欢迎的Markdown应用程序使用以下轻量级标记语言之一：</p>
+<ul>
+<li><a href="https://commonmark.org/">CommonMark</a></li>
+<li><a href="https://github.github.com/gfm/">GitHub Flavored Markdown (GFM)</a></li>
+<li><a href="https://michelf.ca/projects/php-markdown/extra/">Markdown Extra</a></li>
+<li><a href="https://fletcherpenney.net/multimarkdown/">MultiMarkdown</a></li>
+<li><a href="https://rmarkdown.rstudio.com/">R Markdown</a></li>
+</ul>
+<p>有许多<a href="https://github.com/markdown/markdown.github.com/wiki/Implementations">Markdown处理器</a>可用。它们中的许多允许您添加启用扩展语法元素的扩展。查看您所使用处理器的文档以获取更多信息。</p>
+<h3 id="table">3.2. 表格<a class="headerlink" href="#table" title="Permanent link"></a></h3>
+<p>要添加表，请使用三个或多个连字符（<code>---</code>）创建每列的标题，并使用管道（<code>|</code>）分隔每列。您可以选择在表的任一端添加管道，单元格宽度可以变化。
+使用连字符和管道创建表可能很麻烦。为了加快该过程，请尝试使用<a href="https://www.tablesgenerator.com/markdown_tables">Markdown Tables Generator</a>。使用图形界面构建表，然后将生成的Markdown格式的文本复制到文件中。</p>
+<pre><code>name | age
+---- | ---
+LearnShare | 12
+Mike |  32
+</code></pre>
+<p>在表头下方的分隔线标记中加入 <code>:</code>，即可标记下方单元格内容的对齐方式：</p>
+<ul>
+<li>:--- 代表左对齐</li>
+<li>:--: 代表居中对齐</li>
+<li>---: 代表右对齐</li>
+</ul>
+<pre><code>| left | center | right |
+| :--- | :----: | ----: |
+| aaaa | bbbbbb | ccccc |
+| a    | b      | c     |
+</code></pre>
+<p>您可以在表格中设置文本格式。例如，您可以添加链接，代码（仅反引号（<code>`</code>）中的单词或短语，而不是代码块）和强调。</p>
+<p>您不能添加标题，块引用，列表，水平规则，图像或HTML标签。</p>
+<p>您可以使用表格的HTML字符代码（<code>&amp;#124;</code>）在表中显示竖线（<code>|</code>）字符。</p>
+<h3 id="fenced-code-blocks">3.3. 围栏代码块<a class="headerlink" href="#fenced-code-blocks" title="Permanent link"></a></h3>
+<p>Markdown基本语法允许您通过将行缩进四个空格或一个制表符来创建<a href="#code">代码块</a>。如果发现不方便，请尝试使用受保护的代码块。根据Markdown处理器或编辑器的不同，您将在代码块之前和之后的行上使用三个反引号（<code>```</code>）或三个波浪号（<code>~~~</code>）。</p>
+<pre><code>```
+{
+"firstName": "John",
+"lastName": "Smith",
+"age": 25
+}
+```
+</code></pre>
+<p>效果如下：</p>
+<pre><code>{
+  &quot;firstName&quot;: &quot;John&quot;,
+  &quot;lastName&quot;: &quot;Smith&quot;,
+  &quot;age&quot;: 25
+}
+</code></pre>
+<p>许多Markdown处理器都支持受围栏代码块的语法突出显示。使用此功能，您可以为编写代码的任何语言添加颜色突出显示。要添加语法突出显示，请在受防护的代码块之前的反引号旁边指定一种语言。</p>
+<pre><code>```json
+{
+"firstName": "John",
+"lastName": "Smith",
+"age": 25
+}
+```
+</code></pre>
+<p>效果如下：</p>
+<pre><code class="language-json">{
+  &quot;firstName&quot;: &quot;John&quot;,
+  &quot;lastName&quot;: &quot;Smith&quot;,
+  &quot;age&quot;: 25
+}
+</code></pre>
+<p>支持以下语言种类：</p>
+<pre><code class="language-no-highlight">bash
+clojure，cpp，cs，css
+dart，dockerfile, diff
+erlang
+go，gradle，groovy
+haskell
+java，javascript，json，julia
+kotlin
+lisp，lua
+makefile，markdown，matlab
+objectivec
+perl，php，python
+r，ruby，rust
+scala，shell，sql，swift
+tex，typescript
+verilog，vhdl
+xml
+yaml
+</code></pre>
+<h3 id="footnotes">3.4. 脚注<a class="headerlink" href="#footnotes" title="Permanent link"></a></h3>
+<p>脚注使您可以添加注释和参考，而不会使文档正文混乱。当您创建脚注时，带有脚注的上标数字会出现在您添加脚注参考的位置。读者可以单击链接以跳至页面底部的脚注内容。</p>
+<p>要创建脚注参考，请在方括号（<code>[^1]</code>）内添加插入符号和标识符。标识符可以是数字或单词，但不能包含空格或制表符。标识符仅将脚注参考与脚注本身相关联-在输出中，脚注按顺序编号。</p>
+<p>在括号内使用另一个插入符号和数字添加脚注，并用冒号和文本（<code>[^1]: My footnote.</code>）。您不必在文档末尾添加脚注。您可以将它们放在除列表，块引号和表之类的其他元素之外的任何位置。</p>
+<pre><code>Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+
+[^1]: This is the first footnote.
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    `{ my code }`
+
+    Add as many paragraphs as you like.
+</code></pre>
+<p>效果如下：</p>
+<p>Here's a simple footnote,<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and here's a longer one.<sup id="fnref:bignote"><a class="footnote-ref" href="#fn:bignote">2</a></sup></p>
+<h3 id="heading-ids">3.5. 标题编号<a class="headerlink" href="#heading-ids" title="Permanent link"></a></h3>
+<p>许多Markdown处理器支持<a href="#headers">标题</a>的自定义ID - 一些Markdown处理器会自动添加它们。添加自定义ID允许您直接链接到标题并使用CSS对其进行修改。要添加自定义标题ID，请在与标题相同的行上用大括号括起该自定义ID。</p>
+<pre><code>### My Great Heading {#custom-id}
+</code></pre>
+<p>HTML看起来像这样：</p>
+<pre><code class="language-html">&lt;h3 id=&quot;custom-id&quot;&gt;My Great Heading&lt;/h3&gt;
+</code></pre>
+<p>通过创建带有数字符号（<code>#</code>）和自定义标题ID的<a href="#links">标准链接</a>，可以链接到文件中具有自定义ID的标题。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[Heading IDs](#heading-ids)</code></td>
+<td><code>&lt;a href="#heading-ids"&gt;Heading IDs&lt;/a&gt;</code></td>
+<td><a href="#heading-ids">Heading IDs</a></td>
+</tr>
+</tbody>
+</table>
+<p>其他网站可以通过将自定义标题ID添加到网页的完整URL（例如<code>[Heading IDs](https://jerry-se.github.io/markdown/#heading-ids)</code>）来链接到标题。</p>
+<h3 id="definition-lists">3.6. 定义列表<a class="headerlink" href="#definition-lists" title="Permanent link"></a></h3>
+<p>一些Markdown处理器允许您创建术语及其对应定义的定义列表。要创建定义列表，请在第一行上键入术语。在下一行，键入一个冒号，后跟一个空格和定义。</p>
+<pre><code class="language-no-highlight">First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+</code></pre>
+<p>HTML看起来像这样：</p>
+<pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;First Term&lt;/dt&gt;
+  &lt;dd&gt;This is the definition of the first term.&lt;/dd&gt;
+  &lt;dt&gt;Second Term&lt;/dt&gt;
+  &lt;dd&gt;This is one definition of the second term. &lt;/dd&gt;
+  &lt;dd&gt;This is another definition of the second term.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<p>效果如下：</p>
+<dl>
+<dt>First Term</dt>
+<dd>This is the definition of the first term.</dd>
+<dt>Second Term</dt>
+<dd>This is one definition of the second term.</dd>
+<dd>This is another definition of the second term.</dd>
+</dl>
+<h3 id="strikethrough">3.7. 删除线<a class="headerlink" href="#strikethrough" title="Permanent link"></a></h3>
+<p>您可以通过在单词中心放置一条水平线来删除单词。结果看起来<del>像这样</del>。此功能使您可以指示某些单词是一个错误，要从文档中删除。若要删除单词，请在单词前后使用两个波浪号<code>~~</code>。</p>
+<pre><code>~~这里是删除线~~
+</code></pre>
+<h3 id="task-lists">3.8. 任务列表<a class="headerlink" href="#task-lists" title="Permanent link"></a></h3>
+<p>任务列表使您可以创建带有复选框的项目列表。在支持任务列表的Markdown应用程序中，复选框将显示在内容旁边。要创建任务列表，请在任务列表项之前添加破折号<code>-</code>和方括号<code>[ ]</code>，并在<code>[ ]</code>前面加上空格。要选择一个复选框，请在方括号<code>[x]</code>之间添加 <code>x</code> 。</p>
+<pre><code>- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+</code></pre>
+<p>效果如下：</p>
+<ul>
+<li>[x] Write the press release</li>
+<li>[ ] Update the website</li>
+<li>[ ] Contact the media</li>
+</ul>
+<h3 id="emoji">3.9. Emoji表情<a class="headerlink" href="#emoji" title="Permanent link"></a></h3>
+<p>有两种方法可以将表情符号添加到Markdown文件中：将表情符号复制并粘贴到Markdown格式的文本中，或者键入<em>emoji shortcodes</em>。</p>
+<p>在大多数情况下，您可以简单地从 <a href="https://emojipedia.org/">Emojipedia</a> 等来源复制表情符号并将其粘贴到文档中。许多Markdown应用程序会自动以Markdown格式的文本显示表情符号。从Markdown应用程序导出的HTML和PDF文件应显示表情符号。</p>
+<p><strong>Tips</strong>: 如果您使用的是静态网站生成器，请确保将HTML页面编码为UTF-8。</p>
+<p>一些Markdown应用程序允许您通过键入表情符号短代码来插入表情符号。这些以冒号开头和结尾，并包含表情符号的名称。</p>
+<pre><code>去露营了！ :tent: 很快回来。
+
+真好笑！ :joy:
+</code></pre>
+<p>效果如下：</p>
+<p>去露营了！⛺很快回来。</p>
+<p>真好笑！😂</p>
+<p><strong>Tips</strong>: 您可以使用此<a href="https://gist.github.com/rxaviers/7360908">表情符号简码列表</a>，但请记住，表情符号简码因应用程序而异。有关更多信息，请参阅Markdown应用程序的文档。</p>
+<h3 id="mathematical_formula">3.10. 数学公式<a class="headerlink" href="#mathematical_formula" title="Permanent link"></a></h3>
+<p>LaTeX是一种基于ΤΕΧ的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发，利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由TeX所提供的强大功能，能在几天，甚至几小时内生成很多具有书籍质量的印刷品。对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。</p>
+<p>MathJax是一个显示网络上数学公式的开源JavaScript引擎库，它可以在所有浏览器上面工作，其中就支持LaTeX，MathML和AsciiMath 符号，里面的数字会被MathJax使用JavaScript引擎解析成HTML，SVG或者是MathML 方程式，然后在现代的浏览器里面显示。 它的设计目标是利用最新的web技术，构建一个支持math的web平台。支持主要的浏览器和操作系统,包括那些移动设备。</p>
+<p><a href="https://github.com/KaTeX/KaTeX">KaTeX</a>： 可汗学院出品，号称“最快”的数学公式渲染库。支持主流的浏览器：Chrome, Firefox, Safari, Opera和 IE8-IE11。有以下优点：</p>
+<ul>
+<li>快速：并发渲染，无需重排页面。根据这个测试，性能绝对秒杀MathJax；</li>
+<li>渲染效果好：采用TeX语法，渲染效果达到印刷出版级别；</li>
+<li>无依赖：不依赖其它库；</li>
+<li>支持服务器端渲染：例如，服务器端的Node.js程序调用KaTeX，把渲染好的HTML片段直接发送给客户端。</li>
+</ul>
+<p>VS Code的 Markdown preview enhanced（MPE）插件支持 <em>MathJax</em> 和 <em>KaTeX</em> 两类渲染引擎。总结来说，两者的特点如下：</p>
+<ul>
+<li><em>MathJax</em> 渲染更快，支持若干简写字符，但是本身支持的范围较小；</li>
+<li><em>KaTeX</em> 渲染稍慢，支持更多复杂的表示</li>
+</ul>
+<p>另外，<strong>Typora</strong>用的也是 <em>MathJax</em> 引擎，却能实现更多的功能，不知道是不是版本问题。</p>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://latex.codecogs.com/eqneditor/editor.php">Online LaTeX Equation Editor - create, integrate and download</a></li>
+<li><a href="https://pandao.github.io/editor.md/examples/katex.html">Tex 科学公式语言 (TeX/LaTeX)</a></li>
+<li><a href="https://www.mohu.org/info/lshort-cn.pdf">一份不太简短的 LATEX 2ε 介绍</a></li>
+<li><a href="https://www.zhihu.com/question/496663264">LaTeX如何渲染？</a></li>
+</ul>
+<p>行内 <em>MathJax</em> 公式使用方法，比如这个化学公式：<code>$\ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}$</code></p>
+<p><em>MathJax</em> 块公式使用方法如下：</p>
+<pre><code>$$H(D_2) = -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) = 1$$
+</code></pre>
+<p>矩阵：</p>
+<pre><code>$$
+\begin{pmatrix}
+1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\
+1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n \\
+\end{pmatrix}
+$$
+</code></pre>
+<p>This is an extension for Python Markdown which adds KaTeX support.</p>
+<pre><code>```math
+f(x) = \int_{-\infty}^\infty
+    \hat f(\xi)\,e^{2 \pi i \xi x}
+    \,d\xi
+```
+</code></pre>
+<blockquote>
+<p>很多平台，比如知乎、CSDN支持公式，对于微信不支持这种不支持的，目前的解决方案是转成 svg 图片放到微信中，无需调整，矢量不失真。</p>
+</blockquote>
+<h2 id="python-markdown">4. Python-Markdown<a class="headerlink" href="#python-markdown" title="Permanent link"></a></h2>
+<h3 id="python-markdown-introduction">4.1. 介绍<a class="headerlink" href="#python-markdown-introduction" title="Permanent link"></a></h3>
+<p>这是 John Gruber 的 <a href="https://daringfireball.net/projects/markdown/">Markdown</a> 的 Python 实现。尽管存在一些已知问题，但它几乎完全符合参考实现。
+有关确切支持和不支持的信息，请参阅<a href="https://python-markdown.github.io/#Features">功能</a>。
+<a href="https://python-markdown.github.io/extensions">可用扩展</a>支持附加功能。</p>
+<h3 id="python-markdown-documentation">4.2. 文档<a class="headerlink" href="#python-markdown-documentation" title="Permanent link"></a></h3>
+<pre><code class="language-python">pip install markdown
+</code></pre>
+<pre><code class="language-python">import markdown
+html = markdown.markdown(your_text_string)
+</code></pre>
+<p>有关更高级的<a href="https://python-markdown.github.io/install">安装</a>和<a href="https://python-markdown.github.io/reference">使用</a>文档，
+请参阅 <code>docs/</code> 发行版目录或项目网站<a href="https://Python-Markdown.github.io/">https://Python-Markdown.github.io/</a>。</p>
+<p><a href="https://github.com/Python-Markdown/markdown/wiki/Third-Party-Extensions">Third Party Extensions</a></p>
+<h2 id="references">5. 参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<p><a href="https://markdown.com.cn/basic-syntax/">Markdown 官方教程</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>This is the first footnote.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:bignote">
+<p>Here's one with multiple paragraphs and code.</p>
+<p>Indent paragraphs to include them in the footnote.</p>
+<p><code>{ my code }</code></p>
+<p>Add as many paragraphs as you like.&#160;<a class="footnote-backref" href="#fnref:bignote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,91 @@
+div.col-md-9 h1:first-of-type {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 300;
+}
+
+div.col-md-9>p:first-of-type {
+    text-align: center;
+}
+
+div.col-md-9 p.admonition-title:first-of-type {
+    text-align: left;
+}
+
+div.col-md-9 h1:first-of-type .headerlink {
+    display: none;
+}
+
+code.no-highlight {
+    color: black;
+}
+
+/* 块引用-左侧线条颜色 */
+
+blockquote {
+    background: #ebf5fd;
+    color: #333;
+    border-left: 5px solid #49a7ea;
+    /* margin: 1.5em 10px; */
+    padding: 0.5em 10px;
+    /* font-size: 16px; */
+    /* line-height: 26px; */
+    /* quotes: "\201C" "\201D" "\2018" "\2019"; */
+}
+
+/* 块引用-左双引号 */
+
+/* blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+} */
+
+/* 块引用-右双引号 */
+
+/* blockquote:after {
+    color: #ccc;
+    content: close-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+} */
+
+/* 块引用-文字颜色 */
+
+blockquote p {
+    display: inline;
+    /* color: #713C99; */
+}
+
+/* Definition List styles */
+
+dd {
+    padding-left: 20px;
+}
+
+/* Homepage */
+
+body.homepage div.jumbotron {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+}
+
+body.homepage div.jumbotron div.card {
+    margin-bottom: 2rem;
+}
+
+body.homepage>div.container>div.row>div.col-md-3 {
+    display: none;
+}
+
+body.homepage>div.container>div.row>div.col-md-9 {
+    margin-left: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+}

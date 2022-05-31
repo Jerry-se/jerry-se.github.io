@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/git/git_lfs/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Git LFS - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Git <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Git LFS</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../markdown/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../python/build_blogs_with_pelican/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#git-lfs" class="nav-link">Git LFS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">使用目的</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">原理</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">配置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">配置总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lfs" class="nav-link">使用LFS管理历史大文件</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">参考链接</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="git-lfs">Git LFS<a class="headerlink" href="#git-lfs" title="Permanent link"></a></h1>
+<p>Git LFS 是 Github 开发的一个 Git 的扩展，用于实现 Git 对大文件的支持。</p>
+<hr />
+<h2 id="_1">使用目的<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
+<p>有些用户，尤其是游戏行业以及媒体行业人员可能会遇到一个问题，那就是随着提交的文件越来越多，项目
+越来越大，Git的响应速度越来越慢，更烦人的是，在提交到远程仓库的最后一刻，系统可能会提示用户此次
+提交被拒绝，原因是提交的文件太大，触发平台额度限制(无论是哪个平台)，相信很多人在这一刻是崩溃的。</p>
+<p>Git LFS(Git Large File Storage)，即Git大文件存储技术。</p>
+<p>在Git仓库中，对于非文本文件，如各种多媒体文件，软件制品文件，二进制文件等等，这些文件
+往往体积比较大，使用Git直接管理会导致仓库的体积迅速膨胀，进而导致Git的许多操作变慢，同
+时也影响仓库上传到远程端。</p>
+<p>Git LFS相当于Git的一种插件式增强工具，简单讲，它是在Git仓库使用这些文件的 <code>指针</code>代替 <code>实际文件</code>，
+而把实际文件存储在远程端LFS服务器，同时在本地仓库中实时追踪这些文件的变动。</p>
+<p><img alt="principle" src="/img/git_lfs_principle.webp" /></p>
+<h2 id="_2">原理<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<p>根据 <code>Git LFS</code>官方帮助文档描述：</p>
+<p>Git LFS是基于Git的 .gitattributs 配置文件的特性，用 <code>smudge</code>过滤器基于 <code>指针文件</code>寻找大文件内
+容， 用 <code>clean</code>过滤器在对大文件改动时，创建指针文件的新版本。同时还用 <code>pre-push</code>钩子将大文件上传
+到Git LFS服务器， 即在 <code>git-push</code>时， 如果提交中包含被LFS跟踪的大文件，<code>pre-push</code>钩子会检测
+到，并执行上传Git LFS服务器的动作。</p>
+<p>因此，如果一个仓库中包含LFS内容，但是在推送时不想推送这类文件，只要加上 <code>--no-verify</code>选项就行，即：</p>
+<pre><code class="language-bash">$ git push --no-verify
+</code></pre>
+<p><code>--no-verify</code>选项告诉 <code>git push</code>完全跳过 <code>pre-push</code>钩子。</p>
+<p>前面提到被LFS管理的文件，本地仓库中保存的内容实际上是指针文件，其格式类似于下面这样：</p>
+<pre><code class="language-bash">$ git show HEAD:2.svg
+
+version https://git-lfs.github.com/spec/v1
+oid sha256:158213f90f8b27012034c6f58db63e1861b12aa122d98910de311bf1cb1e50a0
+size 14651
+(END)
+</code></pre>
+<p><code>version</code>表示LFS的版本</p>
+<p><code>oid</code>表示文件对象的唯一hash值</p>
+<p><code>size</code>表示文件的大小</p>
+<h2 id="_3">安装<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
+<p>注意：以下安装以及命令使用演示，均是基于Linux中命令行的方式进行，Windows上的图像界面
+操作，由于时间关系，暂不涉及。</p>
+<p>安装依赖： Git &gt;=1.8.5</p>
+<p>Linux 系统：</p>
+<pre><code class="language-bash">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+</code></pre>
+<blockquote>
+<p><a href="https://packagecloud.io/github/git-lfs/install#bash">https://packagecloud.io/github/git-lfs/install#bash</a></p>
+</blockquote>
+<p>其它操作系统上的安装，见官方安装文档：</p>
+<blockquote>
+<p><a href="https://github.com/git-lfs/git-lfs#installing">https://github.com/git-lfs/git-lfs#installing</a></p>
+</blockquote>
+<h2 id="_4">配置<a class="headerlink" href="#_4" title="Permanent link"></a></h2>
+<ul>
+<li>
+<p>在Git仓库中为仓库设置相关配置：</p>
+<pre><code>$ git lfs install
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Tips:</p>
+<p>这个命令会自动改变Git配置文件 .gitconfig，而且是全局性质的，会自动在配置文件中增加如下配置：</p>
+<p>[filter "lfs"]</p>
+<p>clean = git-lfs clean -- %f</p>
+<p>smudge = git-lfs smudge -- %f</p>
+<p>process = git-lfs filter-process</p>
+<p>required = true</p>
+</div>
+</li>
+<li>
+<p>选择要用LFS追踪的文件：</p>
+<pre><code>$ git lfs track "*.svg"
+# 或者具体到某个文件
+$ git lfs track "2.png"
+$ git lfs track "example.lfs"
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Tips:</p>
+<p>这个命令会更改仓库中的 .gitattributes配置文件(如果之前不存在这个文件，则会自动新建):</p>
+<p>查看如下：</p>
+<p>$ cat .gitattributes</p>
+<p>*.svg filter=lfs diff=lfs merge=lfs -text</p>
+<p>*.png filter=lfs diff=lfs merge=lfs -text</p>
+</div>
+</li>
+<li>
+<p>查看正在被LFS追踪的文件：</p>
+<pre><code>$ git lfs ls-files
+9a3c7dae41 * 1.png
+d61cf5835a * 2.png
+158213f90f * 3.svg
+</code></pre>
+<div class="admonition note">
+<p>git add file 之后文件才可能被追踪，也才能查看得到</p>
+</div>
+</li>
+<li>
+<p>取消LFS追踪的文件:</p>
+<pre><code>$ git lfs untrack "1.png"
+</code></pre>
+</li>
+<li>
+<p>保存并提交配置：</p>
+<pre><code>$ git add .gitattributes
+$ git commit -m "add .gitattributes"
+</code></pre>
+</li>
+</ul>
+<h2 id="_5">配置总结<a class="headerlink" href="#_5" title="Permanent link"></a></h2>
+<p>安装Git LFS之后，只需三步，即可在仓库中配置LFS功能，即：</p>
+<pre><code>#step 1
+$ git lfs install
+
+#step 2
+$ git lfs track files
+
+# step 3
+$ git add .gitattributes
+</code></pre>
+<p>实际上，由于第一步是全局配置，所以执行一次即可，后续有其它仓库需要使用LFS，则不需要再次执行，除非中途取消了LFS配置。</p>
+<div class="admonition note">
+<p class="admonition-title">Tips：</p>
+<p>运行 git lfs uninstall 即可取消LFS的全局配置</p>
+</div>
+<h2 id="lfs">使用LFS管理历史大文件<a class="headerlink" href="#lfs" title="Permanent link"></a></h2>
+<p>如果一个仓库中原来已经提交了一些大文件，此时即使运行 <code>git lfs track</code>也不会有效的。</p>
+<p>为了将仓库中现存的大文件应用到LFS，需要用 <code>git lfs migrate</code>导入到LFS中：</p>
+<pre><code class="language-bash">$ git lfs migrate import --include-ref=master --include=&quot;biger.zip&quot;
+migrate: override changes in your working copy?  All uncommitted changes will be lost! [y/N] y
+migrate: changes in your working copy will be overridden ...
+migrate: Sorting commits: ..., done.
+migrate: Rewriting commits: 100% (11/11), done.
+  master        f9be3c554e9010ea5e0e23a6a0c6e53dca6c23b0 -&gt; 53d5e655fe7cfd985f75384b92ac5414ad2ff394
+migrate: Updating refs: ..., done.
+migrate: checkout: ..., done.
+</code></pre>
+<div class="admonition note">
+<p>--include-ref 选项指定导入的分支</p>
+<p>如果向应用到所有分支，则使用--everything选项</p>
+<p>--include 选项指定要导入的文件。可以使用通配符，批量导入。</p>
+</div>
+<p>上述操作会改写提交历史，如果不想改写历史，则使用 <code>--no-rewrite</code>选项，并提供新的commit信息：</p>
+<pre><code>$ git lfs migrate import --no-rewrite -m "lfs import"
+</code></pre>
+<p>将本地历史提交中的文件纳入到LFS管理后，如果重改了历史，再次推送代码时，需要使用强制推送。</p>
+<p>这里选择改变提交历史，所以还需要使用 <code>--force</code>强制推送：</p>
+<pre><code class="language-bash">$ git push origin master --force
+
+Enter passphrase for key '/home/git/.ssh/id_ed25519':
+Locking support detected on remote &quot;origin&quot;. Consider enabling it with:
+  $ git config lfs.https://gitee.com/hightest/lfs-demo.git/info/lfs.locksverify true
+Uploading LFS objects: 100% (8/8), 419 MB | 0 B/s, done.
+Enumerating objects: 38, done.
+Counting objects: 100% (38/38), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (37/37), done.
+Writing objects: 100% (38/38), 136.26 MiB | 943.00 KiB/s, done.
+Total 38 (delta 12), reused 10 (delta 0), pack-reused 0
+remote: Powered by GITEE.COM [GNK-6.1]
+To gitee.com:hightest/lfs-demo.git
+ + cefd169...53d5e65 master -&gt; master (forced update)
+</code></pre>
+<p>至此，已经将历史提交中的大文件迁移到远程LFS服务器，本地Git仓库，只保留这个大文件的指针
+文件，所以推送也不会再触发额度限制。推送成功之后，远程仓库就与本地保存一致，它只管理这个大文件的指针文件。</p>
+<h2 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link"></a></h2>
+<p>Git LFS是一个易于安装、易于配置，使用高效的Git拓展工具，它能有效的管理仓库中的大文件，
+避免仓库体积过大，影响项目管理效率。同时，Gitee平台对Git LFS功能有很好的支持，再加上灵
+活的空间配额管理，让企业实现自动扩容，方便的解决了企业在项目开发中遇到的仓库大文件问题。</p>
+<h2 id="_7">参考链接<a class="headerlink" href="#_7" title="Permanent link"></a></h2>
+<p><a href="https://git-lfs.github.com/">Git Large File Storage</a></p>
+<p><a href="https://git-scm.com/docs/gitattributes">gitattributes</a></p>
+<p><a href="https://gitee.com/help/articles/4235">Git LFS 操作指南</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
