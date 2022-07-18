@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/linux_development/ipmi/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>ipmi - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../python/mkdocs/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#ipmi" class="nav-link">IPMI</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#platform-management" class="nav-link">平台管理</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bmc" class="nav-link">BMC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ipmi_1" class="nav-link">IPMI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ipmitool" class="nav-link">ipmitool</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#background" class="nav-link">背景</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#requirements" class="nav-link">要求</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#system-interface" class="nav-link">系统接口</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#install" class="nav-link">安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#usage" class="nav-link">用法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ipmi-examples" class="nav-link">ipmitool运维管理示例</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#modprobe-kernel-modules" class="nav-link">启动相应内核模块</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#ipaddr-managerment" class="nav-link">带外管理IP地址</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#ipmi-user-password" class="nav-link">带外管理用户密码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#power-managerment" class="nav-link">ipmitool 电源管理</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#bootdev-order" class="nav-link">修改服务器引导启动顺序</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#show-sdr" class="nav-link">查看相关的传感器信息</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ipmi">IPMI<a class="headerlink" href="#ipmi" title="Permanent link"></a></h1>
+<p>智能平台管理接口。</p>
+<hr />
+<h2 id="platform-management">平台管理<a class="headerlink" href="#platform-management" title="Permanent link"></a></h2>
+<p>平台管理(Platform Management)表示的是一系列的监视和控制功能，操作的对象是系统硬件。比如：通过监视系统的温度，电压，风扇、电源等等，并做相应的调节工作，以保证系统处于健康的状态。如果系统真的不正常了，也可以通过复位的方式来重新启动系统。同时平台管理还负责记录各种硬件的信息和日志记录，用于提示用户和后续问题的定位。</p>
+<p>以上的这些功能可以集成到一个控制器上来实现，这个控制器被称为 <code>BMC</code>（Baseboard Manager Controller，基板管理控制器）。</p>
+<h2 id="bmc">BMC<a class="headerlink" href="#bmc" title="Permanent link"></a></h2>
+<p><code>BMC</code> 通常是一个安装在服务器主板上的独立板卡，其不依赖于服务器的处理器、BIOS 或操作系统来工作，可谓非常地独立，是一个单独在系统内运行的无代理管理子系统。通俗来讲，<code>BMC</code> 是整个服务器单板的大管家。</p>
+<p><code>BMC</code> 与主板上的不同传感器通信来监视系统是否有严重事件，并在某些参数超出其预置阈值时发出警报和日志事件。所有的 IPMI 功能都是向 <code>BMC</code> 发送命令（IPMI 规范中规定的指令）来完成的，<code>BMC</code> 接收并在系统事件日志中记录事件消息，维护描述系统中传感器情况的传感器数据记录。</p>
+<p><code>BMC</code> 具有以下功能：</p>
+<ul>
+<li>通过系统的串行端口进行访问</li>
+<li>故障日志记录和 SNMP 警报发送</li>
+<li>访问系统事件日志和传感器状况</li>
+<li>远程开、关机</li>
+<li>独立于系统电源或工作状态的支持</li>
+<li>用于系统设置、基于文本公用程序和操作系统控制台的文本控制台重定向</li>
+</ul>
+<p>一般我们的电脑不会自带 <code>BMC</code>，因为用处不大，一些温度、电源等的管理，通过 CPU 来控制就够了。但是对于系统要求高的设备，比如服务器，就会用到 <code>BMC</code>。又因为 <code>BMC</code> 是一个独立的系统，对于某些嵌入式设备，可能不需要其它处理器，光一个 <code>BMC</code> 就能完成工作。</p>
+<p>可见，<code>BMC</code> 本质就是一个带处理器（一般都是 ARM 处理器）的小系统，单独用来处理某些工作也完全是可以的。</p>
+<h2 id="ipmi_1">IPMI<a class="headerlink" href="#ipmi_1" title="Permanent link"></a></h2>
+<p><code>IPMI</code>（Intelligent Platform Management Interface，智能平台管理接口）是一项应用于服务器带外管理系统设计的标准，通过特有的硬件设备而不是操作系统网络连接来对服务器进行电源的手段。<code>IPMI</code> 能够横跨不同的操作系统、固件和硬件平台，可以智能的监视、控制和上报服务器的运作状况（e.g. 远程开启、关闭电源）以及健康特征（e.g. 温度、电压、风扇工作状态、电源状态等）。<code>IPMI</code> 良好的自治特性克服了以往基于操作系统的管理方式所受的限制，实现了在操作系统不响应或未加载的情况下仍然可以对其进行开关机、信息提取等操作。<code>OpenStack Ironic</code> 正是利用此技术可以远程的对裸机进行上下电或者其他操作，而不是依赖物理开关或者操作系统。</p>
+<p><code>IPMI</code> 的核心是 <code>BMC</code>（Baseboard Management Controller ，基板管理控制器）。当需要对系统文本控制台进行远程访问时，<code>IPMI</code> 的 <code>SOL</code>（Serial Over LAN，LAN 上串口）功能非常关键。<code>SOL</code> 通过将 <code>IPMI</code> 会话重定向到本地串行接口，允许远程访问 <code>Windows</code> 的紧急事件管理控制台（EMS）特殊管理控制台（SAC）或访问 <code>Linux</code> 的串行控制台。<code>BMC</code> 通过在 LAN 上重定向串行端口的信息来做到这点，从而提供了一种与服务器厂商无关的远程查看 <code>OS BootLoader</code> 或紧急管理控制台来诊断和维修故障的标准方式，<code>IPMI</code> 甚至允许在操作系统引导阶段配置各种组件。</p>
+<p><img alt="IPMI Block Diagram" src="../../img/ipmi_block_diagram.png" /></p>
+<h2 id="ipmitool">ipmitool<a class="headerlink" href="#ipmitool" title="Permanent link"></a></h2>
+<p><code>ipmitool</code> 是一个用于管理和配置支持智能平台管理接口的设备的实用程序。</p>
+<p><code>ipmitool</code> 程序为 <code>BMC</code> 提供了一个简单的命令行界面。它具有读取传感器数据存储库 (sensor data repository，简称SDR) 和打印传感器值、显示系统事件日志 (System Event Log，简称SEL) 的内容、打印现场可更换单元 (Field Replaceable Unit，简称FRU) 库存信息、读取和设置 LAN 配置参数以及执行远程机箱电源控制。</p>
+<p>IPMItool 主页: <a href="http://github.com/ipmitool/ipmitool">http://github.com/ipmitool/ipmitool</a></p>
+<p>智能平台管理接口规范: <a href="https://www.intel.com/content/www/us/en/servers/ipmi/ipmi-home.html">https://www.intel.com/content/www/us/en/servers/ipmi/ipmi-home.html</a></p>
+<p>OpenIPMI 项目：Linux IPMI 内核驱动程序和用户态库 <a href="http://openipmi.sourceforge.net">http://openipmi.sourceforge.net</a></p>
+<h3 id="background">背景<a class="headerlink" href="#background" title="Permanent link"></a></h3>
+<p>Sun Microsystems 刚刚开始开发新的通用 x86 服务器系列，其中包括一个带有 IPMIv1.5 BMC 的 OEM Intel 主板。<code>ipmitool</code> 最初的作者开始的想法是远程机箱电源控制会很方便在实验室中为他的系统提供的功能，并从那里发展成为一个多功能工具，很多人都觉得它很有用。他决定在 BSD 许可下发布它，并让其他人有机会使用它。</p>
+<p><code>ipmitool</code> 不是为了提供大规模（又名企业）管理应用程序功能而编写的。<code>ipmitool</code> 提供的功能很容易通过发送简单的 IPMI 请求消息并解析返回的响应来完成。它旨在供喜欢命令行实用程序的简单性和可编写脚本的系统管理员以及调试或开发自己的 BMC 实现的系统管理员使用。</p>
+<h3 id="requirements">要求<a class="headerlink" href="#requirements" title="Permanent link"></a></h3>
+<p>显然，最大的要求是具有支持 <code>IPMI</code> 规范的服务处理器的硬件。许多基于 x86 的服务器现在都提供 <code>IPMI</code> 支持，请向您首选的硬件供应商咨询可用产品。</p>
+<p>一旦您确定拥有所需的硬件，您就需要决定如何访问 <code>BMC</code>。最常见的情况是通过系统接口或 LAN 进行访问。（或<code>serial</code>，但目前<code>ipmitool</code>不支持<code>serial</code>接口）</p>
+<h3 id="system-interface">系统接口<a class="headerlink" href="#system-interface" title="Permanent link"></a></h3>
+<p>系统接口有多种类型，但都足够相似，允许单一精心设计的驱动程序来支持它们。不同类型的系统接口包括键盘控制器样式(KCS)、块传输 (BT)、系统管理接口芯片 (SMIC) 和 SMBus。不同的硬件供应商会有不同的偏好和实现。</p>
+<p>在 Linux 上，<code>OpenIPMI</code> 内核驱动程序应该支持所有这些系统接口，并且加载正确的内核模块并设置设备节点以使用它应该是一件简单的事情。驱动程序模块名称在不同内核版本中略有不同，但对于所有版本，您都需要这两个模块：</p>
+<ul>
+<li>ipmi_msghandler：传入和传出消息处理程序</li>
+<li>ipmi_devintf：IPMI 驱动程序的字符设备接口</li>
+</ul>
+<p>对于 2.4.x 和早期的 2.6.x 内核，您需要根据硬件支持的系统接口类型选择模块。例如：</p>
+<ul>
+<li>ipmi_kcs_drv：键盘控制器样式驱动程序</li>
+</ul>
+<p>最新的 2.6.x 内核已将它们组合成一个模块：</p>
+<ul>
+<li>ipmi_si：通用 IPMI 系统接口驱动程序</li>
+</ul>
+<p>有关哪些内核模块是必须的，更多信息请参阅您的发行版和/或内核随附的文档。一旦加载了所需的模块并且驱动程序找到了适合 <code>BMC</code> 的系统接口，那么您需要确保 <code>/dev/ipmi0</code> 处的设备节点指向正确的主设备号。</p>
+<p>这是因为当它被加载时 <code>OpenIPMI</code> 被赋予了一个动态分配的主编号，但取决于存在的其他模块，这个数字可能是从 254 开始。最简单的判断方法是检查 <code>/proc/devices</code> 的输出并查看“ipmidev”设备分配给哪个主编号。</p>
+<p><code>ipmitool</code> 包含一个名为 <code>ipmi.init</code> 的示例脚本，可用于在启动时自动执行此过程。</p>
+<h3 id="install">安装<a class="headerlink" href="#install" title="Permanent link"></a></h3>
+<pre><code class="language-bash">$ sudo apt install ipmitool
+</code></pre>
+<p>从源码编译安装请参考: <a href="https://github.com/ipmitool/ipmitool/blob/master/INSTALL">https://github.com/ipmitool/ipmitool/blob/master/INSTALL</a></p>
+<h3 id="usage">用法<a class="headerlink" href="#usage" title="Permanent link"></a></h3>
+<p><code>ipmitool</code> 的所有调用都需要指定要使用的接口，除非您想使用在编译时设置的默认接口。每个调用还必须指定要运行的命令。您可以在使用 -h 选项的使用输出中查看支持的接口列表和默认接口列表以及顶级命令列表： </p>
+<pre><code class="language-bash">usage: ipmitool [options...] &lt;command&gt;
+
+   -h            This help
+   -V            Show version information
+   -v            Verbose (can use multiple times)
+   -c            Display output in comma separated format
+   -I intf       Interface to use
+   -H hostname   Remote host name for LAN interface
+   -p port       Remote RMCP port [default=623]
+   -L level      Remote session privilege level [default=USER]
+   -A authtype   Force use of authtype NONE, PASSWORD, MD2 or MD5
+   -U username   Remote session username
+   -P password   Remote session password
+   -f file       Read remote session password from file
+   -a            Prompt for remote password
+   -E            Read password from IPMI_PASSWORD environment variable
+   -m address    Set local IPMB address
+   -t address    Bridge request to remote target address
+
+Interfaces:
+    open         Linux OpenIPMI Interface [default]
+    imb          Intel IMB Interface
+    lan          IPMI v1.5 LAN Interface
+    lanplus      IPMI v2.0 RMCP+ LAN Interface
+
+Commands:
+    raw          Send a RAW IPMI request and print response
+    lan          Configure LAN Channels
+    chassis      Get chassis status and set power state
+    event        Send pre-defined events to BMC
+    bmc          Print BMC status and configure global enables
+    sdr          Print Sensor Data Repository entries and readings
+    sensor       Print detailed sensor information
+    fru          Print built-in FRU and scan SDR for FRU locators
+    sel          Print System Evelnt Log
+    sol          Configure IPMIv2.0 Serial-over-LAN
+    user         Configure BMC users
+    channel      Configure BMC channels
+    session      Print session information
+    shell        Launch interactive IPMI shell
+    exec         Run list of commands from file
+    set          Set runtime variable for shell and exec
+</code></pre>
+<h2 id="ipmi-examples">ipmitool运维管理示例<a class="headerlink" href="#ipmi-examples" title="Permanent link"></a></h2>
+<p>开始使用 IPMI 命令。</p>
+<h3 id="modprobe-kernel-modules">启动相应内核模块<a class="headerlink" href="#modprobe-kernel-modules" title="Permanent link"></a></h3>
+<pre><code class="language-bash">root@dbtuserver:~# modprobe ipmi_msghandler
+root@dbtuserver:~# modprobe ipmi_devintf
+root@dbtuserver:~# modprobe ipmi_si
+root@dbtuserver:~# lsmod | grep ipmi
+ipmi_ssif              36864  0
+ipmi_si                65536  0
+ipmi_devintf           20480  0
+ipmi_msghandler       106496  3 ipmi_devintf,ipmi_si,ipmi_ssif
+</code></pre>
+<h3 id="ipaddr-managerment">带外管理IP地址<a class="headerlink" href="#ipaddr-managerment" title="Permanent link"></a></h3>
+<p>命令格式如下:</p>
+<pre><code class="language-bash">ipmitool lan print [&lt;channel number&gt;]
+ipmitool lan set &lt;channel number&gt; &lt;command&gt; &lt;parameter&gt;
+</code></pre>
+<pre><code class="language-bash"># 设置静态IP地址
+root@dbtuserver:~# ipmitool lan set 1 ipsrc static
+# 设置IP地址
+root@dbtuserver:~# ipmitool lan set 1 ipaddr 192.168.0.110
+# 设置子网掩码
+root@dbtuserver:~# ipmitool lan set 1 netmask 255.255.255.0
+# 设置网关地址
+root@dbtuserver:~# ipmitool lan set 1 defgw ipaddr 192.168.0.1
+# 查看带外管理IP地址
+root@dbtuserver:~# ipmitool lan print 1
+Set in Progress         : Set Complete
+Auth Type Support       : MD5 
+Auth Type Enable        : Callback : MD5 
+                        : User     : MD5 
+                        : Operator : MD5 
+                        : Admin    : MD5 
+                        : OEM      : MD5 
+IP Address Source       : Static Address
+IP Address              : 192.168.0.110
+Subnet Mask             : 255.255.255.0
+MAC Address             : 04:d9:f5:50:f9:b6
+SNMP Community String   : AMI
+IP Header               : TTL=0x40 Flags=0x40 Precedence=0x00 TOS=0x10
+BMC ARP Control         : ARP Responses Enabled, Gratuitous ARP Disabled
+Gratituous ARP Intrvl   : 0.0 seconds
+Default Gateway IP      : 192.168.0.1
+Default Gateway MAC     : 8c:16:45:14:31:4c
+Backup Gateway IP       : 0.0.0.0
+Backup Gateway MAC      : 00:00:00:00:00:00
+802.1q VLAN ID          : Disabled
+802.1q VLAN Priority    : 0
+RMCP+ Cipher Suites     : 0,1,2,3,6,7,8,11,12,15,16,17
+Cipher Suite Priv Max   : XaaaaaaaaaaaXXX
+                        :     X=Cipher Suite Unused
+                        :     c=CALLBACK
+                        :     u=USER
+                        :     o=OPERATOR
+                        :     a=ADMIN
+                        :     O=OEM
+Bad Password Threshold  : 0
+Invalid password disable: no
+Attempt Count Reset Int.: 0
+User Lockout Interval   : 0
+</code></pre>
+<h3 id="ipmi-user-password">带外管理用户密码<a class="headerlink" href="#ipmi-user-password" title="Permanent link"></a></h3>
+<p>命令格式如下:</p>
+<pre><code class="language-bash">ipmitool user summary      [&lt;channel number&gt;]
+ipmitool user list         [&lt;channel number&gt;]
+ipmitool user set name     &lt;user id&gt; &lt;username&gt;
+ipmitool user set password &lt;user id&gt; [&lt;password&gt; &lt;16|20&gt;]
+ipmitool user disable      &lt;user id&gt;
+ipmitool user enable       &lt;user id&gt;
+ipmitool user priv         &lt;user id&gt; &lt;privilege level&gt; [&lt;channel number&gt;]
+ipmitool user       Privilege levels:
+ipmitool user        * 0x1 - Callback
+ipmitool user        * 0x2 - User
+ipmitool user        * 0x3 - Operator
+ipmitool user        * 0x4 - Administrator
+ipmitool user        * 0x5 - OEM Proprietary
+ipmitool user        * 0xF - No Accipmitool user 
+ipmitool user test         &lt;user id&gt; &lt;16|20&gt; [&lt;password]&gt;
+</code></pre>
+<pre><code class="language-bash"># 设置用户&quot;admin&quot;(ID为2)的密码为&quot;dbtu2017&quot;
+root@dbtuserver:~# ipmitool user set password 2 dbtu2017
+Set User Password command successful (user 2)
+# 查询所有用户列表
+root@dbtuserver:~# ipmitool user list 1
+ID  Name         Callin  Link Auth  IPMI Msg   Channel Priv Limit
+1                    false   false      true       ADMINISTRATOR
+2   admin            false   false      true       ADMINISTRATOR
+3                    true    false      false      NO ACCESS
+4                    true    false      false      NO ACCESS
+5                    true    false      false      NO ACCESS
+6                    true    false      false      NO ACCESS
+7                    true    false      false      NO ACCESS
+8                    true    false      false      NO ACCESS
+9                    true    false      false      NO ACCESS
+10                   true    false      false      NO ACCESS
+</code></pre>
+<h3 id="power-managerment">ipmitool 电源管理<a class="headerlink" href="#power-managerment" title="Permanent link"></a></h3>
+<table>
+<thead>
+<tr>
+<th>ipmitool [chassis] 命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ipmitool [chassis] power status</td>
+<td>获取电源状态</td>
+</tr>
+<tr>
+<td>ipmitool [chassis] power on</td>
+<td>硬开机</td>
+</tr>
+<tr>
+<td>ipmitool [chassis] power off</td>
+<td>硬断电关机</td>
+</tr>
+<tr>
+<td>ipmitool [chassis] power soft</td>
+<td>通过acpi进行软关机，如同轻按一下开机键</td>
+</tr>
+<tr>
+<td>ipmitool [chassis] power reset</td>
+<td>硬重启</td>
+</tr>
+<tr>
+<td>ipmitool [chassis] power cycle</td>
+<td>强制关闭电源，等待1秒然后再打开电源的组合</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash"># 命令帮助
+root@dbtuserver:~# ipmitool chassis power help
+chassis power Commands: status, on, off, cycle, reset, diag, soft
+root@dbtuserver:~# ipmitool power status
+Chassis Power is on
+# ipmitool -H 192.168.0.110 -U admin -P dbtu2017 chassis power off
+Chassis Power Control: Down/Off
+# ipmitool -H 192.168.0.110 -U admin -P dbtu2017 chassis power on 
+Chassis Power Control: Up/On
+</code></pre>
+<h3 id="bootdev-order">修改服务器引导启动顺序<a class="headerlink" href="#bootdev-order" title="Permanent link"></a></h3>
+<pre><code class="language-bash"># 命令帮助
+root@dbtuserver:~# ipmitool chassis bootdev help
+bootdev &lt;device&gt; [clear-cmos=yes|no]
+bootdev &lt;device&gt; [options=help,...]
+  none  : Do not change boot device order
+  pxe   : Force PXE boot
+  disk  : Force boot from default Hard-drive
+  safe  : Force boot from default Hard-drive, request Safe Mode
+  diag  : Force boot from Diagnostic Partition
+  cdrom : Force boot from CD/DVD
+  bios  : Force boot into BIOS Setup
+  floppy: Force boot from Floppy/primary removable media
+
+# PXE引导启动
+ipmitool -I lan -H &lt;server_ip&gt; -U root -P passwd chassis bootdev pxe
+# 从硬盘引导启动
+ipmitool -I lan -H &lt;server_ip&gt; -U root -P passwd chassis bootdev disk
+# 从CD/DVD引导启动
+ipmitool -I lan -H &lt;server_ip&gt; -U root -P passwd chassis bootdev cdrom
+</code></pre>
+<h3 id="show-sdr">查看相关的传感器信息<a class="headerlink" href="#show-sdr" title="Permanent link"></a></h3>
+<pre><code class="language-bash">root@dbtuserver:~# ipmitool sdr [list]
+CPU1 Temperature | 39 degrees C      | ok
+CPU2 Temperature | 38 degrees C      | ok
+PSU1 Over Temp   | 0x00              | ok
+PSU2 Over Temp   | 0x00              | ok
+TR1 Temperature  | 26 degrees C      | ok
+TR2 Temperature  | 55 degrees C      | ok
+TR3 Temperature  | 25 degrees C      | ok
+DIMMA1_Temp      | 32 degrees C      | ok
+DIMMA2_Temp      | 0 degrees C       | nr
+DIMMB1_Temp      | 0 degrees C       | nr
+DIMMC1_Temp      | 0 degrees C       | nr
+DIMMD1_Temp      | 33 degrees C      | ok
+DIMMD2_Temp      | 0 degrees C       | nr
+DIMME1_Temp      | 0 degrees C       | nr
+DIMMF1_Temp      | 0 degrees C       | nr
+DIMMG1_Temp      | 31 degrees C      | ok
+DIMMG2_Temp      | 0 degrees C       | nr
+DIMMH1_Temp      | 0 degrees C       | nr
+DIMMJ1_Temp      | 0 degrees C       | nr
+DIMMK1_Temp      | 31 degrees C      | ok
+DIMMK2_Temp      | 0 degrees C       | nr
+DIMML1_Temp      | 0 degrees C       | nr
+DIMMM1_Temp      | 0 degrees C       | nr
+CPU1_ECC1        | 0x00              | ok
+CPU2_ECC1        | 0x00              | ok
++VCCIO1          | 0.99 Volts        | ok
++VCCIO2          | 0.99 Volts        | ok
++VCORE1          | 1.78 Volts        | ok
++VCORE2          | 1.78 Volts        | ok
++VDDQ_ABC_CPU1   | 1.22 Volts        | ok
++VDDQ_DEF_CPU1   | 1.22 Volts        | ok
++VDDQ_GHJ_CPU2   | 1.21 Volts        | ok
++VDDQ_KLM_CPU2   | 1.22 Volts        | ok
++12V             | 11.89 Volts       | ok
++5V              | 5.04 Volts        | ok
++3.3V            | 3.31 Volts        | ok
++5VSB            | 5.06 Volts        | ok
++3.3VSB          | 3.30 Volts        | ok
+VBAT             | 3.12 Volts        | ok
+PMBPower1        | 216 Watts         | ok
+PMBPower2        | 184 Watts         | ok
+PSU1 AC Lost     | 0x00              | ok
+PSU2 AC Lost     | 0x00              | ok
+PSU1 PWR Detect  | 0x00              | ok
+PSU2 PWR Detect  | 0x00              | ok
+CPU_CATERR       | 0x00              | ok
+Memory_Train_ERR | 0x00              | ok
+FRNT_FAN1        | 3000 RPM          | ok
+FRNT_FAN2        | 3300 RPM          | ok
+FRNT_FAN3        | 3200 RPM          | ok
+FRNT_FAN4        | 3200 RPM          | ok
+FRNT_FAN5        | 3000 RPM          | ok
+FRNT_FAN6        | 3000 RPM          | ok
+FRNT_FAN7        | 0 RPM             | nr
+PSU1 Slow FAN1   | 0x00              | ok
+PSU2 Slow FAN1   | 0x00              | ok
+Backplane1 HD01  | 0x00              | ok
+Backplane1 HD02  | 0x00              | ok
+Backplane1 HD03  | 0x00              | ok
+Backplane1 HD04  | 0x00              | ok
+Backplane1 HD05  | 0x00              | ok
+Backplane1 HD06  | 0x00              | ok
+Backplane1 HD07  | 0x00              | ok
+Backplane1 HD08  | 0x00              | ok
+NM Capabilities  | 0x00              | ok
+Watchdog2        | 0x00              | ok
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

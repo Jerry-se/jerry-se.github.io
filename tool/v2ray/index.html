@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/tool/v2ray/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>V2Ray - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../frp/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../python/build_blogs_with_pelican/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#v2ray" class="nav-link">v2ray</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">简介</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#difference-with-shadowsocks" class="nav-link">V2Ray 跟 Shadowsocks 有什么区别</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#preparation" class="nav-link">准备工作</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#synchronised-time" class="nav-link">时间是否准确</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#cross-platform" class="nav-link">Linux 版本的问题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install" class="nav-link">安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#config" class="nav-link">配置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#update" class="nav-link">升级更新</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#remove" class="nav-link">移除</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#third-party-gui-clients" class="nav-link">第三方图形客户端</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#routing" class="nav-link">路由规则</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#recommended-vpn" class="nav-link">同事推荐的VPN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="v2ray">v2ray<a class="headerlink" href="#v2ray" title="Permanent link"></a></h1>
+<p>A platform for building proxies to bypass network restrictions.</p>
+<hr />
+<h2 id="introduction">简介<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+<p>V2Ray 是 Project V 下的一个工具。Project V 是一个包含一系列构建特定网络环境工具的项目，而 V2Ray 属于最核心的一个。 官方中介绍<code>Project V 提供了单一的内核和多种界面操作方式。内核（V2Ray）用于实际的网络交互、路由等针对网络数据的处理，而外围的用户界面程序提供了方便直接的操作流程</code>。不过从时间上来说，先有 V2Ray 才有 Project V。 如果还是不理解，那么简单地说，V2Ray 是一个与 Shadowsocks 类似的代理软件，可以用来科学上网（翻墙）学习国外先进科学技术。</p>
+<p>V2Ray 用户手册: <a href="https://www.v2fly.org/">https://www.v2fly.org/</a></p>
+<p>V2Ray 项目地址: <a href="https://github.com/v2fly/v2ray-core">https://github.com/v2fly/v2ray-core</a></p>
+<p>未迁移前的地址: <a href="https://github.com/v2ray/v2ray-core">https://github.com/v2ray/v2ray-core</a></p>
+<p>V2Ray 配置指南: <a href="https://github.com/ToutyRater/v2ray-guide">https://github.com/ToutyRater/v2ray-guide</a></p>
+<h2 id="difference-with-shadowsocks">V2Ray 跟 Shadowsocks 有什么区别<a class="headerlink" href="#difference-with-shadowsocks" title="Permanent link"></a></h2>
+<p>Shadowsocks 是一个纯粹的代理工具，而 V2Ray 定位为一个平台，任何开发者都可以利用 V2Ray 提供的模块开发出新的代理软件。</p>
+<p>了解 Shadowsocks 历史的同学都知道，Shadowsocks 是 clowwindy 开发的自用的软件，开发的初衷只是为了让自己能够简单高效地科学上网，自己使用了很长一段时间后觉得不错才共享出来的。V2Ray 是 clowwindy 被喝茶之后 V2Ray 项目组为表示抗议开发的，一开始就致力于让大家更好更快的科学上网。</p>
+<p>由于出生时的历史背景不同，导致了它们性格特点的差异。</p>
+<p>简单来说，Shadowsocks 功能单一，V2Ray 功能强大。听起来似乎有点贬低 Shadowsocks 呢？当然不！换一个角度来看，Shadowsocks 简单好上手，V2Ray 复杂配置多。</p>
+<p>由于许多 V2Ray 用户都有使用过 Shadowsocks 的经验，基本上可以按照使用 Shadowsocks 那样使用。但是 V2Ray 还是和 Shadowsocks 不太一样，所以我大概说一下使用上的差异。请注意，差异不代表好坏或优劣，如果一个事物必须拥有其他同类所拥有的东西，那么它也就没有了存在的意义。</p>
+<ul>
+<li>客户端：V2Ray 本身只是一个内核，V2Ray 上的图形客户端大多是调用 V2Ray 内核套一个图形界面的外壳，类似于 Linux 内核和 Linux 操作系统的关系；而 Shadowsocks 的客户端都是自己重新实现了一遍 Shadowsocks 协议。本文的内容短期内不涉及图形客户端的使用。</li>
+<li>分流：也许大家第一反应是 PAC，实际上无论是 Shadowsocks (特指 Shadowsocks-libev) 还是 V2Ray 本身不支持 PAC，都是客户端加进来的；Shadowsocks 的分流使用 ACL，V2Ray 使用自己实现的路由功能，孰优孰劣只是仁者智者的问题。</li>
+<li>分享链接/二维码：V2Ray 不像 Shadowsocks 那样有统一规定的 URL 格式，所以各个 V2Ray 图形客户端的分享链接/二维码不一定通用。</li>
+<li>加密方式：V2Ray (特指 VMess 协议) 不像 Shadowsocks 那样看重对加密方式的选择，并且 VMess 的加密方式是由客户端指定的，服务器自适应。</li>
+<li>时间：使用 V2Ray 要保证时间准确，因为这是为了安全设计的。</li>
+<li>密码：V2Ray(VMesss) 只有 id（使用 UUID 的格式），作用类似于 Shadowsocks 的密码，但随机性远好于 Shadowsocks 的密码，只是不太方便记忆(安全和方便的矛盾)。</li>
+<li>UDP 转发：VMess 是基于 TCP 的协议，对于 UDP 包 V2Ray 会转成 TCP 再传输的，即 UDP over TCP。要 UDP 转发功能在客户端的 socks 协议中开启 UDP 即可。</li>
+<li>路由器翻墙：实际上它们并没有什么区别，不要以为没有插件就不能在路由器上用，看事物请看本质。</li>
+</ul>
+<p>Shadowsocks: <a href="https://github.com/shadowsocks/shadowsocks/tree/master">https://github.com/shadowsocks/shadowsocks/tree/master</a></p>
+<h2 id="preparation">准备工作<a class="headerlink" href="#preparation" title="Permanent link"></a></h2>
+<h3 id="synchronised-time">时间是否准确<a class="headerlink" href="#synchronised-time" title="Permanent link"></a></h3>
+<p>V2Ray 对于时间有比较严格的要求，要求服务器和客户端时间差绝对值不能超过<strong>90 秒</strong>，所以一定要保证时间足够准确。还好 V2Ray 并不要求时区一致。比如说自个儿电脑上的时间是北京时间（东 8 区）2017-07-31 12:08:31，但是 VPS 上的时区是东 9 区，所以 VPS 上的时间应该是 2017-07-31 13:07:01 到 2017-07-31 13:10:01 之间才能正常使用 V2Ray。当然，也可以自行改成自己想要的时区。</p>
+<h3 id="cross-platform">Linux 版本的问题<a class="headerlink" href="#cross-platform" title="Permanent link"></a></h3>
+<p>感谢 Golang 编程语言提供的特性和原作者的精心设计，V2Ray 可以不依赖其它软件（库）而运行，并且提供了跨平台支持（如： Windows, Linux, MacOS, BSD 等）。但是由于新手在学习使用过程中可能会遇到各种问题，却缺乏相应的解决问题的能力，因此在 VPS 上建议使用 Debian 9.x, Debian 10 以上或 Ubuntu 18.04 及以上的 Linux 发行版。请不要迷信某个（些）“最稳定”的 Linux 发行版。</p>
+<h2 id="install">安装<a class="headerlink" href="#install" title="Permanent link"></a></h2>
+<p>与 Shadowsocks 不同，从软件上 V2Ray 不区分服务器版和客户端版，也就是说在服务器和客户端运行的 V2Ray 是同一个软件，区别只是配置文件的不同。</p>
+<p>在 Linux 操作系统， V2Ray 的安装有脚本安装、手动安装、编译安装 3 种方式，选择其中一种即可，本文仅提供使用使用脚本安装的方法，并仅推荐使用脚本安装，该脚本由 V2Ray 官方提供。该脚本仅可以在 Debian 系列或者支持 Systemd 的 Linux 操作系统使用。</p>
+<pre><code>$ curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
+$ bash install-release.sh
+# 设置开机自自动
+$ systemctl enable v2ray
+# 启动V2Ray 请提前配置好v2ray.config
+$ systemctl start v2ray
+# 查看V2Ray运行情况
+$ systemctl status v2ray
+</code></pre>
+<h2 id="config">配置<a class="headerlink" href="#config" title="Permanent link"></a></h2>
+<p>关于 V2ray 配置，请参考 <a href="https://github.com/v2fly/v2ray-examples">v2ray-examples</a> 内的示例。</p>
+<p>因为没有域名和网站证书，我只能使用VMess-HTTP，这种简单的伪装我用了近两年也没有被封过，大概是因为个人使用流量少，也没有干坏事。</p>
+<h2 id="update">升级更新<a class="headerlink" href="#update" title="Permanent link"></a></h2>
+<p>在 VPS，重新执行一遍安装脚本就可以更新了，在更新过程中会自动重启 V2Ray，配置文件保持不变。</p>
+<pre><code>$ bash install-release.sh
+</code></pre>
+<p>V2Ray 的更新策略是快速迭代，每周更新(无意外的情况下)。版本号的格式是 vX.Y.Z，如 v2.44.0。v 是固定的字母 v，version 的首字母；X、Y、Z 都是数字，X 是大版本号，每年更新一个大版本(现在是 v4.Y.Z，V2Ray 已经走到了第四个年头)，Y 是小版本，每周五更新一个小版本。Z 是区分正式版和测试版，Z 是 0 代表着是正式版，不是 0 说明是测试版。例如，v4.7.0 是正式版，v4.7.1 是测试版，建议只使用正式版，不手动指定的情况下 V2Ray 的安装脚本也只会安装最新的正式版。</p>
+<h2 id="remove">移除<a class="headerlink" href="#remove" title="Permanent link"></a></h2>
+<pre><code># bash &lt;(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh) --remove
+</code></pre>
+<h2 id="third-party-gui-clients">第三方图形客户端<a class="headerlink" href="#third-party-gui-clients" title="Permanent link"></a></h2>
+<ol>
+<li><a href="https://github.com/2dust/v2rayN">V2rayN</a> : V2RayN 是一个基于 V2Ray 内核的 Windows 客户端。</li>
+<li><a href="https://github.com/Qv2ray/Qv2ray">Qv2ray</a> : 跨平台 V2Ray 客户端，支持 Linux、Windows、macOS，可通过插件系统支持 SSR / Trojan / Trojan-Go / NaiveProxy 等协议。</li>
+<li><a href="https://github.com/SagerNet/SagerNet">SagerNet</a> : SagerNet 是一个基于 V2Ray 的 Android 通用代理应用。</li>
+<li><a href="https://github.com/2dust/v2rayNG">v2rayNG</a> : 一款安卓V2Ray客户端，支持 Xray core 和 v2fly core。</li>
+</ol>
+<h2 id="routing">路由规则<a class="headerlink" href="#routing" title="Permanent link"></a></h2>
+<p>V2Ray 内建了一个路由模块，可以将入站数据按需求由不同的出站连接发出，以达到按需代理的目的。这一功能的常见用法是分流国内外流量。V2Ray 可以通过内部机制判断不同国家或地区的流量，然后将它们发送到不同的出站代理。</p>
+<p>在下载 V2Ray 的时候，下载的压缩包有一个 <code>geosite.dat</code>。这个文件是在路由功能里用到的，文件内置了许多<a href="https://github.com/v2fly/domain-list-community">常见的网站域名</a>。使用方式：<code>geosite:listname</code>，如 <code>geosite:google</code> 表示对 <code>domain-list-community</code> 项目 <code>data</code> 目录里的 <code>google</code> 文件内包含的域名，进行路由筛选或 DNS 筛选。</p>
+<ul>
+<li>Block (阻止)： 拦截向外发送的连接请求，禁止连网。</li>
+<li>Direct (直连)： 直接访问外部网络，不走代理。</li>
+<li>Proxy (代理)： 允许通过代理连接上网。</li>
+</ul>
+<p>Proxy(代理)的Domain规则:</p>
+<pre><code>github.com,
+githubassets.com,
+githubusercontent.com,
+# 下一行谷歌产品图标,
+googleusercontent.com
+</code></pre>
+<p>Direct(直连)的Domain规则:</p>
+<pre><code>postman.com,
+domain:aws.amazon.com,
+domain:amazonaws.com,
+adblockplus.org,
+safesugar.net,
+#【以下全部是geo预定义域名列表】,
+# 下一行是所有私有域名,
+geosite:private,
+# 下一行包含常见大陆站点域名和CNNIC管理的大陆域名，即geolocation-cn和tld-cn的合集,
+geosite:cn,
+# 下一行包含所有Adobe旗下域名,
+geosite:adobe,
+# 下一行包含所有Adobe正版激活域名,
+geosite:adobe-activation,
+# 下一行包含所有微软旗下域名,
+geosite:microsoft,
+# 下一行包含微软msn相关域名少数与上一行微软列表重复,
+geosite:msn,
+# 下一行包含所有苹果旗下域名,
+geosite:apple,
+# 下一行包含可直连访问谷歌网址，需要替换为加强版GEO，否则删除此行,
+geosite:google-cn,
+# 下一行包含可直连访问苹果网址，需要替换为加强版GEO，否则删除此行,
+geosite:apple-cn
+</code></pre>
+<p>Direct(直连)的IP规则:</p>
+<pre><code># 中国大陆 IP 地址
+geoip:cn,
+# 所有私有地址，如 127.0.0.1
+geoip:private
+</code></pre>
+<p>Block(阻止)的Domain规则:</p>
+<pre><code># 包含了常见的广告域名，以及广告提供商的域名。
+geosite:category-ads-all
+</code></pre>
+<p>详细规则参考 <a href="https://www.v2fly.org/config/routing.html">Routing 路由</a></p>
+<h2 id="recommended-vpn">同事推荐的VPN<a class="headerlink" href="#recommended-vpn" title="Permanent link"></a></h2>
+<p>同事推荐的VPN，本人并没有用过，只此记录，不发表意见。</p>
+<ol>
+<li>vpnclient</li>
+<li>快连vpn</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

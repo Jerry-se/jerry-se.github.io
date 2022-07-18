@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/go/web_service_gin/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Web service gin - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../workspaces/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../generics/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#web-service-gin" class="nav-link">使用 Go 和 Gin 开发 RESTful API</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#design-api-endpoints" class="nav-link">1. 设计 API 端点</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-folder-for-code" class="nav-link">2. 为您的代码创建一个文件夹</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-data" class="nav-link">3. 创建数据</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#write-code-31" class="nav-link">3.1. 编写代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#write-handler2return-all-items" class="nav-link">4. 查询所有项目</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#write-code-41" class="nav-link">4.1. 编写代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#run-code-42" class="nav-link">4.2. 运行代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#write-handler2add-new-item" class="nav-link">5. 添加一个新项目</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#write-code-51" class="nav-link">5.1. 编写代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#run-code-52" class="nav-link">5.2. 运行代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#write-handler2return-specific-item" class="nav-link">6. 查询特定的项目</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#write-code-61" class="nav-link">6.1. 编写代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#run-code-62" class="nav-link">6.2. 运行代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#conclusion" class="nav-link">结论</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#completed-code" class="nav-link">完整的代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="web-service-gin">使用 Go 和 Gin 开发 RESTful API<a class="headerlink" href="#web-service-gin" title="Permanent link"></a></h1>
+<p>本教程介绍了使用 Go 和<a href="https://gin-gonic.com/docs/">Gin Web 框架</a>(Gin) 编写 RESTful Web 服务 API 的基础知识。</p>
+<hr />
+<p>Gin 简化了许多与构建 Web 应用程序（包括 Web 服务）相关的编码任务。在本教程中，您将使用 Gin 来路由请求、检索请求详细信息以及编组 JSON 以获取响应。</p>
+<p>在本教程中，您将构建一个具有两个端点的 RESTful API 服务器。您的示例项目将是有关老式爵士乐唱片的数据存储库。</p>
+<p>本教程包括以下部分：</p>
+<ol>
+<li>设计 API 端点。</li>
+<li>为您的代码创建一个文件夹。</li>
+<li>创建数据。</li>
+<li>编写一个处理程序以返回所有项目。</li>
+<li>编写一个处理程序来添加一个新项目。</li>
+<li>编写一个处理程序来返回一个特定的项目。</li>
+</ol>
+<p>要尝试将此作为您在 Google Cloud Shell 中完成的交互式教程，请单击下面的按钮。</p>
+<p><a href="https://ide.cloud.google.com/?cloudshell_workspace=~&amp;walkthrough_tutorial_url=https://raw.githubusercontent.com/golang/tour/master/tutorial/web-service-gin.md"><img alt="Open in Google Cloud Shell" src="../../img/open_in_google_cloud_shell.png" /></a></p>
+<blockquote>
+<p>本教程需要 Go 1.16 或更高版本。</p>
+</blockquote>
+<h2 id="design-api-endpoints">1. 设计 API 端点<a class="headerlink" href="#design-api-endpoints" title="Permanent link"></a></h2>
+<p>您将构建一个 API，该 API 可让您访问出售老式黑胶唱片的商店。因此，您需要提供端点(endpoints)，客户端可以通过这些端点为用户获取和添加相册。</p>
+<p>在开发 API 时，您通常从设计端点开始。如果端点易于理解，您的 API 用户将获得更大的成功。</p>
+<p>以下是您将在本教程中创建的端点。</p>
+<p>/albums</p>
+<ul>
+<li>GET – 获取所有专辑的列表，以 JSON 形式返回。</li>
+<li>POST – 从作为 JSON 发送的请求数据中添加新专辑。</li>
+</ul>
+<p>/albums/:id</p>
+<ul>
+<li>GET – 通过 ID 获取专辑，将专辑数据作为 JSON 返回。</li>
+</ul>
+<p>接下来，您将为代码创建一个文件夹。</p>
+<h2 id="create-folder-for-code">2. 为您的代码创建一个文件夹<a class="headerlink" href="#create-folder-for-code" title="Permanent link"></a></h2>
+<p>首先，为您要编写的代码创建一个项目。</p>
+<ol>
+<li>打开命令提示符并切换到您的主目录。</li>
+<li>
+<p>创建一个名为 web-service-gin 的目录。</p>
+<pre><code>$ mkdir web-service-gin
+$ cd web-service-gin
+</code></pre>
+</li>
+<li>
+<p>创建一个模块，您可以在其中管理依赖项。</p>
+<pre><code>$ go mod init example/web-service-gin
+go: creating new go.mod: module example/web-service-gin
+</code></pre>
+<p>此命令创建一个 go.mod 文件，您添加的依赖项将在其中列出以供跟踪。有关使用模块路径命名模块的更多信息，请参阅 <a href="https://go.dev/doc/modules/managing-dependencies#naming_module">管理依赖项</a>。</p>
+</li>
+</ol>
+<h2 id="create-data">3. 创建数据<a class="headerlink" href="#create-data" title="Permanent link"></a></h2>
+<p>为了使教程简单，您将数据存储在内存中。更典型的 API 将与数据库交互。</p>
+<p>请注意，将数据存储在内存中意味着每次停止服务器时，相册集都会丢失，然后在启动时重新创建。</p>
+<h3 id="write-code-31">3.1. 编写代码<a class="headerlink" href="#write-code-31" title="Permanent link"></a></h3>
+<ol>
+<li>在 web-service 目录中创建一个名为 main.go 的文件。您将在此文件中编写您的 Go 代码。</li>
+<li>
+<p>进入 main.go，在文件顶部，粘贴以下包声明。</p>
+<pre><code>package main
+</code></pre>
+<p>独立程序（与库相反）始终位于 package main 中。</p>
+</li>
+<li>
+<p>在包声明下，粘贴以下 <code>album</code> 结构声明。您将使用它在内存中存储专辑数据。</p>
+<p>结构标记，例如<code>json:"artist"</code>指定当结构的内容被序列化为 JSON 时字段的名称应该是什么。如果没有它们，JSON 将使用结构的大写字段名称——这种风格在 JSON 中并不常见。</p>
+<pre><code>// album represents data about a record album.
+type album struct {
+    ID     string  `json:"id"`
+    Title  string  `json:"title"`
+    Artist string  `json:"artist"`
+    Price  float64 `json:"price"`
+}
+</code></pre>
+</li>
+<li>
+<p>在您刚刚添加的结构声明下，粘贴以下 <code>album</code>结构片段，其中包含您将用于启动的数据。</p>
+<pre><code>// albums slice to seed record album data.
+var albums = []album{
+    {ID: "1", Title: "Blue Train", Artist: "John Coltrane", Price: 56.99},
+    {ID: "2", Title: "Jeru", Artist: "Gerry Mulligan", Price: 17.99},
+    {ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
+}
+</code></pre>
+</li>
+</ol>
+<p>接下来，您将编写代码来实现您的第一个端点。</p>
+<h2 id="write-handler2return-all-items">4. 查询所有项目<a class="headerlink" href="#write-handler2return-all-items" title="Permanent link"></a></h2>
+<p>当客户端在发出 <code>GET /albums</code> 请求时，您希望将所有专辑以 JSON 格式返回。</p>
+<p>为此，您将编写以下内容：</p>
+<ul>
+<li>准备响应的逻辑</li>
+<li>将请求路径映射到您的逻辑的代码</li>
+</ul>
+<p>请注意，这与它们在运行时的执行方式相反，但您首先添加依赖项，然后是依赖于它们的代码。</p>
+<h3 id="write-code-41">4.1. 编写代码<a class="headerlink" href="#write-code-41" title="Permanent link"></a></h3>
+<ol>
+<li>
+<p>在上一节中添加的结构代码下方，粘贴以下代码以获取专辑列表。</p>
+<p>此<code>getAlbums</code>函数从<code>album</code>结构切片创建 JSON，并将 JSON 写入响应。</p>
+<pre><code>// getAlbums responds with the list of all albums as JSON.
+func getAlbums(c *gin.Context) {
+    c.IndentedJSON(http.StatusOK, albums)
+}
+</code></pre>
+<p>在此代码中，您：</p>
+<ul>
+<li>
+<p>编写一个带 <code>gin.Context</code> 参数的函数<code>getAlbums</code>。请注意，你可以给这个函数起任何名字——Gin 和 Go 都不需要特定的函数名格式。</p>
+<p><code>gin.Context</code>是 Gin 最重要的部分。它携带请求详细信息、验证和序列化 JSON 等。（尽管名称相似，但这与 Go 的内置 <code>context</code>包不同。）</p>
+</li>
+<li>
+<p>调用 <code>Context.IndentedJSON</code> 以将结构序列化为 JSON 并将其添加到响应中。</p>
+<p>该函数的第一个参数是您要发送给客户端的 HTTP 状态代码。在这里，您从<code>net/http</code>包中传递常量<code>StatusOK</code>来指示<code>200 OK</code>.</p>
+<p>请注意，您可以替换 <code>Context.IndentedJSON</code> 为调用 <code>Context.JSON</code> 来发送更紧凑的 JSON。在实践中，缩进形式在调试时更容易使用，并且大小差异通常很小。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>在 main.go 顶部附近，就在 <code>albums</code> slice 声明的下方，粘贴下面的代码以将处理函数分配给端点路径。</p>
+<p>这会建立一个关联，在该关联中<code>getAlbums</code>处理对 <code>/albums</code>端点路径的请求。</p>
+<pre><code>func main() {
+    router := gin.Default()
+    router.GET("/albums", getAlbums)
+
+    router.Run("localhost:8080")
+}
+</code></pre>
+<p>在此代码中，您：</p>
+<ul>
+<li>使用 <code>Default</code> 初始化 Gin router 。</li>
+<li>
+<p>使用该 <code>GET</code> 函数将 <code>GET</code> HTTP 方法和<code>/albums</code>路径与处理函数相关联。</p>
+<p>请注意，您正在传递<code>getAlbums</code>函数的名称。这与传递函数的结果不同，您可以通过传递 <code>getAlbums()</code>（注意括号）来完成。</p>
+</li>
+<li>
+<p>使用 <code>Run</code> 函数将 router 连接到<code>http.Server</code>并启动server。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>在 main.go 顶部附近，就在包声明的下方，导入您需要支持您刚刚编写的代码的包。</p>
+<p>第一行代码应如下所示：</p>
+<pre><code>package main
+
+import (
+    "net/http"
+
+    "github.com/gin-gonic/gin"
+)
+</code></pre>
+</li>
+<li>
+<p>保存 main.go。</p>
+</li>
+</ol>
+<h3 id="run-code-42">4.2. 运行代码<a class="headerlink" href="#run-code-42" title="Permanent link"></a></h3>
+<ol>
+<li>
+<p>开始跟踪 Gin 模块作为依赖项。</p>
+<p>在命令行中，使用 <code>go get</code> 将 <code>github.com/gin-gonic/gin</code> 模块添加为您的模块的依赖项。使用点参数表示“获取当前目录中代码的依赖项”。</p>
+<pre><code>$ go get .
+go get: added github.com/gin-gonic/gin v1.7.2
+</code></pre>
+<p>解决并下载此依赖项以满足您在上一步中添加的 <code>import</code> 声明。</p>
+</li>
+<li>
+<p>在包含 main.go 的目录中的命令行下运行代码。使用点参数表示“在当前目录中运行代码”。</p>
+<pre><code>$ go run .
+</code></pre>
+<p>代码运行后，您就有了一个正在运行的 HTTP 服务器，您可以向其发送请求。</p>
+</li>
+<li>
+<p>在新的命令行窗口中，用于<code>curl</code>向正在运行的 Web 服务发出请求。</p>
+<pre><code>$ curl http://localhost:8080/albums
+</code></pre>
+<p>该命令应显示您为服务播种的数据。</p>
+<pre><code>[
+        {
+                "id": "1",
+                "title": "Blue Train",
+                "artist": "John Coltrane",
+                "price": 56.99
+        },
+        {
+                "id": "2",
+                "title": "Jeru",
+                "artist": "Gerry Mulligan",
+                "price": 17.99
+        },
+        {
+                "id": "3",
+                "title": "Sarah Vaughan and Clifford Brown",
+                "artist": "Sarah Vaughan",
+                "price": 39.99
+        }
+]
+</code></pre>
+</li>
+</ol>
+<p>你已经启动了一个 API！在下一部分中，您将使用代码创建另一个端点来处理POST添加项目的请求。</p>
+<h2 id="write-handler2add-new-item">5. 添加一个新项目<a class="headerlink" href="#write-handler2add-new-item" title="Permanent link"></a></h2>
+<p>当客户端在 <code>/albums</code> 发出<code>POST</code>请求时，您希望将请求正文中描述的相册添加到现有相册的数据中。</p>
+<p>为此，您将编写以下内容：</p>
+<ul>
+<li>将新专辑添加到现有列表的逻辑。</li>
+<li>将<code>POST</code>请求路由到您的逻辑的一些代码。</li>
+</ul>
+<h3 id="write-code-51">5.1. 编写代码<a class="headerlink" href="#write-code-51" title="Permanent link"></a></h3>
+<ol>
+<li>
+<p>添加代码以将专辑数据添加到专辑列表。</p>
+<p>在<code>import</code>语句之后的某处，粘贴以下代码。（文件末尾是这段代码的好地方，但 Go 并不强制你声明函数的顺序。）</p>
+<pre><code>// postAlbums adds an album from JSON received in the request body.
+func postAlbums(c *gin.Context) {
+    var newAlbum album
+
+    // Call BindJSON to bind the received JSON to
+    // newAlbum.
+    if err := c.BindJSON(&amp;newAlbum); err != nil {
+        return
+    }
+
+    // Add the new album to the slice.
+    albums = append(albums, newAlbum)
+    c.IndentedJSON(http.StatusCreated, newAlbum)
+}
+</code></pre>
+<p>在此代码中，您：</p>
+<ul>
+<li>用 <code>Context.BindJSON</code> 将请求正文绑定到<code>newAlbum</code>.</li>
+<li>将从 JSON 初始化的 <code>album</code> 结构追加到 <code>albums</code> 切片。</li>
+<li>向响应response添加状态代码<code>201</code>，以及表示您添加的专辑的 JSON。</li>
+</ul>
+</li>
+<li>
+<p>更改您的<code>main</code>函数，使其包含该<code>router.POST</code>函数，如下所示。</p>
+<pre><code>func main() {
+    router := gin.Default()
+    router.GET("/albums", getAlbums)
+    router.POST("/albums", postAlbums)
+
+    router.Run("localhost:8080")
+}
+</code></pre>
+<p>在此代码中，您：</p>
+<ul>
+<li>
+<p>将<code>/albums</code>路径的<code>POST</code>方法与 <code>postAlbums</code> 函数相关联。</p>
+<p>使用 Gin，您可以将<em>处理程序</em> 与 <em>HTTP 方法和路径组合</em> 相关联。这样，您可以根据客户端使用的方法将发送到单个路径的请求单独路由。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="run-code-52">5.2. 运行代码<a class="headerlink" href="#run-code-52" title="Permanent link"></a></h3>
+<ol>
+<li>如果服务器从上一节开始仍在运行，请停止它。</li>
+<li>
+<p>在包含 main.go 的目录打开命令行，运行代码。</p>
+<pre><code>$ go run .
+</code></pre>
+</li>
+<li>
+<p>从不同的命令行窗口，用<code>curl</code>向正在运行的 Web 服务发出请求。</p>
+<pre><code>$ curl http://localhost:8080/albums \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"id": "4","title": "The Modern Sound of Betty Carter","artist": "Betty Carter","price": 49.99}'
+</code></pre>
+<p>该命令应显示添加专辑的标题和 JSON。</p>
+<pre><code>HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Date: Wed, 02 Jun 2021 00:34:12 GMT
+Content-Length: 116
+
+{
+    "id": "4",
+    "title": "The Modern Sound of Betty Carter",
+    "artist": "Betty Carter",
+    "price": 49.99
+}
+</code></pre>
+</li>
+<li>
+<p>与上一节一样，使用<code>curl</code>检索完整的专辑列表，您可以使用它来确认添加了新专辑。</p>
+<pre><code>$ curl http://localhost:8080/albums \
+    --header "Content-Type: application/json" \
+    --request "GET"
+</code></pre>
+<p>该命令应显示专辑列表。</p>
+<pre><code>[
+        {
+                "id": "1",
+                "title": "Blue Train",
+                "artist": "John Coltrane",
+                "price": 56.99
+        },
+        {
+                "id": "2",
+                "title": "Jeru",
+                "artist": "Gerry Mulligan",
+                "price": 17.99
+        },
+        {
+                "id": "3",
+                "title": "Sarah Vaughan and Clifford Brown",
+                "artist": "Sarah Vaughan",
+                "price": 39.99
+        },
+        {
+                "id": "4",
+                "title": "The Modern Sound of Betty Carter",
+                "artist": "Betty Carter",
+                "price": 49.99
+        }
+]
+</code></pre>
+</li>
+</ol>
+<p>在下一部分中，您将添加代码来处理GET特定项目的请求。</p>
+<h2 id="write-handler2return-specific-item">6. 查询特定的项目<a class="headerlink" href="#write-handler2return-specific-item" title="Permanent link"></a></h2>
+<p>当客户端发出<code>GET /albums/[id]</code>请求时，您希望返回 ID 与id路径参数匹配的专辑。</p>
+<p>为此，您将：</p>
+<ul>
+<li>添加逻辑以检索请求的相册。</li>
+<li>将路径映射到逻辑。</li>
+</ul>
+<h3 id="write-code-61">6.1. 编写代码<a class="headerlink" href="#write-code-61" title="Permanent link"></a></h3>
+<ol>
+<li>
+<p>在您在上一节中添加的<code>postAlbums</code>函数下方，粘贴以下代码以检索特定相册。</p>
+<p>此<code>getAlbumByID</code>函数将提取请求路径中的 ID，然后找到匹配的相册。</p>
+<pre><code>// getAlbumByID locates the album whose ID value matches the id
+// parameter sent by the client, then returns that album as a response.
+func getAlbumByID(c *gin.Context) {
+    id := c.Param("id")
+
+    // Loop over the list of albums, looking for
+    // an album whose ID value matches the parameter.
+    for _, a := range albums {
+        if a.ID == id {
+            c.IndentedJSON(http.StatusOK, a)
+            return
+        }
+    }
+    c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
+}
+</code></pre>
+<p>在此代码中，您：</p>
+<ul>
+<li>
+<p>用 <code>Context.Param</code> 从 URL 中检索<code>id</code>路径参数。当您将此处理程序映射到路径时，您将在路径中包含参数的占位符。</p>
+</li>
+<li>
+<p>循环<code>album</code>切片中的结构，寻找其<code>ID</code> 字段值与<code>id</code>参数值匹配的结构。如果找到，则将该<code>album</code>结构序列化为 JSON，并将其作为响应与<code>200 OK</code> HTTP 代码一同返回。</p>
+<p>如上所述，现实世界的服务可能会使用数据库查询来执行此查找。</p>
+</li>
+<li>
+<p>如果找不到专辑，则返回<code>http.StatusNotFound</code> 即 HTTP <code>404</code>错误。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>最后，更改您的main，使其包含对路径为 <code>/albums/:id</code> 的新调用<code>router.GET</code>，如以下示例所示。</p>
+<pre><code>func main() {
+    router := gin.Default()
+    router.GET("/albums", getAlbums)
+    router.GET("/albums/:id", getAlbumByID)
+    router.POST("/albums", postAlbums)
+
+    router.Run("localhost:8080")
+}
+</code></pre>
+<p>此代码中，您：</p>
+<ul>
+<li>将<code>/albums/:id</code>路径与<code>getAlbumByID</code>函数相关联。在 Gin 中，路径中项目前面的冒号表示该项目是路径参数。</li>
+</ul>
+</li>
+</ol>
+<h3 id="run-code-62">6.2. 运行代码<a class="headerlink" href="#run-code-62" title="Permanent link"></a></h3>
+<ol>
+<li>
+<p>如果服务器从上一节开始仍在运行，请停止它。</p>
+</li>
+<li>
+<p>在包含 main.go 的目录中打开命令行中，运行代码以启动服务器。</p>
+<pre><code>$ go run .
+</code></pre>
+</li>
+<li>
+<p>从不同的命令行窗口，用<code>curl</code>向正在运行的 Web 服务发出请求。</p>
+<pre><code>$ curl http://localhost:8080/albums/2
+</code></pre>
+<p>该命令应显示您使用 ID 的专辑的 JSON。如果找不到专辑，您将收到带有错误消息的 JSON。</p>
+<pre><code>{
+        "id": "2",
+        "title": "Jeru",
+        "artist": "Gerry Mulligan",
+        "price": 17.99
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="conclusion">结论<a class="headerlink" href="#conclusion" title="Permanent link"></a></h2>
+<p>恭喜！您刚刚使用 Go 和 Gin 编写了一个简单的 RESTful Web 服务。</p>
+<p>建议的下一个主题：</p>
+<ul>
+<li>如果您是 Go 新手，您会发现 <a href="https://go.dev/doc/effective_go">Effective Go</a> 和 <a href="https://go.dev/doc/code">How to write Go code</a> 代码中描述的有用的最佳实践。</li>
+<li><a href="https://go.dev/tour/">Go Tour</a> 是对 Go 基础知识的逐步介绍。</li>
+<li>有关 Gin 的更多信息，请参阅 <a href="https://pkg.go.dev/github.com/gin-gonic/gin">Gin Web Framework package documentation</a> 或 <a href="https://gin-gonic.com/docs/">Gin Web Framework docs</a>。</li>
+</ul>
+<h2 id="completed-code">完整的代码<a class="headerlink" href="#completed-code" title="Permanent link"></a></h2>
+<p>本节包含您使用本教程构建的应用程序的代码。</p>
+<pre><code class="language-golang">package main
+
+import (
+    &quot;net/http&quot;
+
+    &quot;github.com/gin-gonic/gin&quot;
+)
+
+// album represents data about a record album.
+type album struct {
+    ID     string  `json:&quot;id&quot;`
+    Title  string  `json:&quot;title&quot;`
+    Artist string  `json:&quot;artist&quot;`
+    Price  float64 `json:&quot;price&quot;`
+}
+
+// albums slice to seed record album data.
+var albums = []album{
+    {ID: &quot;1&quot;, Title: &quot;Blue Train&quot;, Artist: &quot;John Coltrane&quot;, Price: 56.99},
+    {ID: &quot;2&quot;, Title: &quot;Jeru&quot;, Artist: &quot;Gerry Mulligan&quot;, Price: 17.99},
+    {ID: &quot;3&quot;, Title: &quot;Sarah Vaughan and Clifford Brown&quot;, Artist: &quot;Sarah Vaughan&quot;, Price: 39.99},
+}
+
+func main() {
+    router := gin.Default()
+    router.GET(&quot;/albums&quot;, getAlbums)
+    router.GET(&quot;/albums/:id&quot;, getAlbumByID)
+    router.POST(&quot;/albums&quot;, postAlbums)
+
+    router.Run(&quot;localhost:8080&quot;)
+}
+
+// getAlbums responds with the list of all albums as JSON.
+func getAlbums(c *gin.Context) {
+    c.IndentedJSON(http.StatusOK, albums)
+}
+
+// postAlbums adds an album from JSON received in the request body.
+func postAlbums(c *gin.Context) {
+    var newAlbum album
+
+    // Call BindJSON to bind the received JSON to
+    // newAlbum.
+    if err := c.BindJSON(&amp;newAlbum); err != nil {
+        return
+    }
+
+    // Add the new album to the slice.
+    albums = append(albums, newAlbum)
+    c.IndentedJSON(http.StatusCreated, newAlbum)
+}
+
+// getAlbumByID locates the album whose ID value matches the id
+// parameter sent by the client, then returns that album as a response.
+func getAlbumByID(c *gin.Context) {
+    id := c.Param(&quot;id&quot;)
+
+    // Loop through the list of albums, looking for
+    // an album whose ID value matches the parameter.
+    for _, a := range albums {
+        if a.ID == id {
+            c.IndentedJSON(http.StatusOK, a)
+            return
+        }
+    }
+    c.IndentedJSON(http.StatusNotFound, gin.H{&quot;message&quot;: &quot;album not found&quot;})
+}
+</code></pre>
+<h2 id="references">参考<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<p><a href="https://go.dev/doc/tutorial/web-service-gin">https://go.dev/doc/tutorial/web-service-gin</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

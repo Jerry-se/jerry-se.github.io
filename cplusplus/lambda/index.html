@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/cplusplus/lambda/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Lambda - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../markdown/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../questions/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#lambda-expressions" class="nav-link">Lambda 表达式</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#syntax" class="nav-link">语法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#explanation" class="nav-link">解释</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lambda-captures" class="nav-link">Lambda 捕获</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#functor" class="nav-link">仿函数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#examples" class="nav-link">示例</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="lambda-expressions">Lambda 表达式<a class="headerlink" href="#lambda-expressions" title="Permanent link"></a></h1>
+<p>构造闭包：能够捕获作用域中的变量的无名函数对象。since C++11</p>
+<hr />
+<h2 id="syntax">语法<a class="headerlink" href="#syntax" title="Permanent link"></a></h2>
+<table>
+
+<tr>
+<td> <code>[ captures ] ( params ) specs requires(optional) { body }</code>
+</td>
+<td> (1)
+</td>
+<td>
+</td></tr>
+
+<tr>
+<td> <code>[ captures ] { body }</code>
+</td>
+<td> (2)
+</td>
+<td> <span>(until C++23)</span>
+</td></tr>
+
+<tr>
+<td> <code>[ captures ] specs { body }</code>
+</td>
+<td> (2)
+</td>
+<td> <span>(since C++23)</span>
+</td></tr>
+
+<tr>
+<td> <code>[ captures ] < tparams > requires(optional) ( params ) specs requires(optional) { body }</code>
+</td>
+<td> (3)
+</td>
+<td> <span>(since C++20)</span>
+</td></tr>
+
+<tr>
+<td> <code>[ captures ] < tparams > requires(optional) { body }</code>
+</td>
+<td> (4)
+</td>
+<td> <span>(since C++20)</span><br /><span>(until C++23)</span>
+</td></tr>
+
+<tr>
+<td> <code>[ captures ] < tparams > requires(optional) specs { body }</code>
+</td>
+<td> (4)
+</td>
+<td> <span>(since C++23)</span>
+</td></tr>
+</table>
+
+<ol>
+<li>完整声明。</li>
+<li>省略形参列表：函数不接收实参，如同形参列表是 <strong>()</strong>。</li>
+<li>与 1 相同，但指定泛型 lambda 并显式提供模板形参列表。</li>
+<li>与 2 相同，但指定泛型 lambda 并显式提供模板形参列表。</li>
+</ol>
+<h2 id="explanation">解释<a class="headerlink" href="#explanation" title="Permanent link"></a></h2>
+<ul>
+<li>captures - 包含零或更多个<a href="#lambda-captures">捕获符</a>的逗号分隔列表，可以 默认捕获符（capture-default） 起始。
+有关捕获符的详细描述，见<a href="#lambda-captures">下文</a>。 如果变量满足下列条件，那么 lambda 表达式在使用它前不需要先捕获：<ul>
+<li>该变量是非局部变量，或具有静态或线程局部<a href="https://zh.cppreference.com/w/cpp/language/storage_duration">存储期</a>（此时无法捕获该变量），或者</li>
+<li>该变量是以<a href="https://zh.cppreference.com/w/cpp/language/constant_expression#.E5.B8.B8.E9.87.8F.E8.A1.A8.E8.BE.BE.E5.BC.8F">常量表达式</a>初始化的引用。<br />
+如果变量满足下列条件，那么 lambda 表达式在读取它的值前不需要先捕获：</li>
+<li>该变量具有 const 而非 volatile 的整型或枚举类型，并已经用<a href="https://zh.cppreference.com/w/cpp/language/constant_expression#.E5.B8.B8.E9.87.8F.E8.A1.A8.E8.BE.BE.E5.BC.8F">常量表达式</a>初始化，或者</li>
+<li>该变量是 constexpr 的且没有 mutable 成员。</li>
+</ul>
+</li>
+<li>tparams - （角括号中的）模板形参列表，用于为泛型 lambda 提供各模板形参的名字（见下文的 ClosureType::operator()）。与在模板声明中相似，模板形参列表可以后附 requires 子句，它指定各模板实参上的<a href="https://zh.cppreference.com/w/cpp/language/constraints">约束</a>。
+模板形参列表不能为空（不允许 &lt;&gt;）。</li>
+<li>params - 形参列表，如在<a href="https://zh.cppreference.com/w/cpp/language/function">具名函数</a>中。</li>
+<li>specs - 由 <em>specifiers</em>、<em>exception</em>、<em>attr</em> 和 <em>trailing-return-type</em> 按顺序组成，每个组分均非必需</li>
+<li>specifiers -  可选的说明符的序列。不提供说明符时复制捕获的对象在 lambda 函数体内是 const 的。可以使用下列说明符：<ul>
+<li>mutable: 允许 <em>函数体</em> 修改复制捕获的对象，以及调用它们的非 const 成员函数</li>
+<li>constexpr: 显式指定函数调用运算符或运算符模板的任意特化为 <a href="https://zh.cppreference.com/w/cpp/language/constexpr">constexpr</a> 函数。如果没有此说明符但函数调用运算符或任意给定的运算符模板特化恰好满足针对 constexpr 函数的所有要求，那么它也会是 constexpr 的。  <strong><em>(C++17 起)</em></strong></li>
+<li>consteval：指定函数调用运算符或任意给定的运算符模板特化为<a href="https://zh.cppreference.com/w/cpp/language/consteval">立即函数</a>。不能同时使用 consteval 和 constexpr。  <strong><em>(C++20 起)</em></strong></li>
+</ul>
+</li>
+<li>exception - 为闭包类型的 operator() 提供<a href="https://zh.cppreference.com/w/cpp/language/except_spec">动态异常说明</a>或 (C++20 前) <a href="https://zh.cppreference.com/w/cpp/language/noexcept_spec">noexcept 说明符</a></li>
+<li>attr - 为闭包类型的函数调用运算符或运算符模板的类型提供<a href="https://zh.cppreference.com/w/cpp/language/attributes">属性说明</a>。这样指定的任何属性均属于函数调用运算符或运算符模板的类型，而非其自身。（例如不能使用 [[<a href="https://zh.cppreference.com/w/cpp/language/attributes/noreturn">noreturn</a>]]）</li>
+<li>trailing-return-type - -&gt; <em>返回类型</em>，其中 <em>返回类型</em> 指定返回类型。如果没有 <em>尾随返回类型</em>，那么闭包的 operator() 的返回类型从 return 语句推导，如同对于声明返回类型为 auto 的函数的推导一样。</li>
+<li>requires -    (C++20 起)向闭包类型的 operator() 添加<a href="https://zh.cppreference.com/w/cpp/language/constraints">约束</a></li>
+<li>body - 函数体</li>
+</ul>
+<p>当以 <a href="https://zh.cppreference.com/w/cpp/language/auto">auto</a> 为形参类型或显式提供模板形参列表 (C++20 起)时，该 lambda 是泛型 lambda。(C++14 起)</p>
+<h2 id="lambda-captures">Lambda 捕获<a class="headerlink" href="#lambda-captures" title="Permanent link"></a></h2>
+<p><em>捕获</em> 是一个含有零或更多个捕获符的逗号分隔列表，可以 <em>默认捕获符</em> 开始。默认捕获符只有</p>
+<ul>
+<li>&amp;（以引用隐式捕获被使用的自动变量）和</li>
+<li>=（以复制隐式捕获被使用的自动变量）。</li>
+</ul>
+<p>当出现任一默认捕获符时，都能隐式捕获当前对象（<code>*this</code>）。若隐式捕获它，则始终以引用捕获，即使默认捕获符是 =。当默认捕获符为 = 时，<code>*this</code> 的隐式捕获被弃用。 (C++20 起)</p>
+<p><em>捕获</em> 中单独的捕获符的语法是:</p>
+<table>
+
+<tr>
+<td> <span>标识符</span>
+</td>
+<td> (1)
+</td>
+<td>
+</td></tr>
+
+<tr>
+<td> <span>标识符</span> <code><b>...</b></code>
+</td>
+<td> (2)
+</td>
+<td>
+</td></tr>
+
+
+<tr>
+<td> <span>标识符</span> <span>初始化器</span>
+</td>
+<td> (3)
+</td>
+<td> <span>(C++14 起)</span>
+</td></tr>
+
+<tr>
+<td> <code><b>&amp;</b></code> <span>标识符</span>
+</td>
+<td> (4)
+</td>
+<td>
+</td></tr>
+
+
+<tr>
+<td> <code><b>&amp;</b></code> <span>标识符</span> <code><b>...</b></code>
+</td>
+<td> (5)
+</td>
+<td>
+</td></tr>
+
+<tr>
+<td> <code><b>&amp;</b></code> <span>标识符</span> <span>初始化器</span>
+</td>
+<td> (6)
+</td>
+<td> <span>(C++14 起)</span>
+</td></tr>
+
+<tr>
+<td> <code><b>this</b></code>
+</td>
+<td> (7)
+</td>
+<td>
+</td></tr>
+
+<tr>
+<td> <code><b>*</b></code> <code><b>this</b></code>
+</td>
+<td> (8)
+</td>
+<td> <span>(C++17 起)</span>
+</td></tr>
+
+<tr>
+<td> <code><b>...</b></code> <span>标识符</span> <span>初始化器</span>
+</td>
+<td> (9)
+</td>
+<td> <span>(C++20 起)</span>
+</td></tr>
+
+<tr>
+<td> <code><b>&amp;</b></code> <code><b>...</b></code> <span>标识符</span> <span>初始化器</span>
+</td>
+<td> (10)
+</td>
+<td> <span>(C++20 起)</span>
+</td></tr>
+
+</table>
+
+<ol>
+<li>简单的以复制捕获</li>
+<li>作为包展开的简单的以复制捕获</li>
+<li>带初始化器的以复制捕获</li>
+<li>简单的以引用捕获</li>
+<li>作为包展开的简单的以引用捕获</li>
+<li>带初始化器的以引用捕获</li>
+<li>当前对象的简单的以引用捕获</li>
+<li>当前对象的简单的以复制捕获</li>
+<li>初始化器为包展开的以复制捕获</li>
+<li>初始化器为包展开的以引用捕获</li>
+</ol>
+<p>当默认捕获符是 &amp; 时，后继的简单捕获符不能以 &amp; 开始。</p>
+<pre><code class="language-cpp">struct S2 { void f(int i); };
+void S2::f(int i)
+{
+    [&amp;]{};          // OK：默认以引用捕获
+    [&amp;, i]{};       // OK：以引用捕获，但 i 以值捕获
+    [&amp;, &amp;i] {};     // 错误：以引用捕获为默认时的以引用捕获
+    [&amp;, this] {};   // OK：等价于 [&amp;]
+    [&amp;, this, i]{}; // OK：等价于 [&amp;, i]
+}
+</code></pre>
+<p>当默认捕获符是 = 时，后继的简单捕获符必须以 &amp; 开始，或者为 *this (C++17 起) 或 this (C++20 起)。</p>
+<pre><code class="language-cpp">struct S2 { void f(int i); };
+void S2::f(int i)
+{
+    [=]{};          // OK：默认以复制捕获
+    [=, &amp;i]{};      // OK：以复制捕获，但 i 以引用捕获
+    [=, *this]{};   // C++17 前：错误：无效语法
+                    // C++17 起：OK：以复制捕获外围的 S2
+    [=, this] {};   // C++20 前：错误：= 为默认时的 this
+                    // C++20 起：OK：同 [=]
+}
+</code></pre>
+<p>任何捕获符只可以出现一次：</p>
+<pre><code class="language-cpp">struct S2 { void f(int i); };
+void S2::f(int i)
+{
+    [i, i] {};        // 错误：i 重复
+    [this, *this] {}; // 错误：&quot;this&quot; 重复 (C++17)
+}
+</code></pre>
+<h2 id="functor">仿函数<a class="headerlink" href="#functor" title="Permanent link"></a></h2>
+<p>在C++11之前，STL中的一些算法需要使用一种函数对象---仿函数(functor)；其本质是重新定义和成员函数 operator() ，使其使用上很像普通函数，其实，细心的我们已经发现，Lambda函数与仿函数似乎有一些默契。
+如下例子：折扣</p>
+<pre><code class="language-cpp">class Price
+{
+private:
+    float _rate;
+public:
+    Price(float rate):_rate(rate){}
+    float operator()(float price)
+    {
+        return price*(1 - _rate / 100);
+    }
+};
+
+int main(int argc, char* argv[])
+{
+    float rate=5.5f;
+
+    Price c1(rate);
+    auto c2 = [rate](float price)-&gt;float {return price*(1 - rate / 100); };
+
+    float p1 = c1(3699);    //仿函数
+    float p2 = c2(3699);    //Lambda函数
+
+    return 0;
+}
+</code></pre>
+<p>仿函数以rate初始化,Lambda捕捉rate变量，参数传递上，两者一致。</p>
+<p>事实上，仿函数就是实现Lambda函数一种方式，编译器通常会把Lambda函数转换为一个仿函数对象，但是仿函数的语法却给我们带来了很大的便捷。</p>
+<p>在C++11中，Lambda函数被广泛使用，很多仿函数被取代。</p>
+<h2 id="examples">示例<a class="headerlink" href="#examples" title="Permanent link"></a></h2>
+<pre><code class="language-cpp">int main(int argc, char* argv[])
+{
+    int a = 5, b = 7;
+    auto total = [](int x, int y)-&gt;int {return x + y; };    //接受两个参数
+    cout &lt;&lt; total(a, b)&lt;&lt;endl;  //12
+    auto fun1 = [=] {return a + b; };   //值传递捕捉父作用域变量
+    cout &lt;&lt; fun1() &lt;&lt; endl; //12
+    auto fun2 = [&amp;](int c) {b = a + c; a = 1; };    //省略了返回值类型，引用捕获所有
+    fun2(3);
+    cout &lt;&lt; a &lt;&lt;&quot; &quot;&lt;&lt; b &lt;&lt; endl; //1 8
+    a = 5; b = 7;   //被修改后，重新赋值
+    auto fun3 = [=, &amp;b](int c) mutable {b = a + c; a = 1; };    //以值传递捕捉的变量，在函数体里如果要修改，要加mutaple,因为默认const修饰
+    fun3(3);
+    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt;b&lt;&lt; endl;    //5 8
+    a = 5; b = 7;   //被修改后，重新赋值
+    auto fun4 = [=](int x, int y) mutable-&gt;int {a += x; b += y; return a + b; };
+    int t = fun4(10, 20);
+    cout &lt;&lt; t &lt;&lt; endl;  //42
+    cout &lt;&lt; a &lt;&lt;&quot; &quot;&lt;&lt; b &lt;&lt; endl;    //5 7
+    return 0;
+}
+</code></pre>
+<p>块作用域以外的Lambda函数捕捉列表必须为空，因此这样的函数除了语法上的不同，和普通函数区别不大。</p>
+<p>块作用域以内的Lambda函数仅能捕捉块作用域以内的自动变量，捕捉任何非此作用域或非自动变量(静态变量)，都会引起编译器报错。</p>
+<p>下面示例演示如何传递 lambda 给泛型算法，以及 lambda 表达式所产生的对象能如何存储于 std::function 对象。</p>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+
+int main()
+{
+    std::vector&lt;int&gt; c = {1, 2, 3, 4, 5, 6, 7};
+    int x = 5;
+    c.erase(std::remove_if(c.begin(), c.end(), [x](int n) { return n &lt; x; }), c.end());
+
+    std::cout &lt;&lt; &quot;c: &quot;;
+    std::for_each(c.begin(), c.end(), [](int i){ std::cout &lt;&lt; i &lt;&lt; ' '; });
+    std::cout &lt;&lt; '\n';
+
+    // the type of a closure cannot be named, but can be inferred with auto
+    // since C++14, lambda could own default arguments
+    auto func1 = [](int i = 6) { return i + 4; };
+    std::cout &lt;&lt; &quot;func1: &quot; &lt;&lt; func1() &lt;&lt; '\n';
+
+    // like all callable objects, closures can be captured in std::function
+    // (this may incur unnecessary overhead)
+    std::function&lt;int(int)&gt; func2 = [](int i) { return i + 4; };
+    std::cout &lt;&lt; &quot;func2: &quot; &lt;&lt; func2(6) &lt;&lt; '\n';
+
+    constexpr int fib_max {8};
+    std::cout &lt;&lt; &quot;Emulate `recursive lambda` calls:\nFibonacci numbers: &quot;;
+    auto nth_fibonacci = [](int n)
+    {
+        std::function&lt;int(int, int, int)&gt; fib = [&amp;](int n, int a, int b)
+        {
+            return n ? fib(n - 1, a + b, a) : b;
+        };
+        return fib(n, 0, 1);
+    };
+
+    for (int i{1}; i &lt;= fib_max; ++i)
+    {
+        std::cout &lt;&lt; nth_fibonacci(i) &lt;&lt; (i &lt; fib_max ? &quot;, &quot; : &quot;\n&quot;);
+    }
+
+    std::cout &lt;&lt; &quot;Alternative approach to lambda recursion:\nFibonacci numbers: &quot;;
+    auto nth_fibonacci2 = [](auto self, int n, int a = 0, int b = 1) -&gt; int
+    {
+        return n ? self(self, n - 1, a + b, a) : b;
+    };
+
+    for (int i{1}; i &lt;= fib_max; ++i)
+    {
+        std::cout &lt;&lt; nth_fibonacci2(nth_fibonacci2, i) &lt;&lt; (i &lt; fib_max ? &quot;, &quot; : &quot;\n&quot;);
+    }
+
+#ifdef __cpp_explicit_this_parameter
+    std::cout &lt;&lt; &quot;C++23 approach to lambda recursion:\n&quot;;
+    auto nth_fibonacci3 = [](this auto self, int n, int a = 0, int b = 1)
+    {
+         return n ? self(n - 1, a + b, a) : b;
+    };
+
+    for (int i{1}; i &lt;= fib_max; ++i)
+    {
+        std::cout &lt;&lt; nth_fibonacci3(i) &lt;&lt; (i &lt; fib_max ? &quot;, &quot; : &quot;\n&quot;);
+    }
+#endif
+}
+</code></pre>
+<p>Possible output:</p>
+<pre><code>c: 5 6 7 
+func1: 10
+func2: 10
+Emulate `recursive lambda` calls:
+Fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, 13
+Alternative approach to lambda recursion:
+Fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, 13
+</code></pre>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<p>Lambda expressions: <a href="https://en.cppreference.com/w/cpp/language/lambda">https://en.cppreference.com/w/cpp/language/lambda</a></p>
+<p>Lambda expressions: <a href="https://zh.cppreference.com/w/cpp/language/lambda">https://zh.cppreference.com/w/cpp/language/lambda</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

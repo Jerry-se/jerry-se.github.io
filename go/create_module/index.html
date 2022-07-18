@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/go/create_module/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Create module - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../getting_started/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../workspaces/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#create-go-module" class="nav-link">创建 Go 模块</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#create-module" class="nav-link">创建一个其他人可以使用的模块</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#call-module-code" class="nav-link">在另一个模块中调用代码</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#return-and-handle-errors" class="nav-link">返回并处理错误</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#random-greeting" class="nav-link">返回随即问候语</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#greeting-multiple-people" class="nav-link">回复多人问候</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#add-test" class="nav-link">添加测试</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#compile-install" class="nav-link">编译和安装应用程序</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="create-go-module">创建 Go 模块<a class="headerlink" href="#create-go-module" title="Permanent link"></a></h1>
+<p>介绍模块、函数、错误处理、数组、map、单元测试和编译安装.</p>
+<hr />
+<h2 id="create-module">创建一个其他人可以使用的模块<a class="headerlink" href="#create-module" title="Permanent link"></a></h2>
+<p>在一个模块中，您为一组离散且有用的功能收集一个或多个相关包。例如，您可能会创建一个包含具有财务分析功能的包的模块，以便其他编写财务应用程序的人可以使用您的工作。有关开发模块的更多信息，请参阅 <a href="https://go.dev/doc/modules/developing">开发和发布模块</a>。</p>
+<p>Go 代码被分组到包中，包被分组到模块中。您的模块指定了运行代码所需的依赖项，包括 Go 版本和它所需的一组其他模块。</p>
+<ol>
+<li>
+<p>为 Go 模块代码创建一个目录 <code>greetings</code>。</p>
+<pre><code>mkdir greetings
+cd greetings
+</code></pre>
+</li>
+<li>
+<p>使用<a href="https://go.dev/ref/mod#go-mod-init">命令 <code>go mod init</code></a> 启动您的模块 。</p>
+<p>运行 <code>go mod init</code> 命令，会生成你的模块路径——<code>example.com/greetings</code>. 如果您发布一个模块，这必须是 Go 工具可以从中下载您的模块的路径。那将是您的代码存储库。</p>
+<p>有关使用模块路径命名模块的更多信息，请参阅 <a href="https://go.dev/doc/modules/managing-dependencies#naming_module">管理依赖项</a>。</p>
+<pre><code>$ go mod init example.com/greetings
+go: creating new go.mod: module example.com/greetings
+</code></pre>
+</li>
+<li>
+<p>创建代码文件 greetings.go，粘贴以下代码并保存文件。</p>
+<pre><code>package greetings
+
+import "fmt"
+
+// Hello returns a greeting for the named person.
+func Hello(name string) string {
+    // Return a greeting that embeds the name in a message.
+    message := fmt.Sprintf("Hi, %v. Welcome!", name)
+    return message
+}
+</code></pre>
+<p>这是您的模块的第一个代码。它会向任何请求的呼叫者返回问候语。在此代码中，您：</p>
+<ul>
+<li>声明一个<code>greetings</code>包来收集相关功能。</li>
+<li>
+<p>实现一个<code>Hello</code>函数来返回问候语。</p>
+<p>该函数接受一个类型为 <code>string</code> 的参数 <code>name</code>。该函数还返回一个<code>string</code>. 在 Go 中，<strong>名称以大写字母开头的函数可以被不在同一个包中的函数调用</strong>。这在 Go 中称为导出名称。有关导出名称的更多信息，请参阅 Go tour 中的<a href="https://go.dev/tour/basics/3">导出名称</a>。</p>
+</li>
+<li>
+<p>声明一个<code>message</code>变量来保存你的问候。</p>
+<p>在 Go 中，<code>:=</code>运算符是在一行中声明和初始化变量的快捷方式（Go 使用右侧的值来确定变量的类型）。从长远来看，您可能已将其写为：</p>
+<pre><code>var message string
+message = fmt.Sprintf("Hi, %v. Welcome!", name)
+</code></pre>
+</li>
+<li>
+<p>使用<code>fmt</code>包的<a href="https://pkg.go.dev/fmt/#Sprintf"><code>Sprintf</code>功能</a>来创建问候消息。第一个参数是格式字符串，<code>Sprintf</code>将参数<code>name</code>的值替换为格式动词<code>%v</code>。插入参数<code>name</code>的值完成了问候文本。</p>
+</li>
+<li>将格式化的问候语文本返回给呼叫者。</li>
+</ul>
+</li>
+</ol>
+<h2 id="call-module-code">在另一个模块中调用代码<a class="headerlink" href="#call-module-code" title="Permanent link"></a></h2>
+<ol>
+<li>
+<p>为 Go 模块创建一个目录 <code>hello</code>，在这个文件夹写调用者的代码。</p>
+<pre><code>cd ..
+mkdir hello
+cd hello
+</code></pre>
+<p>目录结构如下:</p>
+<pre><code>&lt;home&gt;/
+ |-- greetings/
+ |-- hello/
+</code></pre>
+</li>
+<li>
+<p>启用依赖项跟踪</p>
+<p>运行<a href="https://go.dev/ref/mod#go-mod-init">go mod init</a>，为模块启用依赖项跟踪</p>
+<pre><code>$ go mod init example.com/hello
+go: creating new go.mod: module example.com/hello
+</code></pre>
+</li>
+<li>
+<p>创建代码文件 <code>hello.go</code> 并粘贴以下代码</p>
+<pre><code>package main
+
+import (
+    "fmt"
+
+    "example.com/greetings"
+)
+
+func main() {
+    // Get a greeting message and print it.
+    message := greetings.Hello("Gladys")
+    fmt.Println(message)
+}
+</code></pre>
+<p>在此段代码中，您:
+- 声明一个 <code>main</code> 包。在Go中，作为应用程序执行的代码必须在 <code>main</code> 包中。
+- 导入两个包 <code>example.com/greetings</code> 和 <code>fmt</code> 。这使得您的代码可以访问这些包的函数。导入 <code>example.com/greetings</code> （您之前创建的模块中的包） 使您可以访问 <code>Hello</code> 函数。导入 <code>fmt</code> ，具有处理输入和输出文本的功能，例如将文本打印到控制台。</p>
+</li>
+<li>
+<p>编辑 <code>example.com/hello</code> 模块以使用您的本地 <code>example.com/greetings</code> 模块。</p>
+<p>对于生产用途，您将 <code>example.com/greetings</code> 从其存储库发布模块（使用反映其发布位置的模块路径），Go 工具可以在其中找到它并下载它。目前，由于您尚未发布该模块，您需要调整该 <code>example.com/hello</code> 模块，以便它可以在您的本地文件系统上找到 <code>example.com/greetings</code> 代码。</p>
+<p>为此，请使用 <a href="https://go.dev/ref/mod#go-mod-edit"><code>go mod edit</code> command</a> 命令编辑 <code>example.com/hello</code> 模块以将 Go 工具从其模块路径（模块所在的位置）重定向到本地目录（模块所在的位置）。</p>
+<ol>
+<li>
+<p>在 <code>hello</code> 目录执行以下命令:</p>
+<pre><code>$ go mod edit -replace example.com/greetings=../greetings
+</code></pre>
+<p>该命令指定 <code>example.com/greetings</code> 应替换 <code>../greetings</code> 作为依赖项的定位。运行命令后， hello 目录中的 go.mod 文件应该包含一个 <a href="https://go.dev/doc/modules/gomod-ref#replace"><code>replace</code>指令</a>：</p>
+<pre><code>module example.com/hello
+
+go 1.16
+
+replace example.com/greetings =&gt; ../greetings
+</code></pre>
+</li>
+<li>
+<p>在 hello 目录中下，运行 <a href="https://go.dev/ref/mod#go-mod-tidy"><code>go mod tidy</code></a> 命令同步模块 <code>example.com/hello</code> 的依赖关系，添加代码所需但尚未在模块中跟踪的那些。</p>
+<pre><code>$ go mod tidy
+go: found example.com/greetings in example.com/greetings v0.0.0-00010101000000-000000000000
+</code></pre>
+<p>命令完成后，<code>example.com/hello</code> 模块的 go.mod 文件应如下所示：</p>
+<pre><code>module example.com/hello
+
+go 1.16
+
+replace example.com/greetings =&gt; ../greetings
+
+require example.com/greetings v0.0.0-00010101000000-000000000000
+</code></pre>
+<p>该命令在 <code>greetings</code> 目录中找到了本地代码，然后添加了一个<a href="https://go.dev/doc/modules/gomod-ref#require"><code>require</code> 指令</a>来指定<code>example.com/hello</code> 依赖 <code>example.com/greetings</code>。您在 hello.go 中导入 <code>greetings</code> 包时创建了此依赖项。</p>
+<p>模块路径后面的数字是一个<em>伪版本号</em> ——一个生成的数字用来代替语义版本号（模块还没有）。</p>
+<p>要引用<em>已发布</em>的模块，go.mod 文件通常会省略<code>replace</code>指令并使用 <code>require</code>末尾带有标记版本号的指令。</p>
+<pre><code>require example.com/greetings v1.1.0
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>在 <code>hello</code> 目录下，运行代码以确认其工作。</p>
+<pre><code>$ go run .
+Hi, Gladys. Welcome!
+</code></pre>
+</li>
+</ol>
+<h2 id="return-and-handle-errors">返回并处理错误<a class="headerlink" href="#return-and-handle-errors" title="Permanent link"></a></h2>
+<p>处理错误是可靠代码的基本特征。在下面的教程中，您将添加一些代码以从greetings模块返回错误，然后在调用者中处理它。</p>
+<ol>
+<li>
+<p>修改 <code>greetings/greetings.go</code> 如下代码。</p>
+<p>如果您不知道该问候谁，那么发送问候是没有意义的。如果名称为空，则向调用者返回错误。将以下代码复制到 <code>greetings.go</code> 并保存文件。</p>
+<pre><code>package greetings
+
+import (
+    "errors"
+    "fmt"
+)
+
+// Hello returns a greeting for the named person.
+func Hello(name string) (string, error) {
+    // If no name was given, return an error with a message.
+    if name == "" {
+        return "", errors.New("empty name")
+    }
+
+    // If a name was received, return a value that embeds the name
+    // in a greeting message.
+    message := fmt.Sprintf("Hi, %v. Welcome!", name)
+    return message, nil
+}
+</code></pre>
+<p>在这段代码中，您：</p>
+<ul>
+<li>更改函数，使其返回两个值： 一个 <code>string</code> 和一个 <code>error</code>。您的调用者将检查第二个值以查看是否发生错误。（任何 Go 函数都可以返回多个值。有关更多信息，请参阅 <a href="https://go.dev/doc/effective_go.html#multiple-returns">Effective Go</a>。）</li>
+<li>导入 Go 标准库 <code>errors</code> 包，以便您可以使用它的 <a href="https://pkg.go.dev/errors/#example-New"><code>errors.New</code> 函数</a>。</li>
+<li>添加一条<code>if</code>语句以检查无效请求（名称应为空字符串）并在请求无效时返回错误。该<code>errors.New</code>函数返回一个 <code>error</code>内部带有您的消息。</li>
+<li>添加<code>nil</code>（意味着没有错误）作为成功返回的第二个值。这样，调用者就可以看到函数成功了。</li>
+</ul>
+</li>
+<li>
+<p>在 <code>hello/hello.go</code> 文件中，处理 <code>Hello</code> 函数现在返回的错误以及非错误值。</p>
+<pre><code>package main
+
+import (
+    "fmt"
+    "log"
+
+    "example.com/greetings"
+)
+
+func main() {
+    // Set properties of the predefined Logger, including
+    // the log entry prefix and a flag to disable printing
+    // the time, source file, and line number.
+    log.SetPrefix("greetings: ")
+    log.SetFlags(0)
+
+    // Request a greeting message.
+    message, err := greetings.Hello("")
+    // If an error was returned, print it to the console and
+    // exit the program.
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // If no error was returned, print the returned message
+    // to the console.
+    fmt.Println(message)
+}
+</code></pre>
+<p>在这段代码中，您：</p>
+<ul>
+<li>将 <a href="https://pkg.go.dev/log/"><code>log</code> 包</a> 配置为在其日志消息的开头打印命令名称（“greetings:”），不带时间戳或源文件信息。</li>
+<li>将<code>Hello</code>的两个返回值（包括 error）分配给变量。</li>
+<li>将<code>Hello</code>的参数从 Gladys 的名字更改为空字符串，以便您可以尝试错误处理代码。</li>
+<li>寻找一个非 <strong>nil</strong> 的<code>error</code>值。在这种情况下继续下去是没有意义的。</li>
+<li>使用标准库中的函数<code>log package</code>来输出错误信息。如果出现错误，您可以使用 <code>log</code> 包的 <a href="https://pkg.go.dev/log?tab=doc#Fatal"><code>Fatal</code> 函数</a> 来打印错误并停止程序。</li>
+</ul>
+</li>
+<li>
+<p>在 <code>hello</code> 目录运行 hello.go 以确认代码有效。</p>
+<p>现在你传入一个空名称，会得到一个错误。</p>
+<pre><code>$ go run .
+greetings: empty name
+exit status 1
+</code></pre>
+</li>
+</ol>
+<h2 id="random-greeting">返回随即问候语<a class="headerlink" href="#random-greeting" title="Permanent link"></a></h2>
+<p>您将添加一个小片段以包含三条问候消息，然后让您的代码随机返回其中一条消息。</p>
+<p>为此，您将使用 Go slice(切片)。切片就像一个数组，只是它的大小会随着您添加和删除项目而动态变化。切片是 Go 最有用的类型之一。</p>
+<p>有关切片的更多信息，请参阅 Go 博客中的 <a href="https://blog.golang.org/slices-intro">Go slices</a>。</p>
+<ol>
+<li>
+<p>在 <code>greetings/greetings.go</code> 中，更改您的代码，使其如下所示。</p>
+<pre><code>package greetings
+
+import (
+    "errors"
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+// Hello returns a greeting for the named person.
+func Hello(name string) (string, error) {
+    // If no name was given, return an error with a message.
+    if name == "" {
+        return name, errors.New("empty name")
+    }
+    // Create a message using a random format.
+    message := fmt.Sprintf(randomFormat(), name)
+    return message, nil
+}
+
+// init sets initial values for variables used in the function.
+func init() {
+    rand.Seed(time.Now().UnixNano())
+}
+
+// randomFormat returns one of a set of greeting messages. The returned
+// message is selected at random.
+func randomFormat() string {
+    // A slice of message formats.
+    formats := []string{
+        "Hi, %v. Welcome!",
+        "Great to see you, %v!",
+        "Hail, %v! Well met!",
+    }
+
+    // Return a randomly selected message format by specifying
+    // a random index for the slice of formats.
+    return formats[rand.Intn(len(formats))]
+}
+</code></pre>
+<p>在此代码中，您：</p>
+<ul>
+<li>添加一个<code>randomFormat</code>函数，该函数返回随机选择的问候消息格式。请注意，<code>randomFormat</code>以小写字母开头，使其只能被其自己的包中的代码访问（换句话说，它不会被导出）。</li>
+<li>在<code>randomFormat</code>中，声明<code>formats</code>具有三种消息格式的切片。声明切片时，在括号中省略其大小，如下所示：<code>[]string</code>. 这告诉 Go，切片底层数组的大小可以动态更改。</li>
+<li>使用 <a href="https://pkg.go.dev/math/rand/"><code>math/rand</code>包</a> 生成一个随机数，用于从切片中选择一个项目。</li>
+<li>添加一个<code>init</code>函数以使用当前时间为<code>rand</code>包的随机数种子(seed)。Go在程序启动时自动执行<code>init</code>函数，在全局变量被初始化之后。有关<code>init</code>函数的更多信息，请参阅 <a href="https://go.dev/doc/effective_go.html#init">Effective Go</a>。</li>
+<li>在<code>Hello</code>中，调用<code>randomFormat</code>函数以获取您将返回的消息的格式，然后将格式和 <code>name</code>值一起使用来创建消息。</li>
+<li>像以前一样返回消息（或错误）。</li>
+</ul>
+</li>
+<li>
+<p>在 <code>hello/hello.go</code> 中，更改您的代码，使其如下所示。</p>
+<p>只需将 Gladys 的名字（或其他名字，如果您愿意的话）作为参数添加到 hello.go 中的<code>Hello</code>函数调用中。</p>
+<pre><code>package main
+
+import (
+    "fmt"
+    "log"
+
+    "example.com/greetings"
+)
+
+func main() {
+    // Set properties of the predefined Logger, including
+    // the log entry prefix and a flag to disable printing
+    // the time, source file, and line number.
+    log.SetPrefix("greetings: ")
+    log.SetFlags(0)
+
+    // Request a greeting message.
+    message, err := greetings.Hello("Gladys")
+    // If an error was returned, print it to the console and
+    // exit the program.
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // If no error was returned, print the returned message
+    // to the console.
+    fmt.Println(message)
+}
+</code></pre>
+</li>
+<li>
+<p>运行 hello.go 以确认代码正常运行。多次运行它，注意问候语发生了变化。</p>
+<pre><code>$ go run .
+Great to see you, Gladys!
+
+$ go run .
+Hi, Gladys. Welcome!
+
+$ go run .
+Hail, Gladys! Well met!
+</code></pre>
+</li>
+</ol>
+<h2 id="greeting-multiple-people">回复多人问候<a class="headerlink" href="#greeting-multiple-people" title="Permanent link"></a></h2>
+<p>添加对在一个请求中获取多个人的问候的支持。换句话说，处理多值输入，然后将该输入中的值与多值输出配对。为此，您需要将一组名称传递给一个函数，该函数可以为每个名称返回一个问候语。</p>
+<p>但是有一个问题。将<code>Hello</code>函数的参数从单个名称更改为一组名称会更改函数的签名。如果您已经发布了<code>example.com/greetings</code> 模块并且用户已经编写了代码调用<code>Hello</code>，那么该更改将破坏他们的程序。</p>
+<p>在这种情况下，更好的选择是编写一个具有不同名称的新函数。新函数将采用多个参数。这保留了旧功能以实现向后兼容性。</p>
+<ol>
+<li>
+<p>在 <code>greetings/greetings.go</code> 中，更改您的代码，使其如下所示。</p>
+<pre><code>package greetings
+
+import (
+    "errors"
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+// Hello returns a greeting for the named person.
+func Hello(name string) (string, error) {
+    // If no name was given, return an error with a message.
+    if name == "" {
+        return name, errors.New("empty name")
+    }
+    // Create a message using a random format.
+    message := fmt.Sprintf(randomFormat(), name)
+    return message, nil
+}
+
+// Hellos returns a map that associates each of the named people
+// with a greeting message.
+func Hellos(names []string) (map[string]string, error) {
+    // A map to associate names with messages.
+    messages := make(map[string]string)
+    // Loop through the received slice of names, calling
+    // the Hello function to get a message for each name.
+    for _, name := range names {
+        message, err := Hello(name)
+        if err != nil {
+            return nil, err
+        }
+        // In the map, associate the retrieved message with
+        // the name.
+        messages[name] = message
+    }
+    return messages, nil
+}
+
+// Init sets initial values for variables used in the function.
+func init() {
+    rand.Seed(time.Now().UnixNano())
+}
+
+// randomFormat returns one of a set of greeting messages. The returned
+// message is selected at random.
+func randomFormat() string {
+    // A slice of message formats.
+    formats := []string{
+        "Hi, %v. Welcome!",
+        "Great to see you, %v!",
+        "Hail, %v! Well met!",
+    }
+
+    // Return one of the message formats selected at random.
+    return formats[rand.Intn(len(formats))]
+}
+</code></pre>
+<p>在此代码中，您：</p>
+<ul>
+<li>添加一个<code>Hellos</code>函数，其参数是名称切片而不是单个名称。此外，您将其返回类型之一从一个 <code>string</code>更改为一个 <code>map</code>以便您可以返回映射到问候消息的名称。</li>
+<li>让新<code>Hellos</code>函数调用现有 <code>Hello</code>函数。这有助于减少重复，同时也保留这两个功能。</li>
+<li>创建一个<code>messages</code> map 映射以将每个接收到的名称（作为键）与生成的消息（作为值）相关联。在 Go 中，您使用以下语法初始化map： <code>make(map[key-type]value-type)</code>. 您有函数<code>Hellos</code>将此映射返回给调用者。有关map的更多信息，请参阅Go 博客上的 <a href="https://blog.golang.org/maps">Go maps in action</a> 。</li>
+<li>遍历您的函数收到的名称，检查每个名称是否具有非空值，然后将一条消息与每个关联。在这个 <code>for</code>循环中，<code>range</code>返回两个值：循环中当前项目的索引和项目值的副本。您不需要索引，因此您使用 Go 空白标识符（下划线）来忽略它。有关更多信息，请参阅 Effective Go 中的<a href="https://go.dev/doc/effective_go.html#blank">空白标识符</a>。</li>
+</ul>
+</li>
+<li>
+<p>在您的 <code>hello/hello.go</code> 调用代码中，传递一段名称，然后打印您返回的名称/消息映射的内容。</p>
+<pre><code>package main
+
+import (
+    "fmt"
+    "log"
+
+    "example.com/greetings"
+)
+
+func main() {
+    // Set properties of the predefined Logger, including
+    // the log entry prefix and a flag to disable printing
+    // the time, source file, and line number.
+    log.SetPrefix("greetings: ")
+    log.SetFlags(0)
+
+    // A slice of names.
+    names := []string{"Gladys", "Samantha", "Darrin"}
+
+    // Request greeting messages for the names.
+    messages, err := greetings.Hellos(names)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // If no error was returned, print the returned map of
+    // messages to the console.
+    fmt.Println(messages)
+}
+</code></pre>
+<p>通过这些更改，您可以：</p>
+<ul>
+<li>创建一个<code>names</code>变量作为包含三个名称的切片类型。</li>
+<li>将<code>names</code>变量作为参数传递给 <code>Hellos</code>函数。</li>
+</ul>
+</li>
+<li>
+<p>切换到包含 <code>hello/hello.go</code> 的目录，然后使用<code>go run</code>确认代码有效。</p>
+<p>输出应该是地图的字符串表示形式，将名称与消息相关联，如下所示：</p>
+<pre><code>$ go run .
+map[Darrin:Hail, Darrin! Well met! Gladys:Hi, Gladys. Welcome! Samantha:Hail, Samantha! Well met!]
+</code></pre>
+</li>
+</ol>
+<p>本主题介绍了用户表示名称/值对的map映射。它还引入了通过为模块中增加新函数或更改函数实现新功能来保持向后兼容性的想法。有关向后兼容性的更多信息，请参阅 <a href="https://blog.golang.org/module-compatibility">保持模块兼容</a>。</p>
+<h2 id="add-test">添加测试<a class="headerlink" href="#add-test" title="Permanent link"></a></h2>
+<p>现在您已经将代码放到了一个稳定的地方，添加一个测试，在开发期间测试您的代码可能会暴露在您进行更改时发现的错误。</p>
+<p>Go 对单元测试的内置支持使您可以更轻松地进行测试。具体来说，使用命名约定、Go 的<code>testing</code>包和<code>go test</code>命令，您可以快速编写和执行测试。</p>
+<ol>
+<li>
+<p>在 greetings 目录中，创建一个名为 <code>greetings_test.go</code> 的文件。</p>
+<p>以 _test.go 结尾的文件名告诉<code>go test</code>命令该文件包含测试函数。</p>
+</li>
+<li>
+<p>在 greetings_test.go 中，粘贴以下代码并保存文件。</p>
+<pre><code>package greetings
+
+import (
+    "testing"
+    "regexp"
+)
+
+// TestHelloName calls greetings.Hello with a name, checking
+// for a valid return value.
+func TestHelloName(t *testing.T) {
+    name := "Gladys"
+    want := regexp.MustCompile(`\b`+name+`\b`)
+    msg, err := Hello("Gladys")
+    if !want.MatchString(msg) || err != nil {
+        t.Fatalf(`Hello("Gladys") = %q, %v, want match for %#q, nil`, msg, err, want)
+    }
+}
+
+// TestHelloEmpty calls greetings.Hello with an empty string,
+// checking for an error.
+func TestHelloEmpty(t *testing.T) {
+    msg, err := Hello("")
+    if msg != "" || err == nil {
+        t.Fatalf(`Hello("") = %q, %v, want "", error`, msg, err)
+    }
+}
+</code></pre>
+<p>在此代码中，您：</p>
+<ul>
+<li>在与您正在测试的代码相同的包中实现测试函数。</li>
+<li>创建两个测试函数来测试<code>greetings.Hello</code> 函数。测试函数名称的格式为<code>TestName</code>，其中<em>Name</em>说明了特定测试。此外，测试函数将指向包 <code>testing</code> 类型 <code>testing.T</code>的指针作为参数。您可以使用此参数的方法来报告和记录您的测试。</li>
+<li>实施两个测试：<ul>
+<li><code>TestHelloName</code>调用<code>Hello</code>函数，传递一个<code>name</code>值，函数应该能够使用该值返回有效的响应消息。如果调用返回错误或意外响应消息（不包括您传入的名称），则使用t参数的 <a href="https://pkg.go.dev/testing/#T.Fatalf"><code>Fatalf</code> 方法</a>将消息打印到控制台并结束执行。</li>
+<li><code>TestHelloEmpty</code>使用空字符串调用<code>Hello</code>函数。此测试旨在确认您的错误处理是否有效。如果调用返回非空字符串或没有错误，则使用<code>t</code>参数的<code>Fatalf</code> 方法将消息打印到控制台并结束执行。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>在greetings目录下的命令行，运行 <a href="https://go.dev/cmd/go/#hdr-Test_packages"><code>go test</code> 命令</a> 执行测试。</p>
+<p><code>go test</code>命令在测试文件（名称以 _test.go 结尾）中执行测试函数（名称以 <code>Test</code> 开头）。您可以添加<code>-v</code>标志以获得列出所有测试及其结果的详细输出。</p>
+<pre><code>$ go test
+PASS
+ok      example.com/greetings   0.364s
+
+$ go test -v
+=== RUN   TestHelloName
+--- PASS: TestHelloName (0.00s)
+=== RUN   TestHelloEmpty
+--- PASS: TestHelloEmpty (0.00s)
+PASS
+ok      example.com/greetings   0.372s
+</code></pre>
+</li>
+<li>
+<p>中断<code>greetings.Hello</code>函数以查看失败的测试。</p>
+<p><code>TestHelloName</code>测试函数检查您指定名称为<code>Hello</code>的函数的返回值。要查看失败的测试结果，请更改<code>greetings.Hello</code>函数以使其不再包含名称。</p>
+<p>在 <code>greetings/greetings.go</code> 中，粘贴以下代码代替 <code>Hello</code>函数。请注意，突出显示的行会更改函数返回的值，就好像name参数被意外删除了一样。</p>
+<pre><code>// Hello returns a greeting for the named person.
+func Hello(name string) (string, error) {
+    // If no name was given, return an error with a message.
+    if name == "" {
+        return name, errors.New("empty name")
+    }
+    // Create a message using a random format.
+    // message := fmt.Sprintf(randomFormat(), name)
+    message := fmt.Sprint(randomFormat())
+    return message, nil
+}
+</code></pre>
+</li>
+<li>
+<p>在greetings目录下，运行<code>go test</code>执行测试。</p>
+<p>这一次，在<code>go test</code>没有<code>-v</code>参数的情况下运行。输出将仅包含失败测试的结果，这在您有大量测试时很有用。测试<code>TestHelloName</code>应该失败——<code>TestHelloEmpty</code>仍然通过。</p>
+<pre><code>$ go test
+--- FAIL: TestHelloName (0.00s)
+    greetings_test.go:15: Hello("Gladys") = "Hail, %v! Well met!", &lt;nil&gt;, want match for `\bGladys\b`, nil
+FAIL
+exit status 1
+FAIL    example.com/greetings   0.182s
+</code></pre>
+</li>
+</ol>
+<h2 id="compile-install">编译和安装应用程序<a class="headerlink" href="#compile-install" title="Permanent link"></a></h2>
+<p>学习几个新<code>go</code>命令。虽然该<code>go run</code>命令是在您进行频繁更改时编译和运行程序的有用快捷方式，但它不会生成二进制可执行文件。</p>
+<p>本主题介绍了用于构建代码的两个附加命令：</p>
+<ul>
+<li>该<a href="https://go.dev/cmd/go/#hdr-Compile_packages_and_dependencies"><code>go build</code> 命令</a>会编译软件包及其依赖项，但不会安装结果。</li>
+<li>该<a href="https://go.dev/ref/mod#go-install"><code>go install</code> 命令</a>编译并安装包。</li>
+</ul>
+<p>常用命令</p>
+<ol>
+<li>
+<p>从 hello 目录中的命令行，运行<code>go build</code> 命令将代码编译为可执行文件。</p>
+<pre><code>$ go build
+</code></pre>
+</li>
+<li>
+<p>从 hello 目录中的命令行，运行新的<code>hello</code> 可执行文件以确认代码有效。</p>
+<p>请注意，您的结果可能会有所不同，具体取决于您是否在测试后更改了 greetings.go 代码。</p>
+<ul>
+<li>
+<p>在 Linux 或 Mac 上：</p>
+<pre><code>$ ./hello
+map[Darrin:Great to see you, Darrin! Gladys:Hail, Gladys! Well met! Samantha:Hail, Samantha! Well met!]
+</code></pre>
+</li>
+<li>
+<p>在 Windows 上：</p>
+<pre><code>$ hello.exe
+map[Darrin:Great to see you, Darrin! Gladys:Hail, Gladys! Well met! Samantha:Hail, Samantha! Well met!]
+</code></pre>
+</li>
+</ul>
+<p>您已将应用程序编译为可执行文件，以便可以运行它。但是要在当前目录运行它，您的命令提示符需要位于可执行文件的目录中，或者指定可执行文件的路径。</p>
+<p>接下来，您将安装可执行文件，以便在不指定其路径的情况下运行它。</p>
+</li>
+<li>
+<p>发现 Go 安装路径，该<code>go</code>命令将在其中安装当前包。</p>
+<p>您可以通过运行 <a href="https://go.dev/cmd/go/#hdr-List_packages_or_modules"><code>go list</code> 命令</a> 来发现安装路径， 如下例所示：</p>
+<pre><code>$ go list -f '{{.Target}}'
+</code></pre>
+<p>例如，该命令的输出可能会<code>/home/gopher/bin/hello</code>显示 ，这意味着二进制文件将被安装到 <code>/home/gopher/bin</code>。您将在下一步中需要此安装目录。</p>
+</li>
+<li>
+<p>将 Go 安装目录添加到系统的 shell 路径。</p>
+<p>这样，您将能够运行程序的可执行文件，而无需指定可执行文件的位置。</p>
+<ul>
+<li>
+<p>在 Linux 或 Mac 上，运行以下命令：</p>
+<pre><code>$ export PATH=$PATH:/path/to/your/install/directory
+</code></pre>
+</li>
+<li>
+<p>在 Windows 上，运行以下命令：</p>
+<pre><code>$ set PATH=%PATH%;C:\path\to\your\install\directory
+</code></pre>
+</li>
+</ul>
+<p>作为替代方案，如果您的 shell 路径中已经有一个目录 <code>$HOME/bin</code>，并且您想在那里安装您的 Go 程序，您可以通过使用 <a href="https://go.dev/cmd/go/#hdr-Print_Go_environment_information"><code>go env</code> 命令</a>设置变量 <code>GOBIN</code> 来更改安装目标：</p>
+<pre><code>$ go env -w GOBIN=/path/to/your/bin
+</code></pre>
+<p>或者</p>
+<pre><code>$ go env -w GOBIN=C:\path\to\your\bin
+</code></pre>
+</li>
+<li>
+<p>更新 shell 路径后，运行<code>go install</code>命令编译和安装包。</p>
+<pre><code>$ go install
+</code></pre>
+</li>
+<li>
+<p>只需键入其名称即可运行您的应用程序。为了让这个有趣，打开一个新的命令提示符并在其他目录中运行可执行文件名<code>hello</code>。</p>
+<pre><code>$ hello
+map[Darrin:Hail, Darrin! Well met! Gladys:Great to see you, Gladys! Samantha:Hail, Samantha! Well met!]
+</code></pre>
+</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

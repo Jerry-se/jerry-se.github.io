@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/git/git/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Git - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Git</a>
+</li>
+                                    
+<li>
+    <a href="../git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../go/writing_web_app/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../git_lfs/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#git" class="nav-link">Git</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">简介</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install" class="nav-link">安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#configuration" class="nav-link">配置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#workflows" class="nav-link">流程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#init" class="nav-link">初始化</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#clone" class="nav-link">克隆</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit" class="nav-link">提交</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#push" class="nav-link">推送</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pull" class="nav-link">更新</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#branch" class="nav-link">分支</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tag" class="nav-link">标签</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#merge" class="nav-link">合并</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stash" class="nav-link">暂存stash</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#diff" class="nav-link">比较diff</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#grep" class="nav-link">查找grep</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#examples" class="nav-link">示例</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#build-server" class="nav-link">服务器搭建</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#ssh-key" class="nav-link">ssh免密</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#sparse-checkout" class="nav-link">只克隆单个文件夹</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#proxy" class="nav-link">代理设置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#http-buffer" class="nav-link">http缓冲区</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#long-path" class="nav-link">启用长路经</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#merge-example" class="nav-link">分支合并</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#create-branch-base-other" class="nav-link">在某个远程分支的基础上创建自己的分支</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#patch-diff" class="nav-link">打本地补丁</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#show-commit" class="nav-link">查看commit提交记录详情</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#commit-amend" class="nav-link">对提交的补救</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#stage" class="nav-link">暂存staged</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#show-log" class="nav-link">查看历史提交记录</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#rename" class="nav-link">重命名文件或文件夹</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#clean-work-folder" class="nav-link">清理工作区</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#delete-files-and-history-permanently" class="nav-link">永久删除文件和历史记录</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link"></a></h1>
+<p>本人总结的 Git 教程</p>
+<hr />
+<h2 id="introduction">简介<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+<p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<p>Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</p>
+<p>Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
+<p>Git Official: <a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p>Git Documentation: <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
+<p>Git Reference Guide: <a href="https://git-scm.com/docs">https://git-scm.com/docs</a></p>
+<p>Git Book: <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></p>
+<h2 id="install">安装<a class="headerlink" href="#install" title="Permanent link"></a></h2>
+<p>各系统安装官方说明: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p><a href="https://www.kernel.org/pub/software/scm/git/">Older releases</a> are available and the <a href="https://github.com/git/git">Git source repository</a> is on GitHub.</p>
+<pre><code class="language-bash">git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
+    [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
+    [-p|--paginate|-P|--no-pager] [--no-replace-objects] [--bare]
+    [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
+    [--super-prefix=&lt;path&gt;] [--config-env=&lt;name&gt;=&lt;envvar&gt;]
+    &lt;command&gt; [&lt;args&gt;]
+</code></pre>
+<p>Git 具有异常丰富的命令集，可提供高级操作和对内部的完全访问。</p>
+<p>掌握基本命令后，可以通过“git help command”了解更多关于单个 Git 命令的信息。</p>
+<h2 id="configuration">配置<a class="headerlink" href="#configuration" title="Permanent link"></a></h2>
+<p>Git 提供了一个叫做 <code>git config</code> 的工具，专门用来配置或读取相应的工作环境变量。</p>
+<p>这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。这些变量可以存放在以下三个不同的地方：</p>
+<ol>
+<li><code>/etc/gitconfig</code> 文件：系统中对所有用户都普遍适用的配置。若使用 <code>git config</code> 时用 <code>--system</code> 选项，读写的就是这个文件。</li>
+<li><code>~/.gitconfig</code> 文件：用户目录下的配置文件只适用于该用户。若使用 <code>git config</code> 时用 <code>--global</code> 选项，读写的就是这个文件。</li>
+<li>当前项目的 Git 目录中的配置文件（也就是工作目录中的 <code>.git/config</code> 文件）：这里的配置仅仅针对当前项目有效。每一个级别的配置都会覆盖上层的相同配置，所以 <code>.git/config</code> 里的配置会覆盖 <code>/etc/gitconfig</code> 中的同名变量。</li>
+</ol>
+<p>在 Windows 系统上，Git 会找寻用户主目录下的 <code>.gitconfig</code> 文件。主目录即 $HOME 变量指定的目录，一般都是 <code>C:\Documents and Settings\$USER</code>。</p>
+<p>常用的配置命令如下:</p>
+<pre><code class="language-bash"># 配置个人的用户名称和电子邮件地址：
+$ git config --global user.name &quot;runoob&quot;
+$ git config --global user.email test@runoob.com
+
+# 设置Git默认使用的文本编辑器, 一般可能会是 `Vi` 或者 `Vim`。如果你有其他偏好，比如 `Emacs` 的话，可以重新设置:
+$ git config --global core.editor emacs
+
+# 还有一个比较常用的是，在解决合并冲突时使用哪种差异分析工具。比如要改用 `vimdiff` 的话：
+# Git 可以理解 kdiff3，tkdiff，meld，xxdiff，emerge，vimdiff，gvimdiff，ecmerge，和 opendiff 等合并工具的输出信息。
+$ git config --global merge.tool vimdiff
+
+# 要检查已有的配置信息，可以使用命令：
+$ git config --list
+http.postbuffer=2M
+user.name=runoob
+user.email=test@runoob.com
+
+# 可以直接查询某个变量的设定，像这样:
+$ git config user.name
+runoob
+</code></pre>
+<p>如果要在某个特定的项目中使用其他名字或者电邮，只要去掉 <code>--global</code> 选项重新配置即可，新的设定保存在当前项目的 <code>.git/config</code> 文件里。</p>
+<p>有时候会看到重复的变量名，那就说明它们来自不同的配置文件（比如 <code>/etc/gitconfig</code> 和 <code>~/.gitconfig</code>），不过最终 Git 实际采用的是最后一个。</p>
+<p>这些配置我们也可以在 <code>~/.gitconfig</code> 或 <code>/etc/gitconfig</code> 也能看到。</p>
+<h2 id="workflows">流程<a class="headerlink" href="#workflows" title="Permanent link"></a></h2>
+<h2 id="init">初始化<a class="headerlink" href="#init" title="Permanent link"></a></h2>
+<p>git-init - 创建一个空的 Git 存储库或重新初始化现有的</p>
+<pre><code class="language-bash">git init [-q | --quiet] [--bare] [--template=&lt;template_directory&gt;]
+      [--separate-git-dir &lt;git dir&gt;] [--object-format=&lt;format&gt;]
+      [-b &lt;branch-name&gt; | --initial-branch=&lt;branch-name&gt;]
+      [--shared[=&lt;permissions&gt;]] [directory]
+</code></pre>
+<p>该命令创建一个空的Git存储库 - 本质上是一个 <code>.git</code> 目录，其中包含 <code>objects</code>、<code>refs/heads</code>、<code>refs/tags</code>和模板文件的子目录。还将创建一个引用master分支 HEAD 的初始 <code>HEAD</code> 文件。</p>
+<ul>
+<li>--bare : 创建一个纯仓库。如果未设置 <code>GIT_DIR</code> 环境变量，则将其设置为当前工作目录。</li>
+<li>--object-format=&lt;format> : 指定存储库的对象格式（哈希算法）。有效值为 <code>sha1</code> 和（如果启用）<code>sha256</code>。<code>sha1</code> 是默认值。</li>
+<li>--template=&lt;template_directory> : 指定要使用模板的目录。</li>
+<li>-b &lt;branch-name> | --initial-branch=&lt;branch-name> : 在新创建的仓库中为初始分支指定名称。如果没有指定，则使用默认名称：<code>master</code>。</li>
+<li>--shared : 指定 Git 存储库在多个用户之间共享。</li>
+</ul>
+<p>参考: <a href="https://git-scm.com/docs/git-init">https://git-scm.com/docs/git-init</a></p>
+<h2 id="clone">克隆<a class="headerlink" href="#clone" title="Permanent link"></a></h2>
+<p>将存储库克隆到新创建的目录中，为克隆存储库中的每个分支创建远程跟踪分支:</p>
+<pre><code class="language-bash">git clone [--template=&lt;template-directory&gt;]
+      [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
+      [-o &lt;name&gt;] [-b &lt;name&gt;] [-u &lt;upload-pack&gt;] [--reference &lt;repository&gt;]
+      [--dissociate] [--separate-git-dir &lt;git-dir&gt;]
+      [--depth &lt;depth&gt;] [--[no-]single-branch] [--no-tags]
+      [--recurse-submodules[=&lt;pathspec&gt;]] [--[no-]shallow-submodules]
+      [--[no-]remote-submodules] [--jobs &lt;n&gt;] [--sparse] [--[no-]reject-shallow]
+      [--filter=&lt;filter&gt; [--also-filter-submodules]] [--] &lt;repository&gt;
+      [&lt;directory&gt;]
+</code></pre>
+<ul>
+<li>git clone -q , --quiet 【远程仓库地址】: 安静地操作。进展不会报告给标准错误流。</li>
+<li>git clone  -n, --no-checkout【远程仓库地址】: 克隆完成后不会执行 HEAD 的检出。</li>
+<li>git clone --bare 【远程仓库地址】: 制作一个裸露的Git存储库。 也就是说，不要创建 <code>&lt;directory&gt;</code> 并将管理文件放置在 <code>&lt;directory&gt;/.git</code> 中，而是将 <code>&lt;directory&gt;</code> 本身设置为 <code>$GIT_DIR</code> 。 显然这意味着 <code>--no-checkout</code> ，因为没有地方可以检出工作树。 同样，将远程的分支头直接复制到相应的本地分支头，而无需将其映射到 <code>ref/remotes/origin/</code> 。 使用此选项时，不会创建远程跟踪分支或相关的配置变量。</li>
+<li>git clone --mirror 【远程仓库地址】: 设置源存储库的镜像。 这意味着裸露(<code>--bare</code>)。 与<code>--bare</code>相比，<code>--mirror</code>不仅将源的本地分支映射到目标的本地分支，还映射所有引用（包括远程跟踪分支，注释等），并设置一个refspec配置，以便所有这些引用 被目标存储库中的git远程更新覆盖。</li>
+<li>git clone -b, --branch <name> 【远程仓库地址】: 不要将新创建的HEAD指向克隆的存储库的HEAD所指向的分支，而是指向<name>分支。</li>
+<li>git clone --depth <depth> 【远程仓库地址】: 创建一个浅克隆，其历史记录被截断为指定的提交数。 表示 <code>--single-branch</code> ，除非给出 <code>--no-single-branch</code> 来获取所有分支的尖端附近的历史记录。 如果要浅层克隆子模块，则还要传递 <code>--shallow-submodules</code> 。</li>
+</ul>
+<p>参考: <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a></p>
+<h2 id="commit">提交<a class="headerlink" href="#commit" title="Permanent link"></a></h2>
+<p>git-commit - 记录对存储库的更改</p>
+<pre><code class="language-bash">git commit [-a | --interactive | --patch] [-s] [-v] [-u&lt;mode&gt;] [--amend]
+       [--dry-run] [(-c | -C | --squash) &lt;commit&gt; | --fixup [(amend|reword):]&lt;commit&gt;)]
+       [-F &lt;file&gt; | -m &lt;msg&gt;] [--reset-author] [--allow-empty]
+       [--allow-empty-message] [--no-verify] [-e] [--author=&lt;author&gt;]
+       [--date=&lt;date&gt;] [--cleanup=&lt;mode&gt;] [--[no-]status]
+       [-i | -o] [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]]
+       [(--trailer &lt;token&gt;[(=|:)&lt;value&gt;])…​] [-S[&lt;keyid&gt;]]
+       [--] [&lt;pathspec&gt;…​]
+</code></pre>
+<ul>
+<li>-F <file> : 从给定文件中获取提交消息。使用-从标准输入读取消息。</li>
+<li>-m <msg> : 使用给定的 <msg> 作为提交消息。如果给出了多个 <code>-m</code> 选项，它们的值将连接为单独的段落。<code>-m</code> 选项与<code>-c</code>、<code>-C</code>和<code>-F</code>互斥。</li>
+</ul>
+<p>参考: <a href="https://git-scm.com/docs/git-commit">https://git-scm.com/docs/git-commit</a></p>
+<h2 id="push">推送<a class="headerlink" href="#push" title="Permanent link"></a></h2>
+<p>git-push - 更新远程引用以及关联对象</p>
+<pre><code class="language-bash">git push [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=&lt;git-receive-pack&gt;]
+       [--repo=&lt;repository&gt;] [-f | --force] [-d | --delete] [--prune] [-v | --verbose]
+       [-u | --set-upstream] [-o &lt;string&gt; | --push-option=&lt;string&gt;]
+       [--[no-]signed|--signed=(true|false|if-asked)]
+       [--force-with-lease[=&lt;refname&gt;[:&lt;expect&gt;]] [--force-if-includes]]
+       [--no-verify] [&lt;repository&gt; [&lt;refspec&gt;…​]]
+</code></pre>
+<ul>
+<li>--tags : 除了在命令行上明确列出的 refspecs 之外，<code>refs/tags</code> 所有的 refs 都会被推送。</li>
+<li>--atomic : 如果可用，请在远程端使用原子事务。要么更新所有 refs，要么在错误时不更新 refs。如果服务器不支持原子推送，推送将失败。</li>
+<li>-u | --set-upstream : 对于每个最新或成功推送的分支，使用无参数 <a href="#pull">git-pull</a>和其他命令，添加上游（跟踪）引用。</li>
+</ul>
+<p>参考: <a href="https://git-scm.com/docs/git-push">https://git-scm.com/docs/git-push</a></p>
+<h2 id="pull">更新<a class="headerlink" href="#pull" title="Permanent link"></a></h2>
+<p>git-pull - 将来自远程存储库的更改合并到当前分支中</p>
+<pre><code class="language-bash">git pull [&lt;options&gt;] [&lt;repository&gt; [&lt;refspec&gt;…​]]
+</code></pre>
+<p>参考: <a href="https://git-scm.com/docs/git-pull">https://git-scm.com/docs/git-pull</a></p>
+<h2 id="branch">分支<a class="headerlink" href="#branch" title="Permanent link"></a></h2>
+<p>git-branch - 列出、创建或删除分支</p>
+<pre><code class="language-bash">git branch [--color[=&lt;when&gt;] | --no-color] [--show-current]
+    [-v [--abbrev=&lt;n&gt; | --no-abbrev]]
+    [--column[=&lt;options&gt;] | --no-column] [--sort=&lt;key&gt;]
+    [--merged [&lt;commit&gt;]] [--no-merged [&lt;commit&gt;]]
+    [--contains [&lt;commit&gt;]] [--no-contains [&lt;commit&gt;]]
+    [--points-at &lt;object&gt;] [--format=&lt;format&gt;]
+    [(-r | --remotes) | (-a | --all)]
+    [--list] [&lt;pattern&gt;…​]
+git branch [--track[=(direct|inherit)] | --no-track] [-f]
+    [--recurse-submodules] &lt;branchname&gt; [&lt;start-point&gt;]
+git branch (--set-upstream-to=&lt;upstream&gt; | -u &lt;upstream&gt;) [&lt;branchname&gt;]
+git branch --unset-upstream [&lt;branchname&gt;]
+git branch (-m | -M) [&lt;oldbranch&gt;] &lt;newbranch&gt;
+git branch (-c | -C) [&lt;oldbranch&gt;] &lt;newbranch&gt;
+git branch (-d | -D) [-r] &lt;branchname&gt;…​
+git branch --edit-description [&lt;branchname&gt;]
+</code></pre>
+<p>如果给出<code>--list</code>，或者没有非选项参数，则列出现有分支；当前分支将以绿色突出显示并标有星号。在链接的工作树中签出的任何分支都将以青色突出显示并标有加号。选项<code>-r</code>导致列出远程跟踪分支，选项<code>-a</code>显示本地和远程分支。</p>
+<p>如果<code>&lt;pattern&gt;</code>给定了 a，则将其用作 shell 通配符以将输出限制为匹配的分支。如果给出了多个模式，则如果它与任何模式匹配，则会显示一个分支。</p>
+<p>请注意，提供 <code>&lt;pattern&gt;</code> 时，您必须使用<code>--list</code>; 否则该命令可能被解释为分支创建。</p>
+<p>该命令的第二种形式创建一个名为 <code>&lt;branchname&gt;</code> 的新分支头，它指向当前的<code>HEAD</code>，或者给定的 <code>&lt;start-point&gt;</code> 。作为一种特殊情况，对于 <code>&lt;start-point&gt;</code>，您可以将<code>"A...B"</code>其用作合并基础的快捷方式，<code>A</code>并且<code>B</code>如果只有一个合并基础。您最多可以省略一个<code>A</code> and <code>B</code>，在这种情况下它默认为 <code>HEAD</code>.</p>
+<p>请注意，这将创建新分支，但不会将工作树切换到它；使用“git switch <newbranch>”切换到新分支。</p>
+<p>使用<code>-m</code>或者<code>-M</code>选项，<oldbranch> 将被重命名为 <newbranch>。如果 <oldbranch> 有相应的 reflog，则将其重命名以匹配 <newbranch>，并创建一个 reflog 条目以记住分支重命名。如果 <newbranch> 存在，则必须使用 <strong>-M</strong> 来强制进行重命名。</p>
+<p><code>-c</code>和<code>-C</code>选项与<code>-m</code>和<code>-M</code>具有完全相同的语义，除了分支不会被重命名，它将被复制到一个新名称，以及它的配置和 reflog。</p>
+<p>带有<code>-d</code>或<code>-D</code>选项，<branchname>将被删除。您可以指定多个要删除的分支。如果分支当前有 reflog，则 reflog 也将被删除。</p>
+<p><code>-r</code>与<code>-d</code>一起使用删除远程跟踪分支。请注意，只有在远程存储库中不再存在远程跟踪分支或<strong>git fetch</strong>配置为不再获取它们时，删除远程跟踪分支才有意义。</p>
+<p>参考: <a href="https://git-scm.com/docs/git-branch">https://git-scm.com/docs/git-branch</a></p>
+<h2 id="tag">标签<a class="headerlink" href="#tag" title="Permanent link"></a></h2>
+<p>git-tag - 创建、列出、删除或使用 GPG 签名的验证标签对象</p>
+<pre><code class="language-bash">git tag [-a | -s | -u &lt;keyid&gt;] [-f] [-m &lt;msg&gt; | -F &lt;file&gt;] [-e]
+    &lt;tagname&gt; [&lt;commit&gt; | &lt;object&gt;]
+git tag -d &lt;tagname&gt;…​
+git tag [-n[&lt;num&gt;]] -l [--contains &lt;commit&gt;] [--no-contains &lt;commit&gt;]
+    [--points-at &lt;object&gt;] [--column[=&lt;options&gt;] | --no-column]
+    [--create-reflog] [--sort=&lt;key&gt;] [--format=&lt;format&gt;]
+    [--merged &lt;commit&gt;] [--no-merged &lt;commit&gt;] [&lt;pattern&gt;…​]
+git tag -v [--format=&lt;format&gt;] &lt;tagname&gt;…​
+</code></pre>
+<p>在 <code>refs/tags/</code> 中添加标签引用，除非<code>-d/-l/-v</code>给出删除、列出或验证标签。</p>
+<p>除非给出<code>-f</code>，否则命名标签必须不存在。</p>
+<p>如果传递了 <code>-a</code>、 <code>-s</code>或 <code>-u &lt;keyid&gt;</code>中的一个，则该命令将创建一个标记对象，并需要一个标记消息。除非给出 <code>-m &lt;msg&gt;</code>或<code>-F &lt;file&gt;</code>，否则将启动一个编辑器供用户键入标签消息。</p>
+<p>如果<code>-m &lt;msg&gt;</code>或<code>-F &lt;file&gt;</code>被给出并且<code>-a</code>, <code>-s</code>, 和<code>-u &lt;keyid&gt;</code> 不存在,那么<code>-a</code>是隐含的。</p>
+<p>否则，将创建直接指向给定对象的标记引用（即轻量级标记）。</p>
+<p>一个 GnuPG 签名的标签对象将在<code>-s</code>或<code>-u &lt;keyid&gt;</code>使用时创建。不使用<code>-u &lt;keyid&gt;</code>时，当前用户的提交者身份用于查找 GnuPG 密钥进行签名。配置变量 <code>gpg.program</code> 用于指定自定义 GnuPG 二进制文件。</p>
+<p>标记对象（用 <code>-a</code>、 <code>-s</code>或 <code>-u</code>创建）称为“带注释的”标签(annotated tag)；它们包含创建日期、标记名称和电子邮件、标记消息和可选的 GnuPG 签名。而“轻量级”标签(lightweight tag)只是对象（通常是提交对象）的简单名称。</p>
+<p>带注释的标签用于发布，而轻量级标签用于私有或临时对象标签。出于这个原因，一些用于命名对象的 git 命令（如<code>git describe</code>）默认会忽略轻量级标签。</p>
+<blockquote>
+<p>在我们使用 <code>git push</code> 命令推送某个分支的时候，标签并不会被推送到远程仓库，所以<strong><em>我们必须显式的推送标签到远程仓库</em></strong>。</p>
+<p>使用下面两种命令则可以推送标签到远程仓库：</p>
+<ul>
+<li><code>git push &lt;remote&gt; &lt;tag_name&gt;</code>：推送某个标签到远程仓库。</li>
+<li><code>git push &lt;remote&gt; --tags</code>：推送所有标签到远程仓库。</li>
+</ul>
+<p>同样，在删除本地的标签后，要想删除远程仓库的标签，也必须使用的显式的命令：</p>
+<ul>
+<li><code>git push &lt;remote&gt; --delete &lt;tag_name&gt;</code>：删除远程仓库中的某个标签。</li>
+<li><code>git push &lt;remote&gt; :refs/tags/&lt;tagname&gt;</code>：删除远程仓库某个标签的等价方式，相当于将冒号前面的空值推送到远程标签名，从而高效地删除它。</li>
+</ul>
+</blockquote>
+<p>参考: <a href="https://git-scm.com/docs/git-tag">https://git-scm.com/docs/git-tag</a></p>
+<h2 id="merge">合并<a class="headerlink" href="#merge" title="Permanent link"></a></h2>
+<p>git-merge - 将两个或多个开发历史连接在一起</p>
+<pre><code class="language-bash">git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] 
+    [--no-verify] [-s &lt;strategy&gt;] [-X &lt; strategy-option&gt;] [-S[&lt;keyid&gt;]] 
+    [--[no-]allow-unrelated-histories] 
+    [--[no-]rerere-autoupdate] [-m &lt;msg&gt;] [-F &lt;file &gt;] 
+    [--into-name &lt;branch&gt;] [&lt;commit&gt;...​] git merge (--continue | --abort | --quit)
+</code></pre>
+<p>在应用外部更改之前，您应该让自己的工作保持良好状态并在本地提交，这样如果发生冲突就不会被破坏。另见<a href="#stash">git-stash</a>。 当本地未提交的更改与<code>git pull / git merge</code>可能需要更新的文件重叠时，<code>git pull</code>和<code>git merge</code>将停止而不做任何事情。</p>
+<p>看到冲突后，您可以做两件事：</p>
+<ul>
+<li>决定不合并。您需要的唯一清理是将索引文件重置为<code>HEAD</code>的反向提交， 并清理所做的工作树更改；<code>git merge --abort</code> 可用于此。</li>
+<li>解决冲突。Git 将标记工作树中的冲突。将文件编辑成形状 并将它们添加到索引中。使用 <code>git commit</code> 或 <code>git merge --continue</code>来完成交易。后一个命令在调用<code>git commit</code>之前检查是否正在进行（中断的）合并。</li>
+</ul>
+<p>您可以使用多种工具解决冲突：</p>
+<ul>
+<li>使用合并工具。 <code>git mergetool</code>启动图形合并工具，它将帮助您完成合并。</li>
+<li>看看差异。 <code>git diff</code>将显示三向差异，突出显示<code>HEAD</code>和<code>MERGE_HEAD</code> 版本的更改。</li>
+<li>查看每个分支的差异。<code>git log --merge -p &lt;path&gt;</code> 将首先显示<code>HEAD</code>版本的差异，然后显示 <code>MERGE_HEAD</code>版本。</li>
+<li>看看原件。 <code>git show :1:filename</code>显示共同祖先，<code>git show :2:filename</code>显示<code>HEAD</code> 版本，<code>git show :3:filename</code>显示<code>MERGE_HEAD</code> 版本。</li>
+</ul>
+<p>参考: <a href="https://git-scm.com/docs/git-merge">https://git-scm.com/docs/git-merge</a></p>
+<h2 id="stash">暂存stash<a class="headerlink" href="#stash" title="Permanent link"></a></h2>
+<p>git-stash - 将更改存储在脏工作目录中</p>
+<pre><code class="language-bash">git stash list [&lt;log-options&gt;]
+git stash show [-u|--include-untracked|--only-untracked] [&lt;diff-options&gt;] [&lt;stash&gt;]
+git stash drop [-q|--quiet] [&lt;stash&gt;]
+git stash ( pop | apply ) [--index] [-q|--quiet] [&lt;stash&gt;]
+git stash branch &lt;branchname&gt; [&lt;stash&gt;]
+git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--quiet]
+         [-u|--include-untracked] [-a|--all] [-m|--message &lt;message&gt;]
+         [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]]
+         [--] [&lt;pathspec&gt;…​]]
+git stash clear
+git stash create [&lt;message&gt;]
+git stash store [-m|--message &lt;message&gt;] [-q|--quiet] &lt;commit&gt;
+</code></pre>
+<p>当您想记录工作目录和索引的当前状态，但又想回到干净的工作目录时使用<code>git stash</code>。该命令保存您的本地修改并恢复工作目录以匹配<code>HEAD</code>提交。</p>
+<p>该命令隐藏的修改可以用 <code>git stash list</code> 列出 、<code>git stash show</code>检查和<code>git stash apply</code>恢复（可能在不同的提交之上）。<code>git stash</code>不带任何参数的调用等效于<code>git stash push</code>. 默认情况下，存储被列为“WIP on branchname ...​”，但您可以在创建时在命令行上提供更具描述性的消息。</p>
+<p>您创建的最新存储存储在<code>refs/stash</code>; 较旧的存储可在此参考的 reflog 中找到，并且可以使用通常的 reflog 语法命名（例如<code>stash@{0}</code>，是最近创建的存储，<code>stash@{1}</code>是它之前的存储，<code>stash@{2.hours.ago}</code> 也是可能的）。也可以通过仅指定存储索引来引用存储（例如，整数<code>n</code>等价于<code>stash@{n}</code>）。</p>
+<ul>
+<li>push [-m | --message <message>] [--] [<pathspec>…​ ] : 将本地修改保存到新的存储条目并将它们回滚到 HEAD（在工作树和索引中）。<code>&lt;message&gt;</code> 部分是可选的，它提供描述以及隐藏状态。</li>
+<li>save : 此选项已弃用，取而代之的是<strong>git stash push</strong>。它与“stash push”的不同之处在于它不能采用 pathspec。相反，所有非选项参数都连接起来形成存储消息。</li>
+<li>
+<p>list [<log-options>] : 列出您当前拥有的存储条目。每个存储条目都列出了它的名称（例如stash@{0}，是最新的条目，stash@{1}是之前的条目，等等），创建条目时当前分支的名称，以及该条目所基于的提交的简短描述.</p>
+<pre><code>stash@{0}: WIP on submit: 6ebd0e2... Update git-stash documentation
+stash@{1}: On master: 9cc0589... Add git-stash
+</code></pre>
+</li>
+<li>
+<p>show [-u|--include-untracked|--only-untracked] [<diff-options>] [<stash>] : 将存储条目中记录的更改显示为存储内容与首次创建存储条目时返回的提交之间的差异。默认情况下，该命令显示 diffstat，但它会接受<strong>git diff</strong>已知的任何格式（例如，<code>git stash show -p stash@{1}</code> 以补丁形式查看第二个最近的条目）。如果没有<code>&lt;diff-option&gt;</code>提供，默认行为将由config 变量<code>stash.showStat</code>和<code>stash.showPatch</code>给出。您也可以使用<code>stash.showIncludeUntracked</code>设置 <code>--include-untracked</code>选项是否默认启用。</p>
+</li>
+<li>pop [--index] [-q|--quiet] [<stash>] : 从存储列表中删除单个隐藏状态并将其应用于当前工作树状态的顶部，即执行 <code>git stash push</code> 的逆操作。工作目录必须与索引匹配。应用状态可能会因冲突而失败；在这种情况下，它不会从存储列表中删除。您需要手动解决冲突，然后手动调用<code>git stash drop</code>。</li>
+<li>apply [--index] [-q|--quiet] [<stash>] : 类似pop，但不会从stash存储列表中删除状态。不同于pop, <stash>可能是任何看起来像由<code>stash push</code>或<code>stash create</code>创建的提交。</li>
+<li>branch <branchname> [<stash>] : 创建并签出一个从<code>&lt;stash&gt;</code>最初创建的提交开始命名的新分支<code>&lt;branchname&gt;</code>，将<code>&lt;stash&gt;</code>记录的更改应用到新的工作树和索引。如果成功，并且<code>&lt;stash&gt;</code>是表单的引用 <code>stash@{&lt;revision&gt;}</code>，则删除<code>&lt;stash&gt;</code>。如果您运行<code>git stash push</code>的分支发生了足够多的更改而导致<code>git stash apply</code>由于冲突而失败，这将很有用。由于存储条目应用在运行<code>git stash</code>时为 HEAD 的提交之上，因此它恢复了最初的stash状态而没有冲突。</li>
+<li>clear : 删除所有stash条目。请注意，这些条目随后将受到修剪，并且可能无法恢复。</li>
+<li>drop [-q|--quiet] [<stash>] : 从stash列表中删除单个stash。</li>
+<li>create : 创建一个stash（这是一个常规提交对象）并返回其对象名称，而不将其存储在 ref 命名空间中的任何位置。这旨在对脚本有用。它可能不是您要使用的命令；参见上面的“push”。</li>
+<li>store : 将通过<code>git stash create</code> 创建的给定存储（这是一个悬空合并提交）存储在存储引用中，更新存储引用日志。这旨在对脚本有用。它可能不是您要使用的命令；参见上面的“push”。</li>
+</ul>
+<p>参考: <a href="https://git-scm.com/docs/git-stash">https://git-scm.com/docs/git-stash</a></p>
+<h2 id="diff">比较diff<a class="headerlink" href="#diff" title="Permanent link"></a></h2>
+<p>git-diff - 显示提交、提交和工作树等之间的更改</p>
+<pre><code class="language-bash">git diff [&lt;options&gt;] [&lt;commit&gt;] [--] [&lt;path&gt;…​]
+git diff [&lt;options&gt;] --cached [--merge-base] [&lt;commit&gt;] [--] [&lt;path&gt;…​]
+git diff [&lt;options&gt;] [--merge-base] &lt;commit&gt; [&lt;commit&gt;…​] &lt;commit&gt; [--] [&lt;path&gt;…​]
+git diff [&lt;options&gt;] &lt;commit&gt;…​&lt;commit&gt; [--] [&lt;path&gt;…​]
+git diff [&lt;options&gt;] &lt;blob&gt; &lt;blob&gt;
+git diff [&lt;options&gt;] --no-index [--] &lt;path&gt; &lt;path&gt;
+</code></pre>
+<p>参考: <a href="https://git-scm.com/docs/git-diff">https://git-scm.com/docs/git-diff</a></p>
+<h2 id="grep">查找grep<a class="headerlink" href="#grep" title="Permanent link"></a></h2>
+<p>git-grep - 输出与查找模式匹配的行</p>
+<pre><code class="language-bash">git grep [-a | --text] [-I] [--textconv] [-i | --ignore-case] [-w | --word-regexp]
+       [-v | --invert-match] [-h|-H] [--full-name]
+       [-E | --extended-regexp] [-G | --basic-regexp]
+       [-P | --perl-regexp]
+       [-F | --fixed-strings] [-n | --line-number] [--column]
+       [-l | --files-with-matches] [-L | --files-without-match]
+       [(-O | --open-files-in-pager) [&lt;pager&gt;]]
+       [-z | --null]
+       [ -o | --only-matching ] [-c | --count] [--all-match] [-q | --quiet]
+       [--max-depth &lt;depth&gt;] [--[no-]recursive]
+       [--color[=&lt;when&gt;] | --no-color]
+       [--break] [--heading] [-p | --show-function]
+       [-A &lt;post-context&gt;] [-B &lt;pre-context&gt;] [-C &lt;context&gt;]
+       [-W | --function-context]
+       [--threads &lt;num&gt;]
+       [-f &lt;file&gt;] [-e] &lt;pattern&gt;
+       [--and|--or|--not|(|)|-e &lt;pattern&gt;…​]
+       [--recurse-submodules] [--parent-basename &lt;basename&gt;]
+       [ [--[no-]exclude-standard] [--cached | --no-index | --untracked] | &lt;tree&gt;…​]
+       [--] [&lt;pathspec&gt;…​]
+</code></pre>
+<p>参考: <a href="https://git-scm.com/docs/git-grep">https://git-scm.com/docs/git-grep</a></p>
+<h2 id="examples">示例<a class="headerlink" href="#examples" title="Permanent link"></a></h2>
+<p>下面是本人实际遇到的一些示例:</p>
+<h3 id="build-server">服务器搭建<a class="headerlink" href="#build-server" title="Permanent link"></a></h3>
+<p>本地自建git服务器</p>
+<pre><code class="language-bash">jerry@jerry:~$ git init --bare demo.git
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch &lt;name&gt;
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m &lt;name&gt;
+Initialized empty Git repository in /home/jerry/demo.git/
+
+# 在另外一个文件夹下克隆此仓库
+jerry@jerry:~/Code$ git clone jerry@127.0.0.1:/home/jerry/demo.git
+Cloning into 'demo'...
+jerry@127.0.0.1's password: 
+warning: You appear to have cloned an empty repository.
+</code></pre>
+<p>clone格式:<br />
+$ git clone ssh://gituser@www.xx.com:27852/xx/git/xx/sample.git<br />
+其中 gituser：表示用户 www.xx.com：表示服务ip地址  27852表示端口 /xx/git/xx/sample.git:表示代码仓库路径</p>
+<h3 id="ssh-key">ssh免密<a class="headerlink" href="#ssh-key" title="Permanent link"></a></h3>
+<p>生成RSA密钥:</p>
+<pre><code class="language-bash">$ ssh-keygen -t rsa -C &quot;1364812552@qq.com&quot;
+</code></pre>
+<p>-t 表示密钥的类型 ，-b表示密钥的长度，-C 用于识别这个密钥的注释。</p>
+<p>linux默认生成目录是<code>~/.ssh/</code>，Windows是<code>C:\Users\Administrator\.ssh\</code></p>
+<p>复制公钥<code>id_rsa.pub</code>的内容，在Github -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key 中添加公钥。</p>
+<p>使用<code>ssh -T git@github.com</code>验证是否成功。</p>
+<h3 id="sparse-checkout">只克隆单个文件夹<a class="headerlink" href="#sparse-checkout" title="Permanent link"></a></h3>
+<p>以https://github.com/geekhac/to...子目录为例：</p>
+<pre><code class="language-bash">$ git init todomvc &amp;&amp; cd todomvc
+$ git config core.sparsecheckout true //设置允许克隆子目录
+$ echo '/examples/react/*' &gt;&gt; .git/info/sparse-checkout //设置要克隆的仓库的子目录路径
+$ git remote add origin https://github.com/geekhac/to...
+$ git pull origin master
+</code></pre>
+<p><code>/examples/react/*</code>路径可能需要相对路径，经本人测试，是否以'/'开头不影响操作结果。</p>
+<h3 id="proxy">代理设置<a class="headerlink" href="#proxy" title="Permanent link"></a></h3>
+<pre><code class="language-bash"># 设置ss
+$ git config --global http.proxy 'socks5://127.0.0.1:1080'
+$ git config --global https.proxy 'socks5://127.0.0.1:1080'
+# 设置代理
+$ git config --global http.proxy http://127.0.0.1:1080
+$ git config --global https.proxy https://127.0.0.1:1080
+# 取消代理
+$ git config --global --unset http.proxy
+$ git config --global --unset https.proxy
+</code></pre>
+<h3 id="http-buffer">http缓冲区<a class="headerlink" href="#http-buffer" title="Permanent link"></a></h3>
+<p>当仓库超过1G时，HTTPS Clone和下载ZIP文件可能会失败，使用SSH Clone更好。
+或者在增大postBuffer的同时，关闭ssl认证：</p>
+<pre><code class="language-bash">$ git config --global http.postBuffer 2048000000 # 设置为2G
+$ git config --global http.sslVerify false # 关闭sslVerify
+$ git config --global core.compression 0 # or -1
+</code></pre>
+<h3 id="long-path">启用长路经<a class="headerlink" href="#long-path" title="Permanent link"></a></h3>
+<p>git有可以创建4096长度的文件名，然而在windows最多是260，因为git用了旧版本的windows api，为此踩了个坑。</p>
+<pre><code class="language-bash">$ git checkout -f HEAD
+fatal: cannot create directory at 'src/third_party/node/linux/node-linux-x64/lib/node_modules/npm/node_modules/libnpx/node_modules/yargs/node_modules/read-pkg-up/node_modules/read-pkg/node_modules/load-json-file/node_modules/parse-json/node_modules/error-ex/node_modules': Filename too long
+$ git config --global core.longpaths true
+</code></pre>
+<h3 id="merge-example">分支合并<a class="headerlink" href="#merge-example" title="Permanent link"></a></h3>
+<p>git merge最简洁用法</p>
+<ul>
+<li>
+<p>开发分支（dev）上的代码达到上线的标准后，要合并到 master 分支</p>
+<pre><code>$ git checkout dev
+$ git pull
+$ git checkout master
+$ git merge dev
+$ git push -u origin master
+</code></pre>
+</li>
+<li>
+<p>当master代码改动了，需要更新开发分支（dev）上的代码</p>
+<pre><code>$ git checkout master 
+$ git pull 
+$ git checkout dev
+$ git merge master 
+$ git push -u origin dev
+</code></pre>
+</li>
+</ul>
+<h3 id="create-branch-base-other">在某个远程分支的基础上创建自己的分支<a class="headerlink" href="#create-branch-base-other" title="Permanent link"></a></h3>
+<pre><code class="language-bash">$ git checkout -b 本地分支名 origin/远程分支名
+$ git checkout -b develop origin/develop
+# 将自己创建的本地分支提交到远程分支，自动在远程分支上创建自己的分支
+$ git push origin 本地分支名:远端分支名xx  // 在服務器新建新分支名xxx
+$ git push origin develop:develop
+</code></pre>
+<h3 id="patch-diff">打本地补丁<a class="headerlink" href="#patch-diff" title="Permanent link"></a></h3>
+<p>只想将当前文件夹中改动的文件打包成一个patch，并不想提交相应的代码</p>
+<pre><code class="language-bash">$ git diff &gt; xxx.patch
+</code></pre>
+<p>当再次用这个patch的时候，执行命令</p>
+<pre><code class="language-bash">$ git apply xxx.patch
+</code></pre>
+<h3 id="show-commit">查看commit提交记录详情<a class="headerlink" href="#show-commit" title="Permanent link"></a></h3>
+<pre><code class="language-bash"># 查看最新的commit
+$ git show
+# 查看指定commit hashID的所有修改：
+$ git show commitId
+# 查看某次commit中具体某个文件的修改：
+$ git show commitId fileName
+</code></pre>
+<h3 id="commit-amend">对提交的补救<a class="headerlink" href="#commit-amend" title="Permanent link"></a></h3>
+<p>当我们提交(commit)后，还未push前，发现有些文件忘了暂存了，这些文件自然也不可能被上传。此时需要补救措施：即将这些文件add上，重新commit一下。
+假设文件forget.text是被遗忘的文件:</p>
+<pre><code class="language-bash"># 第一次提交(忘了文件)
+$ git commit -m &quot;commit-first-time&quot;
+# 将忘了的文件继续add上
+$ git add forget.txt
+# 重新提交一次，这样就能够将之间文件和忘了的文件一起提交了
+$ git commit --amend
+</code></pre>
+<h3 id="stage">暂存staged<a class="headerlink" href="#stage" title="Permanent link"></a></h3>
+<pre><code class="language-bash"># 暂存一个文件test.txt
+$ git add test.txt
+# 发现该文件不需要暂存，那就撤销吧
+$ git reset HEAD test.txt
+# 不想要这些修改了，丢弃修改，执行完后回到最近的暂存状态，如果没有暂存文件，则回退到最新的版本
+$ git checkout -- test.txt
+</code></pre>
+<h3 id="show-log">查看历史提交记录<a class="headerlink" href="#show-log" title="Permanent link"></a></h3>
+<pre><code class="language-bash">$ git log -- &lt;file&gt;
+# 查看每次提交的内容差异
+$ git log -p -2 -- &lt;file&gt;
+# 参数：-p 表示每次提交的内容差异，-2 则表示显示最近的两次更新。
+# 说明：该选项除了显示基本信息之外，还在附带了每次 commit 的变化。
+</code></pre>
+<h3 id="rename">重命名文件或文件夹<a class="headerlink" href="#rename" title="Permanent link"></a></h3>
+<pre><code class="language-bash">$ git mv oldname newname
+$ git mv -f oldfolder newfolder
+$ git add -u newfolder (-u选项会更新已经追踪的文件和文件夹)
+$ git commit -m &quot;changed the foldername whaddup&quot;
+</code></pre>
+<h3 id="clean-work-folder">清理工作区<a class="headerlink" href="#clean-work-folder" title="Permanent link"></a></h3>
+<p>去除工作区的修改，清空工作目录中无版本跟踪的文件或目录。</p>
+<ol>
+<li>
+<p>去除暂存区的文件，标绿的文件（git add的文件）,这样暂存区的文件会变为modify</p>
+<pre><code>$ git reset .
+</code></pre>
+</li>
+<li>
+<p>去掉modify的文件，相当于全部删除自己的修改</p>
+<pre><code>$ git checkout .
+</code></pre>
+</li>
+<li>
+<p>有时候因为冲突导致工作区有好多untrack的文件，想要清空工作区</p>
+<pre><code># 删除 untracked files
+$ git clean -f
+# 连 untracked 的目录也一起删掉
+$ git clean -fd
+# 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）
+$ git clean -xfd
+加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删
+</code></pre>
+</li>
+</ol>
+<h3 id="delete-files-and-history-permanently">永久删除文件和历史记录<a class="headerlink" href="#delete-files-and-history-permanently" title="Permanent link"></a></h3>
+<p>有些时候不小心上传了一些敏感文件(例如密码), 或者不想上传的文件没及时或忘了加到.gitignore里的,而且上传的文件又特别大的时候, 这将导致别人clone你的代码或下载zip包的时候也必须更新或下载这些无用的文件,因此, 我们需要一个方法, 永久的删除这些文件(包括该文件的历史记录).</p>
+<p>步骤1. 使用<a href="https://git-scm.com/docs/git-filter-branch">git filter-branch</a>删除文件</p>
+<pre><code class="language-bash">$ git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' \
+--prune-empty --tag-name-filter cat -- --all
+</code></pre>
+<p>其中, <code>PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA</code> 就是你要删除的文件的相对路径(相对于git仓库的根目录), 替换成你要删除的文件路径即可. 注意一点，这里的文件或文件夹，如果以 '/' 开头，则文件或文件夹会被认为是从 git 的安装目录开始。</p>
+<p>如果你要删除的目标不是文件，而是文件夹，那么请在 <code>git rm --cached</code> 命令后面添加 <code>-r</code> 命令，表示递归的删除（子）文件夹和文件夹下的文件，类似于 <code>rm -rf</code> 命令。</p>
+<p>如果你要删除的文件很多, 可以写进一个<code>.sh</code>文件批量执行, 如果文件或路径里有中文, 由于MinGW或CygWin对中文路径设置比较麻烦, 你可以使用通配符<code>*</code>号, 例如: <code>sound/music_*.mp3</code>, 这样就把sound目录下以<code>music_</code>开头的mp3文件都删除了.</p>
+<p>例如:新建一个 bash 脚本文件，<code>del-music-mp3.sh</code>:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch projects/Moon.mp3' --prune-empty --tag-name-filter cat -- --all
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch sound/Music_*.mp3' --prune-empty --tag-name-filter cat -- --all
+</code></pre>
+<p>如果你看到类似下面这样的, 就说明删除成功了:</p>
+<pre><code>Rewrite 48dc599c80e20527ed902928085e7861e6b3cbe6 (266/266)
+# Ref 'refs/heads/master' was rewritten
+</code></pre>
+<p>如果显示 <code>xxxxx unchanged</code>, 说明repo里没有找到该文件, 请检查路径和文件名是否正确.</p>
+<p>如果你想以后也不会再上传这个文件或文件夹, 请把这个文件或文件夹添加到<code>.gitignore</code>文件里, 然后再push你的repo.</p>
+<p>步骤2. 推送修改后的repo</p>
+<p>以强制覆盖的方式推送你的repo, 命令如下:</p>
+<pre><code class="language-bash">$ git push origin master --force --all
+Counting objects: 4669, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4352/4352), done.
+Writing objects: 100% (4666/4666), 35.16 MiB | 51 KiB/s, done.
+Total 4666 (delta 1361), reused 0 (delta 0)
+To https://github.com/defunkt/github-gem.git
+ + beb839d...81f21f3 master -&gt; master (forced update)
+</code></pre>
+<p>这个过程其实是重新上传我们的repo, 比较耗时, 虽然跟删掉重新建一个repo有些类似, 但是好处是保留了原有的更新记录, 所以还是有些不同的. 如果你实在不在意这些更新记录, 也可以删掉重建, 两者也差不太多, 也许后者还更直观些.</p>
+<p>为了能从打了 tag 的版本中也删除你所指定的文件或文件夹，您可以使用这样的命令来强制推送您的 Git tags：</p>
+<pre><code class="language-bash">$ git push origin master --force --tags
+</code></pre>
+<p>告诉您的协作者，从您的旧(受污染的)存储库历史中重新创建分支，而不是合并它们。一个合并提交可能会重新引入一些或所有您刚刚陷入清除麻烦的受污染的历史。</p>
+<p>步骤3. 清理和回收空间</p>
+<p>经过一段时间之后，您确信<code>git filter-branch</code>没有意外的副作用，您可以使用以下命令强制解除对本地存储库中的所有对象的引用和垃圾回收(GC)。</p>
+<pre><code class="language-bash">$ git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
+$ git reflog expire --expire=now --all
+$ git gc --prune=now
+Counting objects: 2437, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1378/1378), done.
+Writing objects: 100% (2437/2437), done.
+Total 2437 (delta 1461), reused 1802 (delta 1048)
+
+$ git gc --aggressive --prune=now
+
+Counting objects: 2437, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2426/2426), done.
+Writing objects: 100% (2437/2437), done.
+Total 2437 (delta 1483), reused 0 (delta 0)
+</code></pre>
+<p>您还可以通过将过滤后的历史推入一个新的或空的存储库，然后从GitHub创建一个新的克隆来实现这一点。</p>
+<p>上面命令的第一句也可以换成:</p>
+<pre><code class="language-bash">$ rm -rf .git/refs/original/
+</code></pre>
+<p><a href="https://git-scm.com/docs/git-filter-branch">git filter-branch</a>有很多陷阱，这些陷阱可能会对预期的历史重写产生不明显的破坏（并且由于它的性能如此糟糕，因此您几乎没有时间调查此类问题）。这些安全和性能问题不能向后兼容修复，因此不建议使用它。请使用替代历史过滤工具，例如<a href="https://github.com/newren/git-filter-repo/">git filter-repo</a>。</p>
+<p>参考 github的帮助 <a href="https://help.github.com/articles/remove-sensitive-data">remove sensitive data</a> ,说明了一种使用BFG工具的思路，可能更便利。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -50,12 +50,78 @@
                             <li class="navitem">
                                 <a href="../../markdown/" class="nav-link">Markdown</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Git <b class="caret"></b></a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
     <a href="./" class="dropdown-item active">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
 </li>
                                 </ul>
                             </li>
@@ -72,6 +138,15 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -81,12 +156,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../markdown/" class="nav-link">
+                                <a rel="prev" href="../git/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../python/build_blogs_with_pelican/" class="nav-link">
+                                <a rel="next" href="../gitea/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -110,35 +185,55 @@
             
             <li class="nav-item" data-level="1"><a href="#git-lfs" class="nav-link">Git LFS</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">使用目的</a>
+            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">使用目的</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">原理</a>
+            <li class="nav-item" data-level="2"><a href="#principle" class="nav-link">原理</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">安装</a>
+            <li class="nav-item" data-level="2"><a href="#install" class="nav-link">安装</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">配置</a>
+            <li class="nav-item" data-level="2"><a href="#usage" class="nav-link">用法</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">配置总结</a>
+            <li class="nav-item" data-level="2"><a href="#usage-summary" class="nav-link">用法总结</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#lfs" class="nav-link">使用LFS管理历史大文件</a>
+            <li class="nav-item" data-level="2"><a href="#example-usage" class="nav-link">使用LFS管理历史大文件</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">总结</a>
+            <li class="nav-item" data-level="2"><a href="#help-command" class="nav-link">帮助命令</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">参考链接</a>
+            <li class="nav-item" data-level="2"><a href="#lfs-test-server" class="nav-link">LFS Test Server</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#install-lfs-server" class="nav-link">安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#run-lfs-server" class="nav-link">运行</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#lfs-server-example" class="nav-link">示例用法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#summary" class="nav-link">总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考链接</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -152,7 +247,7 @@
 <h1 id="git-lfs">Git LFS<a class="headerlink" href="#git-lfs" title="Permanent link"></a></h1>
 <p>Git LFS 是 Github 开发的一个 Git 的扩展，用于实现 Git 对大文件的支持。</p>
 <hr />
-<h2 id="_1">使用目的<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
+<h2 id="purpose">使用目的<a class="headerlink" href="#purpose" title="Permanent link"></a></h2>
 <p>有些用户，尤其是游戏行业以及媒体行业人员可能会遇到一个问题，那就是随着提交的文件越来越多，项目
 越来越大，Git的响应速度越来越慢，更烦人的是，在提交到远程仓库的最后一刻，系统可能会提示用户此次
 提交被拒绝，原因是提交的文件太大，触发平台额度限制(无论是哪个平台)，相信很多人在这一刻是崩溃的。</p>
@@ -162,8 +257,8 @@
 时也影响仓库上传到远程端。</p>
 <p>Git LFS相当于Git的一种插件式增强工具，简单讲，它是在Git仓库使用这些文件的 <code>指针</code>代替 <code>实际文件</code>，
 而把实际文件存储在远程端LFS服务器，同时在本地仓库中实时追踪这些文件的变动。</p>
-<p><img alt="principle" src="/img/git_lfs_principle.webp" /></p>
-<h2 id="_2">原理<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<p><img alt="principle" src="../../img/git_lfs_principle.webp" /></p>
+<h2 id="principle">原理<a class="headerlink" href="#principle" title="Permanent link"></a></h2>
 <p>根据 <code>Git LFS</code>官方帮助文档描述：</p>
 <p>Git LFS是基于Git的 .gitattributs 配置文件的特性，用 <code>smudge</code>过滤器基于 <code>指针文件</code>寻找大文件内
 容， 用 <code>clean</code>过滤器在对大文件改动时，创建指针文件的新版本。同时还用 <code>pre-push</code>钩子将大文件上传
@@ -184,7 +279,7 @@ size 14651
 <p><code>version</code>表示LFS的版本</p>
 <p><code>oid</code>表示文件对象的唯一hash值</p>
 <p><code>size</code>表示文件的大小</p>
-<h2 id="_3">安装<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
+<h2 id="install">安装<a class="headerlink" href="#install" title="Permanent link"></a></h2>
 <p>注意：以下安装以及命令使用演示，均是基于Linux中命令行的方式进行，Windows上的图像界面
 操作，由于时间关系，暂不涉及。</p>
 <p>安装依赖： Git &gt;=1.8.5</p>
@@ -199,7 +294,7 @@ sudo apt-get install git-lfs
 <blockquote>
 <p><a href="https://github.com/git-lfs/git-lfs#installing">https://github.com/git-lfs/git-lfs#installing</a></p>
 </blockquote>
-<h2 id="_4">配置<a class="headerlink" href="#_4" title="Permanent link"></a></h2>
+<h2 id="usage">用法<a class="headerlink" href="#usage" title="Permanent link"></a></h2>
 <ul>
 <li>
 <p>在Git仓库中为仓库设置相关配置：</p>
@@ -254,7 +349,7 @@ $ git commit -m "add .gitattributes"
 </code></pre>
 </li>
 </ul>
-<h2 id="_5">配置总结<a class="headerlink" href="#_5" title="Permanent link"></a></h2>
+<h2 id="usage-summary">用法总结<a class="headerlink" href="#usage-summary" title="Permanent link"></a></h2>
 <p>安装Git LFS之后，只需三步，即可在仓库中配置LFS功能，即：</p>
 <pre><code>#step 1
 $ git lfs install
@@ -270,7 +365,7 @@ $ git add .gitattributes
 <p class="admonition-title">Tips：</p>
 <p>运行 git lfs uninstall 即可取消LFS的全局配置</p>
 </div>
-<h2 id="lfs">使用LFS管理历史大文件<a class="headerlink" href="#lfs" title="Permanent link"></a></h2>
+<h2 id="example-usage">使用LFS管理历史大文件<a class="headerlink" href="#example-usage" title="Permanent link"></a></h2>
 <p>如果一个仓库中原来已经提交了一些大文件，此时即使运行 <code>git lfs track</code>也不会有效的。</p>
 <p>为了将仓库中现存的大文件应用到LFS，需要用 <code>git lfs migrate</code>导入到LFS中：</p>
 <pre><code class="language-bash">$ git lfs migrate import --include-ref=master --include=&quot;biger.zip&quot;
@@ -310,12 +405,85 @@ To gitee.com:hightest/lfs-demo.git
 </code></pre>
 <p>至此，已经将历史提交中的大文件迁移到远程LFS服务器，本地Git仓库，只保留这个大文件的指针
 文件，所以推送也不会再触发额度限制。推送成功之后，远程仓库就与本地保存一致，它只管理这个大文件的指针文件。</p>
-<h2 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link"></a></h2>
+<h2 id="help-command">帮助命令<a class="headerlink" href="#help-command" title="Permanent link"></a></h2>
+<p>直接获得有关特定命令的帮助：</p>
+<pre><code class="language-bash">$ git lfs help &lt;subcommand&gt;
+</code></pre>
+<p><a href="https://github.com/git-lfs/git-lfs/blob/main/docs">官方文档</a>有该工具的命令参考和规范。wiki 上还有一个<a href="https://github.com/git-lfs/git-lfs/wiki/FAQ">常见问题解答</a>，它回答了一些常见问题。</p>
+<p>如果您对如何使用 Git LFS 有疑问，不确定某事，或者正在寻找其他人关于最佳实践或用例提示的输入，请随时 <a href="https://github.com/git-lfs/git-lfs/discussions">开始讨论</a>。</p>
+<p>您可以随时<a href="https://github.com/git-lfs/git-lfs/issues">打开问题</a>，其中一位核心团队成员会回复您。</p>
+<h2 id="lfs-test-server">LFS Test Server<a class="headerlink" href="#lfs-test-server" title="Permanent link"></a></h2>
+<p>LFS Test Server 是一个实现<a href="https://github.com/github/git-lfs/tree/master/docs/api#readme">Git LFS API</a>的示例服务器。它旨在用于测试<a href="https://github.com/github/git-lfs">Git LFS</a>客户端，并未处于生产就绪状态。</p>
+<p>LFS Test Server 是用 Go 编写的，预编译的二进制文件可用于 Mac、Windows、Linux 和 FreeBSD。</p>
+<p>自建 LFS Server 请参考: <a href="https://github.com/git-lfs/lfs-test-server">LFS Test Server</a></p>
+<h3 id="install-lfs-server">安装<a class="headerlink" href="#install-lfs-server" title="Permanent link"></a></h3>
+<p>使用 Go 安装程序:</p>
+<pre><code class="language-bash">$ go install github.com/github/lfs-test-server
+# or
+$ go install github.com/github/lfs-test-server@latest
+</code></pre>
+<p>从源代码安装，请使用 Go 工具:</p>
+<pre><code class="language-bash">$ go get github.com/github/lfs-test-server
+$ go build
+</code></pre>
+<h3 id="run-lfs-server">运行<a class="headerlink" href="#run-lfs-server" title="Permanent link"></a></h3>
+<p>默认情况下，运行二进制文件将启动 LFS 服务器<code>localhost:8080</code>。可以通过环境变量配置的东西很少：</p>
+<pre><code class="language-no-highlight">LFS_LISTEN      # The address:port the server listens on, default: &quot;tcp://:8080&quot;
+LFS_HOST        # The host used when the server generates URLs, default: &quot;localhost:8080&quot;
+LFS_METADB      # The database file the server uses to store meta information, default: &quot;lfs.db&quot;
+LFS_CONTENTPATH # The path where LFS files are store, default: &quot;lfs-content&quot;
+LFS_ADMINUSER   # An administrator username, default: not set
+LFS_ADMINPASS   # An administrator password, default: not set
+LFS_CERT        # Certificate file for tls
+LFS_KEY         # tls key
+LFS_SCHEME      # set to 'https' to override default http
+LFS_USETUS      # set to 'true' to enable tusd (tus.io) resumable upload server; tusd must be on PATH, installed separately
+LFS_TUSHOST     # The host used to start the tusd upload server, default &quot;localhost:1080&quot;
+</code></pre>
+<p>如果设置了<code>LFS_ADMINUSER</code>和<code>LFS_ADMINPASS</code>变量，则可以通过 访问基本的管理界面 <code>http://$LFS_HOST/mgmt</code>。在这里您可以添加和删除用户，这必须在您可以将服务器与客户端一起使用之前完成。如果未设置这些变量中的任何一个（这是默认设置），则禁用管理界面。</p>
+<p>要将 LFS 测试服务器与 Git LFS 客户端一起使用，请在存储库的<code>.gitconfig</code>文件中对其进行配置：</p>
+<pre><code class="language-no-highlight">[lfs]
+  url = &quot;http://localhost:8080/&quot;
+</code></pre>
+<p>HTTPS：</p>
+<p>注意：如果将 https 与自签名证书一起使用，也会在客户端 repo 中禁用证书检查。</p>
+<pre><code class="language-no-highlight">[lfs]
+  url = &quot;https://localhost:8080/&quot;
+[http]
+  sslverify = false
+</code></pre>
+<h3 id="lfs-server-example">示例用法<a class="headerlink" href="#lfs-server-example" title="Permanent link"></a></h3>
+<p>生成密钥对</p>
+<pre><code class="language-bash">openssl req -x509 -sha256 -nodes -days 2100 -newkey rsa:2048 -keyout mine.key -out mine.crt
+</code></pre>
+<p>创建一个运行脚步</p>
+<pre><code class="language-bash">#!/bin/bash
+
+set -eu
+set -o pipefail
+
+
+LFS_LISTEN=&quot;tcp://:9999&quot;
+LFS_HOST=&quot;127.0.0.1:9999&quot;
+LFS_CONTENTPATH=&quot;content&quot;
+LFS_ADMINUSER=&quot;&lt;cool admin user name&gt;&quot;
+LFS_ADMINPASS=&quot;&lt;better admin password&gt;&quot;
+LFS_CERT=&quot;mine.crt&quot;
+LFS_KEY=&quot;mine.key&quot;
+LFS_SCHEME=&quot;https&quot;
+
+export LFS_LISTEN LFS_HOST LFS_CONTENTPATH LFS_ADMINUSER LFS_ADMINPASS LFS_CERT LFS_KEY LFS_SCHEME
+
+./lfs-test-server
+</code></pre>
+<p>在浏览器打开管理页面：<a href="https://localhost:9999/mgmt">https://localhost:9999/mgmt</a></p>
+<h2 id="summary">总结<a class="headerlink" href="#summary" title="Permanent link"></a></h2>
 <p>Git LFS是一个易于安装、易于配置，使用高效的Git拓展工具，它能有效的管理仓库中的大文件，
 避免仓库体积过大，影响项目管理效率。同时，Gitee平台对Git LFS功能有很好的支持，再加上灵
 活的空间配额管理，让企业实现自动扩容，方便的解决了企业在项目开发中遇到的仓库大文件问题。</p>
-<h2 id="_7">参考链接<a class="headerlink" href="#_7" title="Permanent link"></a></h2>
+<h2 id="references">参考链接<a class="headerlink" href="#references" title="Permanent link"></a></h2>
 <p><a href="https://git-lfs.github.com/">Git Large File Storage</a></p>
+<p><a href="https://github.com/git-lfs/git-lfs/wiki">Git LFS Wiki</a></p>
 <p><a href="https://git-scm.com/docs/gitattributes">gitattributes</a></p>
 <p><a href="https://gitee.com/help/articles/4235">Git LFS 操作指南</a></p></div>
             </div>

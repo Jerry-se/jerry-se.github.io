@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/go/workspaces/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Workspaces - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../create_module/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../web_service_gin/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#multi-module-workspace" class="nav-link">多模块工作区</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#create-module" class="nav-link">创建一个模块</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-workspace" class="nav-link">创建工作区</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#download-and-modify-example" class="nav-link">下载和修改golang.org/x/example模块</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#learn-more-about-workspaces" class="nav-link">了解有关工作区的更多信息</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="multi-module-workspace">多模块工作区<a class="headerlink" href="#multi-module-workspace" title="Permanent link"></a></h1>
+<p>使用多模块工作区，告诉 Go 命令您正在同时在多个模块中编写代码，并轻松地在这些模块中构建和运行代码。</p>
+<hr />
+<p>在本教程中，您将在共享的多模块工作区中创建两个模块，对这些模块进行更改，并在构建中查看这些更改的结果。</p>
+<blockquote>
+<p>本教程需要 go 1.18 或更高版本。</p>
+</blockquote>
+<h2 id="create-module">创建一个模块<a class="headerlink" href="#create-module" title="Permanent link"></a></h2>
+<ol>
+<li>
+<p>打开命令提示符并切换到您的主目录，为您的代码创建一个名为工作区的目录。</p>
+<pre><code>$ mkdir workspace
+$ cd workspace
+</code></pre>
+</li>
+<li>
+<p>初始化模块</p>
+<p>创建一个依赖于 <code>golang.org/x/example</code> 模块的新模块 <code>hello</code> 。</p>
+<pre><code>$ mkdir hello
+$ cd hello
+$ go mod init example.com/hello
+go: creating new go.mod: module example.com/hello
+</code></pre>
+<p>使用<code>go get</code>命令添加对 <code>golang.org/x/example</code> 模块的依赖项。</p>
+<pre><code>$ go get golang.org/x/example
+</code></pre>
+</li>
+<li>
+<p>在 hello 目录下创建 hello.go，内容如下：</p>
+<pre><code>package main
+
+import (
+    "fmt"
+
+    "golang.org/x/example/stringutil"
+)
+
+func main() {
+    fmt.Println(stringutil.Reverse("Hello"))
+}
+</code></pre>
+</li>
+<li>
+<p>运行hello程序：</p>
+<pre><code>$ go run example.com/hello
+olleH
+</code></pre>
+</li>
+</ol>
+<h2 id="create-workspace">创建工作区<a class="headerlink" href="#create-workspace" title="Permanent link"></a></h2>
+<p>在这一步中，我们将创建一个<code>go.work</code>文件来指定模块的工作区。</p>
+<ol>
+<li>
+<p>初始化工作区</p>
+<p>在 <code>workspace</code> 目录中，运行：</p>
+<pre><code>$ go work init ./hello
+</code></pre>
+<p>该<code>go work init</code>命令告诉<code>go</code>为工作空间中包含在目录<code>./hello</code>的模块创建一个<code>go.work</code>文件。</p>
+<p>该<code>go</code>命令生成一个如下所示的文件<code>go.work</code>：</p>
+<pre><code>go 1.18
+
+use ./hello
+</code></pre>
+<p>该<code>go.work</code>文件的语法与<code>go.mod</code>相似。</p>
+<p>该<code>go</code>指令告诉 Go 应该使用哪个版本的 Go 来解释文件。它类似于 <code>go.mod</code> 文件中的go指令。</p>
+<p>该<code>use</code>指令告诉 Go 在进行构建时目录<code>hello</code>中的模块应该是主模块。</p>
+<p>所以在<code>workspace</code>的任何子目录中模块都会被激活。</p>
+</li>
+<li>
+<p>运行工作区目录下的程序</p>
+<p>在workspace目录中，运行：</p>
+<pre><code>$ go run example.com/hello
+olleH
+</code></pre>
+<p>Go 命令包括工作区中的所有模块作为主模块。这允许我们在模块中引用一个包，甚至在模块之外。在模块或工作区之外运行<code>go run</code>命令会导致错误，因为该<code>go</code>命令不知道要使用哪些模块。</p>
+<p>接下来，我们将<code>golang.org/x/example</code>模块的本地副本添加到工作区。然后，我们将向<code>stringutil</code>包中添加一个新函数，我们可以使用它来代替<code>Reverse</code>.</p>
+</li>
+</ol>
+<h2 id="download-and-modify-example">下载和修改<code>golang.org/x/example</code>模块<a class="headerlink" href="#download-and-modify-example" title="Permanent link"></a></h2>
+<p>在这一步中，我们将下载包含<code>golang.org/x/example</code>模块的 Git 存储库的副本，将其添加到工作区，然后向其中添加一个我们将从 hello 程序中使用的新函数。</p>
+<ol>
+<li>
+<p>克隆存储库</p>
+<p>在 workspace 目录中，运行 <code>git</code> 命令克隆存储库：</p>
+<pre><code>$ git clone https://go.googlesource.com/example
+Cloning into 'example'...
+remote: Total 165 (delta 27), reused 165 (delta 27)
+Receiving objects: 100% (165/165), 434.18 KiB | 1022.00 KiB/s, done.
+Resolving deltas: 100% (27/27), done.
+</code></pre>
+</li>
+<li>
+<p>将<code>example</code>模块添加到工作区</p>
+<pre><code>$ go work use ./example
+</code></pre>
+<p>该<code>go work use</code>命令将一个新模块添加到 go.work 文件中。它现在看起来像这样：</p>
+<pre><code>go 1.18
+
+use (
+    ./hello
+    ./example
+)
+</code></pre>
+<p>模块现在包括<code>example.com/hello</code>模块和<code>golang.org/x/example</code>模块。</p>
+<p>这将允许我们使用我们将在<code>stringutil</code>模块副本中编写的新代码，而不是使用命令<code>go get</code>下载的模块缓存中的模块版本。</p>
+</li>
+<li>
+<p>添加新函数</p>
+<p>我们将向<code>golang.org/x/example/stringutil</code>包中添加一个新函数以将字符串大写。</p>
+<p>在目录<code>workspace/example/stringutil</code>中创建一个名为<code>toupper.go</code>的新文件，包含以下内容：</p>
+<pre><code>package stringutil
+
+import "unicode"
+
+// ToUpper uppercases all the runes in its argument string.
+func ToUpper(s string) string {
+    r := []rune(s)
+    for i := range r {
+        r[i] = unicode.ToUpper(r[i])
+    }
+    return string(r)
+}
+</code></pre>
+</li>
+<li>
+<p>修改hello程序以使用该函数。</p>
+<p>修改<code>workspace/hello/hello.go</code>文件，内容如下:</p>
+<pre><code>package main
+
+import (
+    "fmt"
+
+    "golang.org/x/example/stringutil"
+)
+
+func main() {
+    fmt.Println(stringutil.ToUpper("Hello"))
+}
+</code></pre>
+</li>
+<li>
+<p>在workspace目录下，运行代码</p>
+<pre><code>$ go run example.com/hello
+HELLO
+</code></pre>
+<p>Go 命令在文件<code>go.work</code>指定的目录<code>hello</code>中查找命令行中指定的模块<code>example.com/hello</code>，同样使用文件<code>go.work</code>解析导入<code>golang.org/x/example</code>。</p>
+<p><code>go.work</code>可以用来代替添加<code>replace</code> 指令以跨多个模块工作。</p>
+<p>由于这两个模块在同一个工作区中，因此很容易在一个模块中进行更改并在另一个模块中使用它。</p>
+</li>
+<li>
+<p>未来的一步</p>
+<p>现在，要正确发布这些模块，我们需要发布<code>golang.org/x/example</code> 模块，例如在<code>v0.1.0</code>。这通常通过在模块的版本控制存储库上标记提交来完成。有关更多详细信息，请参阅 <a href="https://go.dev/doc/modules/release-workflow">模块发布工作流程文档</a> 。发布完成后，我们可以在<code>hello/go.mod</code>中增加对 <code>golang.org/x/example</code> 模块的要求：</p>
+<pre><code>cd hello
+go get golang.org/x/example@v0.1.0
+</code></pre>
+<p>这样，该go命令可以正确解析工作区之外的模块。</p>
+</li>
+</ol>
+<h2 id="learn-more-about-workspaces">了解有关工作区的更多信息<a class="headerlink" href="#learn-more-about-workspaces" title="Permanent link"></a></h2>
+<p>除了我们在教程前面看到的<code>go work init</code>之外，go命令还有几个用于处理工作区的子命令：</p>
+<ul>
+<li><code>go work use [-r] [dir]</code> 如果目录<code>dir</code>存在，则将<code>use</code>指令添加到文件<code>go.work</code>中，如果参数目录不存在，则删除该<code>use</code>目录。标志<code>-r</code>递归地检查<code>dir</code>子目录。</li>
+<li><code>go work edit</code> 编辑<code>go.work</code>文件类似于<code>go mod edit</code></li>
+<li><code>go work sync</code>将工作区构建列表中的依赖项同步到每个工作区模块中。</li>
+</ul>
+<p>有关workspaces(工作区)和<code>go.work</code>文件的更多详细信息，请参阅 Go Modules Reference 中的 <a href="https://go.dev/ref/mod#workspaces">Workspaces</a>。</p>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<p><a href="https://go.dev/doc/tutorial/workspaces">https://go.dev/doc/tutorial/workspaces</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

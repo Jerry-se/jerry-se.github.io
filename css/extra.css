@@ -16,6 +16,54 @@ div.col-md-9 h1:first-of-type .headerlink {
     display: none;
 }
 
+/* 代码块样式 */
+
+p code,table td:last-child code,.content ul li code,code.mark {
+	padding: 2px 6px;
+	font-size: 94%;
+	color: #333;
+	background-color: #f1f1f1;
+	border-radius: 3px
+}
+
+a code {
+	color: inherit;
+	background: none;
+	padding: 0
+}
+
+/* code,.code,.syntax,.green-box,.sky-box,.gray-box,.pink-box,.red-box,.at-rule,.codebox pre,.console-output,.command {
+	font-size: 16px;
+	font-family: Consolas,Monaco,Courier,monospace
+} */
+
+/* 标题中代码块字体大小 */
+
+h1 code,h2 code,h3 code {
+	font: inherit
+}
+
+/* 围栏式代码块样式 */
+
+/* code[class*=language-],pre[class*=language-] {
+	color: #ccc;
+	background: none;
+	font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none
+} */
+
 code.no-highlight {
     color: black;
 }

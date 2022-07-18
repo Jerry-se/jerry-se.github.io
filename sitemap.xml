@@ -2,32 +2,187 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jerry-se.github.io/</loc>
-         <lastmod>2022-05-31</lastmod>
+         <lastmod>2022-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jerry-se.github.io/about/</loc>
-         <lastmod>2022-05-31</lastmod>
+         <lastmod>2022-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jerry-se.github.io/markdown/</loc>
-         <lastmod>2022-05-31</lastmod>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/cplusplus/lambda/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/cplusplus/questions/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/database/mysql/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/git/git/</loc>
+         <lastmod>2022-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jerry-se.github.io/git/git_lfs/</loc>
-         <lastmod>2022-05-31</lastmod>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/git/gitea/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/git/github_rest_api/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/create_module/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/generics/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/getting_started/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/go/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/install/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/web_service_gin/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/workspaces/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/writing_web_app/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/wiki/final.go/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/wiki/part1.go/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/wiki/part2.go/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/go/wiki/part3.go/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/google/chromium_build_instructions/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/google/google_search_tips/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/linux_development/gdb/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/linux_development/ipmi/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/linux_development/nc/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/linux_development/strace/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/linux_development/vim/</loc>
+         <lastmod>2022-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/build_blogs_with_pelican/</loc>
-         <lastmod>2022-05-31</lastmod>
+         <lastmod>2022-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/mkdocs/</loc>
-         <lastmod>2022-05-31</lastmod>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/tool/frp/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/tool/v2ray/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/windows_development/automatic_power_up/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/windows_development/autostart/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/windows_development/shell_development/default_programs/</loc>
+         <lastmod>2022-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/windows_development/shell_development/file_association/</loc>
+         <lastmod>2022-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

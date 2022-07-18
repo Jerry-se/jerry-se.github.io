@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/google/chromium_build_instructions/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>下载编译Chromium {#check_out_and_build_chromium} - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#check_out_and_build_chromium" class="nav-link">下载编译Chromium</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#depot_tools" class="nav-link">depot_tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">环境变量</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">设置代理</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gclient" class="nav-link">gclient</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#git" class="nav-link">Git 配置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#get-the-code" class="nav-link">Get the code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">构建</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">编译</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="check_out_and_build_chromium">下载编译Chromium<a class="headerlink" href="#check_out_and_build_chromium" title="Permanent link"></a></h1>
+<h2 id="depot_tools">depot_tools<a class="headerlink" href="#depot_tools" title="Permanent link"></a></h2>
+<ol>
+<li>Windows: <a href="https://storage.googleapis.com/chrome-infra/depot_tools.zip">https://storage.googleapis.com/chrome-infra/depot_tools.zip</a></li>
+<li>Linux:</li>
+</ol>
+<pre><code class="language-shell">git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+</code></pre>
+<h2 id="_1">环境变量<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
+<pre><code class="language-bash"># windows
+# 首先向环境变量PATH添加 `C:\src\depot_tools`，最好在Python路径之前
+$ set DEPOT_TOOLS_UPDATE=0
+# 这告诉depot_tools使用本地安装的Visual Studio版本（默认情况下，depot_tools将尝试使用google内部版本）
+$ set DEPOT_TOOLS_WIN_TOOLCHAIN=0
+$ set vs2017_install=&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise&quot;
+$ set vs2022_install=C:\Program Files\Microsoft Visual Studio\2022\Professional
+$ set vs2022_install=C:\Program Files\Microsoft Visual Studio\2022\Community
+
+# vs2015的设置
+$ set GYP_MSVS_VERSION=2015
+$ set GYP_MSVS_OVERRIDE_PATH=C:\Program Files (x86)\Microsoft Visual Studio 14.0
+
+# linux
+# depot tool path必须使用全路径，不要使用~/depot_tools
+$ export PATH=&quot;$PATH:/path/to/depot_tools&quot;
+$ export DEPOT_TOOLS_UPDATE=0
+</code></pre>
+<h2 id="_2">设置代理<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<pre><code class="language-shell"># windows
+$ set http_proxy=127.0.0.1:10809
+$ set https_proxy=127.0.0.1:10809
+# linux
+$ export http_proxy=127.0.0.1:10809
+$ export https_proxy=127.0.0.1:10809
+# Git proxy
+$ git config --global http.proxy &quot;http://127.0.0.1:10809&quot;
+$ git config --global https.proxy &quot;https://127.0.0.1:10809&quot;
+</code></pre>
+<h2 id="gclient">gclient<a class="headerlink" href="#gclient" title="Permanent link"></a></h2>
+<p>$ gclient</p>
+<p>--nohooks
+--no-history 不想要完整的历史记录
+--jobs 16  if you wish to use parallelism</p>
+<p>可以修改<code>.gclient</code>文件来不下载某些依赖库，例如以下三个文件夹是编译后生成的文件，不下载不影响编译和调试。</p>
+<pre><code>solutions = [
+  {
+    &quot;name&quot;: &quot;src&quot;,
+    &quot;url&quot;: &quot;https://gitee.com/jerry-se/chromium_deps.git&quot;,
+    &quot;managed&quot;: False,
+    &quot;custom_deps&quot;: {
+      &quot;src/chrome/tools/test/reference_build/chrome_mac&quot;: None,
+      &quot;src/chrome/tools/test/reference_build/chrome_win&quot;: None,
+      &quot;src/chrome/tools/test/reference_build/chrome_linux&quot;: None,
+    },
+    &quot;custom_vars&quot;: {},
+  },
+]
+target_os = [&quot;win&quot;]
+</code></pre>
+<h2 id="git">Git 配置<a class="headerlink" href="#git" title="Permanent link"></a></h2>
+<p>Windows环境需要</p>
+<pre><code class="language-shell">$ git config --global user.name &quot;My Name&quot;
+$ git config --global user.email &quot;my-name@chromium.org&quot;
+$ git config --global core.autocrlf false
+$ git config --global core.filemode false
+$ git config --global branch.autosetuprebase always
+</code></pre>
+<h2 id="get-the-code">Get the code<a class="headerlink" href="#get-the-code" title="Permanent link"></a></h2>
+<pre><code class="language-shell">$ mkdir chromium &amp;&amp; cd chromium
+$ fetch --nohooks chromium
+</code></pre>
+<p>如果代码下载过程中因报错等中断了，使用下面的命令继续:</p>
+<pre><code class="language-shell">$ gclient sync --nohooks
+</code></pre>
+<p>签出代码后，如果使用的是Ubuntu系统，请运行:</p>
+<pre><code class="language-shell">$ ./build/install-build-deps.sh
+</code></pre>
+<p>此脚本会安装一些构建依赖项。</p>
+<p>切换分支</p>
+<pre><code class="language-shell"># Inside chromium/src/
+# 确保你能获得你要签出的所有release tag信息
+$ git fetch --tags
+# FETCH_HEAD想要的分支，my_stable_branch本地分支的名称
+$ git checkout -b my_stable_branch FETCH_HEAD
+$ git checkout -b 100.0.4896.127 100.0.4896.127
+# Now synchronize the dependencies to the current branch
+$ gclient sync --with_branch_heads --with-tags
+</code></pre>
+<p>回到"trunk"</p>
+<pre><code class="language-shell"># Make sure you are in 'src'.
+$ git checkout -f origin/main
+$ gclient sync
+</code></pre>
+<p>$ gclient --runhooks</p>
+<p><a href="https://www.chromium.org/developers/how-tos/get-the-code/">Get the code</a></p>
+<p><a href="https://www.chromium.org/developers/how-tos/old-get-the-code/">how to get old code</a></p>
+<p><a href="https://www.chromium.org/developers/how-tos/get-the-code/working-with-release-branches/">Working with Release Branches</a></p>
+<p><a href="https://omahaproxy.appspot.com/">OmahaProxy CSV Viewer</a></p>
+<p><a href="https://chromiumdash.appspot.com/schedule">Chromium Development Calendar and Release Info</a></p>
+<h2 id="_3">构建<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
+<pre><code class="language-shell">$ gn gen out/Default
+</code></pre>
+<pre><code># Build arguments go here.
+# See &quot;gn args &lt;out_dir&gt; --list&quot; for available build arguments.
+is_debug = false
+is_component_build = true
+enable_nacl = false
+target_cpu = &quot;x86&quot;
+blink_symbol_level = 0
+v8_symbol_level = 0
+symbol_level = 0
+use_goma = false
+</code></pre>
+<p>编译代码需要安装Windows SDK中的Debugging Tools for Windows，即:</p>
+<p>"C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\dbghelp.dll"</p>
+<p><a href="https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/">Windows SDK</a></p>
+<p><a href="https://developer.microsoft.com/zh-cn/windows/downloads/sdk-archive/">Windows SDK 历史版本</a></p>
+<h2 id="_4">编译<a class="headerlink" href="#_4" title="Permanent link"></a></h2>
+<pre><code class="language-shell">$ autoninja -C out/Default chrome
+$ autoninja -C out/Default base
+$ autoninja -C out/Default base_unittests
+$ autoninja -C out/Default unit_tests
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

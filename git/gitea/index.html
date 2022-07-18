@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/git/gitea/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Gitea - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../git_lfs/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../tool/frp/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gitea" class="nav-link">Gitea</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">简介</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#features" class="nav-link">功能特性</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#system-requirements" class="nav-link">系统要求</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#components" class="nav-link">组件</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#service-support" class="nav-link">软件及服务支持</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install" class="nav-link">安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#service" class="nav-link">以服务方式运行</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gitlab" class="nav-link">GitLab</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gitea">Gitea<a class="headerlink" href="#gitea" title="Permanent link"></a></h1>
+<p>Gitea 是一个开源社区驱动的轻量级代码托管解决方案，后端采用 Go 编写，采用 MIT 许可证.</p>
+<hr />
+<h2 id="introduction">简介<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+<p>Gitea 是一个自己托管的Git服务程序。他和GitHub, Bitbucket or Gitlab等比较类似。他是从 <a href="http://gogs.io/">Gogs</a> 发展而来，不过已经Fork并且命名为Gitea。</p>
+<p>Gitea的首要目标是创建一个极易安装，运行非常快速，安装和使用体验良好的自建 Git 服务。我们采用Go作为后端语言，这使我们只要生成一个可执行程序即可。并且他还支持跨平台，支持 Linux, macOS 和 Windows 以及各种架构，除了x86，amd64，还包括 ARM 和 PowerPC。</p>
+<h2 id="features">功能特性<a class="headerlink" href="#features" title="Permanent link"></a></h2>
+<ul>
+<li>支持活动时间线</li>
+<li>支持 SSH 以及 HTTP/HTTPS 协议</li>
+<li>支持 SMTP、LDAP 和反向代理的用户认证</li>
+<li>支持反向代理子路径</li>
+<li>支持用户、组织和仓库管理系统</li>
+<li>支持添加和删除仓库协作者</li>
+<li>支持仓库和组织级别 Web 钩子（包括 Slack 集成）</li>
+<li>支持仓库 Git 钩子和部署密钥</li>
+<li>支持仓库工单（Issue）、合并请求（Pull Request）以及 Wiki</li>
+<li>支持迁移和镜像仓库以及它的 Wiki</li>
+<li>支持在线编辑仓库文件和 Wiki</li>
+<li>支持自定义源的 Gravatar 和 Federated Avatar</li>
+<li>支持邮件服务</li>
+<li>支持后台管理面板</li>
+<li>支持 MySQL、PostgreSQL、SQLite3、MSSQL 和 TiDB(MySQL) 数据库</li>
+<li>支持多语言本地化（21 种语言）</li>
+<li>支持软件包注册中心（Composer/Conan/Container/Generic/Helm/Maven/NPM/Nuget/PyPI/RubyGems）</li>
+</ul>
+<h2 id="system-requirements">系统要求<a class="headerlink" href="#system-requirements" title="Permanent link"></a></h2>
+<ul>
+<li>最低的系统硬件要求为一个廉价的树莓派</li>
+<li>如果用于团队项目，建议使用 2 核 CPU 及 1GB 内存</li>
+</ul>
+<h2 id="components">组件<a class="headerlink" href="#components" title="Permanent link"></a></h2>
+<ul>
+<li>Web框架： <a href="http://github.com/go-chi/chi">Chi</a></li>
+<li>ORM: <a href="https://xorm.io/">XORM</a></li>
+<li>UI 框架：<ul>
+<li><a href="https://jquery.com/">jQuery</a></li>
+<li><a href="https://fomantic-ui.com/">Fomantic UI</a></li>
+<li><a href="https://vuejs.org/">Vue2</a></li>
+<li>更多组件参见 package.json</li>
+</ul>
+</li>
+<li>编辑器：<ul>
+<li><a href="https://codemirror.net/">CodeMirror</a></li>
+<li><a href="https://github.com/Ionaru/easy-markdown-editor">EasyMDE</a></li>
+<li><a href="https://microsoft.github.io/monaco-editor">Monaco Editor</a></li>
+</ul>
+</li>
+<li>数据库驱动：<ul>
+<li><a href="https://github.com/go-sql-driver/mysql">https://github.com/go-sql-driver/mysql</a></li>
+<li><a href="https://github.com/lib/pq">https://github.com/lib/pq</a></li>
+<li><a href="https://github.com/mattn/go-sqlite3">https://github.com/mattn/go-sqlite3</a></li>
+<li><a href="https://github.com/denisenkom/go-mssqldb">https://github.com/denisenkom/go-mssqldb</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="service-support">软件及服务支持<a class="headerlink" href="#service-support" title="Permanent link"></a></h2>
+<p><a href="https://github.com/drone/drone">Drone</a> (CI)</p>
+<h2 id="install">安装<a class="headerlink" href="#install" title="Permanent link"></a></h2>
+<p>从二进制安装
+所有下载均包括 SQLite, MySQL 和 PostgreSQL 的支持，同时所有资源均已嵌入到可执行程序中，这一点和老版本有所不同。 基于二进制的安装非常简单，只要从 <a href="https://dl.gitea.io/gitea">下载页面</a> 选择对应平台，拷贝下载URL，执行以下命令即可（以Linux为例）：</p>
+<pre><code class="language-bash">$ wget -O gitea https://dl.gitea.io/gitea/1.16.8/gitea-1.16.8-linux-amd64
+$ chmod +x gitea
+$ mv gitea /usr/local/bin/
+</code></pre>
+<p>测试
+在执行了以上步骤之后，你将会获得 <code>gitea</code> 的二进制文件，在你复制到部署的机器之前可以先测试一下。在命令行执行完后，你可以 <code>Ctrl + C</code> 关掉程序。</p>
+<pre><code class="language-bash">$ ./gitea web
+</code></pre>
+<p>创建用户 <code>git</code> 和 <code>gitea</code> 相应权限的配置和存储目录。</p>
+<pre><code class="language-bash">$ sudo adduser git
+
+$ sudo mkdir /var/lib/gitea
+$ sudo chown git:git /var/lib/gitea/
+
+$ sudo mkdir /etc/gitea
+$ sudo chown git:git /etc/gitea/
+</code></pre>
+<h2 id="service">以服务方式运行<a class="headerlink" href="#service" title="Permanent link"></a></h2>
+<p>在 terminal 中执行以下命令：</p>
+<pre><code class="language-bash">$ sudo vim /etc/systemd/system/gitea.service
+</code></pre>
+<p>接着拷贝示例代码 <a href="https://github.com/go-gitea/gitea/blob/master/contrib/systemd/gitea.service">gitea.service</a> 并取消对任何需要运行在主机上的服务部分的注释，譬如 MySQL。</p>
+<p>修改 user，home 目录以及其他必须的初始化参数，如果使用自定义端口，则需修改 PORT 参数，反之如果使用默认端口则需删除 -p 标记。</p>
+<p>激活 gitea 并将它作为系统自启动服务：</p>
+<pre><code class="language-bash">$ sudo systemctl enable gitea
+$ sudo systemctl start gitea
+</code></pre>
+<h2 id="gitlab">GitLab<a class="headerlink" href="#gitlab" title="Permanent link"></a></h2>
+<p>开始时想自建 GitLab 服务的，但是 GitLab 占用太多资，而Gitea 资源占用明显要低得多。</p>
+<p>静态硬盘占用上，Gitea 核心是一个 100 MiB 上下的可执行文件，外加上作为必要依赖的 Git（如果内置 SQLite 不够的话也需要单独部署一个 MySQL 或者 PostgreSQL 做数据库），而 GitLab 光 Docker image 大小就 GiB 级了，断断续续跑了两天，这日志就快 200MiB 了……</p>
+<p>内存方面，我这里 Gitea 日常占用内存通常在几百 MiB 浮动，而 GitLab 的 Docker 容器目前内存占用是 14GiB。</p>
+<p>GitLab CPU 占用率（相对于一个核心计算）日常待机在 35% 上下，而 Gitea 通常是 0.2% 左右。（这些都是不严谨的简单测试，现在已经改用 Gitea，懒得折腾了。）</p>
+<p><a href="https://docs.gitlab.com/ee/update/package/#upgrade-using-a-manually-downloaded-package">https://docs.gitlab.com/ee/update/package/#upgrade-using-a-manually-downloaded-package</a></p>
+<p><a href="https://packages.gitlab.com/gitlab/gitlab-ce">https://packages.gitlab.com/gitlab/gitlab-ce</a></p>
+<p><a href="https://www.jb51.net/article/194092.htm">https://www.jb51.net/article/194092.htm</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/486410391">https://zhuanlan.zhihu.com/p/486410391</a></p>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<p><a href="https://docs.gitea.io/zh-cn/">Gitea Docs</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
