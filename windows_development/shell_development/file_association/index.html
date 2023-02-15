@@ -61,6 +61,10 @@
 <li>
     <a href="../../../cplusplus/questions/" class="dropdown-item">Questions</a>
 </li>
+                                    
+<li>
+    <a href="../../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -123,6 +127,10 @@
 <li>
     <a href="../../../tool/v2ray/" class="dropdown-item">V2Ray</a>
 </li>
+                                    
+<li>
+    <a href="../../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -143,9 +151,37 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../../linux_development/docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../../linux_development/coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
     <a href="../../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
 </li>
                                 </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../sitemap/" class="nav-link">Index</a>
                             </li>
                         </ul>
 
@@ -179,6 +215,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#bmp" class="nav-link">看图程序关联BMP文件格式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
               <ul class="nav flex-column">
               </ul>
@@ -194,6 +234,21 @@
 <p>设置文件关联和默认的打开方式。</p>
 <p>自定义文件格式</p>
 <h2 id="_2">注册表<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<h2 id="bmp">看图程序关联BMP文件格式<a class="headerlink" href="#bmp" title="Permanent link"></a></h2>
+<p>HKEY_LOCAL_MACHINE和HKEY_CURRENT_USER下的SOFTWARE\Classes写入
+计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\PhotoViewer.bmp
+默认      REG_SZ      图片格式
+DefaultIcon
+默认      REG_SZ      "C:\Users\Administrator\AppData\Roaming\PhotoViewer\PhotoViewer.exe",2
+Shell
+Open
+Command
+默认      REG_SZ      "C:\Users\Administrator\AppData\Roaming\PhotoViewer\PhotoViewer.exe" "%1"</p>
+<p>向HKEY_LOCAL_MACHINE和HKEY_CURRENT_USER下的SOFTWARE\Classes.bmp
+HKEY_LOCAL_MACHINE\SOFTWARE\Classes.bmp
+默认      REG_SZ      PhotoViewer.bmp</p>
+<p>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts.bmp
+Progid  REG_SZ      PhotoViewer.bmp</p>
 <h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
 <p><a href="https://docs.microsoft.com/zh-cn/windows/win32/shell/default-programs">Win32 默认程序</a></p></div>
             </div>

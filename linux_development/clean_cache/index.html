@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/linux_development/clean_cache/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>清理缓存 {#clean-cache} - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#clean-cache" class="nav-link">清理缓存</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#m" class="nav-link">以M为单位进行输出</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#free60000" class="nav-link">当free变量的值小于等于60000时，条件成立</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="clean-cache">清理缓存<a class="headerlink" href="#clean-cache" title="Permanent link"></a></h1>
+<p>场景：某次查看服务器的内存使用情况时，发现buff/cache高得吓人</p>
+<p>手动执行命令
+在执行这三条命令之前一定要先执行sync命令</p>
+<p>描述：sync 命令运行sync子例程。如果必须停止系统，则运行sync命令以确保文件系统的完整性</p>
+<pre><code># 清除pagecache
+sync &amp;&amp; echo 1 &gt; /proc/sys/vm/drop_caches
+
+# 清除回收slab分配器中的对象（包括目录项缓存和inode缓存）
+# slab分配器是内核中管理内存的一种机制，其中很多缓存数据实现都是用的pagecache
+sync &amp;&amp; echo 2 &gt; /proc/sys/vm/drop_caches
+
+# 清除pagecache和slab分配器中的缓存对象
+sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches
+</code></pre>
+<p>定时清除过大buff/cache脚本</p>
+<pre><code>#!/bin/bash
+USED_CURRENT=`free -m | awk 'NR==2' | awk '{print $3}'`
+FREE_CURRENT=`free -m | awk 'NR==2' | awk '{print $4}'`
+# crontab定时任务不能使用绝对路径，不会自动执行
+TARGETFILE='/home/mocha/桌面/cleanCache.log'
+DATETIME=$(date +&quot;%Y年%m月%d日 %H时%M分&quot;)
+echo &quot;===========================&quot; &gt;&gt; $TARGETFILE
+echo &quot;执行清空缓存时间 ${DATETIME}&quot; &gt;&gt; $TARGETFILE
+echo &quot;清理缓存前: | [Used：${USED_CURRENT}MB][Free：${FREE_CURRENT}MB]&quot; &gt;&gt; $TARGETFILE
+
+if [ $FREE_CURRENT -le 300 ]
+then
+    sync &amp;&amp; echo 1 &gt; /proc/sys/vm/drop_caches
+    sync &amp;&amp; echo 2 &gt; /proc/sys/vm/drop_caches
+    sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches
+    USED_CLEAN=`free -m | awk 'NR==2' | awk '{print $3}'`
+    FREE_CLEAN=`free -m | awk 'NR==2' | awk '{print $4}'`
+    echo &quot;清理缓存后: | [Used：${USED_CLEAN}MB][Free：${FREE_CLEAN}MB]&quot; &gt;&gt; $TARGETFILE
+else
+    echo &quot;不需要清理缓存&quot; &gt;&gt; $TARGETFILE
+fi
+echo &quot;===========================&quot; &gt;&gt; $TARGETFILE
+</code></pre>
+<p>使用crontab实现定时执行任务</p>
+<pre><code># 表示每天的6点00分执行该脚本
+[root@centos7 backup]# crontab -e
+00 6 * * * /home/mocha/桌面/cleanCache.sh
+</code></pre>
+<p>脚本命令说明</p>
+<pre><code># NR==1    定位在file的第一行
+# print $1 显示第一列内容
+awk 'NR==1{print $1}' file
+</code></pre>
+<h1 id="m">以M为单位进行输出<a class="headerlink" href="#m" title="Permanent link"></a></h1>
+<pre><code>free -m
+
+              total        used        free      shared  buff/cache   available
+Mem:           1839        1101         489           0         248         583
+Swap:             0           0           0
+</code></pre>
+<h1 id="free60000">当free变量的值小于等于60000时，条件成立<a class="headerlink" href="#free60000" title="Permanent link"></a></h1>
+<pre><code>$free -le 60000
+</code></pre>
+<p>————————————————
+版权声明：本文为CSDN博主「是摩卡不是抹茶呀」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Mr_Mocha/article/details/102052527</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

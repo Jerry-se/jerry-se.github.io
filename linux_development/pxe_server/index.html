@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/linux_development/pxe_server/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>PXE Server - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#pxe-server" class="nav-link">PXE Server</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#dhcp" class="nav-link">dhcp</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dnsmasq-dhcp-proxy" class="nav-link">dnsmasq dhcp proxy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tftp" class="nav-link">tftp</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pxe" class="nav-link">pxe</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#network-booting" class="nav-link">Network booting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#ubuntupxe" class="nav-link">Ubuntu搭建pxe服务器</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#pxewindowslinux" class="nav-link">pxe引导windows或linux</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#ubuntu-bootparam" class="nav-link">ubuntu bootparam</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#_1" class="nav-link">视频</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="pxe-server">PXE Server<a class="headerlink" href="#pxe-server" title="Permanent link"></a></h1>
+<p>Ubuntu 18.04 搭建PXE服务器</p>
+<hr />
+<h2 id="dhcp">dhcp<a class="headerlink" href="#dhcp" title="Permanent link"></a></h2>
+<p>sudo apt-get install isc-dhcp-server</p>
+<p>修改 /etc/default/isc-dhcp-server</p>
+<p>INTERFACESv4="ens38"</p>
+<p>修改 /etc/dhcp/dhcpd.conf 添加配置如下：</p>
+<p>subnet 192.168.57.0 netmask 255.255.255.0 {
+       range 192.168.57.100 192.168.57.200;
+       option subnet-mask 255.255.255.0;
+       option routers 192.168.57.2;
+       option domain-name-servers 192.168.57.2;
+       option broadcast-address 192.168.57.255;
+       filename "pxelinux.0";
+       next-server 192.168.57.149;
+}</p>
+<p>在VMware虚拟机中添加网卡"ens38"，创建自定义网络VMnet2，虚拟机内启用dhcp服务时，发现以下问题:</p>
+<pre><code>9月 26 14:24:06 jerry dhcpd[6049]: No subnet declaration for ens38 (no IPv4 addresses).
+9月 26 14:24:06 jerry dhcpd[6049]: ** Ignoring requests on ens38.  If this is not what
+9月 26 14:24:06 jerry dhcpd[6049]:    you want, please write a subnet declaration
+9月 26 14:24:06 jerry dhcpd[6049]:    in your dhcpd.conf file for the network segment
+9月 26 14:24:06 jerry dhcpd[6049]:    to which interface ens38 is attached. **
+9月 26 14:24:06 jerry dhcpd[6049]: 
+9月 26 14:24:06 jerry dhcpd[6049]: 
+9月 26 14:24:06 jerry systemd[1]: isc-dhcp-server.service: Main process exited, code=exited, status=1/FAILURE
+9月 26 14:24:06 jerry dhcpd[6049]: Not configured to listen on any interfaces!
+9月 26 14:24:06 jerry systemd[1]: isc-dhcp-server.service: Failed with result 'exit-code'.
+9月 26 14:24:06 jerry dhcpd[6049]: 
+9月 26 14:24:06 jerry dhcpd[6049]: If you think you have received this message due to a bug rather
+9月 26 14:24:06 jerry dhcpd[6049]: than a configuration issue please read the section on submitting
+9月 26 14:24:06 jerry dhcpd[6049]: bugs on either our web page at www.isc.org or in the README file
+9月 26 14:24:06 jerry dhcpd[6049]: before submitting a bug.  These pages explain the proper
+9月 26 14:24:06 jerry dhcpd[6049]: process and the information we find helpful for debugging..
+9月 26 14:24:06 jerry dhcpd[6049]: 
+9月 26 14:24:06 jerry dhcpd[6049]: exiting.
+</code></pre>
+<p>后面查阅各种资料，发现必须要给ens38配置一个IP地址192.168.57.2，绑定在这个网卡上的DHCP服务才能运行。</p>
+<h2 id="dnsmasq-dhcp-proxy">dnsmasq dhcp proxy<a class="headerlink" href="#dnsmasq-dhcp-proxy" title="Permanent link"></a></h2>
+<p>/etc/dnsmasq.d/ltsp.conf</p>
+<pre><code># 指定DNS的端口，默认53，设置 port=0 将完全禁用 DNS 功能，仅使用 DHCP/TFTP
+port=0
+# 记录额外的 dhcp 日志，记录所有发送给 DHCP 客户端的选项（option）以及标签（tag）信息
+log-dhcp
+# 是否启用内置的 tftp 服务器
+# enable-tftp=ens37
+# 指定 tftp 的根目录
+tftp-root=/srv/tftp
+
+dhcp-no-override
+
+# 设置标签
+#dhcp-vendorclass=set:&lt;tag&gt;,[enterprise:&lt;IANA-enterprise number&gt;,]&lt;vendor-class&gt;
+#dhcp-userclass=set:&lt;tag&gt;,&lt;user-class&gt;
+#dhcp-mac=set:&lt;tag&gt;,&lt;MAC address&gt;
+#dhcp-circuitid=set:&lt;tag&gt;,&lt;circuit-id&gt;
+#dhcp-remoteid=set:&lt;tag&gt;,&lt;remote-id&gt;
+#dhcp-subscrid=set:&lt;tag&gt;,&lt;subscriber-id&gt;
+
+# vendorclass区分BIOS/UEFI
+#dhcp-vendorclass=BIOS,PXEClient:Arch:00000
+#dhcp-vendorclass=UEFI,PXEClient:Arch:00007
+
+# 如果只有一种可能，可用此行写死
+# dhcp-boot=undionly.kpxe,,192.168.1.159
+
+dhcp-match=set:iPXE,option:user-class,&quot;iPXE&quot;
+dhcp-match=set:bios,option:client-arch,0
+# dhcp-match=set:ipxe,175
+
+dhcp-boot=tag:bios,undionly.kpxe,,192.168.1.159
+dhcp-boot=tag:!bios,ipxe.efi,,192.168.1.159
+dhcp-boot=net:iPXE,http://192.168.1.159:8080/ipxe/boot.ipxe,,192.168.1.159
+
+# dhcp-boot=net:!iPXE,tag:bios,undionly.kpxe
+# dhcp-boot=tag:!ipxe,tag:!bios,ipxe.efi
+# dhcp-boot=tag:ipxe,http://192.168.1.159:8080/ipxe/boot.ipxe,,192.168.1.159
+
+pxe-prompt=&quot;Booting from iPXE&quot;,1
+# 如果只需 PXE 代理，不需要 DHCP 请使用 proxy 模式
+# dhcp-range=192.168.1.159,proxy
+
+interface=ens37
+# listen-address=192.168.1.159
+# bind-interfaces
+dhcp-host=00:50:56:21:96:3b,192.168.1.66
+dhcp-range=192.168.1.50,192.168.1.100,255.255.255.0,45m
+# dhcp-range=192.168.1.0,static,255.255.255.0,45m
+</code></pre>
+<p>同一个网络中一般情况下有且只有一个DHCP服务器，如果有多个DHCP服务器在某些情况下会出现IP冲突的问题。</p>
+<p>DHCP服务器可以配置IP地址池（可分配的IP地址范围），如果存在多个DHCP服务器，将他们的IP地址池分开也是可以的。
+例如A服务器只分配192.168.1.1~192.168.1.50，B服务器只分配192.168.1.51~192.168.1.254，这样是可以的。
+客户端会选择第一个返回的IP地址，并告知DHCP服务器它使用了那个IP，然后DHCP服务器将记录这个IP地址已被使用，一段时间内不会再分给别人。</p>
+<p>安装dnsmasq后重启服务可能会遇到53端口被占用导致服务重启失败，此时需要使用systemd-resove手动配置网卡的dns地址，让其他服务停止占用。</p>
+<pre><code>systemd-resolve --interface=eno1 --set-dns=223.5.5.5
+</code></pre>
+<p>https://wiki.fogproject.org/wiki/index.php?title=ProxyDHCP_with_dnsmasq#:~:text=From%20the%20perspective%20of%20FOG%2C%20dnsmasq%20is%20used,response%20is%20heard%2C%20dnsmasq%20%22adds%20to%22%20the%20response.</p>
+<p>http://blog.eastern.nl/2013/01/dnsmasq-as-dhcp-proxy-to-enable-pxe-on-your-network/</p>
+<p>https://gmagno.dev/2019/05/quick-setup-of-a-proxydhcp-with-dnsmasq-and-pxe-boot/</p>
+<h2 id="tftp">tftp<a class="headerlink" href="#tftp" title="Permanent link"></a></h2>
+<p>sudo apt install tftpd-hpa
+sudo apt install xinetd</p>
+<p>tftpd-hpa 是服务端
+tftp-hpa 是客户端</p>
+<p>mkdir /var/lib/tftpboot/ &amp;&amp; chmod 777 /var/lib/tftpboot/</p>
+<p>修改 /etc/default/tftpd-hpa ，内容如下：</p>
+<pre><code># /etc/default/tftpd-hpa
+
+TFTP_USERNAME=&quot;tftp&quot;
+TFTP_DIRECTORY=&quot;/var/lib/tftpboot&quot;
+TFTP_ADDRESS=&quot;:69&quot;
+TFTP_OPTIONS=&quot;--secure&quot;
+</code></pre>
+<p>启动 tftp服务并设置开机启动
+systemctl start tftpd-hpa.service
+systemctl enable tftpd-hpa.service</p>
+<p>xinetd好像不设置也没有关系，但很多博客有提到</p>
+<p>修改 /etc/xinetd.d/tftp</p>
+<pre><code>service tftp
+{
+        socket_type     = dgram
+        protocol                = udp
+        wait                    = yes
+        user                    = root
+        server          = /usr/sbin/in.tftpd
+        server_args     = -s /var/lib/tftpboot
+        disable         = no
+        per_source      = 11
+        cps                     = 100 2
+        flags                   = IPv4
+}
+</code></pre>
+<h2 id="pxe">pxe<a class="headerlink" href="#pxe" title="Permanent link"></a></h2>
+<p>很多文章说只要安装了syslinux，就能在<code>/usr/share/syslinux/</code>文件夹下面发现<code>pxelinux.0</code>文件。</p>
+<p>但是，Ubuntu安装后没有发现此文件，所以需要到官网去下载。</p>
+<pre><code>wget http://www.archive.ubuntu.com/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/netboot.tar.gz /var/lib/tftpboot/
+tar -zxvf netboot.tar.gz
+</code></pre>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://learn.microsoft.com/zh-cn/mem/configmgr/mdt/">Microsoft Deployment Toolkit (MDT)</a>: 为自动化桌面和服务器部署提供统一的工具、流程和指南集合。</li>
+<li>Wds 用于 pxe 和 mdt 用于部署。</li>
+<li>WDS &amp; SCCM 2012</li>
+<li>fogproject.org 需要安装在linux上，但是可以镜像windows机器，甚至kickstart/preseed linux机器</li>
+<li>pxelinux + clonezilla</li>
+<li>DRBL-Live 和 Clonezilla 服务器。http ://drbl.org/download/</li>
+<li>iPXE</li>
+</ul>
+<p>网络引导中使用的工具
+- <a href="https://ltsp.org/#Booting_with_pxelinux_0">LTSP Booting with pxelinux.0</a>
+- <a href="http://ipxe.org/">iPXE</a> - 可编写脚本的网络引导加载程序和固件
+- <a href="http://www.syslinux.org/wiki/index.php/PXELINUX">PXELINUX</a> - 灵活的网络引导加载程序
+- <a href="http://ipxe.org/wimboot">wimboot</a> - 使用 iPXE 直接启动 Windows .wim 文件
+- <a href="https://github.com/xbgmsharp/ipxe-buildweb">rom-o-matic</a> - 用于构建 iPXE 二进制文件的简单 Web 界面（需要 Docker）
+- <a href="http://tftpd32.jounin.net/">Tftpd32</a> - 适用于 Windows 的免费 DHCP 和 TFTP 服务器
+- <a href="http://linux-iscsi.org/">LIO</a> - Linux 的开源 iSCSI 目标
+- <a href="https://github.com/puppetlabs/Razor">Puppet Labs Razor</a> - 一种用于管理 Puppet 裸机部署的配置工具（Razor talk at PuppetConf 2012）
+- <a href="http://www.microsoft.com/en-US/download/details.aspx?id=19867">Microsoft iSCSI Software Target</a> - 一个 Windows Server 2008 组件，为您的网络提供 iSCSI 服务
+- <a href="http://www.microsoft.com/en-us/server-cloud/system-center/configuration-manager-2012.aspx">System Center Configuration Manager (SCCM)</a> - 用于部署和管理大量 Windows 计算机的 Microsoft 产品
+- <a href="https://theforeman.org/">Foreman</a> - 一个完整的物理和虚拟服务器生命周期管理工具</p>
+<h3 id="network-booting">Network booting<a class="headerlink" href="#network-booting" title="Permanent link"></a></h3>
+<ul>
+<li><a href="https://networkboot.org/fundamentals/">Fundamentals</a></li>
+<li><a href="https://networkboot.org/getting_started/">Getting Started</a></li>
+<li><a href="https://networkboot.org/tools/">Tools</a></li>
+</ul>
+<h3 id="ubuntupxe">Ubuntu搭建pxe服务器<a class="headerlink" href="#ubuntupxe" title="Permanent link"></a></h3>
+<ul>
+<li><a href="https://www.cnblogs.com/zhangjianghua/p/13930560.html">基于Ubuntu20.04搭建pxe+kickstart</a></li>
+<li><a href="https://www.codenong.com/cs111026093/">使用PXE高效批量网络装机，原来网吧的机子是这么装的！</a></li>
+<li><a href="http://t.zoukankan.com/mython-p-10919355.html">网络装机pxe服务器的配置过程</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/270269074">从无盘启动看Linux启动原理</a></li>
+</ul>
+<h3 id="pxewindowslinux">pxe引导windows或linux<a class="headerlink" href="#pxewindowslinux" title="Permanent link"></a></h3>
+<ul>
+<li><a href="https://blog.tianjinkun.com/post/79.html">PXE实现Windows和Linux的双系统引导</a></li>
+<li><a href="https://blog.csdn.net/zhangyingda/article/details/118576835">PXE 网络安装 windows 或 linux</a></li>
+</ul>
+<h3 id="ubuntu-bootparam">ubuntu bootparam<a class="headerlink" href="#ubuntu-bootparam" title="Permanent link"></a></h3>
+<p><a href="https://manpages.ubuntu.com/cgi-bin/search.py?titles=Title&amp;q=bootparam.7">https://manpages.ubuntu.com/cgi-bin/search.py?titles=Title&amp;q=bootparam.7</a></p>
+<h3 id="_1">视频<a class="headerlink" href="#_1" title="Permanent link"></a></h3>
+<ul>
+<li><a href="https://space.bilibili.com/621002172">老杨Linux</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

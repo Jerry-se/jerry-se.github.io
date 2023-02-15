@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/linux_development/iPXE/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>iPXE - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#ipxe" class="nav-link">iPXE</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#dhcp" class="nav-link">DHCP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tftp" class="nav-link">TFTP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nginx" class="nav-link">Nginx</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ipxe_1" class="nav-link">iPXE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#iscsi" class="nav-link">iSCSI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ubuntuiscsi-target" class="nav-link">安装Ubuntu到iSCSI target</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">存储池</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">写时拷贝</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ipxe">iPXE<a class="headerlink" href="#ipxe" title="Permanent link"></a></h1>
+<h2 id="dhcp">DHCP<a class="headerlink" href="#dhcp" title="Permanent link"></a></h2>
+<pre><code>option client-architecture code 93 = unsigned integer 16;
+subnet 192.168.119.0 netmask 255.255.255.0 {
+    range 192.168.119.100 192.168.119.200;
+    option subnet-mask 255.255.255.0;
+    # option routers 192.168.119.2;
+    # option domain-name-servers 192.168.119.2;
+    option broadcast-address 192.168.119.255;
+    # filename &quot;grldr&quot;;
+    # filename &quot;undionly.kpxe&quot;;
+    if exists user-class and option user-class = &quot;iPXE&quot; {
+        # filename &quot;http://my.web.server/real_boot_script.php&quot;;
+        filename &quot;&quot;;
+        option root-path &quot;iscsi:192.168.119.2::::iqn.2022-10.com.iscsi.jerry:win10test.storage&quot;;
+    } elsif option client-architecture = 00:00 {
+        filename &quot;undionly.kpxe&quot;;
+    } else {
+        filename &quot;ipxe.efi&quot;;
+    }
+    next-server 192.168.119.2;
+}
+</code></pre>
+<p>参考: <a href="https://ipxe.org/howto/dhcpd">isc dhcpd</a></p>
+<h2 id="tftp">TFTP<a class="headerlink" href="#tftp" title="Permanent link"></a></h2>
+<h2 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link"></a></h2>
+<p><code>/etc/nginx/nginx.conf</code></p>
+<pre><code>    server {
+        listen    8080;
+        root      /var/www/file;
+        location / {
+            autoindex on;# 显示目录
+            autoindex_exact_size on;# 显示文件大小
+            autoindex_localtime on;# 显示文件时间
+        }
+    }
+</code></pre>
+<pre><code class="language-shell">jerry@jerry:/var/www/file$ tree
+.
+├── ipxe
+│   ├── boot.ipxe
+│   ├── boot.ipxe.cfg
+│   ├── cfg
+│   │   ├── 404.html
+│   │   └── mac-000c29c63944.ipxe.cfg
+│   ├── menu.ipxe
+│   ├── script.ipxe
+│   └── wimboot
+└── winpe
+    ├── amd64
+    │   ├── ......
+    └── x86
+        ├── ......
+
+217 directories, 319 files
+</code></pre>
+<p><code>ipxe</code>文件夹下存放的是iPXE的启动脚本，其中<code>mac-000c29c63944.ipxe.cfg</code>以MAC地址去除冒号全小写格式命名，每个被引导的机器都需要有一个对应的配置文件。<code>wimboot</code>文件从<a href="https://github.com/ipxe/wimboot/releases">https://github.com/ipxe/wimboot/releases</a>下载。</p>
+<p><code>winpe</code>文件夹下存放的 64/32位 的WinPE环境。</p>
+<h2 id="ipxe_1">iPXE<a class="headerlink" href="#ipxe_1" title="Permanent link"></a></h2>
+<p>编译依赖</p>
+<pre><code>sudo apt install liblzma-dev xorriso isolinux
+</code></pre>
+<pre><code>git clone https://github.com/ipxe/ipxe.git
+cd ipxe/src
+make
+</code></pre>
+<p>无盘启动的脚本</p>
+<p><code>script.ipxe</code></p>
+<pre><code>#!ipxe
+dhcp
+chain --autofree http://192.168.119.2:8080/ipxe/boot.ipxe
+</code></pre>
+<pre><code>make bin/undionly.kpxe EMBED=script.ipxe
+make bin-x86_64-pcbios/undionly.kpxe EMBED=script.ipxe
+</code></pre>
+<p>会编译出<code>bin/undionly.kpxe</code>，把文件复制到tftp目录中。</p>
+<p>其他引导脚本如下</p>
+<p><code>http://192.168.119.2:8080/ipxe/boot.ipxe</code></p>
+<pre><code>#!ipxe
+chain --autofree boot.ipxe.cfg
+chain --autofree cfg/mac-${mac:hexraw}.ipxe.cfg
+chain --replace --autofree menu.ipxe
+</code></pre>
+<p><code>http://192.168.119.2:8080/ipxe/boot.ipxe.cfg</code></p>
+<pre><code>#!ipxe
+set iscsi-server 192.168.119.2
+set base-url http://192.168.119.2:8080
+set menu-timeout 5000
+set menu-default windows
+</code></pre>
+<p><code>http://192.168.119.2:8080/ipxe/cfg/404.html</code></p>
+<pre><code>#!ipxe
+set iscsi-iqn 404
+</code></pre>
+<p><code>http://192.168.119.2:8080/ipxe/cfg/mac-000c29c63944.ipxe.cfg</code></p>
+<pre><code>#!ipxe
+# set username test
+# set password ttttttttt123
+set initiator-iqn iqn.2022-10.com.iscsi.jerry:win10test.client
+set iscsi-iqn iqn.2022-10.com.iscsi.jerry:win10test.storage
+</code></pre>
+<p><code>http://192.168.119.2:8080/ipxe/menu.ipxe</code></p>
+<pre><code>#!ipxe
+:start
+menu iPXE boot menu build 20220717
+item --gap --               ------------------------- Operating systems ------------------------------
+item --key w windows        Boot Windows from iSCSI
+item --gap --               ------------------------- Tools and utilities ----------------------------
+item --key d winpe32        Boot basic WindowsPE 32 bit
+item --key d winpe64        Boot basic WindowsPE 64 bit
+item --gap --               ------------------------- Advanced options -------------------------------
+item --key c config         Configure settings
+item shell                  Drop to iPXE shell
+item reboot                 Reboot computer
+item
+item --key x exit         Exit iPXE and continue BIOS boot
+choose --timeout ${menu-timeout} --default ${menu-default} selected || goto cancel
+set menu-timeout 0
+goto ${selected}
+
+:cancel
+echo You cancelled the menu, dropping you to a shell
+
+:shell
+echo Type 'exit' to get the back to the menu
+shell
+goto start
+
+:failed
+echo Failed to start, will return to main menu within 5 seconds
+sleep 5
+goto start
+
+:reboot
+reboot
+
+:exit
+exit
+
+:config
+config
+goto start
+
+:windows
+echo Booting from SAN device
+sanboot iscsi:${iscsi-server}::::${iscsi-iqn} || goto failed
+goto start
+
+:winpe32
+set arch x86
+goto winpe
+
+:winpe64
+set arch amd64
+goto winpe
+
+:winpe
+set keep-san 1
+echo Attach SAN device...
+sanhook iscsi:${iscsi-server}::::${iscsi-iqn} || goto failed
+echo Load Windows PE file...
+kernel wimboot
+initrd ${base-url}/winpe/${arch}/media/Boot/BCD                     BCD
+initrd ${base-url}/winpe/${arch}/media/Boot/boot.sdi                boot.sdi
+initrd ${base-url}/winpe/${arch}/media/sources/boot.wim             boot.wim
+echo Starting the system....
+boot || goto failed
+goto start
+</code></pre>
+<ul>
+<li><a href="https://gist.github.com/robinsmidsrod/2234639">iPXE examples</a></li>
+<li><a href="https://gist.github.com/robinsmidsrod/21a15a562bc45d4ce25dcde507fb3100">iPXE examples</a></li>
+</ul>
+<p>https://www.bilibili.com/video/BV1AX4y1K7Hz/?vd_source=ed8e0bafbee554fbbe561fea9b15a230</p>
+<h2 id="iscsi">iSCSI<a class="headerlink" href="#iscsi" title="Permanent link"></a></h2>
+<p>使用<code>qemu-img</code>创建一个镜像文件，也可以使用<code>dd</code>创建一个大文件。</p>
+<p>qemu-img create -f qcow2 -o preallocation=falloc /data/win10test.qcow2 30G
+dd if=/dev/zero of=/data/win10test.img bs=1024 count=512
+dd if=/dev/zero of=/data/win10test.img bs=4096 count=8192000</p>
+<pre><code>root@jerry:~# sudo apt install targetcli-fb
+root@jerry:~# targetcli
+targetcli shell version 2.1.51
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/&gt; ls
+o- / ......................................................................................................................... [...]
+  o- backstores .............................................................................................................. [...]
+  | o- block .................................................................................................. [Storage Objects: 0]
+  | o- fileio ................................................................................................. [Storage Objects: 0]
+  | o- pscsi .................................................................................................. [Storage Objects: 0]
+  | o- ramdisk ................................................................................................ [Storage Objects: 0]
+  o- iscsi ............................................................................................................ [Targets: 0]
+  o- loopback ......................................................................................................... [Targets: 0]
+  o- vhost ............................................................................................................ [Targets: 0]
+  o- xen-pvscsi ....................................................................................................... [Targets: 0]
+/&gt; cd backstores/fileio 
+/backstores/fileio&gt; create name=win10image file_or_dev=/data/win10test.qcow2 
+Created fileio win10image with size 32217432064
+/backstores/fileio&gt; cd /
+/&gt; ls
+o- / ......................................................................................................................... [...]
+  o- backstores .............................................................................................................. [...]
+  | o- block .................................................................................................. [Storage Objects: 0]
+  | o- fileio ................................................................................................. [Storage Objects: 1]
+  | | o- win10image ....................................................... [/data/win10test.qcow2 (30.0GiB) write-back deactivated]
+  | |   o- alua ................................................................................................... [ALUA Groups: 1]
+  | |     o- default_tg_pt_gp ....................................................................... [ALUA state: Active/optimized]
+  | o- pscsi .................................................................................................. [Storage Objects: 0]
+  | o- ramdisk ................................................................................................ [Storage Objects: 0]
+  o- iscsi ............................................................................................................ [Targets: 0]
+  o- loopback ......................................................................................................... [Targets: 0]
+  o- vhost ............................................................................................................ [Targets: 0]
+  o- xen-pvscsi ....................................................................................................... [Targets: 0]
+/&gt; cd iscsi 
+/iscsi&gt; create 
+Created target iqn.2003-01.org.linux-iscsi.jerry.x8664:sn.85dcacd77768.
+Created TPG 1.
+Global pref auto_add_default_portal=true
+Created default portal listening on all IPs (0.0.0.0), port 3260.
+/iscsi&gt; ls
+o- iscsi .............................................................................................................. [Targets: 1]
+  o- iqn.2003-01.org.linux-iscsi.jerry.x8664:sn.85dcacd77768 ............................................................. [TPGs: 1]
+    o- tpg1 ................................................................................................. [no-gen-acls, no-auth]
+      o- acls ............................................................................................................ [ACLs: 0]
+      o- luns ............................................................................................................ [LUNs: 0]
+      o- portals ...................................................................................................... [Portals: 1]
+        o- 0.0.0.0:3260 ....................................................................................................... [OK]
+/iscsi&gt; delete iqn.2003-01.org.linux-iscsi.jerry.x8664:sn.85dcacd77768 
+Deleted Target iqn.2003-01.org.linux-iscsi.jerry.x8664:sn.85dcacd77768.
+/iscsi&gt; 
+/iscsi&gt; create iqn.2022-10.com.iscsi.jerry:win10test.storage
+Created target iqn.2022-10.com.iscsi.jerry:win10test.storage.
+Created TPG 1.
+Global pref auto_add_default_portal=true
+Created default portal listening on all IPs (0.0.0.0), port 3260.
+/iscsi&gt; ls
+o- iscsi .............................................................................................................. [Targets: 1]
+  o- iqn.2022-10.com.iscsi.jerry:win10test.storage ....................................................................... [TPGs: 1]
+    o- tpg1 ................................................................................................. [no-gen-acls, no-auth]
+      o- acls ............................................................................................................ [ACLs: 0]
+      o- luns ............................................................................................................ [LUNs: 0]
+      o- portals ...................................................................................................... [Portals: 1]
+        o- 0.0.0.0:3260 ....................................................................................................... [OK]
+/iscsi&gt; cd iqn.2022-10.com.iscsi.jerry:win10test.storage/tpg1/luns 
+/iscsi/iqn.20...age/tpg1/luns&gt; create /backstores/fileio/win10image 
+Created LUN 0.
+/iscsi/iqn.20...age/tpg1/luns&gt; ls
+o- luns .................................................................................................................. [LUNs: 1]
+  o- lun0 ........................................................... [fileio/win10image (/data/win10test.qcow2) (default_tg_pt_gp)]
+/iscsi/iqn.20...age/tpg1/luns&gt; 
+/iscsi/iqn.20...age/tpg1/luns&gt; cd ../acls 
+/iscsi/iqn.20...age/tpg1/acls&gt; create
+Missing required parameter wwn
+/iscsi/iqn.20...age/tpg1/acls&gt; 
+/iscsi/iqn.20...age/tpg1/acls&gt; create iqn.2022-10.com.iscsi.jerry:win10test.client
+Created Node ACL for iqn.2022-10.com.iscsi.jerry:win10test.client
+Created mapped LUN 0.
+/iscsi/iqn.20...age/tpg1/acls&gt; cd /
+/&gt; ls
+o- / ......................................................................................................................... [...]
+  o- backstores .............................................................................................................. [...]
+  | o- block .................................................................................................. [Storage Objects: 0]
+  | o- fileio ................................................................................................. [Storage Objects: 1]
+  | | o- win10image ......................................................... [/data/win10test.qcow2 (30.0GiB) write-back activated]
+  | |   o- alua ................................................................................................... [ALUA Groups: 1]
+  | |     o- default_tg_pt_gp ....................................................................... [ALUA state: Active/optimized]
+  | o- pscsi .................................................................................................. [Storage Objects: 0]
+  | o- ramdisk ................................................................................................ [Storage Objects: 0]
+  o- iscsi ............................................................................................................ [Targets: 1]
+  | o- iqn.2022-10.com.iscsi.jerry:win10test.storage ..................................................................... [TPGs: 1]
+  |   o- tpg1 ............................................................................................... [no-gen-acls, no-auth]
+  |     o- acls .......................................................................................................... [ACLs: 1]
+  |     | o- iqn.2022-10.com.iscsi.jerry:win10test.client ......................................................... [Mapped LUNs: 1]
+  |     |   o- mapped_lun0 ........................................................................... [lun0 fileio/win10image (rw)]
+  |     o- luns .......................................................................................................... [LUNs: 1]
+  |     | o- lun0 ................................................... [fileio/win10image (/data/win10test.qcow2) (default_tg_pt_gp)]
+  |     o- portals .................................................................................................... [Portals: 1]
+  |       o- 0.0.0.0:3260 ..................................................................................................... [OK]
+  o- loopback ......................................................................................................... [Targets: 0]
+  o- vhost ............................................................................................................ [Targets: 0]
+  o- xen-pvscsi ....................................................................................................... [Targets: 0]
+/&gt; exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/rtslib-fb-target/backup/.
+Configuration saved to /etc/rtslib-fb-target/saveconfig.json
+root@jerry:~# 
+root@jerry:~# cat /etc/rtslib-fb-target/saveconfig.json 
+{
+  &quot;fabric_modules&quot;: [],
+  &quot;storage_objects&quot;: [
+    {
+      &quot;aio&quot;: false,
+      &quot;alua_tpgs&quot;: [
+        {
+          &quot;alua_access_state&quot;: 0,
+          &quot;alua_access_status&quot;: 0,
+          &quot;alua_access_type&quot;: 3,
+          &quot;alua_support_active_nonoptimized&quot;: 1,
+          &quot;alua_support_active_optimized&quot;: 1,
+          &quot;alua_support_offline&quot;: 1,
+          &quot;alua_support_standby&quot;: 1,
+          &quot;alua_support_transitioning&quot;: 1,
+          &quot;alua_support_unavailable&quot;: 1,
+          &quot;alua_write_metadata&quot;: 0,
+          &quot;implicit_trans_secs&quot;: 0,
+          &quot;name&quot;: &quot;default_tg_pt_gp&quot;,
+          &quot;nonop_delay_msecs&quot;: 100,
+          &quot;preferred&quot;: 0,
+          &quot;tg_pt_gp_id&quot;: 0,
+          &quot;trans_delay_msecs&quot;: 0
+        }
+      ],
+      &quot;attributes&quot;: {
+        &quot;alua_support&quot;: 1,
+        &quot;block_size&quot;: 512,
+        &quot;emulate_3pc&quot;: 1,
+        &quot;emulate_caw&quot;: 1,
+        &quot;emulate_dpo&quot;: 1,
+        &quot;emulate_fua_read&quot;: 1,
+        &quot;emulate_fua_write&quot;: 1,
+        &quot;emulate_model_alias&quot;: 1,
+        &quot;emulate_pr&quot;: 1,
+        &quot;emulate_rest_reord&quot;: 0,
+        &quot;emulate_tas&quot;: 1,
+        &quot;emulate_tpu&quot;: 0,
+        &quot;emulate_tpws&quot;: 0,
+        &quot;emulate_ua_intlck_ctrl&quot;: 0,
+        &quot;emulate_write_cache&quot;: 1,
+        &quot;enforce_pr_isids&quot;: 1,
+        &quot;force_pr_aptpl&quot;: 0,
+        &quot;is_nonrot&quot;: 0,
+        &quot;max_unmap_block_desc_count&quot;: 1,
+        &quot;max_unmap_lba_count&quot;: 8192,
+        &quot;max_write_same_len&quot;: 4096,
+        &quot;optimal_sectors&quot;: 16384,
+        &quot;pgr_support&quot;: 1,
+        &quot;pi_prot_format&quot;: 0,
+        &quot;pi_prot_type&quot;: 0,
+        &quot;pi_prot_verify&quot;: 0,
+        &quot;queue_depth&quot;: 128,
+        &quot;unmap_granularity&quot;: 1,
+        &quot;unmap_granularity_alignment&quot;: 0,
+        &quot;unmap_zeroes_data&quot;: 0
+      },
+      &quot;dev&quot;: &quot;/data/win10test.qcow2&quot;,
+      &quot;name&quot;: &quot;win10image&quot;,
+      &quot;plugin&quot;: &quot;fileio&quot;,
+      &quot;size&quot;: 32217432064,
+      &quot;write_back&quot;: true,
+      &quot;wwn&quot;: &quot;c2007503-d997-4c99-aa19-2a41d32714a0&quot;
+    }
+  ],
+  &quot;targets&quot;: [
+    {
+      &quot;fabric&quot;: &quot;iscsi&quot;,
+      &quot;parameters&quot;: {
+        &quot;cmd_completion_affinity&quot;: &quot;-1&quot;
+      },
+      &quot;tpgs&quot;: [
+        {
+          &quot;attributes&quot;: {
+            &quot;authentication&quot;: 0,
+            &quot;cache_dynamic_acls&quot;: 0,
+            &quot;default_cmdsn_depth&quot;: 64,
+            &quot;default_erl&quot;: 0,
+            &quot;demo_mode_discovery&quot;: 1,
+            &quot;demo_mode_write_protect&quot;: 1,
+            &quot;fabric_prot_type&quot;: 0,
+            &quot;generate_node_acls&quot;: 0,
+            &quot;login_keys_workaround&quot;: 1,
+            &quot;login_timeout&quot;: 15,
+            &quot;netif_timeout&quot;: 2,
+            &quot;prod_mode_write_protect&quot;: 0,
+            &quot;t10_pi&quot;: 0,
+            &quot;tpg_enabled_sendtargets&quot;: 1
+          },
+          &quot;enable&quot;: true,
+          &quot;luns&quot;: [
+            {
+              &quot;alias&quot;: &quot;5677db3bc1&quot;,
+              &quot;alua_tg_pt_gp_name&quot;: &quot;default_tg_pt_gp&quot;,
+              &quot;index&quot;: 0,
+              &quot;storage_object&quot;: &quot;/backstores/fileio/win10image&quot;
+            }
+          ],
+          &quot;node_acls&quot;: [
+            {
+              &quot;attributes&quot;: {
+                &quot;dataout_timeout&quot;: 3,
+                &quot;dataout_timeout_retries&quot;: 5,
+                &quot;default_erl&quot;: 0,
+                &quot;nopin_response_timeout&quot;: 30,
+                &quot;nopin_timeout&quot;: 15,
+                &quot;random_datain_pdu_offsets&quot;: 0,
+                &quot;random_datain_seq_offsets&quot;: 0,
+                &quot;random_r2t_offsets&quot;: 0
+              },
+              &quot;mapped_luns&quot;: [
+                {
+                  &quot;alias&quot;: &quot;2e96a1e5e7&quot;,
+                  &quot;index&quot;: 0,
+                  &quot;tpg_lun&quot;: 0,
+                  &quot;write_protect&quot;: false
+                }
+              ],
+              &quot;node_wwn&quot;: &quot;iqn.2022-10.com.iscsi.jerry:win10test.client&quot;
+            }
+          ],
+          &quot;parameters&quot;: {
+            &quot;AuthMethod&quot;: &quot;CHAP,None&quot;,
+            &quot;DataDigest&quot;: &quot;CRC32C,None&quot;,
+            &quot;DataPDUInOrder&quot;: &quot;Yes&quot;,
+            &quot;DataSequenceInOrder&quot;: &quot;Yes&quot;,
+            &quot;DefaultTime2Retain&quot;: &quot;20&quot;,
+            &quot;DefaultTime2Wait&quot;: &quot;2&quot;,
+            &quot;ErrorRecoveryLevel&quot;: &quot;0&quot;,
+            &quot;FirstBurstLength&quot;: &quot;65536&quot;,
+            &quot;HeaderDigest&quot;: &quot;CRC32C,None&quot;,
+            &quot;IFMarkInt&quot;: &quot;Reject&quot;,
+            &quot;IFMarker&quot;: &quot;No&quot;,
+            &quot;ImmediateData&quot;: &quot;Yes&quot;,
+            &quot;InitialR2T&quot;: &quot;Yes&quot;,
+            &quot;MaxBurstLength&quot;: &quot;262144&quot;,
+            &quot;MaxConnections&quot;: &quot;1&quot;,
+            &quot;MaxOutstandingR2T&quot;: &quot;1&quot;,
+            &quot;MaxRecvDataSegmentLength&quot;: &quot;8192&quot;,
+            &quot;MaxXmitDataSegmentLength&quot;: &quot;262144&quot;,
+            &quot;OFMarkInt&quot;: &quot;Reject&quot;,
+            &quot;OFMarker&quot;: &quot;No&quot;,
+            &quot;TargetAlias&quot;: &quot;LIO Target&quot;
+          },
+          &quot;portals&quot;: [
+            {
+              &quot;ip_address&quot;: &quot;0.0.0.0&quot;,
+              &quot;iser&quot;: false,
+              &quot;offload&quot;: false,
+              &quot;port&quot;: 3260
+            }
+          ],
+          &quot;tag&quot;: 1
+        }
+      ],
+      &quot;wwn&quot;: &quot;iqn.2022-10.com.iscsi.jerry:win10test.storage&quot;
+    }
+  ]
+}
+</code></pre>
+<p>测试iscsi的连接</p>
+<pre><code>root@jerry:~# sudo apt install open-iscsi
+root@jerry:~# iscsiadm -m discovery -t sendtargets -p 192.168.119.2
+192.168.119.2:3260,1 iqn.2022-10.com.iscsi.jerry:test1
+root@jerry:~# iscsiadm -m node -T iqn.2022-10.com.iscsi.jerry:test1 -l
+Logging in to [iface: default, target: iqn.2022-10.com.iscsi.jerry:test1, portal: 192.168.119.2,3260] (multiple)
+iscsiadm: Could not login to [iface: default, target: iqn.2022-10.com.iscsi.jerry:test1, portal: 192.168.119.2,3260].
+iscsiadm: initiator reported error (24 - iSCSI login failed due to authorization failure)
+iscsiadm: Could not log into all portals
+root@jerry:~# 
+root@jerry:~# targetcli
+targetcli shell version 2.1.51
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/&gt; cd /iscsi/iqn.2022-10.com.iscsi.jerry:test1/tpg1/
+/iscsi/iqn.20...ry:test1/tpg1&gt; ls
+o- tpg1 ..................................................................................................... [no-gen-acls, no-auth]
+  o- acls ................................................................................................................ [ACLs: 1]
+  | o- iqn.2022-10.com.iscsi.jerry:test1 .......................................................................... [Mapped LUNs: 1]
+  |   o- mapped_lun0 ...................................................................................... [lun0 fileio/test1 (rw)]
+  o- luns ................................................................................................................ [LUNs: 1]
+  | o- lun0 .............................................................. [fileio/test1 (/data/win10test.qcow2) (default_tg_pt_gp)]
+  o- portals .......................................................................................................... [Portals: 1]
+    o- 0.0.0.0:3260 ........................................................................................................... [OK]
+/iscsi/iqn.20...ry:test1/tpg1&gt; set attribute generate_node_acls=1
+Parameter generate_node_acls is now '1'.
+/iscsi/iqn.20...ry:test1/tpg1&gt; cd /
+/&gt; ls
+o- / ......................................................................................................................... [...]
+  o- backstores .............................................................................................................. [...]
+  | o- block .................................................................................................. [Storage Objects: 0]
+  | o- fileio ................................................................................................. [Storage Objects: 1]
+  | | o- test1 .............................................................. [/data/win10test.qcow2 (30.0GiB) write-back activated]
+  | |   o- alua ................................................................................................... [ALUA Groups: 1]
+  | |     o- default_tg_pt_gp ....................................................................... [ALUA state: Active/optimized]
+  | o- pscsi .................................................................................................. [Storage Objects: 0]
+  | o- ramdisk ................................................................................................ [Storage Objects: 0]
+  o- iscsi ............................................................................................................ [Targets: 1]
+  | o- iqn.2022-10.com.iscsi.jerry:test1 ................................................................................. [TPGs: 1]
+  |   o- tpg1 .................................................................................................. [gen-acls, no-auth]
+  |     o- acls .......................................................................................................... [ACLs: 1]
+  |     | o- iqn.2022-10.com.iscsi.jerry:test1 .................................................................... [Mapped LUNs: 1]
+  |     |   o- mapped_lun0 ................................................................................ [lun0 fileio/test1 (rw)]
+  |     o- luns .......................................................................................................... [LUNs: 1]
+  |     | o- lun0 ........................................................ [fileio/test1 (/data/win10test.qcow2) (default_tg_pt_gp)]
+  |     o- portals .................................................................................................... [Portals: 1]
+  |       o- 0.0.0.0:3260 ..................................................................................................... [OK]
+  o- loopback ......................................................................................................... [Targets: 0]
+  o- vhost ............................................................................................................ [Targets: 0]
+  o- xen-pvscsi ....................................................................................................... [Targets: 0]
+/&gt; exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/rtslib-fb-target/backup/.
+Configuration saved to /etc/rtslib-fb-target/saveconfig.json
+root@jerry:~# 
+root@jerry:~# iscsiadm -m node -T iqn.2022-10.com.iscsi.jerry:test1 -l
+Logging in to [iface: default, target: iqn.2022-10.com.iscsi.jerry:test1, portal: 192.168.119.2,3260] (multiple)
+Login to [iface: default, target: iqn.2022-10.com.iscsi.jerry:test1, portal: 192.168.119.2,3260] successful.
+</code></pre>
+<p>只使用<code>targetcli</code>而不进入交互模式输入也是可行的</p>
+<pre><code>root@jerry:~# dd if=/dev/zero of=/data/ubuntu-18.04.img bs=4096 count=1024000
+1024000+0 records in
+1024000+0 records out
+4194304000 bytes (4.2 GB, 3.9 GiB) copied, 9.67806 s, 433 MB/s
+root@jerry:~# 
+root@jerry:~# targetcli /backstores/fileio create name=ubuntu1804image file_or_dev=/data/ubuntu-18.04.img
+Created fileio ubuntu1804image with size 4194304000
+root@jerry:~# 
+root@jerry:~# targetcli /iscsi create iqn.2022-10.com.iscsi.jerry:ubuntu-18.04.storage
+Created target iqn.2022-10.com.iscsi.jerry:ubuntu-18.04.storage.
+Created TPG 1.
+Global pref auto_add_default_portal=true
+Created default portal listening on all IPs (0.0.0.0), port 3260.
+root@jerry:~# 
+root@jerry:~# targetcli /iscsi/iqn.2022-10.com.iscsi.jerry:ubuntu-18.04.storage/tpg1/luns create /backstores/fileio/ubuntu1804image
+Created LUN 0.
+root@jerry:~# 
+root@jerry:~# targetcli /iscsi/iqn.2022-10.com.iscsi.jerry:ubuntu-18.04.storage/tpg1/acls create iqn.2022-10.com.iscsi.jerry:ubuntu-18.04.client
+Created Node ACL for iqn.2022-10.com.iscsi.jerry:ubuntu-18.04.client
+Created mapped LUN 0.
+root@jerry:~# 
+root@jerry:~# targetcli
+targetcli shell version 2.1.51
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/&gt; ls
+o- / ......................................................................................................................... [...]
+  o- backstores .............................................................................................................. [...]
+  | o- block .................................................................................................. [Storage Objects: 0]
+  | o- fileio ................................................................................................. [Storage Objects: 1]
+  | | o- ubuntu1804image .................................................... [/data/ubuntu-18.04.img (3.9GiB) write-back activated]
+  | |   o- alua ................................................................................................... [ALUA Groups: 1]
+  | |     o- default_tg_pt_gp ....................................................................... [ALUA state: Active/optimized]
+  | o- pscsi .................................................................................................. [Storage Objects: 0]
+  | o- ramdisk ................................................................................................ [Storage Objects: 0]
+  o- iscsi ............................................................................................................ [Targets: 1]
+  | o- iqn.2022-10.com.iscsi.jerry:ubuntu-18.04.storage .................................................................. [TPGs: 1]
+  |   o- tpg1 ............................................................................................... [no-gen-acls, no-auth]
+  |     o- acls .......................................................................................................... [ACLs: 1]
+  |     | o- iqn.2022-10.com.iscsi.jerry:ubuntu-18.04.client ...................................................... [Mapped LUNs: 1]
+  |     |   o- mapped_lun0 ...................................................................... [lun0 fileio/ubuntu1804image (rw)]
+  |     o- luns .......................................................................................................... [LUNs: 1]
+  |     | o- lun0 ............................................. [fileio/ubuntu1804image (/data/ubuntu-18.04.img) (default_tg_pt_gp)]
+  |     o- portals .................................................................................................... [Portals: 1]
+  |       o- 0.0.0.0:3260 ..................................................................................................... [OK]
+  o- loopback ......................................................................................................... [Targets: 0]
+  o- vhost ............................................................................................................ [Targets: 0]
+  o- xen-pvscsi ....................................................................................................... [Targets: 0]
+/&gt; exit
+Global pref auto_save_on_exit=true
+Last 10 configs saved in /etc/rtslib-fb-target/backup/.
+Configuration saved to /etc/rtslib-fb-target/saveconfig.json
+root@jerry:~#
+</code></pre>
+<p>进入WinPE后，插入写有win10 21H1版本的镜像光盘，进入光盘目录执行<code>setup.exe</code>就可以弹出系统安装界面，然后按照指示把系统安装到iscsi虚拟磁盘中。</p>
+<pre><code>X:\Windows\system32&gt;wpeinit
+
+X:\Windows\system32&gt;diskpart
+
+Microsoft DiskPart version 10.0.19041.1
+
+Copyright (C) Microsoft Corporation.
+On computer: MININT-5D6CFUB
+
+DISKPART&gt; list vol
+
+  Volume ###  LTR  Label        FS     Type        Size     Status     Info
+  ----------  ---  -----------  -----  ----------  -------  ---------  --------
+  Volume 0     D   ESD-ISO      UDF    DVD-ROM     4465 MB  Healthy
+
+DISKPART&gt; exit
+
+Leaving DiskPart...
+
+X:\Windows\system32&gt;cd /d D:\
+
+D:\&gt;setup.exe
+</code></pre>
+<p>winpe 挂载网络共享文件夹</p>
+<pre><code>net use Z: \\192.168.1.202\NetShare /user:&quot;Jerry&quot;
+</code></pre>
+<p>winpe gpt分区</p>
+<pre><code>diskpart
+select disk 0
+# 删除所有分区
+clean
+# 转换成GPT
+convert gpt
+# 创建 EFI 系统分区
+create partition efi size = 512
+# EFI 分区 FAT32格式
+format quick fs=fat32
+# 分配盘符，后面需要创建引导
+assign letter=&quot;S&quot;
+active
+# 创建 MSR 保留分区
+create partition msr size = 128
+# 创建主分区
+create partition primary
+format quick fs=ntfs
+assign letter=&quot;W&quot;
+</code></pre>
+<p>安装好系统重启后需要一下几件事:
+1. 设备管理器-驱动 : 有个“其他设备”-&gt;“基本系统设备”带黄色感叹号，应该是显卡设备没有驱动，禁用此设备
+2. 注册表<code>HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management</code>的<code>PagingFiles</code>字段清空。
+3. 初始化一下iSCSI发起程序</p>
+<ul>
+<li><a href="https://ipxe.org/howto/winpe">How to boot Windows PE via HTTP</a></li>
+<li>ubuntu iscsi</li>
+<li>https://blog.csdn.net/weixin_53049621/article/details/122860162</li>
+<li>http://t.zoukankan.com/panther1942-p-15636533.html</li>
+<li>https://www.cnblogs.com/pipci/p/11620234.html</li>
+<li>windows server</li>
+<li>bilibili</li>
+<li><a href="https://www.bilibili.com/video/BV1zA4y1f7uy?share_source=copy_web&amp;vd_source=9644a2370cb7f6e92c3d83b7cddcb826">无盘教学系统-03-ipxe+iscsi网络启动</a></li>
+<li><a href="https://www.bilibili.com/video/BV1gQ4y1i7nS?share_source=copy_web&amp;vd_source=9644a2370cb7f6e92c3d83b7cddcb826">安装win10系统到NAS(iscsi-uefi)无盘系统</a></li>
+</ul>
+<p>iPXE脚本和WinPE 资源 https://www.wunote.cn/article/4986/</p>
+<ul>
+<li>Windows VHD</li>
+<li><a href="https://zhuanlan.zhihu.com/p/560915540">Windows VHD 教程</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/manage/create-vhdset-file">Hyper-V VHD</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/troubleshoot/windows-server/virtualization/virtualization-overview">Windows server 虚拟化</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/windows-server/storage/storage">Windows server 存储</a></li>
+</ul>
+<p><a href="https://blog.csdn.net/Junson142099/article/details/109308109">使用Windows Sysprep来封装系统</a></p>
+<p>iscsi启动蓝屏的问题，可能是要安装一个补丁 KB976042
+- <a href="http://bbs.wuyou.net/forum.php?mod=viewthread&amp;tid=423459">高分悬赏-无盘启动windows蓝屏</a>
+- <a href="https://learn.microsoft.com/zh-cn/troubleshoot/windows-server/performance/0x0000007b-stop-error-switch-alternate-iscsi-adapter">windows切换到iscsi系统后蓝屏</a>
+- <a href="https://github.com/ipxe/ipxe/discussions/324">Windows 10 - 11 installation on a iSCSI target</a>
+- <a href="https://forum.ipxe.org/showthread.php?tid=23709">Problem install Windows 10 to iSCSI target</a>
+- <a href="https://github.com/ipxe/ipxe/discussions/249">Cannot boot Windows10(1809) on targetcli(LIO)</a></p>
+<p>安装Windows 10 到 iscsi target 最后遇到报错“无法安装所需的驱动”
+- <a href="https://github.com/ipxe/ipxe/discussions/437">Boot Hyper-V Server 2019 and Windows Server 2019 from iSCSI</a></p>
+<ul>
+<li><a href="https://www.virtualbox.org/manual/UserManual.html">Oracle VM VirtualBox User Manual</a></li>
+</ul>
+<h2 id="ubuntuiscsi-target">安装Ubuntu到iSCSI target<a class="headerlink" href="#ubuntuiscsi-target" title="Permanent link"></a></h2>
+<p>使用ISO镜像一直没成功，要么无法启动，要么没有识别出iSCSI磁盘，导致无法继续安装。所以问题出在启动引导是否识别iSCSI存储。</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/53662902">如何构建一台网络引导服务器（二）</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/53821092">如何构建一台网络引导服务器（三）</a></li>
+</ul>
+<p>使用Netboot安装成功。</p>
+<p>netboot 无人值守<code>preseed</code>配置</p>
+<ul>
+<li><a href="https://gist.github.com/robinsmidsrod/2234639">ubuntu 12.04</a></li>
+<li><a href="https://lvii.github.io/system/2019-08-07-ipxe-auto-install-ubuntu-server-with-preseed/">iPXE 引导 ubuntu 并使用 preseed 自动安装系统</a></li>
+<li><a href="https://blog.csdn.net/weixin_43846408/article/details/124234833">使用 iPXE 实现 Linux 自动安装</a></li>
+<li><a href="https://www.bookstack.cn/read/debian-releases-install/afe5dbfe6bb23816.md">Debian 安装预置文件</a></li>
+</ul>
+<h2 id="_1">存储池<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
+<p>sudo apt install lvm2</p>
+<p>添加一块硬盘20G，分成两个分区，一个10G，一个9.5G：</p>
+<pre><code>root@jerry:~# lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0     4K  1 loop /snap/bare/5
+loop1    7:1    0  63.2M  1 loop /snap/core20/1634
+loop2    7:2    0 400.8M  1 loop /snap/gnome-3-38-2004/112
+loop3    7:3    0  63.2M  1 loop /snap/core20/1623
+loop4    7:4    0 346.3M  1 loop /snap/gnome-3-38-2004/119
+loop5    7:5    0  81.3M  1 loop /snap/gtk-common-themes/1534
+loop6    7:6    0  91.7M  1 loop /snap/gtk-common-themes/1535
+loop7    7:7    0    48M  1 loop /snap/snapd/17029
+loop8    7:8    0  45.9M  1 loop /snap/snap-store/599
+loop9    7:9    0  54.2M  1 loop /snap/snap-store/558
+loop10   7:10   0    48M  1 loop /snap/snapd/17336
+sda      8:0    0    60G  0 disk 
+├─sda1   8:1    0   512M  0 part /boot/efi
+├─sda2   8:2    0     1K  0 part 
+└─sda5   8:5    0  59.5G  0 part /
+sdb      8:16   0    20G  0 disk 
+sr0     11:0    1  1024M  0 rom  
+root@jerry:~# 
+root@jerry:~# 
+root@jerry:~# 
+root@jerry:~# fdisk /dev/sdb 
+
+Welcome to fdisk (util-linux 2.34).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x77f94e8a.
+
+Command (m for help): m
+
+Help:
+
+  DOS (MBR)
+   a   toggle a bootable flag
+   b   edit nested BSD disklabel
+   c   toggle the dos compatibility flag
+
+  Generic
+   d   delete a partition
+   F   list free unpartitioned space
+   l   list known partition types
+   n   add a new partition
+   p   print the partition table
+   t   change a partition type
+   v   verify the partition table
+   i   print information about a partition
+
+  Misc
+   m   print this menu
+   u   change display/entry units
+   x   extra functionality (experts only)
+
+  Script
+   I   load disk layout from sfdisk script file
+   O   dump disk layout to sfdisk script file
+
+  Save &amp; Exit
+   w   write table to disk and exit
+   q   quit without saving changes
+
+  Create a new label
+   g   create a new empty GPT partition table
+   G   create a new empty SGI (IRIX) partition table
+   o   create a new empty DOS partition table
+   s   create a new empty Sun partition table
+
+
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 
+First sector (2048-41943039, default 2048): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-41943039, default 41943039): +10G
+
+Created a new partition 1 of type 'Linux' and of size 10 GiB.
+
+Command (m for help): n
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (2-4, default 2): 
+First sector (20973568-41943039, default 20973568): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (20973568-41943039, default 41943039): +10G
+Value out of range.
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (20973568-41943039, default 41943039): +9.5G
+
+Created a new partition 2 of type 'Linux' and of size 9.5 GiB.
+
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+root@jerry:~# lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0     4K  1 loop /snap/bare/5
+loop1    7:1    0  63.2M  1 loop /snap/core20/1634
+loop2    7:2    0 400.8M  1 loop /snap/gnome-3-38-2004/112
+loop3    7:3    0  63.2M  1 loop /snap/core20/1623
+loop4    7:4    0 346.3M  1 loop /snap/gnome-3-38-2004/119
+loop5    7:5    0  81.3M  1 loop /snap/gtk-common-themes/1534
+loop6    7:6    0  91.7M  1 loop /snap/gtk-common-themes/1535
+loop7    7:7    0    48M  1 loop /snap/snapd/17029
+loop8    7:8    0  45.9M  1 loop /snap/snap-store/599
+loop9    7:9    0  54.2M  1 loop /snap/snap-store/558
+loop10   7:10   0    48M  1 loop /snap/snapd/17336
+sda      8:0    0    60G  0 disk 
+├─sda1   8:1    0   512M  0 part /boot/efi
+├─sda2   8:2    0     1K  0 part 
+└─sda5   8:5    0  59.5G  0 part /
+sdb      8:16   0    20G  0 disk 
+├─sdb1   8:17   0    10G  0 part 
+└─sdb2   8:18   0   9.5G  0 part 
+sr0     11:0    1  1024M  0 rom  
+root@jerry:~# 
+</code></pre>
+<p>把分区初始化为物理卷</p>
+<pre><code>root@jerry:~# pvcreate /dev/sdb1 
+  Physical volume &quot;/dev/sdb1&quot; successfully created.
+root@jerry:~# pvcreate /dev/sdb2 
+  Physical volume &quot;/dev/sdb2&quot; successfully created.
+</code></pre>
+<p><code>vgcreate</code> 创建卷组，<code>vgextend</code> 扩展卷组，<code>vgs</code>列出卷组信息，<code>pvs</code>列出物理卷</p>
+<pre><code>root@jerry:~# vgcreate bootpool /dev/sdb1
+  Volume group &quot;bootpool&quot; successfully created
+root@jerry:~# vgs
+  VG       #PV #LV #SN Attr   VSize   VFree  
+  bootpool   1   0   0 wz--n- &lt;10.00g &lt;10.00g
+root@jerry:~# pvs
+  PV         VG       Fmt  Attr PSize   PFree  
+  /dev/sdb1  bootpool lvm2 a--  &lt;10.00g &lt;10.00g
+  /dev/sdb2           lvm2 ---    9.50g   9.50g
+root@jerry:~# vgextend bootpool /dev/sdb2
+  Volume group &quot;bootpool&quot; successfully extended
+root@jerry:~# vgs
+  VG       #PV #LV #SN Attr   VSize  VFree 
+  bootpool   2   0   0 wz--n- 19.49g 19.49g
+root@jerry:~# pvs
+  PV         VG       Fmt  Attr PSize   PFree  
+  /dev/sdb1  bootpool lvm2 a--  &lt;10.00g &lt;10.00g
+  /dev/sdb2  bootpool lvm2 a--   &lt;9.50g  &lt;9.50g
+root@jerry:~# 
+</code></pre>
+<p>在存储池<code>bootpool</code>中创建逻辑卷<code>bootimg</code>，大小10G，使用<code>lvs</code>查看逻辑卷信息。</p>
+<pre><code>root@jerry:~# lvcreate -L 10240M -n bootimg bootpool 
+  Logical volume &quot;bootimg&quot; created.
+root@jerry:~# 
+root@jerry:~# lvs
+  LV      VG       Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  bootimg bootpool -wi-a----- 10.00g                                                    
+root@jerry:~#
+</code></pre>
+<p>给逻辑卷分区并挂载到<code>/mnt/bootimg/</code>目录</p>
+<pre><code>root@jerry:~# mkfs -t xfs /dev/bootpool/bootimg
+mkfs: failed to execute mkfs.xfs: No such file or directory
+root@jerry:~# 
+root@jerry:~# mkfs -t ext4 /dev/bootpool/bootimg
+mke2fs 1.45.5 (07-Jan-2020)
+Creating filesystem with 2621440 4k blocks and 655360 inodes
+Filesystem UUID: bc3fadf5-5456-4cca-892a-b7df4597755c
+Superblock backups stored on blocks: 
+    32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information: done 
+
+root@jerry:~# 
+root@jerry:~# mount /dev/bootpool/bootimg /mnt/bootimg
+mount: /mnt/bootimg: mount point does not exist.
+root@jerry:~# mkdir /mnt/bootimg/
+root@jerry:~# 
+root@jerry:~# mount /dev/bootpool/bootimg /mnt/bootimg
+root@jerry:~# df
+Filesystem                   1K-blocks     Used Available Use% Mounted on
+udev                           1950900        0   1950900   0% /dev
+tmpfs                           398324     2000    396324   1% /run
+/dev/sda5                     61092684 32516968  25439972  57% /
+tmpfs                          1991604        0   1991604   0% /dev/shm
+tmpfs                             5120        4      5116   1% /run/lock
+tmpfs                          1991604        0   1991604   0% /sys/fs/cgroup
+/dev/loop0                         128      128         0 100% /snap/bare/5
+/dev/loop1                       64768    64768         0 100% /snap/core20/1634
+/dev/loop2                      410496   410496         0 100% /snap/gnome-3-38-2004/112
+/dev/loop3                       64768    64768         0 100% /snap/core20/1623
+/dev/loop4                      354688   354688         0 100% /snap/gnome-3-38-2004/119
+/dev/loop5                       83328    83328         0 100% /snap/gtk-common-themes/1534
+/dev/loop6                       93952    93952         0 100% /snap/gtk-common-themes/1535
+/dev/loop8                       47104    47104         0 100% /snap/snap-store/599
+/dev/loop7                       49152    49152         0 100% /snap/snapd/17029
+/dev/loop9                       55552    55552         0 100% /snap/snap-store/558
+/dev/loop10                      49152    49152         0 100% /snap/snapd/17336
+/dev/sda1                       523248        4    523244   1% /boot/efi
+tmpfs                           398320       28    398292   1% /run/user/1000
+/dev/mapper/bootpool-bootimg  10218772       24   9678076   1% /mnt/bootimg
+root@jerry:~# df -hT
+Filesystem                   Type      Size  Used Avail Use% Mounted on
+udev                         devtmpfs  1.9G     0  1.9G   0% /dev
+tmpfs                        tmpfs     389M  2.0M  388M   1% /run
+/dev/sda5                    ext4       59G   32G   25G  57% /
+tmpfs                        tmpfs     1.9G     0  1.9G   0% /dev/shm
+tmpfs                        tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+tmpfs                        tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/loop0                   squashfs  128K  128K     0 100% /snap/bare/5
+/dev/loop1                   squashfs   64M   64M     0 100% /snap/core20/1634
+/dev/loop2                   squashfs  401M  401M     0 100% /snap/gnome-3-38-2004/112
+/dev/loop3                   squashfs   64M   64M     0 100% /snap/core20/1623
+/dev/loop4                   squashfs  347M  347M     0 100% /snap/gnome-3-38-2004/119
+/dev/loop5                   squashfs   82M   82M     0 100% /snap/gtk-common-themes/1534
+/dev/loop6                   squashfs   92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop8                   squashfs   46M   46M     0 100% /snap/snap-store/599
+/dev/loop7                   squashfs   48M   48M     0 100% /snap/snapd/17029
+/dev/loop9                   squashfs   55M   55M     0 100% /snap/snap-store/558
+/dev/loop10                  squashfs   48M   48M     0 100% /snap/snapd/17336
+/dev/sda1                    vfat      511M  4.0K  511M   1% /boot/efi
+tmpfs                        tmpfs     389M   28K  389M   1% /run/user/1000
+/dev/mapper/bootpool-bootimg ext4      9.8G   24K  9.3G   1% /mnt/bootimg
+root@jerry:~#
+</code></pre>
+<p>然后就可以把无盘的镜像文件放到<code>/mnt/bootimg/</code>中</p>
+<pre><code>root@jerry:~# ls /mnt/bootimg/
+lost+found
+root@jerry:~# cp /data/ubuntu-18.04.img /mnt/bootimg/
+root@jerry:~# ls -a /mnt/bootimg/
+.  ..  lost+found  ubuntu-18.04.img
+</code></pre>
+<h2 id="_2">写时拷贝<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<p>COW(copy on write)</p>
+<p>基于逻辑卷<code>/dev/bootpool/bootimg</code>创建COW snapshot LV，名称<code>host01</code>，<code>-s</code>表示快照。</p>
+<pre><code>root@jerry:~# lvcreate -L 1024M -s -n host01 /dev/bootpool/bootimg
+  Logical volume &quot;host01&quot; created.
+root@jerry:~# lvcreate -L 1024M -s -n host02 /dev/bootpool/bootimg
+  Logical volume &quot;host02&quot; created.
+root@jerry:~# 
+root@jerry:~# mkdir /mnt/host01 -p
+root@jerry:~# mkdir /mnt/host02 -p
+root@jerry:~# 
+root@jerry:~# mount /dev/bootpool/host01 /mnt/host01/
+root@jerry:~# mount /dev/bootpool/host02 /mnt/host02/
+root@jerry:~# 
+root@jerry:~# ls -a /mnt/host01/
+.  ..  lost+found  ubuntu-18.04.img
+root@jerry:~# df -hT
+Filesystem                   Type      Size  Used Avail Use% Mounted on
+udev                         devtmpfs  1.9G     0  1.9G   0% /dev
+tmpfs                        tmpfs     389M  2.0M  388M   1% /run
+/dev/sda5                    ext4       59G   32G   25G  57% /
+tmpfs                        tmpfs     1.9G     0  1.9G   0% /dev/shm
+tmpfs                        tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+tmpfs                        tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/loop0                   squashfs  128K  128K     0 100% /snap/bare/5
+/dev/loop1                   squashfs   64M   64M     0 100% /snap/core20/1634
+/dev/loop2                   squashfs  401M  401M     0 100% /snap/gnome-3-38-2004/112
+/dev/loop3                   squashfs   64M   64M     0 100% /snap/core20/1623
+/dev/loop4                   squashfs  347M  347M     0 100% /snap/gnome-3-38-2004/119
+/dev/loop5                   squashfs   82M   82M     0 100% /snap/gtk-common-themes/1534
+/dev/loop6                   squashfs   92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop8                   squashfs   46M   46M     0 100% /snap/snap-store/599
+/dev/loop7                   squashfs   48M   48M     0 100% /snap/snapd/17029
+/dev/loop9                   squashfs   55M   55M     0 100% /snap/snap-store/558
+/dev/loop10                  squashfs   48M   48M     0 100% /snap/snapd/17336
+/dev/sda1                    vfat      511M  4.0K  511M   1% /boot/efi
+tmpfs                        tmpfs     389M   28K  389M   1% /run/user/1000
+/dev/mapper/bootpool-bootimg ext4      9.8G  4.0G  5.4G  43% /mnt/bootimg
+/dev/mapper/bootpool-host01  ext4      9.8G  4.0G  5.4G  43% /mnt/host01
+/dev/mapper/bootpool-host02  ext4      9.8G  4.0G  5.4G  43% /mnt/host02
+</code></pre>
+<p>在上层应用看来，<code>/mnt/host01</code>里面和<code>/mnt/bootimg</code>一样，都有镜像<code>ubuntu-18.04.img</code>。</p>
+<p>然后网吧中每增加一台新机器，只需要创建一个COW快照逻辑卷，使用快照卷来启动无盘系统即可。</p>
+<p>怎么删除逻辑卷？</p>
+<pre><code># 首先移除对文件的使用
+root@jerry:~# umount /mnt/host02 
+root@jerry:~# lvremove /dev/bootpool/host02 
+Do you really want to remove and DISCARD active logical volume bootpool/host02? [y/n]: y
+  Logical volume &quot;host02&quot; successfully removed
+root@jerry:~# lvs
+  LV      VG       Attr       LSize  Pool Origin  Data%  Meta%  Move Log Cpy%Sync Convert
+  bootimg bootpool owi-aos--- 10.00g                                                     
+  host01  bootpool swi-aos---  1.00g      bootimg 0.01                                   
+root@jerry:~#
+root@jerry:~# df -hT
+Filesystem                   Type      Size  Used Avail Use% Mounted on
+udev                         devtmpfs  1.9G     0  1.9G   0% /dev
+tmpfs                        tmpfs     389M  2.0M  388M   1% /run
+/dev/sda5                    ext4       59G   32G   25G  57% /
+tmpfs                        tmpfs     1.9G     0  1.9G   0% /dev/shm
+tmpfs                        tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+tmpfs                        tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/loop0                   squashfs  128K  128K     0 100% /snap/bare/5
+/dev/loop1                   squashfs   64M   64M     0 100% /snap/core20/1634
+/dev/loop2                   squashfs  401M  401M     0 100% /snap/gnome-3-38-2004/112
+/dev/loop3                   squashfs   64M   64M     0 100% /snap/core20/1623
+/dev/loop4                   squashfs  347M  347M     0 100% /snap/gnome-3-38-2004/119
+/dev/loop5                   squashfs   82M   82M     0 100% /snap/gtk-common-themes/1534
+/dev/loop6                   squashfs   92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop8                   squashfs   46M   46M     0 100% /snap/snap-store/599
+/dev/loop7                   squashfs   48M   48M     0 100% /snap/snapd/17029
+/dev/loop9                   squashfs   55M   55M     0 100% /snap/snap-store/558
+/dev/loop10                  squashfs   48M   48M     0 100% /snap/snapd/17336
+/dev/sda1                    vfat      511M  4.0K  511M   1% /boot/efi
+tmpfs                        tmpfs     389M   28K  389M   1% /run/user/1000
+/dev/mapper/bootpool-bootimg ext4      9.8G  4.0G  5.4G  43% /mnt/bootimg
+/dev/mapper/bootpool-host01  ext4      9.8G  4.0G  5.4G  43% /mnt/host01
+root@jerry:~#
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

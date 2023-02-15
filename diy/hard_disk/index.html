@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/diy/hard_disk/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>硬盘 {#hard-disk} - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#hard-disk" class="nav-link">硬盘</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#classification" class="nav-link">硬盘的分类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interface" class="nav-link">接口类型</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pci-e" class="nav-link">PCI-E</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#m2" class="nav-link">M.2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nvme" class="nav-link">NVME</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#usb" class="nav-link">USB</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ssd" class="nav-link">SSD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#summary" class="nav-link">总结</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="hard-disk">硬盘<a class="headerlink" href="#hard-disk" title="Permanent link"></a></h1>
+<p>有关硬盘的一些名词和概念。</p>
+<hr />
+<h2 id="classification">硬盘的分类<a class="headerlink" href="#classification" title="Permanent link"></a></h2>
+<p>机械硬盘（HDD）、固态硬盘（SSD）、混合硬盘（SSHD）</p>
+<ul>
+<li>HDD(Hard Disk Driver)：传统硬盘，即机械硬盘，采用磁性碟片来存储。</li>
+<li>SSD(Solid State Disk)：固态硬盘，是用固态电子存储芯片阵列而制成的硬盘，因为台湾英语里把固体电容称之为Solid而得名。</li>
+<li>HHD(Hybrid Hard Disk): 混合硬盘，把磁性硬盘和闪存集成到一起的一种硬盘。绝大多数硬盘都是固定硬盘，被永久性地密封固定在硬盘驱动器中。</li>
+</ul>
+<p>相对SSD固态硬盘来说，HDD机械硬盘的速度已经完全跟不上技术革新的节奏了。现在的机械硬盘在电脑内的作用基本上只有单纯的储存资料文件数据了。</p>
+<p>硬盘按体积大小可分为3.5寸、2.5寸、1.8寸等；按转数可分为5400rpm/7200rpm/10000rpm等，同种类型转数越高速度越快；按接口可分为IDE、SATA、SCSI、SAS、光纤通道硬盘等，ACHI是一种软接口技术，不是实体接口，一般在SATA接口上默认开启ACHI。</p>
+<h2 id="interface">接口类型<a class="headerlink" href="#interface" title="Permanent link"></a></h2>
+<p>IDE、SATA、SCSI、SAS、PCIE、M.2等</p>
+<p>电子集成驱动器接口，Integrated Drive Electronics（IDE），平常所说的IDE接口，也称之为并行ATA接口，即：并口（PATA，Parallel ATA）。ATA的英文拼写为“Advanced Technology Attachment”，含义是“高级技术附加装置”。ATA接口最早是在1986年由康柏、西部数据等几家公司共同开发的，在九十年代初开始应用于台式机系统。，由于其数据传输速度慢、线缆长度过短、连接设备少、不支持热插拔、接口速度的可升级性差等原因，已经淘汰。</p>
+<p>ATA（Advanced Technology Attachment），高技术配置，一般来说，ATA是一种控制器技术，而IDE（Integrated Drive Electronics）是一个匹配它的磁盘驱动器技术，ATA和IDE通常可以互换使用。ATA下一步的技术是SATA（Serial ATA），串行ATA。有了SATA之后，原来的ATA又被称为PATA（Parallel ATA），并行ATA。简单小结一下，一般意义上，IDE和PATA是说的同一种东西，它们的进化型是SATA。</p>
+<p>SATA是Serial ATA的缩写，即串行ATA，SATA已经完全取代旧式PATA（Parallel ATA或旧称IDE）接口的旧式硬盘，因采用串行方式传输数据而得名。在数据传输上这一方面，SATA的速度比以往更加快捷，并支持热插拔，使电脑运作时可以插上或拔除硬件。另一方面，SATA总线使用了嵌入式时钟频率信号，具备了比以往更强的纠错能力，能对传输指令（不仅是数据）进行检查，如果发现错误会自动矫正，提高了数据传输的可靠性。</p>
+<p>SATA接口，有1.0、2.0、3.0三个版本，分别对应SATA 1.5Gbit/s、SATA 3Gbit/s和SATA 6Gbit/s三种规格。未来将有更快速的SATA Express规格。</p>
+<p>SCSI（Small Computer System Interface），小型计算机系统接口，是一种计算机与外部设备之间的接口标准。属于并口，但同IDE（ATA）完全不同的接口，IDE接口是普通PC的标准接口，而SCSI并不是专门为硬盘设计的接口，广泛应用于小型机、服务器上的高速数据传输。SCSI的进化型是SAS（Serial Attached SCSI），串行SCSI。</p>
+<p>串行连接SCSI接口（Serial Attached SCSI，SAS），SAS是新一代的SCSI技术，和现在流行的Serial ATA(SATA)硬盘相同，都是采用串行技术以获得更高的传输速度，并通过缩短连结线改善内部空间等。SAS是并行SCSI接口之后开发出的全新接口。此接口的设计是为了改善存储系统的效能、可用性和扩充性，提供SATA硬盘的兼容性。SAS的接口不仅看起来和SATA类似，而且可以向下兼容SATA标准。即SAS系统的背板(Backpanel)既可以连接具有双端口、高性能的SAS驱动器，也可以连接高容量、低成本的SATA驱动器。由此SAS驱动器和SATA驱动器可以同时存在于一个存储系统之中。但需要注意的是，SATA系统并不兼容SAS，所以SAS驱动器不能连接到SATA背板上。由于SAS系统的兼容性，IT人员能够运用不同接口的硬盘来满足各类应用在容量上或效能上的需求，因此在扩充存储系统时拥有更多的弹性，让存储设备发挥最大的投资效益。</p>
+<p>SATA和SAS是两种不同分支的进化型，但是，SAS却可以完全兼容SATA，即能用SAS硬盘的地方，可以毫无阻碍的使用SATA硬盘。</p>
+<p>FC光纤通道的英文拼写是Fibre Channel，和SCIS接口一样光纤通道最初也不是为硬盘设计开发的接口技术，是专门为网络系统设计的，但随着存储系统对速度的需求，才逐渐应用到硬盘系统中。光纤通道硬盘是为提高多硬盘存储系统的速度和灵活性才开发的，它的出现大大提高了多硬盘系统的通信速度。它以点对点(或是交换)的配置方式在系统之间采用了光缆连接。即, 硬盘本身是不具备FC接口的, 插硬盘的机柜上带有FC接口, 通过光纤与光纤交换机互联。</p>
+<h2 id="pci-e">PCI-E<a class="headerlink" href="#pci-e" title="Permanent link"></a></h2>
+<p>主板上的扩展插槽曾经是多种多样的，例如曾经非常流行的组合就是PCI插槽搭配AGP插槽，其中AGP插槽主要用在显卡上，而PCI插槽的用途则更广一些，不仅有用在显卡上，还能用于扩展其它设备，如网卡、声卡、调制解调器等等。这两种插槽曾经共同为广大DIY玩家服役多年，然而在一个速率更高、扩展性更强的插槽PCI-E出现之后，它们就快速退出舞台，被后者彻底取代。</p>
+<p>PCI-Express(peripheral component interconnect express)是一种高速串行计算机扩展总线标准。属于高速串行点对点双通道高带宽传输，所连接的设备分配独享通道带宽，不共享总线带宽。PCIe有两种存在形式M.2接口通道形式和PCIe标准插槽。</p>
+<p>PCIe可拓展性强，可以支持的设备有：显卡、固态硬盘（PCIe接口形式）、无线网卡、有线网卡、声卡、视频采集卡、PCIe转接M.2接口、PCIe转接USB接口、PCIe转接Tpye-C接口等。</p>
+<p>与基于半双工共享并行架构而制定的PCI以及AGP规范不一样，PCI-E规范是基于全双工点对点串行架构制定的，而且还支持热拔插，其中全双工代表每个PCI-E通道在同一周期内可以实现数据的双向传输;点对点意味着每个PCI-E设备都是独立连接，不需要向整个总线请求带宽;串行传输则可以让其信号速率轻松达到GT/s(相当于GHz)的级别。</p>
+<p>现在PCI-E规范已经发展出5个大版本，每一次大版本的进化，都能带来相比上一版本近乎于翻倍的带宽。</p>
+<p>按照PCI-SIG提供的规范，PCI-E插槽有x1，x2，x4，x8，x12，x16和x32共计7种版本，对应1/2/4/8/12/16/32通道，其中PCI-E x32由于体积问题，仅使用在某些特殊场合中，对应的量产产品几乎为零;PCI-E x12则主要用在服务器领域，基本不会出现在消费级平台上;PCI-E x2则主要用于内部的接口而非扩展插槽，即便是部分有提供该接口的主板，其PCI-E x2也基本是以M.2接口的形式出现，而非PCI-E插槽的形式。因此现在主板上主流的PCI-E插槽，基本就集中在PCI-E x1/x4/x8/x16四种上。</p>
+<p>PCI-E x16插槽全长89mm，拥有164根针脚，分为前后两组，位于前面较短的插槽有22根针脚，主要用于供电，后面一组较长的插槽142根，主要用于数据传输。这样规划让PCI-E x16插槽拥有了极佳的兼容性，可以向下兼容x1/x4/x8级别的设备，在加上其16通道所带来的高带宽，因此PCI-E x16插槽可以说是PCI-E插槽在消费级领域中的完全体，其多数用于安装数据吞吐量很大的产品，如显卡以及RAID阵列卡等。</p>
+<p>由于PCI-E x16插槽常用于显卡，因此其基本由处理器直接引出，这样显卡与处理器之间的数据交换就可以实现最低的延迟，让系统的性能可以得到充分的发挥。</p>
+<p>相比于PCI-E x8插槽全长56mm，拥有98根针脚，相比于PCI-E x16主要是数据针脚减少至76根，供电针脚并无变化。不过我们很少在主板上看见真正的PCI-E x8插槽，因为它通常会以PCI-E x16插槽的形式出现，但数据针脚只有一半是有效的，也就是说实际带宽只有真正的PCI-E x16插槽的一半。</p>
+<p>实际上把PCI-E x8插槽做成PCI-E x16的样子是有原因的，因为PCI-E x8就是为了搭建多显卡平台而生的，为了让采用PCI-E x16接口的显卡顺利安装到PCI-E x8接口上，后者自然需要把自己“伪装”成PCI-E x16插槽。当然也有部分PCI-E x8插槽会在后部开一小口，让显卡能够安装，但这样的接口往往需要定制，成本并不比PCI-E x16插槽低，而且视觉上的冲击力也不够，因此直接采用PCI-E x16插槽来做PCI-E x8插槽自然也是情理之中。</p>
+<p>那么该如何区分真正的PCI-E x16插槽和PCI-E x8模式的PCI-E x16插槽呢?有经验玩家可以观察主板布线，后者的后半段往往是没有线路连接的，甚至没有针脚焊接。不过这并不是最快速的方式，实际上除了旗舰级的平台如X299能提供多条真正的PCI-E x16插槽外，主流级平台包括新近发布的Z370平台都只会提供一条真正的PCI-E x16插槽，就是最靠近处理器的那条。而第二条和第三条PCI-E x16插槽，则多数是PCI-E x8甚至是x4级别的。</p>
+<p>PCI-E x4插槽的长度为39mm，同样是在PCI-E x16插槽的基础上，以减少数据针脚的方式实现，主要用于PCI-E SSD，或者是通过PCI-E转接卡安装M.2 SSD等方面。PCI-E x4插槽通常由主板芯片扩展而来，不过随着处理器内部PCI-E通道数的增多，现在有部分高端主板可以开始提供直连处理器的PCI-E x4插槽，用于安装PCI-E SSD时理论上可以提供更好的性能，例如4K QD性能相比运用主板芯片的PCI-E x4插槽时会有一定的提升。</p>
+<p>找不到PCI-E x4插槽?其实它是以M.2接口的形式出现。用于安装M.2 SSD、M.2无线网卡或者其它M.2接口设备，其余扩展卡则留给PCI-E x1插槽负责。</p>
+<p>PCI-E x1插槽的长度是最短的，仅有25mm，相比PCI-E x16插槽，其数据针脚是大幅度减少至14个。PCI-E x1插槽的带宽通常由主板芯片提供，面向的产品比较广泛，独立网卡、独立声卡、USB 3.0/3.1扩展卡等都会用到PCI-E x1插槽，你甚至可以通过转接线给PCI-E x1插槽装上显卡，用来挖矿或者实现多屏输出。</p>
+<p>此外PCI-E x1插槽还存在着另外一个形态，一般称为Mini PCI-E插槽，常见于Mini-ITX主板以及笔记本电脑上，多数用来扩展无线网卡，但由于其在物理结构上与mSATA插槽相同，因此也有不少主板会通过跳线或者BIOS设定让Mini PCI-E接口在PCI-E模式或者SATA模式中切换，以实现一口两用的效果。</p>
+<p>不过Mini PCI-E插槽由于带宽上的限制，最终并未有得到广泛的普及，它和mSATA接口在面临M.2接口的进攻时都选择了快速撤退，如今其地位和作用都已经被M.2接口取代，基本上已经告别主流。</p>
+<p>PCIe总线标准不同的版本，具体的传输速度见下表。需要注意的是这里的吞吐量指的是理论最快的传输速度，具体的传输速度还要看固态硬盘使用的接口类型和支持的传输协议。</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>x1</th>
+<th>x2</th>
+<th>x4</th>
+<th>x8</th>
+<th>x16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCI-e 1.0</td>
+<td>250MB/s</td>
+<td>500MB/s</td>
+<td>1GB/s</td>
+<td>2GB/s</td>
+<td>4GB/s</td>
+</tr>
+<tr>
+<td>PCI-e 2.0</td>
+<td>500MB/s</td>
+<td>1GB/s</td>
+<td>2GB/s</td>
+<td>4GB/s</td>
+<td>8GB/s</td>
+</tr>
+<tr>
+<td>PCI-e 3.0</td>
+<td>1GB/s</td>
+<td>2GB/s</td>
+<td>4GB/s</td>
+<td>8GB/s</td>
+<td>16GB/s</td>
+</tr>
+<tr>
+<td>PCI-e 4.0</td>
+<td>2GB/s</td>
+<td>4GB/s</td>
+<td>8GB/s</td>
+<td>16GB/s</td>
+<td>32GB/s</td>
+</tr>
+<tr>
+<td>PCI-e 5.0</td>
+<td>4GB/s</td>
+<td>8GB/s</td>
+<td>16GB/s</td>
+<td>32GB/s</td>
+<td>64GB/s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="m2">M.2<a class="headerlink" href="#m2" title="Permanent link"></a></h2>
+<p>M.2接口，是Intel推出的一种替代MSATA新的接口规范。其实，对于桌面台式机用户来讲，SATA接口已经足以满足大部分用户的需求了，不过考虑到超极本用户的存储需求，Intel才急切的推出了这种新的接口标准。所以，我们在华硕、技嘉、微星等发布的新的9系列主板上都看到了这种新的M.2接口，现已普及。</p>
+<p>与MSATA相比，M.2主要有两个方面的优势。第一是速度方面的优势。M.2接口有两种类型：Socket 2（B key——ngff）和Socket 3（M key——nvme），其中Socket2支持SATA、PCI-E X2接口，而如果采用PCI-E ×2接口标准，最大的读取速度可以达到700MB/s，写入也能达到550MB/s。而其中的Socket 3可支持PCI-E ×4接口，理论带宽可达4GB/s。</p>
+<p>第二个是体积方面的优势。虽然，MSATA的固态硬盘体积已经足够小了，但相比M.2接口的固态硬盘，MSATA仍然没有任何优势可言。M.2标准的SSD同mSATA一样可以进行单面NAND闪存颗粒的布置，也可以进行双面布置，其中单面布置的总厚度仅有2.75mm，而双面布置的厚度也仅为3.85mm。</p>
+<p>M.2接口是一种新的主机接口方案，可以兼容多种通信协议，如sata、PCIe、USB、HSIC、UART、SMBus等。M.2接口是为超极本（Ultrabook）量身定做的新一代接口标准，以取代原来的mSATA接口。无论是更小巧的规格尺寸，还是更高的传输性能，M.2都远胜于mSATA。</p>
+<p>我们在买ssd的时候，商家都会说什么ssd是2280还是2242规格的,这里的规格实际上就是代表的ssd的尺寸大小。</p>
+<p>M.2模组的尺寸目前有11种，用Type xxyy的方式表示，xx表示宽度，yy表示长度，单位为毫米。例如上面提到的Type 2230则表示其宽度22nm，长度30nm；Type 2242，表示其宽度22mm，长度42mm；Type 2280则表示其宽度22nm，长度80nm。目前M.2 SSD常见的Type有三种，就是2230、2242、2280。</p>
+<h2 id="nvme">NVME<a class="headerlink" href="#nvme" title="Permanent link"></a></h2>
+<p>NVM Express（NVMe），或称非易失性内存主机控制器接口规范（英语：Non Volatile Memory Host Controller Interface Specification，缩写：NVMHCIS），是一个逻辑设备接口规范。它是与AHCI类似的、基于设备逻辑接口的总线传输协议规范（相当于通讯协议中的应用层），用于访问通过PCI Express（PCIe）总线附加的非易失性存储器介质（例如采用闪存的固态硬盘驱动器），虽然理论上不一定要求 PCIe 总线协议。</p>
+<p>传统的AHCI协议具有较强的兼容性，但是当与通过PCIe总线连接的SSD一起使用时，无法提供最佳的性能。而NVMe的设计充分利用了PCIe SSD的低延迟和并行性，并兼顾可CPU与平台构架，最大程度的发挥SSD的性能。</p>
+<ol>
+<li>NVMe是为PCIe制定的标准接口协议。</li>
+<li>解除了旧标准施放在SSD上的各种限制。</li>
+<li>支持所有常见的操作系统。</li>
+<li>良好的可拓展性。</li>
+<li>具有低延迟，低能耗，高性能等优点。</li>
+</ol>
+<p>NVMe1.0标准与2011年3月推出，由NVMe规范组织成员公司（如Intel,戴尔,三星,镁光等共计100多家公司）合作开发。2012年10月推出了1.1的版本。在2014年11月推出1.2版本之后，时隔近3年，2017年5月，NVMe规范组织正式发布了最新版的NVMe 1.3版规范标准。在最新的1.3中添加了如设备自检、引导分区、虚拟化、主机操控散热管理等新特性，理论上能够大大改进SSD的性能。</p>
+<p>第一：NVMe是一种接口协议，不是指的接口，所谓的协议就是某种规则，比如生活中不同的公路，可以看作是不同的接口，如果一条公路按照高速公路的规则来运行，那么就算是同样的路，也会比行人、自行车、汽车都能走的普通公路速度快得多；</p>
+<p>第二：NVMe标准是面向PCI-E固态硬盘的，怎么理解这个呢，我们知道电脑的CPU是核心计算单元，所有程序指令的计算处理都是由CPU完成，PCI-E相当于一条直接跟CPU打交道的绿色通道，所以PCI-E固态硬盘实际上就是固态硬盘可以直接跟CPU打交道，意味着速度可以更快；</p>
+<p>第三：除了高速公路上的绿色通道特性之外，NVMe还具有超宽的车道，意思是同一时间可以跑更多的数据在上面，不光跑得快，货还拉得多；</p>
+<p>第四：还有一个重要特性是它的功耗很低，这里功耗低并不是指的省油，而是综合管理能力带来的能耗控制，由于在上面跑起来都非常快，所以一旦没数据了，立马让工作人员进入休息状态，长时间没数据，立马放假。对于平板跟笔记本来说，可显著提高电池续航能力。</p>
+<p>SATA总线使用的通信协议是AHCI或ATA，传输速度都不算快。PCIe总线使用的通信协议一般都是NVMe，主流配置是PCIe 3.0×4搭配NVMe 1.4，传输速度能达到2000MB/S以上，说它是主流是因为这样性价比最高。</p>
+<h2 id="usb">USB<a class="headerlink" href="#usb" title="Permanent link"></a></h2>
+<p>通用串行总线（Universal Serial Bus，USB），是一个外部总线标准，用于规范电脑与外部设备的连接和通讯，在存储领域主要用于移动存储设备（移动硬盘、U盘等）。</p>
+<p>USB主要标准：USB1.1，支持低速率（ HalfSpeed）的1.5Mbps和全速率（FullSpeed）的 12Mbps；USB2.0，支持高速率（High Speed）的480Mbps； USB3.0，支持超高速率（ SuperSpeed）的 5Gbps。USB 2.0基于半双工两线总线，只能提供单向数据流传输。 USB 3.0使用双单工四线差分信号线，因此它支持双向并发数据流传输。</p>
+<p>USB3.0的移动硬盘接在eSATA接口上速度会比USB2.0接口的快，但是又要比直接插在USB3.0接口上的要慢。USB3.0接口的最大传输速度可以达到500MB/s，eSATA接口的最大传输速率不能超过300MB/s，USB2.0接口的最大传输速度仅为60MB/s，因此如果计算机具有eSATA接口或USB3.0接口，USB3.0是移动硬盘的首选，其传输速度将远远大于USB2.0。</p>
+<p>usb接口为适应多变的设备，衍生出了标准USB、mini USB、micro USB、USB Type-C等接口，另外，在移动硬盘上我们经常可以看到两个并排连在一起的接口，也是USB接口的变种。</p>
+<h2 id="ssd">SSD<a class="headerlink" href="#ssd" title="Permanent link"></a></h2>
+<p>SSD由控制单元和存储单元（FLASH芯片、DRAM芯片）组成。存储介质分为两种，一种是采用闪存（FLASH芯片）作为存储介质，另外一种是采用DRAM作为存储介质。</p>
+<p>根据外观，固态硬盘有两个版本，一个是SATA接口版，一个是M.2接口版。首先是SATA接口，它是从传统机械硬盘传承而来，最为主流的硬盘接口形态。由于存在时间很长，SATA接口兼容性极强，几乎所有种类的主板都有SATA接口，它算是是目前市面上普及度最强的硬盘接口。市面上固态硬盘SATA接口在性能标准上，一般采用SATA Ⅲ标准，理论最高速度为6Gbps。大部分基于SATA接口的固态硬盘的读取性能正常会在500MB/S以上。</p>
+<p>至于M.2接口呢，其实是为固态硬盘特殊准备的新接口。M.2接口本质为PCIe插槽，PCIe是一种高速通道，不同的固态硬盘传输协议会影响传输性能，支持NVMe协议，走PCIe通道的M.2接口会比不走PCIe的M.2接口快。主控决定了接入M.2接口的SSD是走PCIE通道还是SATA通道。</p>
+<ul>
+<li>FLASH: 基于闪存的固态硬盘（IDEFLASH DISK、Serial ATA Flash Disk）：采用FLASH芯片作为存储介质，这也是通常所说的SSD。它的外观可以被制作成多种模样，例如：笔记本硬盘、微硬盘、存储卡、U盘等样式。这种SSD固态硬盘最大的优点就是可以移动，而且数据保护不受电源控制，能适应于各种环境，适合于个人用户使用。一般它擦写次数普遍为3000次左右，以常用的64G为例，在SSD的平衡写入机理下，可擦写的总数据量为64G X 3000 = 192000G，假如你是个变态视频王每天喜欢下载视频看完就删每天下载100G的话，可用天数为192000 / 100 = 1920，也就是 1920 / 366 = 5.25 年。如果你只是普通用户每天写入的数据远低于10G，就拿10G来算，可以不间断用52.5年，再如果你用的是128G的SSD的话，可以不间断用104年！这什么概念？它像普通硬盘HDD一样，理论上可以无限读写。</li>
+<li>DRAM: 基于DRAM的固态硬盘：采用DRAM作为存储介质，应用范围较窄。它仿效传统硬盘的设计，可被绝大部分操作系统的文件系统工具进行卷设置和管理，并提供工业标准的PCI和FC接口用于连接主机或者服务器。应用方式可分为SSD硬盘和SSD硬盘阵列两种。它是一种高性能的存储器，而且使用寿命很长，美中不足的是需要独立电源来保护数据安全。DRAM固态硬盘属于比较非主流的设备。</li>
+</ul>
+<h2 id="summary">总结<a class="headerlink" href="#summary" title="Permanent link"></a></h2>
+<ul>
+<li>物理接口（插槽）：SATA  PCIE  M.2</li>
+<li>传输协议（总线）：SATA  PCIE  USB</li>
+<li>上层协议：AHCI  NVME</li>
+</ul>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/374750143">https://zhuanlan.zhihu.com/p/374750143</a></li>
+<li><a href="https://blog.csdn.net/bjchenxu/article/details/107036270">https://blog.csdn.net/bjchenxu/article/details/107036270</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

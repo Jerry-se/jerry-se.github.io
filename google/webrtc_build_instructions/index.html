@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/google/webrtc_build_instructions/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>WebRTC - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#webrtc" class="nav-link">WebRTC</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#get-the-code" class="nav-link">Get the code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#peerconnection" class="nav-link">Peerconnection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#call" class="nav-link">Call</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#relay-server" class="nav-link">Relay Server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stun-server" class="nav-link">STUN Server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#turn-server" class="nav-link">TURN Server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="webrtc">WebRTC<a class="headerlink" href="#webrtc" title="Permanent link"></a></h1>
+<p>Development</p>
+<hr />
+<p>The currently supported platforms are Windows, Mac OS X, Linux, Android and iOS. See the <a href="https://webrtc.github.io/webrtc-org/native-code/android/">Android</a> and <a href="https://webrtc.github.io/webrtc-org/native-code/ios/">iOS</a> pages for build instructions and example applications specific to these mobile platforms.</p>
+<h2 id="get-the-code">Get the code<a class="headerlink" href="#get-the-code" title="Permanent link"></a></h2>
+<p>源代码地址: <a href="https://webrtc.googlesource.com/src.git">https://webrtc.googlesource.com/src.git</a></p>
+<p>获取代码与<code>chromium</code>类似，都要设置代理，配置git，<code>depot_tools</code>等，下面只标识不一样的地方。</p>
+<p>有关代理，depot_tools等前置设置请参考<a href="../chromium_build_instructions/">获取和编译chromium代码</a></p>
+<pre><code class="language-shell">$ mkdir webrtc
+$ cd webrtc
+$ fetch --nohooks webrtc
+
+# git
+$ git config branch.autosetupmerge always
+$ git config branch.autosetuprebase always
+
+$ cd src
+# Chromium 103.0.5060.134
+$ git checkout -b M103 refs/remotes/branch-heads/5060
+$ gclient sync
+
+$ gn gen out/Default
+$ gn gen out/Default --args='is_debug=false'
+$ gn clean out/Default
+$ ninja -C out/Default
+$ ninja all -C out/Default
+</code></pre>
+<p><a href="https://webrtc.googlesource.com/src/+/refs/heads/master/docs/native-code/development/index.md">Check out and the build code</a></p>
+<p><a href="https://chromium.googlesource.com/external/webrtc/+/refs/heads/master/docs/release-notes.md">Release notes</a></p>
+<p>从 2019 年 12 月 2 日开始，WebRTC 从M80版本开始，不再以M80命令分支名称，而是与 Chromium 的分支名称匹配。比如 WebRTC M80 匹配 Chromium 80.0.3987.xxx，所在分支为 <code>refs/branch-heads/3987</code>。</p>
+<p><a href="https://chromiumdash.appspot.com/branches">Chromium Active Branches</a></p>
+<h2 id="peerconnection">Peerconnection<a class="headerlink" href="#peerconnection" title="Permanent link"></a></h2>
+<p>使用 WebRTC Native API 的应用程序。客户端<code>peerconnection_client</code>应用程序具有简单的语音和视频功能。服务端<code>peerconnection_server</code>通过管理客户端生成的信令消息，使客户端应用程序能够发起客户端之间的呼叫。</p>
+<h2 id="call">Call<a class="headerlink" href="#call" title="Permanent link"></a></h2>
+<p>目标名称 <code>call</code>（当前禁用）。使用 <code>libjingle</code> 建立的调用应用程序。Call 使用 xmpp（与 WebRTC 使用的 SDP 不同）允许您使用您的 gmail 帐户登录并与您的 gmail 朋友进行音频/视频通话。它建立在 libjingle 之上以提供此功能。</p>
+<p>此外，您可以为语音和视频指定输入和输出 RTP 转储。它提供了两个输入 RTP 转储样本：包含单通道、使用 G722 编码的 16Khz 语音流的<code>voice.rtpdump</code>，以及包含使用 H264 AVC 以每秒 30 帧编码的 320x240 视频流 <code>video.rtpdump</code>。提供的示例将与 Google Talk Video 互操作。如果您使用其他输入 RTP 转储，您可能需要在<code>call_main.cc</code>(第 215-222 行)中更改编解码器。</p>
+<h2 id="relay-server">Relay Server<a class="headerlink" href="#relay-server" title="Permanent link"></a></h2>
+<p>目标名称 <code>relayserver</code>。在无法建立直接对等连接时中继流量。可以与上面的通话应用程序一起使用。</p>
+<h2 id="stun-server">STUN Server<a class="headerlink" href="#stun-server" title="Permanent link"></a></h2>
+<p>目标名称 <code>stunserver</code>。为<a href="https://tools.ietf.org/html/rfc5389">RFC 5389</a>中记录的 NAT 会话遍历实用程序实现 STUN 协议。</p>
+<h2 id="turn-server">TURN Server<a class="headerlink" href="#turn-server" title="Permanent link"></a></h2>
+<p>目标名称 <code>turnserver</code>。用于单元测试。</p>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://webrtc.github.io/webrtc-org/native-code/development/">WebRTC Development</a></li>
+<li><a href="https://github.com/RTC-Developer/WebRTC-Documentation-in-Chinese">中文版 WebRTC 1.0官方文档</a></li>
+<li><a href="https://webrtc.org.cn/mirror/">声网Agora WebRTC国内镜像源</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/diy/desktop_2022.09.01/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>装机 {#assemble-desktop-computer} - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#assemble-desktop-computer" class="nav-link">装机</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#notebook" class="nav-link">笔记本</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#configuration-checklist" class="nav-link">配置清单</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cpu" class="nav-link">CPU</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#motherboard" class="nav-link">主板</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#graphics-card" class="nav-link">显卡</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#memory" class="nav-link">内存</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ssd" class="nav-link">固态硬盘</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hdd" class="nav-link">机械硬盘</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#power" class="nav-link">电源</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#chassis" class="nav-link">机箱</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#heat-sink" class="nav-link">散热</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#monitor" class="nav-link">显示器</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#assemble" class="nav-link">组装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#peripherals" class="nav-link">外设</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-operation-system" class="nav-link">装系统</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="assemble-desktop-computer">装机<a class="headerlink" href="#assemble-desktop-computer" title="Permanent link"></a></h1>
+<p>卖掉游戏笔记本后，我决定组装一台自己的台式机。</p>
+<hr />
+<h2 id="notebook">笔记本<a class="headerlink" href="#notebook" title="Permanent link"></a></h2>
+<p>2017-02-10 在京东购买了 联想(Lenovo)拯救者R720 15.6寸游戏笔记本电脑(i7-7700HQ 8G 1T GTX1050 2G IPS 黑) 实付5999元，12期分期挺便宜。后来又加装了128G固态硬盘和8G内存条。</p>
+<p>2022-08-20 京东-爱回收 2040 回收成交</p>
+<p>然后在纠结是否再买一台新笔记本后，我决定自己组装一个台式机。</p>
+<h2 id="configuration-checklist">配置清单<a class="headerlink" href="#configuration-checklist" title="Permanent link"></a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类型</th>
+<th>型号</th>
+<th>价格</th>
+<th>到手价</th>
+<th>质保</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>CPU</td>
+<td>Intel I7 12700</td>
+<td>2549</td>
+<td>3636</td>
+<td>3年质保</td>
+</tr>
+<tr>
+<td>2</td>
+<td>主板</td>
+<td>微星 B660M MORTAR WIFI DDR4 迫击炮</td>
+<td>1249</td>
+<td>板U套装</td>
+<td>3年质保</td>
+</tr>
+<tr>
+<td>3</td>
+<td>内存</td>
+<td>美商海盗船 DDR4 3200 套装 16G*2</td>
+<td>779</td>
+<td>779</td>
+<td>终身质保</td>
+</tr>
+<tr>
+<td>4</td>
+<td>固态硬盘</td>
+<td>西数 SN770 黑盘 1T M.2 NVME PCIE4.0</td>
+<td>699</td>
+<td>689</td>
+<td>5年质保</td>
+</tr>
+<tr>
+<td>5</td>
+<td>机械硬盘</td>
+<td>希捷 2TB SATA接口</td>
+<td>369</td>
+<td>369</td>
+<td>2年换新</td>
+</tr>
+<tr>
+<td>6</td>
+<td>显卡</td>
+<td>铭瑄 或者 七彩虹 RTX 3060 12 G</td>
+<td>2699</td>
+<td>没买等 40系</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>散热</td>
+<td>九州风神 冰堡 240水冷</td>
+<td>399</td>
+<td>499</td>
+<td>赠送3年漏液险</td>
+</tr>
+<tr>
+<td>8</td>
+<td>电源</td>
+<td>安钛克 HCG 750W 金牌全模组</td>
+<td>799</td>
+<td>773</td>
+<td>10年换新 只换不修</td>
+</tr>
+<tr>
+<td>9</td>
+<td>机箱</td>
+<td>乔思伯 D30 黑色 M-ATX</td>
+<td>379</td>
+<td>386</td>
+<td>1年质保</td>
+</tr>
+<tr>
+<td>10</td>
+<td>风扇</td>
+<td>九州风神 魔环 RGB 风扇 三连包</td>
+<td>99</td>
+<td>111</td>
+<td>1年质保</td>
+</tr>
+<tr>
+<td>11</td>
+<td>显示器</td>
+<td>泰坦军团 27 2K 144Hz IPS 可升降旋转</td>
+<td>1159</td>
+<td>1159</td>
+<td>3年质保</td>
+</tr>
+<tr>
+<td>总计</td>
+<td></td>
+<td></td>
+<td>11179</td>
+<td>8401</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link"></a></h2>
+<p>一开始想选12700KF 搭配 华硕的Z690 玩超频，后来想想，我买来最大的用途还是看视频玩游戏，偶尔写写代码，玩下3A游戏，没有必要超频，费电费钱还折腾人。还有就是重点单核高频，不考虑AMD。最后还是决定12700 搭配 B600M。如果再省些，i5-12600K其实也可以，而且比12700要便宜400块，京东货源充足。</p>
+<h2 id="motherboard">主板<a class="headerlink" href="#motherboard" title="Permanent link"></a></h2>
+<p>CPU确定12700后，主板就是华硕重炮手或者微星迫击炮二选一了，玩灯就选华硕，我其实不在乎，而且微星的接口好像更友好，WIFI最好还是带上。然后就是我不太想用大机箱，为了兼容性，还是选择 m-atx 主板比较好。</p>
+<h2 id="graphics-card">显卡<a class="headerlink" href="#graphics-card" title="Permanent link"></a></h2>
+<p>因为矿难来临，市场上矿卡翻新卡太多，铭瑄或者七彩虹的3060也要2500以上，可能京东旗舰店买到的也是翻新卡，所以最后决定先用核显撑着，等4060显卡。</p>
+<p>京东 12700 + 微星 B660M MORTAR WIFI DDR4 板U套装 3599 * 9.7折 = 3491.03 但是下单前盯一个多星期，12700带核显版本一直缺货，等不及了在淘宝intel旗舰店买的板U套装，原价3699，店铺60券，天猫红包3元，到手价3636。</p>
+<h2 id="memory">内存<a class="headerlink" href="#memory" title="Permanent link"></a></h2>
+<ol>
+<li>首先DDR5太贵，性能比DDR4提升不大，而且还有很多问题，所以不考虑DDR5。</li>
+<li>频率选择。因为12700锁电压，频率太高可能无法点亮。而且性价比上DDR4 3200最优。</li>
+<li>品牌。内存超频首选英睿达，镁光原厂颗粒。最次或者没钱就用国产的光威，合肥长鑫的颗粒。好看不差钱就选芝奇皇家戟，金士顿销量高假货多不推荐，其他威刚、海盗船都差不多。</li>
+</ol>
+<h2 id="ssd">固态硬盘<a class="headerlink" href="#ssd" title="Permanent link"></a></h2>
+<p><a href="../hard_disk/">硬盘的一些概念</a></p>
+<p>首先品牌首选三星和西数，省钱就用国产的铠侠和致态。</p>
+<p>现在PCIE4.0固态的价格慢慢下来了，旗舰价格也开始接近PCIE3.0固态的价格，现在可以优先考虑PCIE4.0固态。</p>
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>价格</th>
+<th>协议</th>
+<th>接口</th>
+<th>顺序读取速度</th>
+<th>顺序写入速度</th>
+<th>闪存类型</th>
+<th>产品尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三星 980 PRO 1T SSD</td>
+<td>￥999</td>
+<td>NVMe</td>
+<td>M.2 PCIe 4.0x4</td>
+<td>7000MB/s</td>
+<td>5000MB/s</td>
+<td>TLC</td>
+<td>2280</td>
+</tr>
+<tr>
+<td>西部数据（Western Digital）WD_BLACK SN850 1T SSD</td>
+<td>￥899</td>
+<td>NVMe</td>
+<td>M.2 PCIe 4.0x4</td>
+<td>7000MB/s</td>
+<td>5300MB/s</td>
+<td>TLC</td>
+<td>2280</td>
+</tr>
+<tr>
+<td>西部数据（Western Digital）WD_BLACK SN770 1T SSD</td>
+<td>￥699</td>
+<td>NVMe</td>
+<td>M.2 PCIe 4.0x4</td>
+<td>5150MB/s</td>
+<td>4900MB/s</td>
+<td>TLC</td>
+<td>2280</td>
+</tr>
+<tr>
+<td>致态（ZhiTai）长江存储 TiPro7000 1TB SSD</td>
+<td>￥879</td>
+<td>NVMe</td>
+<td>M.2 PCIe 4.0x4</td>
+<td>7400MB/s</td>
+<td>5400MB/s</td>
+<td>TLC</td>
+<td>2280</td>
+</tr>
+<tr>
+<td>铠侠（Kioxia）EXCERIA Pro SE10 1TB SSD</td>
+<td>￥854</td>
+<td>NVMe</td>
+<td>M.2 PCIe 4.0x4</td>
+<td>7300MB/s</td>
+<td>6400MB/s</td>
+<td>TLC</td>
+<td>2280</td>
+</tr>
+<tr>
+<td>铠侠（Kioxia）EXCERIA G2 RC20 1TB SSD</td>
+<td>￥539</td>
+<td>NVMe 1.3c</td>
+<td>M.2 PCIe 3.0x4</td>
+<td>2100MB/s</td>
+<td>1700MB/s</td>
+<td>TLC</td>
+<td>2280</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hdd">机械硬盘<a class="headerlink" href="#hdd" title="Permanent link"></a></h2>
+<p>机械硬盘看个人需求，没有大容量存储需求的不需要买。习惯用希捷，性价比高。其他东芝、西数均可。看重使用时长，稳定不易坏。</p>
+<h2 id="power">电源<a class="headerlink" href="#power" title="Permanent link"></a></h2>
+<p>首先计算瓦数，一般i7 + 3060显卡需要650W，准备蹲守40系显卡后又增加了100W功耗。然后品牌一开始选择了华硕 TUF 650W 铜牌突击手。那个时候也不太懂金银铜牌，全模组那些东西。后来看了一些B站的视频，特别是<a href="https://www.bilibili.com/video/BV1mU4y197Sx?share_source=copy_web&amp;vd_source=9644a2370cb7f6e92c3d83b7cddcb826">超详细！电源选购万能攻略，一站式电源基础知识入门指南！内含电源瓦数推荐</a>，我把电源换成了海盗船 RM750 金牌全模组，然后在下单前发现涨价了，最后选了安钛克 HCG 750W 金牌全模组。</p>
+<ul>
+<li><a href="https://kdocs.cn/l/ccm3lVaKqpGZ">【金山文档】 CPU+显卡 电源瓦数推荐图</a></li>
+<li><a href="https://kdocs.cn/l/cexFMHkfEeBB">【金山文档】 电源各瓦数品牌型号推荐表 如有错误可及时通知我修改.xlsx</a></li>
+</ul>
+<h2 id="chassis">机箱<a class="headerlink" href="#chassis" title="Permanent link"></a></h2>
+<p>本人不喜欢太大的机箱，租的房间小，不能占用太大空间。刚开始的想装itx型，发现机箱和小硬件太贵，主板限制太大，扩展接口少，硬件温度高，烤鸡温度CPU动不动90'，显卡温度也不低，于是转向m-atx机箱。B站阿肯老师评测的机械大师非常好，搭配多，可玩性高，能装的硬件也多，可惜有点贵，接近千元。然后看上了华硕冰立方ap201，可惜当时黑色版缺货，而且防尘性不好。然后就选择了乔斯伯D30，最高240水冷也足够了。</p>
+<h2 id="heat-sink">散热<a class="headerlink" href="#heat-sink" title="Permanent link"></a></h2>
+<p>水冷一定考虑机箱的大小，品牌的话，利民、九州风神、ID-COOLING和酷冷至尊都差不多，预算高可以选超频三。机箱如果没有送风扇，看需求可能还要额外买，M-ATX机箱都要注意风扇的尺寸。如果有RGB需求，肯定会比没有灯的贵，这方面就是个人爱好了。</p>
+<h2 id="monitor">显示器<a class="headerlink" href="#monitor" title="Permanent link"></a></h2>
+<p>显示器主要品牌非常多，常见的AOC、DELL、华硕、三星和菲利普，小米也有显示其产品了。</p>
+<p>我的标准要求：</p>
+<ol>
+<li>首先分屏用多了，27寸刚刚好，搭配2K分辨率，一边开浏览器，一边写代码非常舒服。24寸太小，1080P分屏无体验，也不需要4K，不仅贵还需要更好的显卡来支持。</li>
+<li>偶尔玩下游戏看看电影，本人手残，基本不玩fps射击类游戏，刷新不需要太高，75 144 165均可，不需要240Hz。中值144Hz即可。</li>
+<li>对曲面屏无感。</li>
+<li>不是PS和设计类工作，对专业的色彩精度和校色没有要求。HDR无所谓，又不是高清视频从业者。</li>
+<li>必须要能升降，左右和旋转无所谓。</li>
+<li>HDMI、DP有就性，VGA这种旧接口无所谓。</li>
+</ol>
+<p>综合以上，<a href="https://item.jd.com/100033206358.html">泰坦军团 27英寸 2K 144Hz IPS 可升降旋转</a>最具性价比。</p>
+<h2 id="assemble">组装<a class="headerlink" href="#assemble" title="Permanent link"></a></h2>
+<p>2022-09-01 周四 晚上下单，09-03 周六 全部到货，下午开始装机，一次点亮，安装系统后，烤鸡测试CPU、内存和硬盘没有问题。下面就是等显卡了。</p>
+<p>第一次装机，还是花了挺长时间的，总结起来，主板说明书和机箱的说明书很重要，第一次接灯线一直搞不懂为什么会有5V和12V两种电压的RGB线，最后理线简直就是最麻烦的事。下面是参考的装机视频。</p>
+<ul>
+<li><a href="https://cn.msi.com/Motherboard/MAG-B660M-MORTAR-WIFI-DDR4/support#manual">微星官网 MAG B660M MORTAR WIFI DDR4 产品手册</a></li>
+<li><a href="https://www.bilibili.com/video/BV1UU4y1c74o?share_source=copy_web&amp;vd_source=9644a2370cb7f6e92c3d83b7cddcb826">装机不求人之：史上最详细传说级装机教程，零基础新手一站式装机攻略。内含AMD、Intel双平台DIY组装教程。</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Pg411X7KJ?p=2&amp;share_source=copy_web&amp;vd_source=9644a2370cb7f6e92c3d83b7cddcb826">离完美只差一点：乔思伯D30</a></li>
+</ul>
+<h2 id="peripherals">外设<a class="headerlink" href="#peripherals" title="Permanent link"></a></h2>
+<ul>
+<li>雷柏（Rapoo） V500PRO 机械键盘 有线键盘 104键混光红-轴 ￥109 1年质保</li>
+<li>雷柏（Rapoo） VH160 有线耳机 虚拟7.1声道游戏耳机 USB接口 头戴式🎧 ￥79 1年质保</li>
+<li>金士顿（Kingston）64GB USB 3.2 Gen 1 U盘 DTKN 金属外壳 ¥48.8 只换不修，五年质保</li>
+</ul>
+<h2 id="install-operation-system">装系统<a class="headerlink" href="#install-operation-system" title="Permanent link"></a></h2>
+<p>首次安装系统需要准备一个8G以上的U盘(不推荐光盘方式)，首先就是选择要安装的系统版本，下载好镜像。如果使用微软官方的制作工具，该工具会自动下载镜像。如需手动下载，下载网站推荐使用微软官方的下载入口，觉得麻烦就使用 MSDN，这是一个个人性质的原版软件信息收录站点，提供BT资源下载，win11和后面的新系统又放到了新版的MSDN网站，请自行斟酌。</p>
+<ul>
+<li><a href="https://www.microsoft.com/zh-cn/software-download/windows11">微软官方 下载 Windows 11</a></li>
+<li><a href="https://msdn.itellyou.cn/">MSDN I Tell You</a></li>
+<li><a href="https://next.itellyou.cn/">新版 I Tell You</a></li>
+</ul>
+<p>也可以单独下载镜像，使用第三方工具制作WinPE启动盘。推荐使用WinPE方式，因为不仅可以引导安装系统，还集成了丰富的维护工具。推荐使用纯净的PE制作工具，不要选择老毛桃、大白菜那种流氓工具。PE制作工具推荐如下：</p>
+<ul>
+<li><a href="https://www.wepe.com.cn/">微PE工具箱</a> : 首推，简洁又纯净。</li>
+<li><a href="https://firpe.cn/">FirPE</a> : 支持更换主题、ToDesk远程控制、浏览器、迅雷下载等功能。</li>
+<li><a href="https://home.edgeless.top/">Edgeless</a> : 复杂支持很多自定义设置和安装的软件，但不支持老电脑。</li>
+<li><a href="https://www.hotpe.top/">HotPE</a> : B站UP主VirtualHotBar开源工具。</li>
+</ul>
+<p>原装ISO镜像制作工具，类似安装系统的光盘，插进去启动就行。现在很多笔记本和电脑放弃了光盘驱动器，所以开始使用U盘制作。这种方式简单直接，缺点是无法像PE那样选择系统列表，当无法进入系统时没有PE的维护工具可以使用。</p>
+<ul>
+<li>微软官方的制作工具。</li>
+<li><a href="https://rufus.ie/zh/">Rufus</a> : 开源纯净，软件非常小，无安装，支持Windows和Linux，支持Bios和UEFI。</li>
+<li>软碟通 UltraISO : 传统。</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

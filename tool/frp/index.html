@@ -61,6 +61,10 @@
 <li>
     <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
 </li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -123,6 +127,10 @@
 <li>
     <a href="../v2ray/" class="dropdown-item">V2Ray</a>
 </li>
+                                    
+<li>
+    <a href="../activation_keys/" class="dropdown-item">Activation</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -143,9 +151,37 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../linux_development/docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
     <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
 </li>
                                 </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
                             </li>
                         </ul>
 
@@ -202,10 +238,6 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#systemd" class="nav-link">systemd</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#windows-auto-run" class="nav-link">windows开机启动</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -289,12 +321,6 @@ WantedBy=multi-user.target
 $ systemctl start frps
 $ systemctl status frps
 </code></pre>
-<h2 id="windows-auto-run">windows开机启动<a class="headerlink" href="#windows-auto-run" title="Permanent link"></a></h2>
-<p>打开注册表，在 <code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code> 下添加字符串值</p>
-<p><code>计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code></p>
-<p>名称: Frpc
-类型: REG_SZ
-数据: "D:\Program Files\frp_0.43.0_windows_amd64\frpc.exe" -c "D:\Program Files\frp_0.43.0_windows_amd64\frpc.ini"</p>
 <h2 id="ssh-example">通过 SSH 访问局域网中的计算机<a class="headerlink" href="#ssh-example" title="Permanent link"></a></h2>
 <p>这个示例通过简单配置 TCP 类型的代理让用户访问到内网的服务器。</p>
 <ol>

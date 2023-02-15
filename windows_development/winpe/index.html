@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/windows_development/winpe/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>WinPE - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#winpe" class="nav-link">WinPE</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#windows-adk" class="nav-link">Windows ADK</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#add-optional-packages" class="nav-link">添加可选包</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#add-gui" class="nav-link">添加界面</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="winpe">WinPE<a class="headerlink" href="#winpe" title="Permanent link"></a></h1>
+<p>制作WinPE引导系统</p>
+<h2 id="windows-adk">Windows ADK<a class="headerlink" href="#windows-adk" title="Permanent link"></a></h2>
+<p>首先<a href="https://learn.microsoft.com/zh-cn/windows-hardware/get-started/adk-install">下载并安装 Windows ADK</a>：
+- adksetup.exe：Windows ADK(Windows评估和部署工具包)安装程序。
+- adkwinpesetup.exe：Windows ADK(Windows评估和部署工具包)Win PE加载项安装程序。</p>
+<p>然后以管理员身份打开“部署和映像工具环境”，使用 <code>copype</code> 命令创建Windows PE文件的工作副本，使用 <code>MakeWinPEMedia</code> 将Windows PE文件制作成ISO镜像或者安装到U盘。</p>
+<p>命令提示如下:</p>
+<pre><code class="language-shell">C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;copype
+Creates working directories for WinPE image customization and media creation.
+
+copype { amd64 | x86 | arm | arm64 } &lt;workingDirectory&gt;
+
+ amd64             Copies amd64 boot files and WIM to &lt;workingDirectory&gt;\media.
+ x86               Copies x86 boot files and WIM to &lt;workingDirectory&gt;\media.
+ arm               Copies arm boot files and WIM to &lt;workingDirectory&gt;\media.
+ arm64             Copies arm64 boot files and WIM to &lt;workingDirectory&gt;\media.
+                   Note: ARM/ARM64 content may not be present in this ADK.
+ workingDirectory  Creates the working directory at the specified location.
+
+Example: copype amd64 C:\WinPE_amd64
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;MakeWinPEMedia
+Creates bootable WinPE USB flash drive or ISO file.
+
+MakeWinPEMedia {/ufd | /iso} [/f] &lt;workingDirectory&gt; &lt;destination&gt;
+
+ /ufd              Specifies a USB Flash Drive as the media type.
+                   NOTE: THE USB FLASH DRIVE WILL BE FORMATTED.
+ /iso              Specifies an ISO file (for CD or DVD) as the media type.
+ /f                Suppresses prompting to confirm formatting the UFD
+                   or overwriting existing ISO file.
+ workingDirectory  Specifies the working directory created using copype.cmd
+                   The contents of the &lt;workingDirectory&gt;\media folder
+                   will be copied to the UFD or ISO.
+ destination       Specifies the UFD volume or .ISO path and file name.
+
+ Examples:
+   MakeWinPEMedia /UFD C:\WinPE_amd64 G:
+   MakeWinPEMedia /UFD /F C:\WinPE_amd64 H:
+   MakeWinPEMedia /ISO C:\WinPE_x86 C:\WinPE_x86\WinPE_x86.iso
+</code></pre>
+<h2 id="add-optional-packages">添加可选包<a class="headerlink" href="#add-optional-packages" title="Permanent link"></a></h2>
+<p>本次流程不使用ISO镜像，但需要给WinPE添加一些包，全部命令提示如下：</p>
+<pre><code>C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;copype amd64 C:\winpe\amd64
+
+===================================================
+Creating Windows PE customization working directory
+
+    C:\winpe\amd64
+===================================================
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\bootmgr
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\bootmgr.efi
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\bg-bg\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\BCD
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\boot.sdi
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\bootfix.bin
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\memtest.exe
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\bg-bg\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\cs-cz\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\cs-cz\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\da-dk\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\da-dk\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\de-de\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\de-de\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\el-gr\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\el-gr\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\en-gb\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\en-us\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\en-us\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\es-es\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\es-es\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\es-mx\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\et-ee\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\fi-fi\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\fi-fi\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\chs_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\cht_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\jpn_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\kor_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\malgunn_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\malgun_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\meiryon_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\meiryo_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\msjhn_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\msjh_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\msyhn_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\msyh_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\segmono_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\segoen_slboot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\segoe_slboot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Fonts\wgl4_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\fr-ca\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\fr-fr\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\fr-fr\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\hr-hr\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\hu-hu\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\hu-hu\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\it-it\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\it-it\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\ja-jp\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\ja-jp\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\ko-kr\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\ko-kr\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\lt-lt\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\lv-lv\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\nb-no\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\nb-no\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\nl-nl\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\nl-nl\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\pl-pl\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\pl-pl\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\pt-br\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\pt-br\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\pt-pt\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\pt-pt\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\Resources\bootres.dll
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\ro-ro\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\ru-ru\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\ru-ru\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\sk-sk\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\sl-si\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\sr-latn-rs\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\sv-se\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\sv-se\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\tr-tr\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\tr-tr\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\uk-ua\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\zh-cn\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\zh-cn\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\zh-tw\bootmgr.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\Boot\zh-tw\memtest.exe.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\cs-cz\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\da-dk\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\de-de\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Boot\bootx64.efi
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Boot\en-us\bootx64.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\BCD
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\memtest.efi
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\cs-cz\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\da-dk\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\de-de\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\el-gr\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\en-us\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\es-es\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\fi-fi\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\chs_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\cht_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\jpn_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\kor_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\malgun_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\meiryo_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\msjh_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\msyh_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\segmono_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\segoe_slboot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Fonts\wgl4_boot.ttf
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\fr-fr\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\hu-hu\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\it-it\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\ja-jp\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\ko-kr\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\nb-no\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\nl-nl\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\pl-pl\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\pt-br\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\pt-pt\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\Resources\bootres.dll
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\ru-ru\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\sv-se\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\tr-tr\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\zh-cn\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\EFI\Microsoft\Boot\zh-tw\memtest.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\el-gr\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\en-gb\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\en-us\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\es-es\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\es-mx\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\et-ee\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\fi-fi\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\fr-ca\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\fr-fr\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\hr-hr\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\hu-hu\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\it-it\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\ja-jp\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\ko-kr\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\lt-lt\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\lv-lv\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\nb-no\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\nl-nl\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\pl-pl\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\pt-br\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\pt-pt\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\ro-ro\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\ru-ru\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\sk-sk\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\sl-si\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\sr-latn-rs\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\sv-se\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\tr-tr\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\uk-ua\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\zh-cn\bootmgr.efi.mui
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\Media\zh-tw\bootmgr.efi.mui
+复制了 153 个文件
+已复制         1 个文件。
+已复制         1 个文件。
+已复制         1 个文件。
+
+Success
+
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Mount-Image /ImageFile:&quot;C:\winpe\amd64\media\sources\boot.wim&quot; /index:1 /MountDir:&quot;C:\winpe\amd64\mount&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+正在安装映像
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Get-Packages /Image:&quot;C:\winpe\amd64\mount&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Packages listing:
+
+Package Identity : Microsoft-Windows-WinPE-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2019/12/7 6:58
+
+Package Identity : Microsoft-Windows-WinPE-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Foundation
+Install Time : 2019/12/7 6:55
+
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\lp.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package Microsoft-Windows-WinPE-LanguagePack-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-FontSupport-ZH-CN.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package Microsoft-Windows-WinPE-FontSupport-ZH-CN-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Get-Packages /Image:&quot;C:\winpe\amd64\mount&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Packages listing:
+
+Package Identity : Microsoft-Windows-WinPE-FontSupport-ZH-CN-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:36
+
+Package Identity : Microsoft-Windows-WinPE-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2019/12/7 6:58
+
+Package Identity : Microsoft-Windows-WinPE-LanguagePack-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:36
+
+Package Identity : Microsoft-Windows-WinPE-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Foundation
+Install Time : 2019/12/7 6:55
+
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-WMI.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-WMI-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\WinPE-WMI_zh-cn.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-WMI-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-NetFx.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-NetFx-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\WinPE-NetFx_zh-cn.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-NetFx-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-Scripting.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-Scripting-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\WinPE-Scripting_zh-cn.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-Scripting-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-PowerShell.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-PowerShell-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\WinPE-PowerShell_zh-cn.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-PowerShell-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-StorageWMI.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-StorageWMI-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\WinPE-StorageWMI_zh-cn.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-StorageWMI-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-Dot3Svc.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-Dot3Svc-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\WinPE-Dot3Svc_zh-cn.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-Dot3Svc-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-PPPoE.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-PPPoE-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\WinPE-PPPoE_zh-cn.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-PPPoE-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-RNDIS.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-RNDIS-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Add-Package /Image:&quot;C:\winpe\amd64\mount&quot; /PackagePath:&quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\zh-cn\WinPE-RNDIS_zh-cn.cab&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Processing 1 of 1 - Adding package WinPE-RNDIS-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Get-Packages /Image:&quot;C:\winpe\amd64\mount&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+Packages listing:
+
+Package Identity : Microsoft-Windows-WinPE-FontSupport-ZH-CN-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:36
+
+Package Identity : Microsoft-Windows-WinPE-LanguagePack-Package~31bf3856ad364e35~amd64~en-US~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2019/12/7 6:58
+
+Package Identity : Microsoft-Windows-WinPE-LanguagePack-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:36
+
+Package Identity : Microsoft-Windows-WinPE-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Foundation
+Install Time : 2019/12/7 6:55
+
+Package Identity : WinPE-Dot3Svc-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:48
+
+Package Identity : WinPE-Dot3Svc-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:47
+
+Package Identity : WinPE-NetFx-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:42
+
+Package Identity : WinPE-NetFx-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:42
+
+Package Identity : WinPE-PowerShell-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:45
+
+Package Identity : WinPE-PowerShell-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:44
+
+Package Identity : WinPE-PPPoE-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:49
+
+Package Identity : WinPE-PPPoE-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:48
+
+Package Identity : WinPE-RNDIS-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:49
+
+Package Identity : WinPE-RNDIS-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:49
+
+Package Identity : WinPE-Scripting-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:44
+
+Package Identity : WinPE-Scripting-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:43
+
+Package Identity : WinPE-StorageWMI-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:46
+
+Package Identity : WinPE-StorageWMI-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:45
+
+Package Identity : WinPE-WMI-Package~31bf3856ad364e35~amd64~zh-CN~10.0.19041.1
+State : Installed
+Release Type : Language Pack
+Install Time : 2022/10/23 8:40
+
+Package Identity : WinPE-WMI-Package~31bf3856ad364e35~amd64~~10.0.19041.1
+State : Installed
+Release Type : Feature Pack
+Install Time : 2022/10/23 8:40
+
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Set-AllIntl:zh-cn /Image:&quot;C:\winpe\amd64\mount&quot;
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+映像版本: 10.0.19041.1
+
+
+Input locale has been set to: zh-cn
+System locale has been set to: zh-cn
+User locale has been set to: zh-cn
+UI language has been set to: zh-cn
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;dism /Unmount-Image /MountDir:&quot;C:\winpe\amd64\mount&quot; /commit
+
+部署映像服务和管理工具
+版本: 10.0.19041.1
+
+正在保存映像
+[==========================100.0%==========================]
+正在卸载映像
+[==========================100.0%==========================]
+操作成功完成。
+
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools&gt;
+</code></pre>
+<h2 id="add-gui">添加界面<a class="headerlink" href="#add-gui" title="Permanent link"></a></h2>
+<p>上面使用原生ADK制作出来的WinPE，开启进入系统后默认打开wpeinit命令行，并没有常见的Windows桌面，使用命令能够启动内置的Notepad记事本等软件，但更多的软件会因为缺少dll等原因无法打开运行。</p>
+<p>有两种方法给WinPE添加桌面，第一种就是使用Windows自带的桌面，需要补充需要的exe和dll文件，修改必要的注册表，非常麻烦。第二种就是使用第三方的桌面工具，网上很多关于Bs Explorer的资料，但是我在Windows 10 pe中测试失败，在Windows 7 pe依旧运行失败，这些资料原文也都是 Windows 7 pe 的老资料。新的工具是WinXshell。</p>
+<p><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&amp;tid=386397">WinXshell</a></p>
+<p>后来我不在自行制作WinPE，开始使用市面上流行的PE制作工具，测试他们的PE能否为我所用。</p>
+<p>雷电PE(Lightning WinPE x64)</p>
+<pre><code>:winpe
+echo Load Windows PE file...
+kernel ${base-url}/ipxe/wimboot
+initrd ${base-url}/winpe/lightningWinPE/boot/bcd            BCD
+initrd ${base-url}/winpe/lightningWinPE/boot/boot.sdi       boot.sdi
+initrd ${base-url}/winpe/lightningWinPE/sources/BOOT.WIM    boot.wim
+initrd ${base-url}/winpe/lightningWinPE/bootmgr             bootmgr
+echo Starting the system....
+boot || goto failed
+goto start
+
+:winpeuefi
+echo Load Windows PE file...
+kernel ${base-url}/ipxe/wimboot
+initrd ${base-url}/winpe/lightningWinPE/efi/boot/bootx64.efi      bootx64.efi
+initrd ${base-url}/winpe/lightningWinPE/efi/microsoft/boot/bcd    BCD
+initrd ${base-url}/winpe/lightningWinPE/boot/boot.sdi             boot.sdi
+initrd ${base-url}/winpe/lightningWinPE/sources/BOOT.WIM          boot.wim
+initrd ${base-url}/winpe/lightningWinPE/bootmgr.efi               bootmgr
+#sanboot ${base-url}/winpe/WePE64_V2.2.iso
+echo Starting the system....
+boot || goto failed
+goto start
+</code></pre>
+<p><a href="https://www.bilibili.com/video/BV19B4y157wj/?share_source=copy_web&amp;vd_source=9644a2370cb7f6e92c3d83b7cddcb826">利用雷电PE做框架，改造并自定义一个独属于自己，且稳定好用的PE</a></p>
+<p>微PE用iPXE启动时一直失败，暂时放弃。</p>
+<pre><code>:winpeuefi
+echo Load Windows PE file...
+kernel ${base-url}/ipxe/wimboot
+initrd ${base-url}/winpe/wepe/EFI/BOOT/bootx64.efi  bootx64.efi
+initrd ${base-url}/winpe/wepe/EFI/MICROSOFT/BOOT/BCD  BCD
+#initrd ${base-url}/winpe/wepe/WEPE/B64  BCD
+initrd ${base-url}/winpe/wepe/WEPE/WEPE.SDI  boot.sdi
+initrd ${base-url}/winpe/wepe/WEPE/WEPE64.WIM  boot.wim
+initrd ${base-url}/winpe/wepe/WEPE/WEPE64  bootmgr
+#initrd ${base-url}/winpe/wepe/WEIPE  bootmgr
+echo Starting the system....
+boot || goto failed
+goto start
+</code></pre>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<p><a href="https://learn.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/winpe-intro?view=windows-10">Windows PE</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

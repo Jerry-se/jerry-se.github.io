@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/linux_development/coredump/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>coredump - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-274394082');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../docker/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ipmi/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#coredump" class="nav-link">coredump</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#coredump-setting" class="nav-link">开启core dump</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#coredump-file-path" class="nav-link">core dump文件保存的路径</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#test-program" class="nav-link">测试程序</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="coredump">coredump<a class="headerlink" href="#coredump" title="Permanent link"></a></h1>
+<p>linux/Ubuntu下生成core dump文件调试方法</p>
+<hr />
+<h2 id="coredump-setting">开启core dump<a class="headerlink" href="#coredump-setting" title="Permanent link"></a></h2>
+<pre><code class="language-shell">dbtu@dbtu:~$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 384811
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 384811
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+</code></pre>
+<p><code>core file size</code>这一项为0，说明不生成core dump文件。</p>
+<pre><code class="language-shell"># 限制产生的 core 文件的大小不能超过 1024kb
+$ ulimit -c 1024
+# 取消转储文件大小限制
+$ ulimit -c unlimited
+</code></pre>
+<p>但是，这样设置会有一个问题，就是这个命令只在当前打开的shell中生效，关闭后就失效了。想要每次打开shell都会生效，需要将命令写入<code>~/.bashrc</code>或者<code>/etc/profile</code>:</p>
+<pre><code>$ echo 'ulimit -c unlimited' &gt;&gt; ~/.bashrc
+$ echo &quot;ulimit -c 1024&quot; &gt;&gt; /etc/profile
+</code></pre>
+<h2 id="coredump-file-path">core dump文件保存的路径<a class="headerlink" href="#coredump-file-path" title="Permanent link"></a></h2>
+<p><code>/proc/sys/kernel/core_uses_pid</code> 可以控制产生的 core 文件的文件名中是否添加 pid 作为扩展 ，如果添加则文件内容为 1 ，否则为 0 。</p>
+<p><code>proc/sys/kernel/core_pattern</code> 可以设置格式化的 core 文件保存位置或文件名，比如原来文件内容是 <code>core-%e</code>，可以修改为 <code>/tmp/corefile-%e-%p-%t</code>，即文件名格式“corefile-文件名-pid-时间戳”，保存到<code>/tmp/</code>文件夹中。也可以不写文件夹，则直接保存到崩溃程序的同文件夹中。</p>
+<p>还可以使用<code>sysctl</code>命令来设置保存路径：</p>
+<pre><code class="language-shell">$ sudo sysctl -w kernel.core_pattern=core.%p.%s.%c.%d.%P.%E
+</code></pre>
+<p>每个%开头的符号含义请参考命令<code>man 5 core</code> : <a href="https://man7.org/linux/man-pages/man5/core.5.html">core(5) — Linux manual page</a></p>
+<pre><code class="language-text">   Naming of core dump files
+       By  default,  a  core dump file is named core, but the /proc/sys/kernel/core_pattern file (since Linux
+       2.6 and 2.4.21) can be set to define a template that is used to name core dump  files.   The  template
+       can contain % specifiers which are substituted by the following values when a core file is created:
+
+           %%  a single % character
+           %c  core file size soft resource limit of crashing process (since Linux 2.6.24)
+           %d  dump mode—same as value returned by prctl(2) PR_GET_DUMPABLE (since Linux 3.7)
+           %e  executable filename (without path prefix)
+           %E  pathname  of  executable,  with slashes ('/') replaced by exclamation marks ('!') (since Linux
+               3.0).
+           %g  (numeric) real GID of dumped process
+           %h  hostname (same as nodename returned by uname(2))
+           %i  TID of thread that triggered core dump, as seen in the  PID  namespace  in  which  the  thread
+               resides (since Linux 3.18)
+           %I  TID  of  thread  that  triggered  core dump, as seen in the initial PID namespace (since Linux
+               3.18)
+           %p  PID of dumped process, as seen in the PID namespace in which the process resides
+           %P  PID of dumped process, as seen in the initial PID namespace (since Linux 3.12)
+           %s  number of signal causing dump
+           %t  time of dump, expressed as seconds since the Epoch, 1970-01-01 00:00:00 +0000 (UTC)
+           %u  (numeric) real UID of dumped process
+
+       A single % at the end of the template is dropped from the core filename, as is the combination of a  %
+       followed  by any character other than those listed above.  All other characters in the template become
+       a literal part of the core filename.  The template may include '/' characters, which  are  interpreted
+       as  delimiters  for directory names.  The maximum size of the resulting core filename is 128 bytes (64
+       bytes in kernels before 2.6.19).  The default value in this file is &quot;core&quot;.  For backward  compatibil‐
+       ity,  if  /proc/sys/kernel/core_pattern  does  not  include %p and /proc/sys/kernel/core_uses_pid (see
+       below) is nonzero, then .PID will be appended to the core filename.
+
+       Paths are interpreted according to the settings that are active for the crashing process.  That  means
+       the crashing process's mount namespace (see mount_namespaces(7)), its current working directory (found
+       via getcwd(2)), and its root directory (see chroot(2)).
+
+       Since version 2.4, Linux has also provided a more primitive method of controlling the name of the core
+       dump  file.  If the /proc/sys/kernel/core_uses_pid file contains the value 0, then a core dump file is
+       simply named core.  If this file contains a nonzero value,  then  the  core  dump  file  includes  the
+       process ID in a name of the form core.PID.
+
+       Since Linux 3.6, if /proc/sys/fs/suid_dumpable is set to 2 (&quot;suidsafe&quot;), the pattern must be either an
+       absolute pathname (starting with a leading '/' character) or a pipe, as defined below.
+</code></pre>
+<h2 id="test-program">测试程序<a class="headerlink" href="#test-program" title="Permanent link"></a></h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  int *p = nullptr;
+  *p = 0;
+  return 0;
+}
+</code></pre>
+<pre><code class="language-shell"># 使用 -g 参数编译添加调试信息
+$ g++ -g test.cpp -o testcore
+# 运行调试程序
+$ ./testcore
+Segmentation fault (core dumped)
+# 使用ls等命令找到coredump转储的文件，然后用gdb打开
+$ gdb ./testcore core.testcore.1663553436.2705214 
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04.1) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type &quot;show copying&quot; and &quot;show warranty&quot; for details.
+This GDB was configured as &quot;x86_64-linux-gnu&quot;.
+Type &quot;show configuration&quot; for configuration details.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+Find the GDB manual and other documentation resources online at:
+    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+
+For help, type &quot;help&quot;.
+Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;...
+Reading symbols from ./testcore...
+
+warning: exec file is newer than core file.
+[New LWP 2705214]
+Core was generated by `./testcore'.
+Program terminated with signal SIGSEGV, Segmentation fault.
+#0  0x00005562d441b17d in main () at test.cpp:5
+5               *p = 0;
+(gdb) where
+#0  0x00005562d441b17d in main () at test.cpp:5
+(gdb) info frame
+Stack level 0, frame at 0x7ffd6863cc60:
+ rip = 0x5562d441b17d in main (test.cpp:5); saved rip = 0x7f0da5bb4083
+ source language c++.
+ Arglist at 0x7ffd6863cc48, args: 
+ Locals at 0x7ffd6863cc48, Previous frame's sp is 0x7ffd6863cc60
+ Saved registers:
+  rbp at 0x7ffd6863cc50, rip at 0x7ffd6863cc58
+(gdb) 
+</code></pre>
+<p>从上面可以看出,我们可以还原 core_demo 执行时的场景,并使用 <code>where</code> 可以查看当前程序调用函数栈帧, 还可以使用 <code>gdb</code> 中的命令查看寄存器,变量等信息.</p>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://blog.csdn.net/byxdaz/article/details/90682397">Ubuntu下生成core dump文件调试方法</a></li>
+<li><a href="https://stackoverflow.com/questions/17965/how-to-generate-a-core-dump-in-linux-on-a-segmentation-fault">How to generate a core dump in Linux on a segmentation fault?</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
