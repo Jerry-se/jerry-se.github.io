@@ -12,22 +12,19 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <link href="../../css/extra.css" rel="stylesheet">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-274394082');
+          gtag('config', "G-274394082");
         </script> 
     </head>
 
@@ -161,6 +158,18 @@
 <li>
     <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
 </li>
+                                    
+<li>
+    <a href="../../linux_development/make_deb_package/" class="dropdown-item">制作 deb 安装包</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/samba/" class="dropdown-item">Samba</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/scsi/" class="dropdown-item">SCSI</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -219,6 +228,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#websocket" class="nav-link">WebSocket</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#ftp" class="nav-link">FTP</a>
               <ul class="nav flex-column">
               </ul>
@@ -243,6 +256,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#im" class="nav-link">即时通信 IM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">流媒体服务器</a>
               <ul class="nav flex-column">
               </ul>
@@ -252,6 +269,18 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">游戏框架</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">监控平台</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_8" class="nav-link">消息队列</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_9" class="nav-link">分布式计算框架</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -289,6 +318,11 @@ if (!::InternetCheckConnection(L&quot;http://www.baidu.com&quot;, FLAG_ICC_FORCE
 <li>Nginx</li>
 <li>phpstudy</li>
 <li><a href="https://curl.se/">libcurl</a> -- <a href="https://github.com/curl/curl">https://github.com/curl/curl</a></li>
+</ul>
+<h2 id="websocket">WebSocket<a class="headerlink" href="#websocket" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://github.com/uNetworking/uWebSockets">uWebSockets</a></li>
+<li><a href="https://libwebsockets.org/">Libwebsockets</a></li>
 </ul>
 <h2 id="ftp">FTP<a class="headerlink" href="#ftp" title="Permanent link"></a></h2>
 <ul>
@@ -336,6 +370,10 @@ https://packages.ubuntu.com/source/focal/s390x/libfcgi</li>
 <li>WebRTC</li>
 <li>VLC</li>
 </ul>
+<h2 id="im">即时通信 IM<a class="headerlink" href="#im" title="Permanent link"></a></h2>
+<ul>
+<li>teamtalk</li>
+</ul>
 <h2 id="_5">流媒体服务器<a class="headerlink" href="#_5" title="Permanent link"></a></h2>
 <ul>
 <li>ZLMediaKit</li>
@@ -349,6 +387,22 @@ https://packages.ubuntu.com/source/focal/s390x/libfcgi</li>
 <h2 id="_6">游戏框架<a class="headerlink" href="#_6" title="Permanent link"></a></h2>
 <ul>
 <li><a href="https://github.com/cloudwu/skynet">Skynet</a></li>
+</ul>
+<h2 id="_7">监控平台<a class="headerlink" href="#_7" title="Permanent link"></a></h2>
+<ul>
+<li>Zabbix</li>
+</ul>
+<h2 id="_8">消息队列<a class="headerlink" href="#_8" title="Permanent link"></a></h2>
+<p>场景：需要处理大量实时消息，如聊天应用、金融交易等。</p>
+<p>最佳操作：使用消息队列进行消息传递，使用事件驱动或协程（如boost::fiber）降低线程开销。</p>
+<ul>
+<li>RabbitMQ</li>
+<li>Kafka</li>
+</ul>
+<h2 id="_9">分布式计算框架<a class="headerlink" href="#_9" title="Permanent link"></a></h2>
+<ul>
+<li>Hadoop</li>
+<li>Spark</li>
 </ul></div>
             </div>
         </div>
@@ -358,12 +412,14 @@ https://packages.ubuntu.com/source/focal/s390x/libfcgi</li>
                 <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

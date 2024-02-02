@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/linux_development/make_deb_package/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>制作 deb 安装包 - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', "G-274394082");
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">制作 deb 安装包</a>
+</li>
+                                    
+<li>
+    <a href="../samba/" class="dropdown-item">Samba</a>
+</li>
+                                    
+<li>
+    <a href="../scsi/" class="dropdown-item">SCSI</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ipmi/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../samba/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#make-deb-package" class="nav-link">制作 deb 安装包</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">介绍</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#components" class="nav-link">包结构</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#example" class="nav-link">示例</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dpkg" class="nav-link">dpkg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="make-deb-package">制作 deb 安装包<a class="headerlink" href="#make-deb-package" title="Permanent link"></a></h1>
+<p>使用 dpkg 制作 deb 安装包。</p>
+<hr />
+<h2 id="introduction">介绍<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+<p>deb 是 ubuntu/debian 的格式，是 debian 发行版的软件包，ubuntu 是基于 debian 发行的所以可以用。</p>
+<p>dpkg 是 Debian Package 的简写，是为D ebian 专门开发的套件管理系统，方便软件的安装、更新及移除。所有源自 Debian 的 Linux 发行版都使用dpkg，例如 Ubuntu、Knoppix 等。</p>
+<h2 id="components">包结构<a class="headerlink" href="#components" title="Permanent link"></a></h2>
+<p>参考下面的目录结构:</p>
+<pre><code class="language-shell">jerry@jerry-Standard-PC-Q35-ICH9-2009:~/Code/DeepLink$ tree ./mydeb/
+./mydeb/
+├── DEBIAN
+│   ├── control
+│   ├── postinst
+│   ├── postrm
+│   ├── preinst
+│   └── prerm
+├── opt
+│   └── deeplink
+│       ├── deeplink
+│       └── deeplink_ui
+└── usr
+    └── share
+        └── applications
+            └── deeplink.desktop
+
+6 directories, 8 files
+</code></pre>
+<p>这里除了 <code>DEBIAN</code> 文件夹，其余都是应用程序文件，这里其余部分的目录模拟了安装目录（看起来和安装完成后根目录里面对应内容结构一致），这是因为 deb 安装包安装就是把内容释放到了根目录 <code>/</code> 下。</p>
+<p><code>deeplink</code> 和 <code>deeplink_ui</code> 即需要安装的应用程序，将被安装在 <code>/opt/deeplink/</code> 目录下。</p>
+<p><code>/usr/share/applications/deeplink.desktop</code> 是创建桌面快捷方式需要的文件。</p>
+<p><code>DEBIAN</code> 文件夹中必须有 <code>control</code> 文件，表示安装包基本信息。
+还可能有 postinst(postinstallation)、postrm(postremove)、preinst(preinstallation)、prerm(preremove)、copyright (版权)、changlog (修订记录)和 conffiles 等。</p>
+<ul>
+<li><code>preinst</code> 软件安装之前会执行的脚本</li>
+<li><code>postinst</code> 软件安装完成后执行的脚本</li>
+<li><code>prerm</code> 软件卸载前会执行的脚本</li>
+<li><code>postrm</code> 软件卸载后会执行的脚本</li>
+</ul>
+<p>这四个脚本非必须，如果有，这四个脚本文件必须要有可执行权限。</p>
+<p><code>control</code> 文件可能会有以下字段:
+- <code>Package</code>：包名
+- <code>Version</code>：版本号
+- <code>Description</code>：对包的描述
+- <code>Section</code>：申明软件的类别，常见的有<code>utils</code>，<code>net</code>，<code>mail</code>，<code>text</code>，<code>devel</code> 等
+- <code>Architecture</code>：软件包结构，如基于<code>i386</code>，<code>amd64</code>，<code>m68k</code>，<code>sparc</code>，<code>alpha</code>，<code>powerpc</code>等
+- <code>Priority</code>：申明软件对于系统的重要程度，如<code>required</code>，<code>standard</code>，<code>optional</code>，<code>extra</code>等
+- <code>Essential</code>：申明是否是系统最基本的软件包（选项为<code>yes</code>或者<code>no</code>），如果是的话，这就表明该软件是维持系统稳定和正常运行的软件包，不允许任何形式的卸载（除非进行强制性的卸载）
+- <code>Installed-Size</code>：安装的包大小
+- <code>Maintainer</code>：包的制作者，联系方式等
+- <code>Depends</code>：软件所依赖的其他软件包和库文件。如果是依赖多个软件包和库文件，彼此之间采用逗号隔开
+- <code>Pre-Depends</code>：软件安装前必须安装、配置依赖性的软件包和库文件，它常常用于必须的预运行脚本需求
+- <code>Recommends</code>：这个字段表明推荐安装的其他软件包和库文件
+- <code>Suggests</code>：建议安装的其他软件包和库文件</p>
+<h2 id="example">示例<a class="headerlink" href="#example" title="Permanent link"></a></h2>
+<p><code>control</code> 文件内容如下:</p>
+<pre><code class="language-conf">Package: DeepLink
+Version: 1.0.1.2
+Section: utils
+Priority: optional
+Architecture: amd64
+Installed-Size: 128000
+Maintainer: jerry&lt;jerry@congtu.cloud&gt;
+Provides: DEEPCLOUDX
+Description: https://www.deeplink.cloud/
+
+</code></pre>
+<p>注意，很多博客都说 <code>control</code> 文件最末尾必须保留一个空行，否则打包会报错。但是我没有空行，打包也没报错。</p>
+<p><code>preinst</code> 文件内容如下:</p>
+<pre><code class="language-bash">#!/bin/sh
+echo &quot;prepare to install deeplink&quot;
+</code></pre>
+<p><code>postinst</code> 文件内容如下:</p>
+<pre><code class="language-bash">#!/bin/sh
+echo &quot;post install...&quot;
+/opt/deeplink/deeplink -i
+echo &quot;install deeplink service ok&quot;
+/opt/deeplink/deeplink_ui --init
+echo &quot;initialize deeplink configuration ok&quot;
+echo &quot;successfully installed&quot;
+echo &quot;official url of https://www.deeplink.cloud/&quot;
+</code></pre>
+<p><code>prerm</code> 文件内容如下:</p>
+<pre><code class="language-bash">#!/bin/sh
+echo &quot;prepare to remove deeplink&quot;
+/opt/deeplink/deeplink -t
+echo &quot;stop deeplink service ok&quot;
+/opt/deeplink/deeplink -u
+echo &quot;uninstall deeplink service ok&quot;
+/opt/deeplink/deeplink_ui --terminate
+echo &quot;terminate deeplink ui process ok&quot;
+/opt/deeplink/deeplink_ui --clear_cache
+echo &quot;clear deeplink cache ok&quot;
+</code></pre>
+<p><code>postrm</code> 文件内容如下:</p>
+<pre><code class="language-bash">#!/bin/sh
+echo &quot;deeplink successfully removed from your computer.&quot;
+</code></pre>
+<p><code>deeplink.desktop</code> 文件内容如下:</p>
+<pre><code class="language-conf">[Desktop Entry]
+Name=DeepLink
+Version=1.0.1.2
+Exec=/opt/deeplink/deeplink_ui
+Path=/opt/deeplink
+Icon=/opt/deeplink/deeplink_ui
+Terminal=false
+Type=Application
+Categories=Network;Utility
+StartupNotify=true
+</code></pre>
+<h2 id="dpkg">dpkg<a class="headerlink" href="#dpkg" title="Permanent link"></a></h2>
+<p>使用 <code>dpkg</code> 命令将 <code>mydeb/</code> 目录打包生成 <code>deeplink.deb</code>:</p>
+<pre><code class="language-shell">dpkg -b mydeb/ deeplink.deb
+</code></pre>
+<p>除此之外，<code>dpkg</code> 命令还有很多用法:</p>
+<pre><code class="language-shell">dpkg -c xxx.deb // 安装前根据 deb 文件查看
+dpkg -L debname // 安装后根据包名查看
+dpkg -i xxx.deb // 安装 deb 包，如果提示错误，可以加参数 —force-all 强制安装，但不推荐这样做
+dpkg -r debname // 移除卸载 deb 包
+dpkg -S filepath // 查看某个文件属于哪个 deb 包
+dpkg -X xxx.deb dirname // 释放安装内容到 dirname 目录中
+dpkg -e xxx.deb  // 释放控制信息到当前目录下的 DEBIAN 子目录中
+</code></pre>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/153423036">linux下制作deb的方法总结</a></li>
+<li><a href="https://blog.csdn.net/XindaBlack/article/details/106850017">deb、rpm、run程序安装包的制作</a></li>
+<li><a href="https://juejin.cn/post/7029284097939734535">Linux制作deb格式安装包教程</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -12,22 +12,19 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <link href="../css/extra.css" rel="stylesheet">
-
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-274394082');
+          gtag('config', "G-274394082");
         </script> 
     </head>
 
@@ -161,6 +158,18 @@
 <li>
     <a href="../linux_development/ipmi/" class="dropdown-item">ipmi</a>
 </li>
+                                    
+<li>
+    <a href="../linux_development/make_deb_package/" class="dropdown-item">制作 deb 安装包</a>
+</li>
+                                    
+<li>
+    <a href="../linux_development/samba/" class="dropdown-item">Samba</a>
+</li>
+                                    
+<li>
+    <a href="../linux_development/scsi/" class="dropdown-item">SCSI</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -232,7 +241,7 @@
 <p>网站地图导航</p>
 <hr />
 <ul>
-<li><a href="..">Home</a></li>
+<li><a href="../">Home</a></li>
 <li><a href="../markdown/">Markdown</a></li>
 <li>C/C++<ul>
 <li><a href="../cplusplus/lambda/">Lambda</a></li>
@@ -268,6 +277,9 @@
 <li><a href="../linux_development/docker/">docker</a></li>
 <li><a href="../linux_development/coredump/">coredump</a></li>
 <li><a href="../linux_development/ipmi/">IPMI</a></li>
+<li><a href="../linux_development/make_deb_package/">制作 deb 安装包</a></li>
+<li><a href="../linux_development/samba/">Samba</a></li>
+<li><a href="../linux_development/scsi/">SCSI</a></li>
 </ul>
 </li>
 <li>Windows 开发<ul>
@@ -275,6 +287,12 @@
 <li><a href="../windows_development/autostart/">开机启动</a></li>
 <li><a href="../windows_development/automatic_power_up/">自动开机</a></li>
 <li><a href="../windows_development/openssh/">OpenSSH 密钥管理</a></li>
+</ul>
+</li>
+<li>数据库<ul>
+<li><a href="../database/mysql/">MySql</a></li>
+<li><a href="../database/redis/">Redis</a></li>
+<li><a href="../database/mongodb/">MongoDB</a></li>
 </ul>
 </li>
 <li>Chromium<ul>
@@ -297,12 +315,14 @@
                 <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <script>
             var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

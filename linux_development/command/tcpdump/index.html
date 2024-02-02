@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/linux_development/command/tcpdump/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>tcpdump - Jerry's blog</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', "G-274394082");
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../../ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                    
+<li>
+    <a href="../../make_deb_package/" class="dropdown-item">制作 deb 安装包</a>
+</li>
+                                    
+<li>
+    <a href="../../samba/" class="dropdown-item">Samba</a>
+</li>
+                                    
+<li>
+    <a href="../../scsi/" class="dropdown-item">SCSI</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#tcpdump" class="nav-link">tcpdump</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#command-help" class="nav-link">命令提示</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#filter" class="nav-link">过滤器</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#flags" class="nav-link">标记</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="tcpdump">tcpdump<a class="headerlink" href="#tcpdump" title="Permanent link"></a></h1>
+<p><code>tcpdump</code> 命令用来保存和记录网络流量。</p>
+<hr />
+<h2 id="command-help">命令提示<a class="headerlink" href="#command-help" title="Permanent link"></a></h2>
+<pre><code class="language-shell">dbtu@dbtu:~$ tcpdump --help
+tcpdump version 4.9.3
+libpcap version 1.9.1 (with TPACKET_V3)
+OpenSSL 1.1.1f  31 Mar 2020
+Usage: tcpdump [-aAbdDefhHIJKlLnNOpqStuUvxX#] [ -B size ] [ -c count ]
+                [ -C file_size ] [ -E algo:secret ] [ -F file ] [ -G seconds ]
+                [ -i interface ] [ -j tstamptype ] [ -M secret ] [ --number ]
+                [ -Q in|out|inout ]
+                [ -r file ] [ -s snaplen ] [ --time-stamp-precision precision ]
+                [ --immediate-mode ] [ -T type ] [ --version ] [ -V file ]
+                [ -w file ] [ -W filecount ] [ -y datalinktype ] [ -z postrotate-command ]
+                [ -Z user ] [ expression ]
+</code></pre>
+<ul>
+<li>-i: 网卡，例如 'eno1' 或者 'any'</li>
+<li>-c: 抓包数量，例如 '-c10' 表示抓到10个包就停止抓包。</li>
+<li>-w: 保存到文件中，可以用 WireShark 打开查看。</li>
+<li>-v: 输出详细信息，有三个等级，-vvv 带有更多的信息。</li>
+<li>-n: 直接读取，不转换成域名，直接显示 ip ，避免执行 <code>dns lookups</code> 的过程 速度快</li>
+<li>-Q: in 进来的流量 | out  出去的流量 | inout 进出流量</li>
+<li>-r: 读取 -w 参数保存的文件。</li>
+</ul>
+<p>tcpdump -vvv -i eno1 -w test.cap</p>
+<h2 id="filter">过滤器<a class="headerlink" href="#filter" title="Permanent link"></a></h2>
+<p>可以通过各式各样的表达式，来过滤所截取或者输出的数据。</p>
+<pre><code class="language-shell"># 查找特定主机的流量
+$ tcpdump -nvvv -i any -c 3 host 10.0.3.1
+# 查找源地址为特定主机的流量
+$ tcpdump -nvvv -i any -c 3 src host 10.0.3.1
+# 过滤源和目的端口
+$ tcpdump -nvvv -i any -c 3 port 22 and port 60738
+# 查找两个端口号的流量
+$ tcpdump -nvvv -i any -c 20 'port 80 or port 443'
+# 查找两个特定端口和来自特定主机的数据流
+$ tcpdump -nvvv -i any -c 20 '(port 80 or port 443) and host 10.0.3.169'
+</code></pre>
+<p><a href="https://www.tcpdump.org/manpages/pcap-filter.7.html">tcpdump pcap filter</a></p>
+<h2 id="flags">标记<a class="headerlink" href="#flags" title="Permanent link"></a></h2>
+<ul>
+<li>[S] – SYN (开始连接)</li>
+<li>[.] – 没有标记</li>
+<li>[P] – PSH (数据推送)</li>
+<li>[F] – FIN (结束连接)</li>
+<li>[R] – RST (重启连接)</li>
+<li>[S.] - SYN-ACK 数据包</li>
+</ul>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<p><a href="https://zhuanlan.zhihu.com/p/98197914">一份快速实用的 tcpdump 命令参考手册</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/linux_development/scsi/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>SCSI - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', "G-274394082");
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                    
+<li>
+    <a href="../make_deb_package/" class="dropdown-item">制作 deb 安装包</a>
+</li>
+                                    
+<li>
+    <a href="../samba/" class="dropdown-item">Samba</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">SCSI</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../samba/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../windows_development/character_encoding/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#iscsi" class="nav-link">iSCSI</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">简介</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#iscsi-initiator" class="nav-link">iSCSI 客户端</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#iscsi-target" class="nav-link">iSCSI 服务器端</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#stgt" class="nav-link">STGT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#scst" class="nav-link">SCST</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#linux-io" class="nav-link">Linux-IO</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="iscsi">iSCSI<a class="headerlink" href="#iscsi" title="Permanent link"></a></h1>
+<hr />
+<h2 id="introduction">简介<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+<p>iSCSI（Internet Small Computer System Interface，发音为/ˈаɪskʌzi/），Internet 小型计算机系统接口，又称为 IP-SAN，是一种基于因特网及 SCSI-3 协议下的存储技术，由 IETF 提出，并于 2003 年 2 月 11 日成为正式的标准。<a href="https://en.wikipedia.org/wiki/ISCSI">wiki</a></p>
+<p>iSCSI 利用了 TCP/IP 的 port 860 和 3260 作为沟通的渠道。透过两部计算机之间利用 iSCSI 的协议来交换 SCSI 命令，让计算机可以透过高速的局域网集线来把 SAN 模拟成为本地的储存装置。</p>
+<p>本质上，iSCSI 让两个主机通过 IP 网络相互协商然后交换 SCSI 命令。这样一来，iSCSI 就是用广域网仿真了一个常用的高性能本地存储总线，从而创建了一个存储局域网（SAN）。不像某些 SAN 协议，iSCSI 不需要专用的电缆；它可以在已有的交换和 IP 基础架构上运行。</p>
+<p>对于配有支持网络引导的网络接口设备（网卡）的计算机，可以另外配置一台 DHCP 服务器来协助“iSCSI 启动”。 这种情况下，网卡会寻找一个提供 PXE 或 BOOTP 引导映像的 DHCP 服务器。该 DHCP 服务器会根据启动网卡的 MAC 地址提供对应的 iSCSI 启动目标设备/卷信息，然后计算机便可以开始从 iSCSI 远程启动的进程了。</p>
+<p>iSCSI 分为服务端和客户端，服务端需要安装 scsi target 用来共享存储设备，客户端需要安装 iscsi initiator 用来连接 target 端，将 target 端共享的设备挂载到 initiator 本地，可以对其进行分区，格式化等操作。</p>
+<h2 id="iscsi-initiator">iSCSI 客户端<a class="headerlink" href="#iscsi-initiator" title="Permanent link"></a></h2>
+<p>iSCSI initiator 是发起 I/O 操作的启动者；需要通过发现过程请求远端块设备；可以与 target 进行持久连接；在 Linux 系统中可以使用 open-iscsi 软件包来模拟实现，在 Windows 10 及以上版本系统中内置的 iSCSI 发起程序 实现。</p>
+<h2 id="iscsi-target">iSCSI 服务器端<a class="headerlink" href="#iscsi-target" title="Permanent link"></a></h2>
+<p>iSCSI target 是 I/O 操作的执行者；需要导出一个或多个块设备供启动者（initiator）使用；在 Linux 系统中可以使用两种 target 工具，分别为 tgt，和 targetcli，这里先介绍 TGT 的方法，TGT 是 Fujita Tomonori 于 2006 年底将 SCSI Target Framework (STGT/TGT) 引入 Linux 内核。它在内核中有一个库，可协助内核控制目标驱动程序，TGT 是用户态实现的 iscsi target，所有目标处理都在用户空间进行。在 2010 年底，LIO(Linux-IO)项目被选择来代替 TGT 作为内核态实现的 iscsi target。当选择 LIO 替换 TGT 时，它的实现已经进行了调整，以允许 TGT 用户空态模块继续运行，因此 TGT 社区支持在内核中包含 LIO。在 Linux 内核 2.6.38 之前都是 TGT。</p>
+<h3 id="stgt">STGT<a class="headerlink" href="#stgt" title="Permanent link"></a></h3>
+<p>tgt 是一个用户态的 SCSI target 框架，在 GNU/Linux 内核直接集成 SCSI target 框架之前，这是一个绝对主流的框架。</p>
+<p>优点：
+1. 简单，方便使用和维护。
+2. 另外已经有 ceph 的 target driver，只是需要做性能优化。
+3. 因为工作在用户态，所以即使挂掉了，也不会对其他运行的程序产生影响。</p>
+<p>缺点：
+1. 支持的传输协议较少。
+2. 对 SCSI 协议支持比较简单，一些 cluster 中的特性比如 PR 等都不支持，所以基于 stgt 的方案不能在 cluster 中使。
+3. 由于是用户态框架，性能问题较差，根据网上的相关数据， tgt 在使用本地存储的情况下，性能相比后面会提到的 SCST、 LIO 等是有一定差距的。</p>
+<h3 id="scst">SCST<a class="headerlink" href="#scst" title="Permanent link"></a></h3>
+<p>SCST 的核心模块工作在内核里，可以支持通过系统模块（VFS、块层）访问的后端存储如块设备、文件设备以及 passthrough 的 scsi 设备。</p>
+<p>优点：
+1. 支持更多传输协议。
+2. 针对性能做了特殊的优化。
+3. 除了基本的 SCSI 协议支持外，还有一些高级支持：
+    - SCST支持永久性预留（Persistent Reservation, PR）；这是一个用于高可用集群中的存储设备的 I/O 隔离与存储设备故障切换、接管的特性。通过使用 PR 命令，initiator 可以在一个 target 上建立、抢占、查询、重置预留策略。在故障接管过程中，新的虚拟资源可以重置老的虚拟资源的预留策略，从而让故障切换更快、更容易地进行。
+     - SCST 可以使用异步事件通知（AEN）来通告会话状态的变更。AEN 是一个 SCSI target 用来向 initiator 进行 target 端的事件告知的协议特性，即使在没有服务请求的时候也可以进行。于是 initiator 就可以在 target 端发生事件时，如设备插入、移除、调整尺寸或更换介质时，可以得到通知。这让 initiator 可以以即插即用的方式看到 target 的变化。
+4. SCST 的开发者声称，它们的设计在健壮性和安全性方面更加符合 SCSI 标准。SCSI 协议要求，如果一个 initiator 要清除另一个 initiator 的预留资源时，预留者必须要得到清除通知，否则，多个 initiator 都可能来改变预留数据，就可能会破坏数据。SCST 可以实现安全的预留、释放操作，避免类似事情发生。
+5. SCST 也支持非对称逻辑卷分配（ALUA）。ALUA 允许 target 管理员来管理 target 的访问状态和路径属性。这让多路径路由机制可以选择最好的路径，从而根据 target 的访问状态，优化带宽的使用。换句话说，在多路径环境下，target 管理员可以通过改变访问状态来调整 initiator 的路径。
+6. 各大存储服务提供商都是基于 SCST。
+7. 提供更细粒度的访问控制策略以及 QoS 保证机制（限制 initiator 连接的个数）。</p>
+<p>缺点：
+1. 结构复杂，二次开发成本较高。
+2. 工作在 kernel，如果挂了，会导致整个机器 down 掉，影响其他程序。
+3. kernel 部分没有并入 linux，需要手工编译。</p>
+<p>Ubuntu 20.04 安装 SCST:</p>
+<pre><code class="language-shell"># 安装编译 SCST 必要的库
+sudo apt install build-essential debhelper devscripts gcc make lintian quilt
+# 克隆源代码仓库
+git clone https://github.com/SCST-project/scst.git
+cd scst
+# 编译并生成 deb 包
+make dpkg
+# 安装 SCST deb 包
+sudo dpkg -i $PWD/dpkg/{scst,iscsi-scst,scstadmin}_*.deb
+# 创建一个大文件作为磁盘存储
+dd if=/dev/zero of=/home/dbc/data.img bs=1M count=1024
+# scstadmin 配置文件
+sudo vim /etc/scst.conf
+sudo /etc/init.d/scst restart
+</code></pre>
+<p>示例 <code>/etc/scst.conf</code>:</p>
+<pre><code class="language-conf">HANDLER vdisk_fileio {
+  DEVICE disk01 {
+    filename /home/dbc/data.img
+  }
+}
+TARGET_DRIVER iscsi {
+  enabled 1
+  TARGET iqn.2007-05.com.example:storage.disk1 {
+    LUN 0 disk01
+    enabled 1
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://scst.sourceforge.net/">SCST 官网</a></li>
+<li><a href="https://github.com/SCST-project/scst">SCST 源码</a></li>
+</ul>
+<h3 id="linux-io">Linux-IO<a class="headerlink" href="#linux-io" title="Permanent link"></a></h3>
+<p>Linux-IO Target 在 Linux 内核中（linux 2.6.38 后），用软件实现各种 SCSI Target，其支持的 SAN 技术中所有流行的存储协议包括 Fibre Channel（Qlogic，linux3.5）、FCoE（linux3.0）、iSCSI（linux 3.1）、iSER (Mellanox InfiniBand，linux3.10), SRP (Mellanox InfiniBand，linux3.3), USB 等，同时还能为本机生成模拟的 SCSI 设备，以及为虚拟机提供基于 virtio 的 SCSI 设备。Linux-IO Target 使用户能够使用相对廉价的 Linux 系统实现 SCSI、SAN 的各种功能，而不用购买昂贵的专业设备。</p>
+<p>Linux-IO Target 则在内核态实现了对 Target 的模拟，配置管理则采用了更为“现代化”的基于 sysfs 的方式，提供了友好的用户态管理工具。从内核的 2.6.38 版起，Linux 内核都包含 Linux-IO Target 的相关模块。在用户态，各大发行版都打包了 targetcli 和 rtslib，其中 targetcli 程序用于配置、管理，rtslib 则提供 Python 编程接口。</p>
+<p>使用以下命令安装 iSCSI 服务器端：</p>
+<pre><code class="language-shell">sudo apt install targetcli-fb open-iscsi
+</code></pre>
+<p>LIO 也即 Linux-IO，是目前 GNU/Linux 内核自带的 SCSI target 框架（自 2.6.38版本开始引入，真正支持 iSCSI 需要到 3.1 版本） ，对 iSCSI RFC 规范的支持非常好，包括完整的错误恢复都有支持。整个 LIO 是纯内核态实现的，包括前端接入和后端存储模块，为了支持用户态后端，从内核 3.17 开始引入用户态后端支持，即 TCMU(Target Core Module in Userspace)。</p>
+<p>优点：
+1. 支持较多传输协议。
+2. 代码并入 linux 内核，减少了手动编译内核的麻烦。
+3. 提供了python版本的编程接口 rtslib。
+4. LIO 在不断 backport SCST 的功能到 linux 内核，社区的力量是强大的。
+5. LIO 也支持一些 SCST 没有的功能。如 LIO 还支持“会话多连接”（MC/S）。
+6. LIO 支持最高级别的 ERL。</p>
+<p>缺点：
+1. 不支持 AEN，所以 target 状态发生变化时，只能通过 IO 或者用户手动触发以检测处理变化。
+2. 结构相对复杂，二次开发成本较高。
+3. 工作在内核态，出现问题会影响其他程序的运行。</p>
+<p>总的来说，如果需求只是构建一个 iSCSI target，并且规模不是很大，STGT 是一个不错的选择。
+如果要构建一个企业级的存储方案，即高性能、高稳定性的，并且围绕这个有长远计划的，SCST 是正确的选择。
+如果对性能、稳定性要求不是那么高，但又想支持 FC、SRP 等协议，可以选择 LIO。</p>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://www.cnblogs.com/pipci/p/11618660.html">https://www.cnblogs.com/pipci/p/11618660.html</a></li>
+<li><a href="https://www.cnblogs.com/zengzhihua/p/9910704.html">https://www.cnblogs.com/zengzhihua/p/9910704.html</a></li>
+<li><a href="https://blog.csdn.net/menogen/article/details/12195075">https://blog.csdn.net/menogen/article/details/12195075</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

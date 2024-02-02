@@ -12,22 +12,19 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <link href="../../css/extra.css" rel="stylesheet">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-274394082');
+          gtag('config', "G-274394082");
         </script> 
     </head>
 
@@ -160,6 +157,18 @@
                                     
 <li>
     <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/make_deb_package/" class="dropdown-item">制作 deb 安装包</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/samba/" class="dropdown-item">Samba</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/scsi/" class="dropdown-item">SCSI</a>
 </li>
                                 </ul>
                             </li>
@@ -424,9 +433,9 @@ runoob
 <p>该命令创建一个空的Git存储库 - 本质上是一个 <code>.git</code> 目录，其中包含 <code>objects</code>、<code>refs/heads</code>、<code>refs/tags</code>和模板文件的子目录。还将创建一个引用master分支 HEAD 的初始 <code>HEAD</code> 文件。</p>
 <ul>
 <li>--bare : 创建一个纯仓库。如果未设置 <code>GIT_DIR</code> 环境变量，则将其设置为当前工作目录。</li>
-<li>--object-format=&lt;format> : 指定存储库的对象格式（哈希算法）。有效值为 <code>sha1</code> 和（如果启用）<code>sha256</code>。<code>sha1</code> 是默认值。</li>
-<li>--template=&lt;template_directory> : 指定要使用模板的目录。</li>
-<li>-b &lt;branch-name> | --initial-branch=&lt;branch-name> : 在新创建的仓库中为初始分支指定名称。如果没有指定，则使用默认名称：<code>master</code>。</li>
+<li>--object-format=&lt;format&gt; : 指定存储库的对象格式（哈希算法）。有效值为 <code>sha1</code> 和（如果启用）<code>sha256</code>。<code>sha1</code> 是默认值。</li>
+<li>--template=&lt;template_directory&gt; : 指定要使用模板的目录。</li>
+<li>-b &lt;branch-name&gt; | --initial-branch=&lt;branch-name&gt; : 在新创建的仓库中为初始分支指定名称。如果没有指定，则使用默认名称：<code>master</code>。</li>
 <li>--shared : 指定 Git 存储库在多个用户之间共享。</li>
 </ul>
 <p>参考: <a href="https://git-scm.com/docs/git-init">https://git-scm.com/docs/git-init</a></p>
@@ -882,12 +891,14 @@ Total 2437 (delta 1483), reused 0 (delta 0)
                 <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
