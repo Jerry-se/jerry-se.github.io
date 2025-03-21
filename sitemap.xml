@@ -2,402 +2,342 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jerry-se.github.io/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/about/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/markdown/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/sitemap/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/cplusplus/backend/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/cplusplus/bit_xor/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/cplusplus/lambda/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/cplusplus/questions/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/cplusplus/thread/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/cplusplus/third_party/libevent/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/cplusplus/third_party/teamtalk/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/cplusplus/third_party/uwebsockets/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/database/mongodb/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/database/mysql/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/database/redis/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/diy/chatglm/</loc>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/diy/desktop_2022.09.01/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/diy/godot_engine/</loc>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/diy/hard_disk/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/diy/home_server/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/git/git/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/git/git_lfs/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/git/gitea/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/git/github_rest_api/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/create_module/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/generics/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/getting_started/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/go/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/install/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/web_service_gin/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/workspaces/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/writing_web_app/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/wiki/final.go/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/wiki/part1.go/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/wiki/part2.go/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/go/wiki/part3.go/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/google/chromium_build_instructions/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/google/google_analytics/</loc>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/google/google_search_tips/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/google/googletest/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/google/webrtc_build_instructions/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/centos_nodes/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/clean_cache/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/coredump/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/docker/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/gdb/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/ipmi/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/make_deb_package/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/samba/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/scsi/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/shell/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/strace/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/swap_memory/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/ubuntu_notes/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/vim/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/command/auto_scp/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/command/awk/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/command/disk_management/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/command/nc/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/command/tcpdump/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/pxe/fogproject/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/pxe/iPXE/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/pxe/network_boot/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/linux_development/pxe/pxe_server/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/build_blogs_with_pelican/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/mkdocs/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/plotly_dash/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/pyautogui/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/streamlit/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/study/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/python/virtualenv/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/tool/activation_keys/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/tool/clang-format/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/tool/frp/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/tool/nginx/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/tool/prometheus/</loc>
+         <lastmod>2025-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://jerry-se.github.io/tool/rust-desk/</loc>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/tool/v2ray/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/windows_development/automatic_power_up/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/windows_development/autostart/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/windows_development/character_encoding/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/windows_development/openssh/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/windows_development/winpe/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/windows_development/shell_development/default_programs/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://jerry-se.github.io/windows_development/shell_development/file_association/</loc>
-         <lastmod>2024-02-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-03-21</lastmod>
     </url>
 </urlset>

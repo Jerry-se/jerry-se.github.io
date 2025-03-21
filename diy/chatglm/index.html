@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/diy/chatglm/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>ChatGLM - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', "G-274394082");
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C/C++</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Go</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tool</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux 开发</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/make_deb_package/" class="dropdown-item">制作 deb 安装包</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/samba/" class="dropdown-item">Samba</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/scsi/" class="dropdown-item">SCSI</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Windows 开发</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#chatglm" class="nav-link">ChatGLM</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduction" class="nav-link">概述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#python" class="nav-link">Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cuda" class="nav-link">Cuda</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#test" class="nav-link">测试</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#package" class="nav-link">打包</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#references" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="chatglm">ChatGLM<a class="headerlink" href="#chatglm" title="Permanent link"></a></h1>
+<p>ChatGLM-6B 是一个开源的、支持中英双语的对话语言模型，基于 <a href="https://github.com/THUDM/GLM">General Language Model (GLM)</a> 架构，具有 62 亿参数。</p>
+<p>结合模型量化技术，用户可以在消费级的显卡上进行本地部署（INT4 量化级别下最低只需 6GB 显存）。 ChatGLM-6B 使用了和 ChatGPT 相似的技术，针对中文问答和对话进行了优化。经过约 1T 标识符的中英双语训练，辅以监督微调、反馈自助、人类反馈强化学习等技术的加持，62 亿参数的 ChatGLM-6B 已经能生成相当符合人类偏好的回答，更多信息请参考他们的<a href="https://chatglm.cn/blog">博客</a>。欢迎通过 <a href="https://chatglm.cn/">chatglm.cn</a> 体验更大规模的 ChatGLM 模型。</p>
+<p>ChatGLM-6B 权重对学术研究完全开放，在填写<a href="https://open.bigmodel.cn/mla/form">问卷</a>进行登记后亦允许免费商业使用。</p>
+<h2 id="introduction">概述<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+<p>2024 年 4 月因工作需要学习部署一个本地 ChatGLM 环境。使用的算力服务器上创建的虚拟机，机器配置如下:</p>
+<p>| 类别 | 型号 | 备注 |
+| CPU | Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz | 16 核 32 线程 |
+| 内存 | 16G | |
+| 硬盘 | SSD 350G | |
+| 显卡 | NVIDIA GeForce RTX 2080 Ti | 显存 11G |
+| 系统 | Microsoft Windows 10 Pro | 10.0.18363.778 Build 18363.778 |</p>
+<p>项目代码仓库: <a href="https://github.com/THUDM/ChatGLM-6B">https://github.com/THUDM/ChatGLM-6B</a></p>
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link"></a></h2>
+<p>一开始安装的最新版 Python 3.12，但是 <code>pip install -r requirements.txt</code> 安装依赖总是报错。还会需要 Rust 编译环境。后来看到一篇博客说是 Python 版本太新可能不支持，于是我卸载重新安装了 Python 3.10.10 版本，再次安装依赖时，命令一次通过。</p>
+<pre><code class="language-shell">C:\Users\Administrator&gt;python -V
+Python 3.10.10
+
+C:\Users\Administrator&gt;pip -V
+pip 22.3.1 from C:\Program Files\Python310\lib\site-packages\pip (python 3.10)
+</code></pre>
+<h2 id="cuda">Cuda<a class="headerlink" href="#cuda" title="Permanent link"></a></h2>
+<pre><code class="language-shell">C:\Users\Administrator&gt;python
+Python 3.10.10 (tags/v3.10.10:aad5f6a, Feb  7 2023, 17:20:36) [MSC v.1929 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import torch # 如果 PyTorch 安装成功即可导入
+&gt;&gt;&gt; print(torch.__version__) # torch 版本
+2.3.0+cu118
+&gt;&gt;&gt; print(torch.cuda.is_available()) # 查看 CUDA 是否可用
+True
+&gt;&gt;&gt; print(torch.cuda.device_count()) # 查看可用的 CUDA 数量
+1
+&gt;&gt;&gt; print(torch.version.cuda) # 查看 CUDA 的版本号
+11.8
+&gt;&gt;&gt;
+</code></pre>
+<p>上面是正确安装的结果，但是我的 CUDA 总是不可用。下面是踩坑记录。</p>
+<p>下载 CUDA: <a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
+<p>一开始我随便下载了 Cuda 11.6 版本安装了，后来看到 PyTorch 上说 PyTorch 要和 Cuda 的版本要对应，而且 Cuda 版本要小于 <code>nvidia-smi</code> 右上角的 CUDA Version。于是又重新下载安装了 Cuda 11.8 版本。</p>
+<p><a href="https://pytorch.org/get-started/locally/">PyTorch Get Started</a></p>
+<pre><code class="language-shell">C:\Users\Administrator&gt;nvidia-smi
+Mon Apr 29 10:28:20 2024
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 536.23                 Driver Version: 536.23       CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                     TCC/WDDM  | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti   WDDM  | 00000000:05:00.0  On |                  N/A |
+| 27%   33C    P8              24W / 250W |    334MiB / 11264MiB |      1%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      2656    C+G   C:\Windows\explorer.exe                   N/A      |
+|    0   N/A  N/A      2888    C+G   ...siveControlPanel\SystemSettings.exe    N/A      |
+|    0   N/A  N/A      6116    C+G   ....Experiences.TextInput.InputApp.exe    N/A      |
+|    0   N/A  N/A      8648    C+G   ...2txyewy\StartMenuExperienceHost.exe    N/A      |
+|    0   N/A  N/A      9024    C+G   ....Cortana_cw5n1h2txyewy\SearchUI.exe    N/A      |
+|    0   N/A  N/A      9132    C+G   ..._8wekyb3d8bbwe\Microsoft.Photos.exe    N/A      |
+|    0   N/A  N/A      9528    C+G   ...iles (x86)\DeepLink\deeplink_ui.exe    N/A      |
+|    0   N/A  N/A     11388    C+G   ...5n1h2txyewy\ShellExperienceHost.exe    N/A      |
+|    0   N/A  N/A     12904    C+G   ...cal\Microsoft\OneDrive\OneDrive.exe    N/A      |
+|    0   N/A  N/A     15044    C+G   ...crosoft\Edge\Application\msedge.exe    N/A      |
++---------------------------------------------------------------------------------------+
+
+C:\Users\Administrator&gt;
+C:\Users\Administrator&gt;nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2022 NVIDIA Corporation
+Built on Wed_Sep_21_10:41:10_Pacific_Daylight_Time_2022
+Cuda compilation tools, release 11.8, V11.8.89
+Build cuda_11.8.r11.8/compiler.31833905_0
+</code></pre>
+<p>版本都对应后再次尝试，还是不行，问了 ChatGPT，然后发现 PyTorch 有带 cuda 和不带两种版本号，只能卸载了重新安装。</p>
+<pre><code class="language-shell">C:\Users\Administrator&gt; pip list
+Package                   Version
+------------------------- -----------
+...
+torch                     2.3.0
+torchaudio                2.3.0
+...
+C:\Users\Administrator&gt;
+C:\Users\Administrator&gt; pip uninstall torch torchvision torchaudio
+C:\Users\Administrator&gt; pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+C:\Users\Administrator&gt;
+C:\Users\Administrator&gt; pip list
+Package                   Version
+------------------------- -----------
+...
+torch                     2.3.0+cu118
+torchaudio                2.3.0+cu118
+...
+C:\Users\Administrator&gt;
+</code></pre>
+<p>一番操作之后，CUDA 终于可用了。</p>
+<h2 id="test">测试<a class="headerlink" href="#test" title="Permanent link"></a></h2>
+<p>测试代码 <code>test.py</code> 内容如下:</p>
+<pre><code class="language-python">from transformers import AutoTokenizer, AutoModel
+
+# tokenizer = AutoTokenizer.from_pretrained(&quot;THUDM/chatglm-6b&quot;, trust_remote_code=True)
+# model = AutoModel.from_pretrained(&quot;THUDM/chatglm-6b&quot;, trust_remote_code=True).half().cuda()
+# 根据 torch.cuda.is_available() 判断，如果为 False，则使用 CPU 做浮点运算
+# model = AutoModel.from_pretrained(&quot;THUDM/chatglm-6b&quot;, trust_remote_code=True).half().float()
+# 使用离线下载的本地模型参数文件
+tokenizer = AutoTokenizer.from_pretrained(&quot;C:\\Users\\Administrator\\Documents\\Code\\ChatGLM-6B\\THUDM\\chatglm2-6b-int4&quot;, trust_remote_code=True, revision=&quot;v1.1.0&quot;)
+model = AutoModel.from_pretrained(&quot;C:\\Users\\Administrator\\Documents\\Code\\ChatGLM-6B\\THUDM\\chatglm2-6b-int4&quot;, trust_remote_code=True, revision=&quot;v1.1.0&quot;).half().cuda()
+model = model.eval()
+response, history = model.chat(tokenizer, &quot;你好&quot;, history=[])
+print(response)
+# 你好👋!我是人工智能助手 ChatGLM-6B,很高兴见到你,欢迎问我任何问题。
+response, history = model.chat(tokenizer, &quot;晚上睡不着应该怎么办&quot;, history=history)
+print(response)
+# 晚上睡不着可能会让你感到焦虑或不舒服,但以下是一些可以帮助你入睡的方法:
+# 
+# 1. 制定规律的睡眠时间表:保持规律的睡眠时间表可以帮助你建立健康的睡眠习惯,使你更容易入睡。尽量在每天的相同时间上床,并在同一时间起床。
+# 2. 创造一个舒适的睡眠环境:确保睡眠环境舒适,安静,黑暗且温度适宜。可以使用舒适的床上用品,并保持房间通风。
+# 3. 放松身心:在睡前做些放松的活动,例如泡个热水澡,听些轻柔的音乐,阅读一些有趣的书籍等,有助于缓解紧张和焦虑,使你更容易入睡。
+# 4. 避免饮用含有咖啡因的饮料:咖啡因是一种刺激性物质,会影响你的睡眠质量。尽量避免在睡前饮用含有咖啡因的饮料,例如咖啡,茶和可乐。
+# 5. 避免在床上做与睡眠无关的事情:在床上做些与睡眠无关的事情,例如看电影,玩游戏或工作等,可能会干扰你的睡眠。
+# 6. 尝试呼吸技巧:深呼吸是一种放松技巧,可以帮助你缓解紧张和焦虑,使你更容易入睡。试着慢慢吸气,保持几秒钟,然后缓慢呼气。
+# 
+# 如果这些方法无法帮助你入睡,你可以考虑咨询医生或睡眠专家,寻求进一步的建议。
+</code></pre>
+<p>当我们使用项目代码默认的方式时，会自动下载好几个 GB 的模型参数文件。推荐手动下载模型参数文件，并使用上面的代码指定下载后的路径，即可从本地加载模型。</p>
+<pre><code class="language-shell">C:\Users\Administrator\Documents\Code\ChatGLM-6B&gt;python test.py
+Load parallel cpu kernel failed C:\Users\Administrator\.cache\huggingface\modules\transformers_modules\chatglm2-6b-int4\quantization_kernels_parallel.so: Traceback (most recent call last):
+  File &quot;C:\Users\Administrator/.cache\huggingface\modules\transformers_modules\chatglm2-6b-int4\quantization.py&quot;, line 148, in __init__
+    kernels = ctypes.cdll.LoadLibrary(kernel_file)
+  File &quot;C:\Program Files\Python310\lib\ctypes\__init__.py&quot;, line 452, in LoadLibrary
+    return self._dlltype(name)
+  File &quot;C:\Program Files\Python310\lib\ctypes\__init__.py&quot;, line 374, in __init__
+    self._handle = _dlopen(self._name, mode)
+FileNotFoundError: Could not find module 'C:\Users\Administrator\.cache\huggingface\modules\transformers_modules\chatglm2-6b-int4\quantization_kernels_parallel.so' (or one of its dependencies). Try using the full path with constructor syntax.
+
+C:\Users\Administrator/.cache\huggingface\modules\transformers_modules\chatglm2-6b-int4\modeling_chatglm.py:226: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  context_layer = torch.nn.functional.scaled_dot_product_attention(query_layer, key_layer, value_layer,
+你好👋！我是人工智能助手 ChatGLM2-6B，很高兴见到你，欢迎问我任何问题。
+抱歉，我是一个人工智能助手，无法了解你的具体情况，但是我可以提供一些通用的建议来帮助你改善睡眠质量。
+
+1. 改善睡眠环境：确保睡眠环境安静、舒适、黑暗、凉爽。
+
+2. 创造有益的睡前习惯：每天固定的睡眠时间、规律的生活作息、减少有害物品（如咖啡因、尼古丁、酒精等）的摄入。
+
+3. 放松身心：使用轻松的活动和娱乐方式来缓解压力和焦虑。
+
+4. 限制躺在床上的时间：如果在床上躺了30分钟还未入睡，不要继续躺在床上，而是起床做些轻松的活动，直到感到困倦再返回床上。
+
+5. 锻炼身体：适度的身体运动可以帮助身体放松和疲劳，有助于睡眠。
+
+如果这些方法仍然无法帮助你改善睡眠质量，请寻求医生的建议。
+
+C:\Users\Administrator\Documents\Code\ChatGLM-6B&gt;
+</code></pre>
+<p>其实当 CUDA 不可用时，还可以使用 CPU 进行推理，但是推理速度会更慢，而且会把内存占满(需要大概 32GB 内存，而本机只有 16GB)。</p>
+<h2 id="package">打包<a class="headerlink" href="#package" title="Permanent link"></a></h2>
+<p>模型简单调用代码 <code>app.py</code> 代码如下:</p>
+<pre><code class="language-python">import argparse
+import os
+import torch
+from transformers import AutoTokenizer, AutoModel
+
+parser = argparse.ArgumentParser(description=&quot;Command Line for ChatGLM-6B&quot;)
+parser.add_argument(&quot;--prompt&quot;, &quot;-P&quot;, help=&quot;prompt word for model&quot;, default=&quot;你好&quot;)
+parser.add_argument(&quot;--model&quot;, &quot;-m&quot;, help=&quot;local model parameter file path&quot;)
+args = parser.parse_args()
+
+script_path = os.path.abspath(__file__)
+print(script_path)
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+print(script_dir)
+
+print(torch.cuda.is_available())
+
+if __name__ == '__main__':
+    local_model = os.path.join(script_dir, &quot;THUDM&quot;, &quot;chatglm2-6b-int4&quot;)
+    if args.model is not None:
+        local_model = args.model
+    tokenizer = AutoTokenizer.from_pretrained(local_model, trust_remote_code=True)
+    model = AutoModel.from_pretrained(local_model, trust_remote_code=True).half()
+    if torch.cuda.is_available():
+        model = model.cuda()
+    else:
+        model = model.float()
+    model = model.eval()
+    response, history = model.chat(tokenizer, args.prompt, history=[])
+    print(response)
+</code></pre>
+<p>一般项目，总会打包成可执行程序，方便客户部署。所以我以为这个大语言模型，也可以打包成单独的可执行程序，再动态加载模型参数文件。</p>
+<p>可是实际结果令人吃惊，使用 <code>pyinstaller -F -n app app.py</code> 打包后的程序文件大小高达 2.67 GB，运行速度超慢，大概是因为程序加载器在加载超大文件应用时受磁盘和内存读写速度限制，这表现还不如直接用命令 <code>python app.py</code> 执行脚本速度快呢。</p>
+<p>于是我想着使用 <a href="https://github.com/upx/upx">Upx</a> 压缩能否减小体积，下载 Upx 并解压，然后使用命令 <code>pyinstaller -F -n app --upx-dir C:\Users\Administrator\Documents\upx-4.2.3-win64 app.py</code> 再次打包，程序文件大小为 2.39 GB，有效果但作用不大，没有达到百兆大小，没有实际意义。</p>
+<p>后面我试着不打包一个独立文件，使用命令 <code>pyinstaller -n app app.py</code> 打包，然后发现 app.exe 只有 35.6 MB，但是依赖包足足 4.76 GB，单单 <code>torch_cuda.dll</code> 一个文件就有 1.10 GB。这彻底打消了我的打包部署想法，我终于明白那些知名大模型为什么会使用 Docker 来部署了。因为即便 Docker 安装使用很麻烦，但它能够用简单的操作和命令来完整的部署如此复杂和庞大的模型环境，这就足够了。</p>
+<h2 id="references">参考资料<a class="headerlink" href="#references" title="Permanent link"></a></h2>
+<p><a href="https://juejin.cn/post/7245682364932669496">chatglm在windows上私有化部署 | 零基础小白爬坑</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

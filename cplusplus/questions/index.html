@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,13 @@
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>Questions - Jerry's blog</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../../css/extra.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
@@ -33,7 +37,7 @@
             <div class="container">
                 <a class="navbar-brand" href="../..">Jerry's blog</a>
                 <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -41,14 +45,14 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../../markdown/" class="nav-link">Markdown</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C/C++</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -56,7 +60,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Questions</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Questions</a>
 </li>
                                     
 <li>
@@ -64,8 +68,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Go <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Go</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -101,8 +105,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tool <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tool</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -130,8 +134,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -143,8 +147,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux 开发 <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux 开发</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -172,8 +176,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Windows 开发 <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Windows 开发</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -189,14 +193,14 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../../sitemap/" class="nav-link">Index</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ms-md-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -217,124 +221,124 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#common-interview-questions" class="nav-link">C/C++ 常见面试题</a>
+            <li class="nav-item" data-bs-level="1"><a href="#common-interview-questions" class="nav-link">C/C++ 常见面试题</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#difference-between-c-and-cpp" class="nav-link">C 和 C++ 的区别</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#difference-between-pointer-and-reference" class="nav-link">指针和引用的区别</a>
+            <li class="nav-item" data-bs-level="2"><a href="#difference-between-c-and-cpp" class="nav-link">C 和 C++ 的区别</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#difference-between-malloc-and-new" class="nav-link">malloc 和 new，free 和 delete 的区别</a>
+            <li class="nav-item" data-bs-level="2"><a href="#difference-between-pointer-and-reference" class="nav-link">指针和引用的区别</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#extern-c" class="nav-link">extern C 的作用</a>
+            <li class="nav-item" data-bs-level="2"><a href="#difference-between-malloc-and-new" class="nav-link">malloc 和 new，free 和 delete 的区别</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#commonly-used-containers" class="nav-link">常用的容器有哪些</a>
+            <li class="nav-item" data-bs-level="2"><a href="#extern-c" class="nav-link">extern C 的作用</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#volatile-type-qualifier" class="nav-link">volatile 关键字的作用</a>
+            <li class="nav-item" data-bs-level="2"><a href="#commonly-used-containers" class="nav-link">常用的容器有哪些</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#type-conversion" class="nav-link">有哪几种强制类型转换以及使用场景</a>
+            <li class="nav-item" data-bs-level="2"><a href="#volatile-type-qualifier" class="nav-link">volatile 关键字的作用</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#cpp11-new-features" class="nav-link">C++11 新特性</a>
+            <li class="nav-item" data-bs-level="2"><a href="#type-conversion" class="nav-link">有哪几种强制类型转换以及使用场景</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#cpp20-new-features" class="nav-link">C++ 20 新特性</a>
+            <li class="nav-item" data-bs-level="2"><a href="#cpp11-new-features" class="nav-link">C++11 新特性</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#three-characteristics-of-cpp" class="nav-link">C++ 的三大特性</a>
+            <li class="nav-item" data-bs-level="2"><a href="#cpp20-new-features" class="nav-link">C++ 20 新特性</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#polymorphism-in-cpp" class="nav-link">C++的多态实现原理</a>
+            <li class="nav-item" data-bs-level="2"><a href="#three-characteristics-of-cpp" class="nav-link">C++ 的三大特性</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#virtual-function" class="nav-link">什么是虚函数</a>
+            <li class="nav-item" data-bs-level="2"><a href="#polymorphism-in-cpp" class="nav-link">C++的多态实现原理</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#pure-virtual-function" class="nav-link">什么是纯虚函数</a>
+            <li class="nav-item" data-bs-level="2"><a href="#virtual-function" class="nav-link">什么是虚函数</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#sizeof-vtable-pointer" class="nav-link">虚表指针的大小</a>
+            <li class="nav-item" data-bs-level="2"><a href="#pure-virtual-function" class="nav-link">什么是纯虚函数</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#vtable-pointer" class="nav-link">虚函数表的存放内容</a>
+            <li class="nav-item" data-bs-level="2"><a href="#sizeof-vtable-pointer" class="nav-link">虚表指针的大小</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#can-constructor-be-virtual" class="nav-link">构造函数可以是虚函数吗</a>
+            <li class="nav-item" data-bs-level="2"><a href="#vtable-pointer" class="nav-link">虚函数表的存放内容</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#can-destructor-be-virtual" class="nav-link">析构函数可以是虚函数吗</a>
+            <li class="nav-item" data-bs-level="2"><a href="#can-constructor-be-virtual" class="nav-link">构造函数可以是虚函数吗</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#empty-class" class="nav-link">一个空类会生成哪些函数</a>
+            <li class="nav-item" data-bs-level="2"><a href="#can-destructor-be-virtual" class="nav-link">析构函数可以是虚函数吗</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#left-value-right-value" class="nav-link">左值和右值</a>
+            <li class="nav-item" data-bs-level="2"><a href="#empty-class" class="nav-link">一个空类会生成哪些函数</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#smart-pointer" class="nav-link">什么是智能指针，有哪几种，作用，实现原理</a>
+            <li class="nav-item" data-bs-level="2"><a href="#left-value-right-value" class="nav-link">左值和右值</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#circular-dependency" class="nav-link">如何避免循环依赖</a>
+            <li class="nav-item" data-bs-level="2"><a href="#smart-pointer" class="nav-link">什么是智能指针，有哪几种，作用，实现原理</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#unique_ptr-stdmove" class="nav-link">unique_ptr 中 std::move() 作用</a>
+            <li class="nav-item" data-bs-level="2"><a href="#circular-dependency" class="nav-link">如何避免循环依赖</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#static-keywords" class="nav-link">static 关键字的使用</a>
+            <li class="nav-item" data-bs-level="2"><a href="#unique_ptr-stdmove" class="nav-link">unique_ptr 中 std::move() 作用</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#const-keywords" class="nav-link">const 关键字的使用</a>
+            <li class="nav-item" data-bs-level="2"><a href="#static-keywords" class="nav-link">static 关键字的使用</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#diffences-between-define-and-const" class="nav-link">define 和 const 的区别</a>
+            <li class="nav-item" data-bs-level="2"><a href="#const-keywords" class="nav-link">const 关键字的使用</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#object-oriented-design-principles" class="nav-link">面向对象的设计原则</a>
+            <li class="nav-item" data-bs-level="2"><a href="#diffences-between-define-and-const" class="nav-link">define 和 const 的区别</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#compilation-process" class="nav-link">C++ 编译过程</a>
+            <li class="nav-item" data-bs-level="2"><a href="#object-oriented-design-principles" class="nav-link">面向对象的设计原则</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#compilation-process" class="nav-link">C++ 编译过程</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -901,8 +905,7 @@ const int BUFFER_SIZE   = 512;
                 <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../../js/jquery-3.6.0.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
@@ -915,7 +918,7 @@ const int BUFFER_SIZE   = 512;
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>From here you can search these documents. Enter your search terms below.</p>
@@ -935,7 +938,7 @@ const int BUFFER_SIZE   = 512;
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <table class="table">

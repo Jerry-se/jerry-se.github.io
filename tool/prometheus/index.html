@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jerry">
+        <link rel="canonical" href="https://jerry-se.github.io/tool/prometheus/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Prometheus - Jerry's blog</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', "G-274394082");
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Jerry's blog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../markdown/" class="nav-link">Markdown</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C/C++</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cplusplus/lambda/" class="dropdown-item">Lambda</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/questions/" class="dropdown-item">Questions</a>
+</li>
+                                    
+<li>
+    <a href="../../cplusplus/bit_xor/" class="dropdown-item">Bit Xor</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Go</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../go/go/" class="dropdown-item">Go tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../go/install/" class="dropdown-item">Install</a>
+</li>
+                                    
+<li>
+    <a href="../../go/getting_started/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../go/create_module/" class="dropdown-item">Create module</a>
+</li>
+                                    
+<li>
+    <a href="../../go/workspaces/" class="dropdown-item">Workspaces</a>
+</li>
+                                    
+<li>
+    <a href="../../go/web_service_gin/" class="dropdown-item">Web service gin</a>
+</li>
+                                    
+<li>
+    <a href="../../go/generics/" class="dropdown-item">Generics</a>
+</li>
+                                    
+<li>
+    <a href="../../go/writing_web_app/" class="dropdown-item">Writing Web app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tool</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../git/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../git/git_lfs/" class="dropdown-item">Git LFS</a>
+</li>
+                                    
+<li>
+    <a href="../../git/gitea/" class="dropdown-item">Gitea</a>
+</li>
+                                    
+<li>
+    <a href="../frp/" class="dropdown-item">Frp</a>
+</li>
+                                    
+<li>
+    <a href="../v2ray/" class="dropdown-item">V2Ray</a>
+</li>
+                                    
+<li>
+    <a href="../activation_keys/" class="dropdown-item">Activation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/build_blogs_with_pelican/" class="dropdown-item">Pelican</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mkdocs/" class="dropdown-item">MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux 开发</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux_development/docker/" class="dropdown-item">docker</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/coredump/" class="dropdown-item">coredump</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/ipmi/" class="dropdown-item">ipmi</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/make_deb_package/" class="dropdown-item">制作 deb 安装包</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/samba/" class="dropdown-item">Samba</a>
+</li>
+                                    
+<li>
+    <a href="../../linux_development/scsi/" class="dropdown-item">SCSI</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Windows 开发</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../windows_development/character_encoding/" class="dropdown-item">字符编码</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/autostart/" class="dropdown-item">开机启动</a>
+</li>
+                                    
+<li>
+    <a href="../../windows_development/automatic_power_up/" class="dropdown-item">自动开机</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../sitemap/" class="nav-link">Index</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#prometheus" class="nav-link">Prometheus</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">简介</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_2" class="nav-link">单实例，不可扩展</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#pull" class="nav-link">Pull 模式抓取数据</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#getting-started" class="nav-link">Getting Started</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#grafana" class="nav-link">Grafana</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">参考资料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="prometheus">Prometheus<a class="headerlink" href="#prometheus" title="Permanent link"></a></h1>
+<h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
+<p>Prometheus 是一个开源的系统监控和报警工具包，最初由 SoundCloud 开发，后来成为了 CNCF（云原生计算基金会）的一个项目。它主要用于收集、存储、和查询时间序列数据，即指标数据（metrics data），这些数据通常是由应用程序、主机、数据库、网络设备等生成的。</p>
+<p>Prometheus 的特点包括：</p>
+<ol>
+<li>多维度的数据模型：Prometheus 使用基于标签（labels）的多维度数据模型，允许用户灵活地标记和过滤指标。</li>
+<li>高效的时间序列数据库：Prometheus 自带一个强大的时间序列数据库，可以处理大量数据的存储和查询。</li>
+<li>PromQL 查询语言：Prometheus 提供了 PromQL（Prometheus Query Language），一种功能强大的查询语言，可以进行实时的数据分析和聚合。</li>
+<li>数据拉取模式：Prometheus 通过 HTTP 协议主动从被监控的目标（targets）拉取数据，而不是被动接收数据，这种模式可以更好地控制和管理数据收集的频率和范围。</li>
+<li>告警管理：Prometheus 集成了告警管理功能，可以根据定义的规则生成告警，并将这些告警推送到外部系统，如邮件、Slack、PagerDuty 等。</li>
+<li>生态系统丰富：Prometheus 有丰富的生态系统，支持多种数据导出方式（exporter），与 Kubernetes、Docker 等云原生技术紧密集成，并且可以与 Grafana 等可视化工具配合使用。</li>
+</ol>
+<p>Prometheus 广泛应用于监控云原生应用程序、微服务架构、服务器性能等，是 DevOps 和 SRE 团队的重要工具之一。</p>
+<p>Prometheus 本身主要采用的是“拉取”（pull）模式，即从被监控的目标主动拉取数据，但无法接收目标发送的数据。然而，官方提供了一个名为 Pushgateway 的组件，它允许你从客户端主动推送指标数据到 Pushgateway，随后 Prometheus 从 Pushgateway 拉取数据。Pushgateway 适用于短暂的、一次性的任务或那些难以被 Prometheus 直接监控的场景。Pushgateway 主要用于将任务执行的最后状态推送给 Prometheus，而不是用于长期运行的服务。</p>
+<p>云原生时代崛起的 Prometheus 已经在可观测领域得到了广泛应用，其影响力远远超出了云原生的范畴，具有两个显著特点。</p>
+<h3 id="_2">单实例，不可扩展<a class="headerlink" href="#_2" title="Permanent link"></a></h3>
+<p>Prometheus 的作者及社区核心开发者都秉承一个理念：Prometheus 只聚焦核心的功能，扩展性的功能留给社区解决，所以 Prometheus 自诞生至今都是单实例不可扩展的。</p>
+<p>这对于很多从大数据时代走过来的工程师而言有点不可思议，大数据领域的很多开源项目比如 Elasticsearch、HBase、Cassandra 等无一不是多节点多角色的设计。</p>
+<p>Prometheus 的核心开发者曾这样解释，Prometheus 结合 Go 语言的特性和优势，使得 Prometheus 能够以更小的代价抓取并存储更多数据，而 Elasticsearch 或 Cassandra 等 Java 实现的大数据项目处理同样的数据量会消耗更多的资源。也就是说，单实例、不可扩展的 Prometheus 已强大到可以满足大部分用户的需求。</p>
+<h3 id="pull">Pull 模式抓取数据<a class="headerlink" href="#pull" title="Permanent link"></a></h3>
+<p>Prometheus 倡导用 Pull 模式获取数据，即 Prometheus 主动地去数据源拉取数据。对于不便于 Pull 的数据源，Prometheus 提供了 PushGateway 进行处理，但 PushGateway 在部分应用场景上存在限制。</p>
+<p>尽管单实例的 Prometheus 已经足够强大，但还是存在部分需求是其无法满足的，如跨集群聚合、更长时间的存储等。为了扩展 Prometheus，社区给出了多种方案。</p>
+<p>在 Prometheus 长期存储出现之前，用户若需要跨集群聚合计算数据时，社区提供 Federation 方式实现。</p>
+<p>在多个 Prometheus 实例的上一层有一个 Global Prometheus，它负责在各个实例中抓取数据并进行计算，以此解决跨集群聚合计算的问题。但如果各个集群的数据量较大，单实例的 GlobalPrometheus 也会遇到瓶颈。</p>
+<p>2017 年，Prometheus 加⼊ Remote Read/Write API，自此之后社区涌现出大量长期存储的方案，如 Thanos、Grafana Cortex/Mimir、VictoriaMetrics、Wavefront、Splunk、Sysdig、SignalFx、InfluxDB、Graphite 等。</p>
+<p>https://github.com/prometheus/client_golang</p>
+<p>https://github.com/prometheus/pushgateway</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
+<pre><code class="language-shell">$ wget https://github.com/prometheus/prometheus/releases/download/v2.54.0/prometheus-2.54.0.linux-amd64.tar.gz
+$ tar xzvf prometheus-2.54.0.linux-amd64.tar.gz
+$ sudo docker run --name prometheus -p 9090:9090 -v ./prometheus-2.54.0.linux-amd64:/prometheus -it ubuntu:22.04 /bin/bash
+root@60d4e24d3973:/# cd prometheus/
+root@60d4e24d3973:/prometheus# ls
+LICENSE  NOTICE  console_libraries  consoles  prometheus  prometheus.yml  promtool
+root@60d4e24d3973:/prometheus# ./prometheus --config.file=prometheus.yml
+</code></pre>
+<p>默认 <code>prometheus.yml</code> 内容为:</p>
+<pre><code class="language-yaml"># my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - &quot;first_rules.yml&quot;
+  # - &quot;second_rules.yml&quot;
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=&lt;job_name&gt;` to any timeseries scraped from this config.
+  - job_name: &quot;prometheus&quot;
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: [&quot;localhost:9090&quot;]
+</code></pre>
+<p>在 <code>prometheus.yml</code> 中配置 <code>Remote Write</code>：</p>
+<pre><code class="language-yaml">remote_write:
+  - url: &quot;http://localhost:9090/api/v1/write&quot;
+</code></pre>
+<p>用于将 Prometheus 本地存储的数据推送到一个远程存储系统或服务。这样，可以将数据持久化到一个更持久、可扩展或分布式的存储解决方案中。Prometheus 本身通常用于存储短期数据。通过 Remote Write，你可以将数据推送到支持长时间存储的系统。</p>
+<p><a href="https://prometheus.io/docs/prometheus/latest/getting_started/">https://prometheus.io/docs/prometheus/latest/getting_started/</a></p>
+<h2 id="grafana">Grafana<a class="headerlink" href="#grafana" title="Permanent link"></a></h2>
+<p>开源的数据可视化观测平台。可视化来自多个来源的度量、日志和跟踪，例如 Prometheus、Loki、Elasticsearch、InfluxDB、Postgres 等等。</p>
+<pre><code class="language-shell">$ wget https://dl.grafana.com/enterprise/release/grafana-enterprise-11.1.4.linux-amd64.tar.gz
+$ tar -zxvf grafana-enterprise-11.1.4.linux-amd64.tar.gz
+$ sudo docker run -p 3000:3000 -v ./grafana-v11.1.4:/grafana -it ubuntu:22.04 /bin/bash
+root@b53761ce0706:/# 
+root@b53761ce0706:/# cd /grafana/
+root@b53761ce0706:/grafana# ./bin/grafana server
+</code></pre>
+<p>在浏览器打开 <code>http://localhost:3000/</code>，在登录界面，初始用户名和密码都是 <code>admin</code>。</p>
+<ul>
+<li><a href="https://grafana.com/">Grafana 官网</a></li>
+<li><a href="https://github.com/grafana/grafana">Grafana 源码</a></li>
+</ul>
+<h2 id="_3">参考资料<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://prometheus.io/">Prometheus 官网</a></li>
+<li><a href="https://www.cnblogs.com/kubesphere/p/16707315.html">Prometheus 长期存储主流方案</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/2378269">Prometheus 和 InfluxDB 之间有什么区别 - 使用场景、挑战、优势</a></li>
+<li><a href="https://blog.csdn.net/qq_44766883/article/details/131511821">InfluxDB-简介、理论原理介绍以及InfluxDB入门操作</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 Jerry, All Rights Reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
